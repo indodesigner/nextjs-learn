@@ -90,7 +90,7 @@ const Form = () => {
       <h2 className="text-3xl font-bold mb-10 text-center">Multi-step Form</h2>
 
       {step === 1 && (
-        <div className="bg-gray-100 p-4 rounded-lg flex flex-col justify-between min-h-[70vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
+        <div className="bg-gray-100 shadow-md p-4 rounded-lg flex flex-col justify-between min-h-[70vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
           <div>
             <h2 className="text-lg font-medium mb-4 text-center">Step 1</h2>
 
@@ -150,7 +150,7 @@ const Form = () => {
       )}
 
       {step === 2 && (
-        <div className="bg-gray-800 p-4 rounded-lg flex flex-col justify-between min-h-[70vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
+        <div className="bg-gray-800 shadow-md p-4 rounded-lg flex flex-col justify-between min-h-[70vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
           <div>
             <h2 className="text-lg font-medium mb-4 text-center">Step 2</h2>
 
@@ -191,7 +191,7 @@ const Form = () => {
         </div>
       )}
       {step === 3 && (
-        <div className="bg-gray-800 p-4 rounded-lg flex flex-col justify-between min-h-[70vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
+        <div className="bg-gray-800 shadow-md p-4 rounded-lg flex flex-col justify-between min-h-[70vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
           <div>
             <h2 className="text-lg font-medium mb-4 text-center">
               Step 3: Confirmation
