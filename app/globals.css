@@ -11,17 +11,42 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
+    --background-start-rgb: 20, 20, 20;
     --background-end-rgb: 0, 0, 0;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+  background-color: rgb(19, 26, 35);
+  min-height: 100vh;
+}
+
+.repo_status span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 1rem;
+  gap: 0.2rem;
+  font-size: small;
+}
+
+.tab {
+  flex: 1;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tab.active {
+  background-color: #f7fafc;
+  font-weight: 600;
+  color: rgb(19, 26, 35);
+  border-radius: .75em;
 }
