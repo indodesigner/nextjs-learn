@@ -63,7 +63,7 @@ const Form = () => {
     const worksheet = utils.json_to_sheet([formData], { skipHeader: true });
     return worksheet;
   };
-  
+
   const saveAsExcelFile = (buffer, fileName) => {
     const data = new Blob([buffer], { type: 'application/octet-stream' });
     const url = window.URL.createObjectURL(data);
@@ -215,7 +215,7 @@ const Form = () => {
               onClick={handleSubmit}
               className="bg-white text-gray-900 font-medium p-2 rounded-lg"
             >
-              Submit
+              Download xlsx
             </button>
           </div>
         </div>
