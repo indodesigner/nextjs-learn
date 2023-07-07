@@ -6,7 +6,7 @@ export default function HomePage() {
       <div className="max-w-3xl">
         <ul className="flex flex-row gap-3">
           <li>
-            <Link href="/" className="font-medium hover:underline">Home</Link>
+            <Link href="/nextjs-l" className="font-medium hover:underline">Home</Link>
           </li>
           <li>
             <Link href="/about" className="font-medium hover:underline">About</Link>
