@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="flex items-center justify-center py-4 sticky top-0 z-50 bg-gray-800">
+    <div className="flex items-center justify-center py-4 sticky top-0 z-50 bg-gray-100">
       <div className="max-w-3xl">
         <ul className="flex flex-row gap-3">
           <li>

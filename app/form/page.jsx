@@ -90,7 +90,7 @@ const Form = () => {
       <h2 className="text-3xl font-bold mb-10 text-center">Multi-step Form</h2>
 
       {step === 1 && (
-        <div className="bg-gray-800 p-4 rounded-lg flex flex-col justify-between min-h-[70vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
+        <div className="bg-gray-100 p-4 rounded-lg flex flex-col justify-between min-h-[70vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
           <div>
             <h2 className="text-lg font-medium mb-4 text-center">Step 1</h2>
 
@@ -99,7 +99,7 @@ const Form = () => {
               <input
                 type="text"
                 name="fname"
-                className="rounded-md bg-gray-600 p-2"
+                className="rounded-md bg-gray-200 p-2"
                 value={formData.fname}
                 onChange={handleInputChange}
               />
@@ -109,7 +109,7 @@ const Form = () => {
               <input
                 type="text"
                 name="lname"
-                className="rounded-md bg-gray-600 p-2"
+                className="rounded-md bg-gray-200 p-2"
                 value={formData.lname}
                 onChange={handleInputChange}
               />
@@ -119,7 +119,7 @@ const Form = () => {
               <input
                 type="text"
                 name="email"
-                className="rounded-md bg-gray-600 p-2"
+                className="rounded-md bg-gray-200 p-2"
                 value={formData.email}
                 onChange={handleInputChange}
               />
@@ -130,7 +130,7 @@ const Form = () => {
               <input
                 type="text"
                 name="phone"
-                className="rounded-md bg-gray-600 p-2"
+                className="rounded-md bg-gray-200 p-2"
                 value={formData.phone}
                 onChange={handleInputChange}
               />
@@ -139,7 +139,7 @@ const Form = () => {
           </div>
           <div className="flex justify-end">
             <button
-              className="bg-white text-gray-900 font-medium p-2 rounded-lg"
+              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
               disabled={isNextButtonDisabled}
               onClick={handleNextStep}
             >
@@ -159,7 +159,7 @@ const Form = () => {
               <input
                 type="text"
                 name="test1"
-                className="rounded-md bg-gray-600 p-2"
+                className="rounded-md bg-gray-200 p-2"
                 onChange={handleInputChange}
               />
             </div>
@@ -168,20 +168,20 @@ const Form = () => {
               <input
                 type="text"
                 name="test2"
-                className="rounded-md bg-gray-600 p-2"
+                className="rounded-md bg-gray-200 p-2"
                 onChange={handleInputChange}
               />
             </div>
           </div>
           <div className="flex justify-between">
             <button
-              className="bg-white text-gray-900 font-medium p-2 rounded-lg"
+              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
               onClick={handlePrevStep}
             >
               Prev
             </button>
             <button
-              className="bg-white text-gray-900 font-medium p-2 rounded-lg"
+              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
               disabled={isNextButtonDisabled}
               onClick={handleNextStep}
             >
@@ -207,13 +207,13 @@ const Form = () => {
           <div className="flex justify-between mt-10">
             <button
               onClick={handlePrevStep}
-              className="bg-white text-gray-900 font-medium p-2 rounded-lg"
+              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
             >
               Previous
             </button>
             <button
               onClick={handleSubmit}
-              className="bg-white text-gray-900 font-medium p-2 rounded-lg"
+              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
             >
               Download xlsx
             </button>
