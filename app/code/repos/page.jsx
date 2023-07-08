@@ -15,7 +15,7 @@ export const ReposPage = async () => {
       <h2 className="text-3xl font-bold mb-4">Repos</h2>
       <ul>
         {repos.map((repo) => (
-          <li key={repo.id} className="bg-gray-100 p-3 rounded-lg mb-2">
+          <li key={repo.id} className="bg-white p-3 rounded-lg mb-2 shadow-sm">
             <Link href={`/code/repos/${repo.name}`}></Link>
             <h3 className="text-lg font-medium">{repo.name}</h3>
             <p className="text-sm">{repo.description}</p>

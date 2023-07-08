@@ -16,11 +16,11 @@
   }
 } */
 
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background-color: rgb(19, 26, 35);
-  min-height: 100vh;
-} */
+body {
+  /* color: rgb(var(--foreground-rgb)); */
+  background-color: rgb(240, 240, 240);
+  /* min-height: 100vh; */
+}
 
 .repo_status span {
   display: flex;

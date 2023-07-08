@@ -1,6 +1,6 @@
 const loading = () => {
   return (
-    <div className="position-absolute min-w-full bg-red-200 min-h-screen">loading</div>
+    <div className="position-absolute min-w-[100vw] bg-gray-300 min-h-[100vh] flex justify-center align-center">loading</div>
   )
 }
 
