@@ -23,6 +23,12 @@ export default function HomePage() {
           <li>
             <Link href="/form" className="font-medium hover:underline">Form</Link>
           </li>
+          <li>
+            <Link href="/learn" className="font-medium hover:underline">Learn</Link>
+          </li>
+          <li>
+            <Link href="/blogs" className="font-medium hover:underline">Blogs</Link>
+          </li>
         </ul>
       </div>
     </div>

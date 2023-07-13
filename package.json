@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/vision": "^3.14.1",
     "autoprefixer": "10.4.14",
-    "next": "13.4.8",
+    "next": "^13.4.9",
+    "next-sanity": "^5.1.1",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
+    "sanity": "^3.14.1",
     "tailwindcss": "3.3.2",
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "typescript": "5.1.6"
   }
 }
