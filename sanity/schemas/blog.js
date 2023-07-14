@@ -14,9 +14,9 @@ export default {
       title: "Slug",
       options: {
         source: "title",
-        maxLength: 200, // will be ignored if slugify is set
+        maxLength: 20, // will be ignored if slugify is set
         slugify: (input) =>
-          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+          input.toLowerCase().replace(/\s+/g, "-").replace(/\./g, "").slice(0, 20),
       },
     },
     {

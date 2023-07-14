@@ -11,7 +11,7 @@ async function fetchRepos() {
 export const ReposPage = async () => {
   const repos = await fetchRepos();
   return (
-    <div className="">
+    <div>
       <h2 className="text-3xl font-bold mb-4">Repos</h2>
       <ul>
         {repos.map((repo) => (
