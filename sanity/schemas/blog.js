@@ -13,32 +13,31 @@ export default {
       type: "slug",
       title: "Slug",
       options: {
-        source: 'title',
+        source: "title",
         maxLength: 200, // will be ignored if slugify is set
-        slugify: input => input
-                             .toLowerCase()
-                             .replace(/\s+/g, '-')
-                             .slice(0, 200)
-      }
+        slugify: (input) =>
+          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+      },
     },
     {
-      title: 'Release date',
-      name: 'releaseDate',
-      type: 'date',
+      title: "Release date",
+      name: "releaseDate",
+      type: "date",
       options: {
-        dateFormat: 'YYYY-MM-DD',
-        calendarTodayLabel: 'Today'
-      }
+        dateFormat: "YYYY-MM-DD",
+        calendarTodayLabel: "Today",
+      },
     },
     {
       name: "content",
-      type: "text",
       title: "Content",
+      type: "array",
+      of: [{ type: "block" }, { type: "image" }],
     },
     {
-      name: 'href',
-      type: 'url',
-      title: 'Link',
-    }
+      name: "href",
+      type: "url",
+      title: "Link",
+    },
   ],
 };

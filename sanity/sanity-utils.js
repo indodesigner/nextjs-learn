@@ -1,7 +1,5 @@
-import { createClient, groq } from "next-sanity";
-import config from "@/sanity/config/config";
-
-const client = createClient(config);
+import { groq } from "next-sanity";
+import client from "../lib/sanity";
 
 export async function getBlogs() {
   return client.fetch(
@@ -16,7 +14,7 @@ export async function getBlogs() {
   );
 }
 
-export async function getBlog({slug}) {
+export async function getBlog({ slug }) {
   return client.fetch(
     groq`*[_type == "blog" && slug.current == "${slug}"][0]{
           _id,
