@@ -8,7 +8,7 @@ async function fetchRepos() {
   return repos;
 }
 
-export const ReposPage = async () => {
+const ReposPage = async () => {
   const repos = await fetchRepos();
   return (
     <div>
