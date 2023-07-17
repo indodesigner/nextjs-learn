@@ -8,8 +8,9 @@ export async function getBlogs() {
         title,
         "slug": slug.current,
         releaseDate,
+        "postImage": postImage.asset->url,
         content,
-        href
+        href,
       }`
   );
 }
@@ -21,8 +22,9 @@ export async function getBlog({ slug }) {
           title,
           "slug": slug.current,
           releaseDate,
+          "postImage": postImage.asset->url,
           content,
-          href
+          href,
         }`
   );
 }

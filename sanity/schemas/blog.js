@@ -16,7 +16,11 @@ export default {
         source: "title",
         maxLength: 20, // will be ignored if slugify is set
         slugify: (input) =>
-          input.toLowerCase().replace(/\s+/g, "-").replace(/\./g, "").slice(0, 20),
+          input
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/\./g, "")
+            .slice(0, 20),
       },
     },
     {
@@ -27,6 +31,31 @@ export default {
         dateFormat: "YYYY-MM-DD",
         calendarTodayLabel: "Today",
       },
+    },
+    {
+      title: "Post Image",
+      name: "postImage",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string"
+        },
+        {
+          name: "caption",
+          type: "string",
+          title: "Caption",
+        },
+        {
+          name: "attribution",
+          type: "string",
+          title: "Attribution",
+        },
+      ],
     },
     {
       name: "content",
