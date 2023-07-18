@@ -33,6 +33,20 @@ export default {
       },
     },
     {
+      title: 'Categories',
+      name: 'categories',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+        list: [
+          {title: 'Technology', value: 'Technology'},
+          {title: 'Softwares', value: 'Softwares'},
+          {title: 'Marketing', value: 'Marketing'},
+          {title: 'Personal Development', value: 'Personal Development'}
+        ]
+      }
+    },
+    {
       title: "Post Image",
       name: "postImage",
       type: "image",

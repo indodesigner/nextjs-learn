@@ -16,20 +16,23 @@ const Blog = async ({ params }) => {
       {blog.postImage ? (
                   <Image
                     src={urlFor(blog.postImage).url()}
-                    width={800}
-                    height={500}
-                    className="object-cover w-920 h-480"
+                    width={1080}
+                    height={480}
+                    className="h-auto max-w-full mb-4"
                   ></Image>
                 ) : (
+
+                  <figure className="flex justify-center mb-6">
                   <Image
                     src={noPostImage}
-                    width={1024}
-                    height={300}
-                    className="object-cover max-w-7xl max-h-xl"
+                    width={100}
+                    height={100}
+                    className="object-cover max-w-7xl max-h-xl item-center"
                   ></Image>
+                  </figure>
                 )}
-      <h2 className="text-2xl font-bold">{blog.title}</h2>
-      <h6 className="text-xs font-medium mb-10">{blog.releaseDate}</h6>
+      <h2 className="text-md sm:text-lg md:text-2xl font-bold">{blog.title}</h2>
+      <h6 className="text-xs font-medium mb-4">{blog.releaseDate}</h6>
       
       <PortableText value={blog.content} components={RichTextComponents} />
       {blog.href ?
