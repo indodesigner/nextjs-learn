@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function HomePage() {
+export default function Navbar() {
   return (
-    <div className="flex items-center justify-center py-4 sticky top-0 z-50 bg-white">
+    <div className="flex items-center justify-center py-4 sticky top-0 z-50 bg-white min-w-full scroll-auto">
       <div className="max-w-3xl">
         <ul className="flex flex-row gap-3">
           <li>

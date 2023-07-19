@@ -3,6 +3,7 @@ const nextConfig = {
   /* config options here */
 output: "export",
 images: {
+  domains:["cdn.sanity.io"],
   unoptimized: true,
 },
 };
