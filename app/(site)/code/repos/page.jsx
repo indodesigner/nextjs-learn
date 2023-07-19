@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaStar, FaCodeBranch, FaEye } from "react-icons/Fa";
+import { FaStar, FaCodeBranch, FaEye } from "react-icons/fa";
 
 async function fetchRepos() {
   const response = await fetch("https://api.github.com/users/google/repos");
