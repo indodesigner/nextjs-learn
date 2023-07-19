@@ -20,7 +20,7 @@ export default async function Blogs() {
                       width={500}
                       height={500}
                       className="object-cover h-24 rounded-md"
-                      alt={blog.slug + "-image"}
+                      alt={`${blog.slug}-image`}
                     ></Image>
                   ) : (
                     <div className="grid place-items-center border border-gray-200 bg-gray-100 rounded-md">

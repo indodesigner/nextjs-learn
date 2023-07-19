@@ -7,9 +7,12 @@ import { PortableText } from "@portabletext/react";
 import urlFor from "../../../../components/urlFor";
 import {BsImageAlt} from "react-icons/bs";
 
+
+
 const Blog = async ({ params }) => {
   const slug = params.blog;
   const blog = await getBlog({ slug });
+  
   return (
     <div className="max-w-3xl">
       {blog.postImage ? (
@@ -18,6 +21,7 @@ const Blog = async ({ params }) => {
           width={1080}
           height={480}
           className="h-auto max-w-full mb-4"
+          alt={`${blog.slug}-image`}
         ></Image>
       ) : (
         <div className="flex justify-center mb-6">
