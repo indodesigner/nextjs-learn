@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import { RichTextComponents } from "../../../../components/RichTextComponents";
 import Link from "next/link";
 import Image from "next/image";
