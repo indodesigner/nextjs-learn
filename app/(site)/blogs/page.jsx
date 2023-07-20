@@ -16,22 +16,19 @@ export default async function Blogs() {
                 <div className="basis-2/5 sm:basis-1/5">
                   {blog.postImage ? (
                     <Image
-                      src={urlFor(blog.postImage).url()}
+                      src={urlFor(blog.postImage).width(500).height(300).url()}
                       width={500}
                       height={500}
                       className="object-cover h-24 rounded-md"
                       alt={`${blog.slug}-image`}
                     ></Image>
-                  ) : null
-                  // (
-                  //   <div className="grid place-items-center border border-gray-200 bg-gray-100 rounded-md">
-                  //     <div>
-                  //       <BsImageAlt className="w-16 h-24 text-neutral-300" />
-                  //     </div>
-                  //   </div>
-                  // )
-                  
-                  }
+                  ) : (
+                    <div className="grid place-items-center border border-gray-200 bg-gray-100 rounded-md">
+                      <div>
+                        <BsImageAlt className="w-16 h-24 text-neutral-300" />
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="px-2 basis-3/5 sm:basis-4/5">
