@@ -3,23 +3,29 @@ import Link from "next/link";
 import Image from "next/image";
 import urlFor from "../../../components/urlFor";
 import { BsImageAlt } from "react-icons/bs";
+import { PortableText } from "@portabletext/react";
+import { RichTextComponents } from "../../../components/RichTextComponents";
+import { BsFillCalendar2WeekFill } from "react-icons/bs";
 
 export default async function Blogs() {
   const blogs = await getBlogs();
   return (
     <div className="max-w-3xl">
-      <ul className="divide-y divide-neutral-300">
+      <ul>
         {blogs.map((blog) => (
-          <li className="mb-3 pt-2" key={blog._id}>
+          <li
+            className="group mb-3 p-2 backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-neutral-900 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
+            key={blog._id}
+          >
             <Link href={`blogs/${blog.slug}`}>
               <div className="flex">
-                <div className="basis-2/5 sm:basis-1/5">
+                <div className="basis-1/4">
                   {blog.postImage ? (
                     <Image
                       src={urlFor(blog.postImage).width(500).height(300).url()}
                       width={500}
                       height={500}
-                      className="object-cover h-24 rounded-md"
+                      className="object-cover h-24 rounded-md group-hover:drop-shadow-sm"
                       alt={`${blog.slug}-image`}
                     ></Image>
                   ) : (
@@ -31,18 +37,27 @@ export default async function Blogs() {
                   )}
                 </div>
 
-                <div className="px-2 basis-3/5 sm:basis-4/5">
-                  <h1 className="text-sm sm:text-md font-medium mb-2 line-clamp-2">
-                    {blog.title}
-                  </h1>
-                  <h6 className="text-xs min-w-[80px] mb-2">
-                    {blog.releaseDate}
+                <div className="px-2 basis-3/4">
+                  <div className="flex justify-between">
+                    <h1 className="text-sm sm:text-md font-medium mb-2 line-clamp-2">
+                      {blog.title}
+                    </h1>
+                    <h6 className="text-[10px] min-w-[80px] flex gap-1 pt-1">
+                      <BsFillCalendar2WeekFill className="w-3 h-3" />
+                      {blog.releaseDate}
+                    </h6>
+                  </div>
+                  <h6 className="line-clamp-2 text-xs mb-2">
+                    <PortableText
+                      value={blog.content}
+                      components={RichTextComponents}
+                    />
                   </h6>
 
-                  <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
+                  <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-2">
                     {blog.categories.map((categ) => (
-                      <span className="grid place-items-center min-w-max text-xs font-normal border border-gray-300 rounded-full bg-gray-200 px-3">
-                        <h6 className="text-xs text-neutral-700">{categ}</h6>
+                      <span className="min-w-max">
+                        <h6 className="text-xs font-bold">#{categ}</h6>
                       </span>
                     ))}
                   </div>

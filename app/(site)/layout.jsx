@@ -15,7 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className}`}>
+      <body className={`${montserrat.className} min-h-screen`}>
+        <div className=" bg-header-gradient"></div>
         <Navbar />
         <main className="p-2 md:p-8 flex justify-center">{children}</main>
       </body>
