@@ -11,10 +11,7 @@ export default function Navbar() {
           <li>
             <Link href="/about" className="font-medium hover:underline">About</Link>
           </li>
-          <li>
-            <Link href="/about/team" className="font-medium hover:underline">Team</Link>
-          </li>
-          <li>
+           <li>
             <Link href="/code/repos" className="font-medium hover:underline">Code</Link>
           </li>
           <li>

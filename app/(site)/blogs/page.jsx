@@ -22,13 +22,16 @@ export default async function Blogs() {
                       className="object-cover h-24 rounded-md"
                       alt={`${blog.slug}-image`}
                     ></Image>
-                  ) : (
-                    <div className="grid place-items-center border border-gray-200 bg-gray-100 rounded-md">
-                      <div>
-                        <BsImageAlt className="w-16 h-24 text-neutral-300" />
-                      </div>
-                    </div>
-                  )}
+                  ) : null
+                  // (
+                  //   <div className="grid place-items-center border border-gray-200 bg-gray-100 rounded-md">
+                  //     <div>
+                  //       <BsImageAlt className="w-16 h-24 text-neutral-300" />
+                  //     </div>
+                  //   </div>
+                  // )
+                  
+                  }
                 </div>
 
                 <div className="px-2 basis-3/5 sm:basis-4/5">

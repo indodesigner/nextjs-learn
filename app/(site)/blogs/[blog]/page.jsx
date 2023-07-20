@@ -23,13 +23,15 @@ const Blog = async ({ params }) => {
           className="h-auto max-w-full mb-4"
           alt={`${blog.slug}-image`}
         ></Image>
-      ) : (
-        <div className="flex justify-center mb-6">
-          <BsImageAlt
-          className="w-16 h-16"
-           />
-        </div>
-      )}
+      ) : null
+      // (
+      //   <div className="flex justify-center mb-6">
+      //     <BsImageAlt
+      //     className="w-16 h-16"
+      //      />
+      //   </div>
+      // )
+      }
       <h2 className="text-md sm:text-lg md:text-2xl font-bold">{blog.title}</h2>
       <h6 className="text-xs font-medium mb-4">{blog.releaseDate}</h6>
 
