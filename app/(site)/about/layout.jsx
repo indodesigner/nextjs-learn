@@ -1,6 +1,6 @@
 const Aboutlayout = ({ children }) => {
   return (
-    <div className="max-w-3xl flex flex-col items-center bg-white rounded-lg shadow-sm p-8">
+    <div className="flex flex-col items-center rounded-lg shadow-sm">
       {children}
     </div>
   );

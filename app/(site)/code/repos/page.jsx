@@ -15,7 +15,10 @@ const ReposPage = async () => {
       <h2 className="text-3xl font-bold mb-4">Repos</h2>
       <ul>
         {repos.map((repo) => (
-          <li key={repo.id} className="bg-white p-3 rounded-lg mb-2 shadow-sm">
+          <li
+            key={repo.id}
+            className="backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-neutral-900 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300 mb-2 p-2"
+          >
             <Link href={`/code/repos/${repo.name}`}></Link>
             <h3 className="text-lg font-medium">{repo.name}</h3>
             <p className="text-sm">{repo.description}</p>

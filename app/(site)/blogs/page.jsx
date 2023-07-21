@@ -10,7 +10,7 @@ import { BsFillCalendar2WeekFill } from "react-icons/bs";
 export default async function Blogs() {
   const blogs = await getBlogs();
   return (
-    <div className="max-w-3xl">
+    <div>
       <ul>
         {blogs.map((blog) => (
           <li
@@ -55,11 +55,12 @@ export default async function Blogs() {
                   </h6>
 
                   <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-2">
-                    {blog.categories.map((categ) => (
-                      <span className="min-w-max">
-                        <h6 className="text-xs font-bold">#{categ}</h6>
-                      </span>
-                    ))}
+                    {blog.categories &&
+                      blog.categories.map((categ) => (
+                        <span className="min-w-max">
+                          <h6 className="text-xs font-bold">#{categ}</h6>
+                        </span>
+                      ))}
                   </div>
                 </div>
               </div>

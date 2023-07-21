@@ -16,7 +16,7 @@ const Blog = async ({ params }) => {
   const blog = await getBlog({ slug });
 
   return (
-    <div className="max-w-3xl">
+    <div>
       <div className="flex items-center mb-3">
         <Link
           href="/blogs"

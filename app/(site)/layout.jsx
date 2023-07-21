@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
       <body className={`${montserrat.className} min-h-screen`}>
         <div className=" bg-header-gradient"></div>
         <Navbar />
-        <main className="p-2 md:p-8 flex justify-center">{children}</main>
+        <main className="p-4 flex justify-center">
+          <div className="max-w-3xl">{children}</div>
+        </main>
       </body>
     </html>
   );

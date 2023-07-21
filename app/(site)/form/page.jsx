@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { write, utils } from 'xlsx';
+import { write, utils } from "xlsx";
 
 const Form = () => {
   const [step, setStep] = useState(1);
@@ -54,9 +54,9 @@ const Form = () => {
     // Perform form submission logic here
     const worksheet = convertFormDataToSheet(formData);
     const workbook = utils.book_new();
-    utils.book_append_sheet(workbook, worksheet, 'Form Data');
-    const excelBuffer = write(workbook, { bookType: 'xlsx', type: 'buffer' });
-    saveAsExcelFile(excelBuffer, 'form_data.xlsx');
+    utils.book_append_sheet(workbook, worksheet, "Form Data");
+    const excelBuffer = write(workbook, { bookType: "xlsx", type: "buffer" });
+    saveAsExcelFile(excelBuffer, "form_data.xlsx");
   };
 
   const convertFormDataToSheet = (formData) => {
@@ -65,11 +65,11 @@ const Form = () => {
   };
 
   const saveAsExcelFile = (buffer, fileName) => {
-    const data = new Blob([buffer], { type: 'application/octet-stream' });
+    const data = new Blob([buffer], { type: "application/octet-stream" });
     const url = window.URL.createObjectURL(data);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
-    link.setAttribute('download', fileName);
+    link.setAttribute("download", fileName);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -90,7 +90,7 @@ const Form = () => {
       <h2 className="text-3xl font-bold mb-10 text-center">Multi-step Form</h2>
 
       {step === 1 && (
-        <div className="bg-white shadow-sm p-4 rounded-lg flex flex-col justify-between min-h-[65vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
+        <div className="p-4 backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20  hover:drop-shadow-md transition duration-300 flex flex-col justify-between min-h-[65vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
           <div>
             <h2 className="text-lg font-medium mb-4 text-center">Step 1</h2>
 
@@ -99,7 +99,7 @@ const Form = () => {
               <input
                 type="text"
                 name="fname"
-                className="rounded-md bg-gray-200 p-2"
+                className="text-white p-2 backdrop-filter backdrop-blur-xl bg-opacity-10 bg-slate-900 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-zinc-700 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
                 value={formData.fname}
                 onChange={handleInputChange}
               />
@@ -109,7 +109,7 @@ const Form = () => {
               <input
                 type="text"
                 name="lname"
-                className="rounded-md bg-gray-200 p-2"
+                className="text-white p-2 backdrop-filter backdrop-blur-xl bg-opacity-10 bg-slate-900 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-zinc-700 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
                 value={formData.lname}
                 onChange={handleInputChange}
               />
@@ -119,7 +119,7 @@ const Form = () => {
               <input
                 type="text"
                 name="email"
-                className="rounded-md bg-gray-200 p-2"
+                className="text-white p-2 backdrop-filter backdrop-blur-xl bg-opacity-10 bg-slate-900 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-zinc-700 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
                 value={formData.email}
                 onChange={handleInputChange}
               />
@@ -130,7 +130,7 @@ const Form = () => {
               <input
                 type="text"
                 name="phone"
-                className="rounded-md bg-gray-200 p-2"
+                className="text-white p-2 backdrop-filter backdrop-blur-xl bg-opacity-10 bg-slate-900 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-zinc-700 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
                 value={formData.phone}
                 onChange={handleInputChange}
               />
@@ -139,7 +139,7 @@ const Form = () => {
           </div>
           <div className="flex justify-end">
             <button
-              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
+              className="bg-neutral-800 bg-opacity-70 border-[1px] border-neutral-500 border-opacity-50 backdrop-filter text-white font-medium p-2 rounded-lg"
               disabled={isNextButtonDisabled}
               onClick={handleNextStep}
             >
@@ -150,7 +150,7 @@ const Form = () => {
       )}
 
       {step === 2 && (
-        <div className="bg-white shadow-sm p-4 rounded-lg flex flex-col justify-between min-h-[65vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
+        <div className="p-4 backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20  hover:drop-shadow-md transition duration-300 flex flex-col justify-between min-h-[65vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
           <div>
             <h2 className="text-lg font-medium mb-4 text-center">Step 2</h2>
 
@@ -159,7 +159,7 @@ const Form = () => {
               <input
                 type="text"
                 name="test1"
-                className="rounded-md bg-gray-200 p-2"
+                className="text-white p-2 backdrop-filter backdrop-blur-xl bg-opacity-10 bg-slate-900 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-zinc-700 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
                 onChange={handleInputChange}
               />
             </div>
@@ -168,20 +168,20 @@ const Form = () => {
               <input
                 type="text"
                 name="test2"
-                className="rounded-md bg-gray-200 p-2"
+                className="text-white p-2 backdrop-filter backdrop-blur-xl bg-opacity-10 bg-slate-900 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-zinc-700 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
                 onChange={handleInputChange}
               />
             </div>
           </div>
           <div className="flex justify-between">
             <button
-              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
+              className="bg-neutral-800 bg-opacity-70 border-[1px] border-neutral-500 border-opacity-50 backdrop-filter text-white font-medium p-2 rounded-lg"
               onClick={handlePrevStep}
             >
               Prev
             </button>
             <button
-              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
+              className="bg-neutral-800 bg-opacity-70 border-[1px] border-neutral-500 border-opacity-50 backdrop-filter text-white font-medium p-2 rounded-lg"
               disabled={isNextButtonDisabled}
               onClick={handleNextStep}
             >
@@ -191,7 +191,7 @@ const Form = () => {
         </div>
       )}
       {step === 3 && (
-        <div className="bg-white shadow-sm p-4 rounded-lg flex flex-col justify-between min-h-[65vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
+        <div className="p-4 backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20  hover:drop-shadow-md transition duration-300 flex flex-col justify-between min-h-[65vh] min-w-[70vw] sm:min-w-[50vw] md:min-w-[40vw] lg:min-w-[30vw] xl:min-w-[20vw]">
           <div>
             <h2 className="text-lg font-medium mb-4 text-center">
               Step 3: Confirmation
@@ -207,13 +207,13 @@ const Form = () => {
           <div className="flex justify-between mt-10">
             <button
               onClick={handlePrevStep}
-              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
+              className="bg-neutral-800 bg-opacity-70 border-[1px] border-neutral-500 border-opacity-50 backdrop-filter text-white font-medium p-2 rounded-lg"
             >
               Previous
             </button>
             <button
               onClick={handleSubmit}
-              className="bg-gray-800 text-white font-medium p-2 rounded-lg"
+              className="bg-neutral-800 bg-opacity-70 border-[1px] border-neutral-500 border-opacity-50 backdrop-filter text-white font-medium p-2 rounded-lg"
             >
               Download xlsx
             </button>
