@@ -8,11 +8,12 @@ import { RichTextComponents } from "../../../components/RichTextComponents";
 import { BsFillCalendar2WeekFill } from "react-icons/bs";
 
 export default async function Blogs() {
-  const blogs = await getBlogs();
+  const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
   return (
     <div>
       <ul>
         {blogs.map((blog) => (
+          // display blog items as list
           <li
             className="group mb-3 p-2 backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-neutral-900 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
             key={blog._id}
@@ -29,6 +30,7 @@ export default async function Blogs() {
                       alt={`${blog.slug}-image`}
                     ></Image>
                   ) : (
+                    // else part for no blog image
                     <div className="grid place-items-center border border-gray-200 bg-gray-100 rounded-md">
                       <div>
                         <BsImageAlt className="w-16 h-24 text-neutral-300" />
@@ -47,13 +49,15 @@ export default async function Blogs() {
                       {blog.releaseDate}
                     </h6>
                   </div>
-                  <h6 className="line-clamp-2 text-xs mb-2">
+                  {/* rich text component with line clamped to 2 lines */}
+                  <div className="line-clamp-2 text-xs mb-2">
                     <PortableText
                       value={blog.content}
                       components={RichTextComponents}
                     />
-                  </h6>
+                  </div>
 
+                  {/* grid to display blog categries inside blogs list */}
                   <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-2">
                     {blog.categories &&
                       blog.categories.map((categ) => (
