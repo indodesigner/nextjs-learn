@@ -16,9 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* main layout page */}
-      <body className={`${montserrat.className} min-h-screen`}>
+      <body className={`${montserrat.className} min-h-screen text-white`}>
         {/* apply background gradient top and bottom images through css (globals.css) */}
-        <div className=" bg-header-gradient"></div>
+        <div className="bg-header-gradient"></div>
         {/* common navbar component (components)*/}
         <Navbar />
         <main className="p-4 flex justify-center">

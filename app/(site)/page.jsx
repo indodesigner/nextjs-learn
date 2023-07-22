@@ -6,7 +6,7 @@ import { BsImageAlt } from "react-icons/bs";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../components/RichTextComponents";
 
-async function HomePage() {
+export default async function HomePage() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
 
   const firstBlog = blogs[0]; //copy first blog item from blogs array
@@ -28,8 +28,8 @@ async function HomePage() {
         {firstBlog && (
           <Link
             id={firstBlog._id}
-            href={`blogs/${firstBlog.slug}`}
-            className="p-2 backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-neutral-900 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
+            href={`/blogs/${firstBlog.slug}`}
+            className="card-bg"
           >
             {firstBlog.postImage ? (
               <Image
@@ -41,9 +41,9 @@ async function HomePage() {
               ></Image>
             ) : (
               // else part for no blog image
-              <div className="grid place-items-center border border-gray-200 bg-gray-100 rounded-md">
+              <div className="grid place-items-center border border-neutral-700 bg-neutral-800 rounded-md">
                 <div>
-                  <BsImageAlt className="w-16 h-64 text-neutral-300" />
+                  <BsImageAlt className="w-16 h-64 text-neutral-500" />
                 </div>
               </div>
             )}
@@ -69,7 +69,7 @@ async function HomePage() {
               <Link
                 id={blog._id}
                 href={`blogs/${blog.slug}`}
-                className="p-2 backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-neutral-900 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300"
+                className="card-bg"
               >
                 {blog.postImage ? (
                   <Image
@@ -81,9 +81,9 @@ async function HomePage() {
                   ></Image>
                 ) : (
                   // else part for no blog image
-                  <div className="grid place-items-center border border-gray-200 bg-gray-100 rounded-md">
+                  <div className="grid place-items-center border border-neutral-700 bg-neutral-800 rounded-md">
                     <div>
-                      <BsImageAlt className="w-16 h-24 text-neutral-300" />
+                      <BsImageAlt className="w-16 h-24 text-neutral-500" />
                     </div>
                   </div>
                 )}
@@ -106,5 +106,3 @@ async function HomePage() {
     </div>
   );
 }
-
-export default HomePage;

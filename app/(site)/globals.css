@@ -2,19 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-} */
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 20, 20, 20;
-    --background-end-rgb: 0, 0, 0;
+/*-- tailwindcss custom styles -- START -------------------------------------------*/
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
   }
-} */
+  .card-bg {
+    @apply p-2 backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20 hover:bg-neutral-900 hover:bg-opacity-50 hover:drop-shadow-md transition duration-300;
+  }
+  .link-hover {
+    @apply cursor-pointer text-sm font-medium hover:underline transition;
+  }
+}
+
+/*-- tailwindcss custom styles -- END -----------------------------------------------*/
 
 body {
   background-color: rgb(0, 0, 0);
@@ -35,15 +36,6 @@ body {
   animation: scaleAnimation 5s infinite alternate;
 }
 
-h1,
-h2,
-h6,
-p,
-li,
-label,
-a {
-  color: white;
-}
 .repo_status span {
   display: flex;
   flex-direction: row;
@@ -53,7 +45,7 @@ a {
   font-size: small;
 }
 
-.tab {
+/* .tab {
   flex: 1;
   padding: 1rem;
   cursor: pointer;
@@ -65,9 +57,9 @@ a {
   font-weight: 600;
   color: rgb(19, 26, 35);
   border-radius: 0.75em;
-}
+} */
 
-/* keyframes for the animation */
+/*-- keyframes for the animation --------------------------------------------*/
 @keyframes scaleAnimation {
   0% {
     transform: scale(1); /* Initial scale, no change */

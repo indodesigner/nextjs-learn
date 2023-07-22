@@ -1,4 +1,3 @@
-// "use client";
 import { RichTextComponents } from "../../../../components/RichTextComponents";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,10 +17,7 @@ const Blog = async ({ params }) => {
   return (
     <div>
       <div className="flex items-center mb-3">
-        <Link
-          href="/blogs"
-          className="cursor-pointer bg-white text-sm font-medium hover:text-violet-300 rounded-3xl px-2 py-1 bg-opacity-20 transition"
-        >
+        <Link href="/blogs" className="link-hover">
           Blogs
         </Link>
         <h6 className="text-sm">
@@ -48,9 +44,16 @@ const Blog = async ({ params }) => {
         <BsFillCalendar2WeekFill className="w-4 h-4" />
         {blog.releaseDate}
       </h6>
-      <PortableText value={blog.content} components={RichTextComponents} />
+      <div className="mb-4 px-4">
+        <PortableText value={blog.content} components={RichTextComponents} />
+      </div>
       {blog.href ? (
-        <Link href={blog.href} rel="noopener noreferrer" target="_blank">
+        <Link
+          href={blog.href}
+          rel="noopener noreferrer"
+          target="_blank"
+          className="bg-purple-600 px-4 py-1 rounded-2xl hover:bg-purple-700 transition duration-200"
+        >
           {blog.href}
         </Link>
       ) : null}
