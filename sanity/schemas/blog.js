@@ -14,37 +14,39 @@ export default {
       title: "Slug",
       options: {
         source: "title",
-        maxLength: 20, // will be ignored if slugify is set
+        maxLength: 15, // will be ignored if slugify is set
         slugify: (input) =>
           input
             .toLowerCase()
             .replace(/\s+/g, "-")
             .replace(/\./g, "")
-            .slice(0, 20),
+            .slice(0, 15),
       },
     },
     {
       title: "Release date",
       name: "releaseDate",
-      type: "date",
+      type: "datetime",
       options: {
         dateFormat: "YYYY-MM-DD",
+        timeFormat: "HH:mm",
+        timeStep: 15,
         calendarTodayLabel: "Today",
       },
     },
     {
-      title: 'Categories',
-      name: 'categories',
-      type: 'array',
-      of: [{type: 'string'}],
+      title: "Categories",
+      name: "categories",
+      type: "array",
+      of: [{ type: "string" }],
       options: {
         list: [
-          {title: 'Technology', value: 'Technology'},
-          {title: 'Softwares', value: 'Softwares'},
-          {title: 'Marketing', value: 'Marketing'},
-          {title: 'Personal Development', value: 'Personal Development'}
-        ]
-      }
+          { title: "Technology", value: "Technology" },
+          { title: "Softwares", value: "Softwares" },
+          { title: "Marketing", value: "Marketing" },
+          { title: "Personal Development", value: "Personal Development" },
+        ],
+      },
     },
     {
       title: "Post Image",
@@ -57,7 +59,7 @@ export default {
         {
           name: "alt",
           title: "Alt",
-          type: "string"
+          type: "string",
         },
         {
           name: "caption",

@@ -9,16 +9,19 @@ import { BsFillCalendar2WeekFill } from "react-icons/bs";
 
 export default async function Blogs() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
+  console.log(blogs);
   return (
     <div>
-      <ul>
+      <h1 className="text-4xl font-bold my-4">Blogs</h1>
+
+      <ul className="card-bg divide-y divide-neutral-500 divide-opacity-20">
         {blogs &&
           blogs.map((blog) => (
             // display blog items as list
-            <li className="group mb-3 card-bg" key={blog._id}>
+            <li className="group p-1" key={blog._id}>
               <Link href={`blogs/${blog.slug}`}>
-                <div className="flex">
-                  <div className="basis-1/4">
+                <div className="flex hover:bg-neutral-900 hover:bg-opacity-40 transition p-1 rounded-md">
+                  <div className="basis-2/5 sm:basis-1/5">
                     {blog.postImage ? (
                       <Image
                         src={urlFor(blog.postImage)
@@ -40,12 +43,12 @@ export default async function Blogs() {
                     )}
                   </div>
 
-                  <div className="px-2 basis-3/4">
+                  <div className="px-2 basis-3/5 sm:basis-4/5">
                     <div className="flex justify-between">
-                      <h1 className="text-sm sm:text-md font-medium mb-2 line-clamp-2">
+                      <h1 className="text-sm sm:text-md md:text-lg font-bold mb-2 line-clamp-2 group-hover:text-purple-400">
                         {blog.title}
                       </h1>
-                      <h6 className="text-[10px] min-w-[80px] flex gap-1 pt-1">
+                      <h6 className="text-[10px] font-bold min-w-[80px] flex gap-1 pt-1">
                         <BsFillCalendar2WeekFill className="w-3 h-3" />
                         {blog.releaseDate}
                       </h6>

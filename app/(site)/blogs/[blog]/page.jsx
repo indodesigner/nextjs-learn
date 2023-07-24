@@ -40,10 +40,7 @@ const Blog = async ({ params }) => {
         </div>
       )}
       <h2 className="text-md sm:text-lg md:text-2xl font-bold">{blog.title}</h2>
-      <h6 className="text-sm flex gap-1 mb-4">
-        <BsFillCalendar2WeekFill className="w-4 h-4" />
-        {blog.releaseDate}
-      </h6>
+
       <div className="mb-4 px-4">
         <PortableText value={blog.content} components={RichTextComponents} />
       </div>
@@ -57,6 +54,12 @@ const Blog = async ({ params }) => {
           {blog.href}
         </Link>
       ) : null}
+      <hr className="mt-4 border-neutral-400 border-opacity-20" />
+
+      <div className="flex justify-end my-3 gap-2">
+        <h6 className="text-sm">Posted on</h6>
+        <h6 className="text-sm">{blog.releaseDate}</h6>
+      </div>
     </div>
   );
 };

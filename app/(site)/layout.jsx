@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         {/* common navbar component (components)*/}
         <Navbar />
         <main className="p-4 flex justify-center">
-          <div className="max-w-3xl">{children}</div>
+          <div className="max-w-5xl">{children}</div>
         </main>
       </body>
     </html>
