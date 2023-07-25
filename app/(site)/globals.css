@@ -4,21 +4,45 @@
 
 /*-- tailwindcss custom styles -- START -------------------------------------------*/
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  .text-primary-color {
+    @apply text-purple-400;
   }
-  .card-bg {
-    @apply backdrop-filter backdrop-blur-xl bg-opacity-25 bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20 shadow-xl transition duration-300;
+  .decoration-primary-color {
+    @apply decoration-purple-400;
+  }
+  .bg-primary-color {
+    @apply bg-purple-400;
+  }
+  .bg-primary-color-hover {
+    @apply bg-purple-600;
+  }
+  .btn-primary {
+    @apply bg-primary-color px-4 py-1 rounded-2xl hover:bg-primary-color-hover transition duration-200 focus:outline-none focus:ring-2 focus:bg-purple-400 focus:ring-opacity-75;
+  }
+  .card {
+    @apply backdrop-filter backdrop-blur-xl bg-opacity-50 dark:bg-opacity-25 bg-white dark:bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20  transition duration-300;
+  }
+  .card-hover {
+    @apply hover:bg-neutral-200 dark:hover:bg-neutral-900 hover:bg-opacity-30 dark:hover:bg-opacity-30;
   }
   .link-hover {
-    @apply cursor-pointer text-sm font-medium hover:underline transition;
+    @apply hover:underline hover:decoration-wavy hover:decoration-primary-color duration-200;
   }
 }
 
 /*-- tailwindcss custom styles -- END -----------------------------------------------*/
 
-body {
-  background-color: rgb(0, 0, 0);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headings);
+}
+
+p {
+  font-family: var(--font-primary);
 }
 
 .bg-header-gradient {

@@ -9,12 +9,11 @@ import { BsFillCalendar2WeekFill } from "react-icons/bs";
 
 export default async function Blogs() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
-  console.log(blogs);
   return (
     <div>
       <h1 className="text-4xl font-bold my-4">Blogs</h1>
 
-      <ul className="card-bg divide-y divide-neutral-500 divide-opacity-20">
+      <ul className="card divide-y divide-neutral-500 divide-opacity-20">
         {blogs &&
           blogs.map((blog) => (
             // display blog items as list

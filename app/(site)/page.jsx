@@ -11,7 +11,7 @@ export default async function HomePage() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-2">Welcome to TechNukd!</h1>
+      {/* <h1 className="text-3xl font-bold mb-2">Welcome to TechCrush</h1> */}
       {/* <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa autem hic
         sapiente ad! Repellat nihil odit veniam quaerat veritatis cupiditate
@@ -19,13 +19,13 @@ export default async function HomePage() {
       </p> */}
 
       <div className="flex justify-between mt-8 mb-2">
-        <h2 className="text-xl font-bold">Latest blogs</h2>
+        <h2 className="text-2xl font-bold">Latest News</h2>
         <Link
           href="/blogs"
-          className="group font-medium hover:underline hover:decoration-wavy hover:decoration-purple-400 duration-200 flex items-center"
+          className="group font-medium link-hover flex items-center"
         >
           view all
-          <BsFillCaretRightFill className="group-hover:text-purple-400" />
+          <BsFillCaretRightFill className="group-hover:text-primary-color" />
         </Link>
       </div>
 
@@ -37,7 +37,7 @@ export default async function HomePage() {
                 <Link
                   id={blog._id}
                   href={`/blogs/${blog.slug}`}
-                  className="group card-bg hover:bg-neutral-900 hover:bg-opacity-30 rounded-md transition p-2"
+                  className="group card card-hover p-2"
                 >
                   {blog.postImage ? (
                     <Image
@@ -49,14 +49,14 @@ export default async function HomePage() {
                     ></Image>
                   ) : (
                     // else part for no blog image
-                    <div className="grid place-items-center border border-neutral-700 bg-neutral-800 rounded-md">
+                    <div className="grid place-items-center border border-neutral-750 bg-neutral-800 rounded-md">
                       <div>
                         <BsImageAlt className="w-16 h-32 md:h-64 text-neutral-500" />
                       </div>
                     </div>
                   )}
 
-                  <h6 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-bold mt-2 mb-1 line-clamp-3 group-hover:text-purple-400">
+                  <h6 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-bold mt-2 mb-1 line-clamp-3 group-hover:text-primary-color">
                     {blog.title}
                   </h6>
 
@@ -67,7 +67,7 @@ export default async function HomePage() {
                       components={RichTextComponents}
                     />
                   </div>
-                  <h6 className="text-[10px] font-bold flex gap-1 mt-2 text-neutral-300 group-hover:text-white">
+                  <h6 className="text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
                     <BsFillCalendar2WeekFill className="w-3 h-3" />
                     {blog.releaseDate}
                   </h6>
@@ -78,7 +78,7 @@ export default async function HomePage() {
                 <Link
                   id={blog._id}
                   href={`blogs/${blog.slug}`}
-                  className="group card-bg hover:bg-neutral-900 hover:bg-opacity-30 rounded-md transition p-2"
+                  className="group card card-hover p-2"
                 >
                   {blog.postImage ? (
                     <Image
@@ -97,7 +97,7 @@ export default async function HomePage() {
                     </div>
                   )}
 
-                  <h6 className="text-sm sm:text-md md:text-lg font-bold mt-2 mb-1 line-clamp-3 group-hover:text-purple-400">
+                  <h6 className="text-sm sm:text-md md:text-lg font-bold mt-2 mb-1 line-clamp-3 group-hover:text-primary-color">
                     {blog.title}
                   </h6>
 
@@ -108,7 +108,7 @@ export default async function HomePage() {
                       components={RichTextComponents}
                     />
                   </div>
-                  <h6 className="text-[10px] font-bold flex gap-1 mt-2 text-neutral-300 group-hover:text-white">
+                  <h6 className="text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
                     <BsFillCalendar2WeekFill className="w-3 h-3" />
                     {blog.releaseDate}
                   </h6>

@@ -1,11 +1,29 @@
-import { Montserrat } from "next/font/google";
+import { Space_Grotesk, Outfit, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
+import Providers from "../../components/providers";
 
-const montserrat = Montserrat({
+const outfit = Outfit({
+  weight: ["variable"],
+  subsets: ["latin"],
+  variable: "--font-headings",
+  display: "swap",
+});
+
+const noto_sans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
+  variable: "--font-primary",
+  display: "swap",
 });
+
+// const space_grotesk = Space_Grotesk({
+//   weight: ["variable"],
+//   subsets: ["latin"],
+//   variable: "--font-headings",
+//   display: "swap",
+// });
 
 export const metadata = {
   title: "Learn NextJS Frontend",
@@ -14,16 +32,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    // passing font variables to global.css can be accessed there and used
+    <html lang="en" className={`${outfit.variable} ${noto_sans.variable}`}>
       {/* main layout page */}
-      <body className={`${montserrat.className} min-h-screen text-white`}>
+      <body className="min-h-screen bg-white dark:bg-black">
         {/* apply background gradient top and bottom images through css (globals.css) */}
         <div className="bg-header-gradient"></div>
-        {/* common navbar component (components)*/}
-        <Navbar />
-        <main className="p-4 flex justify-center">
-          <div className="max-w-5xl">{children}</div>
-        </main>
+        <Providers>
+          {/* common navbar component (/components/navbar.jsx)*/}
+          <Navbar />
+          <main className="p-4 flex justify-center min-h-screen">
+            {/* rendering childrens - Next Js */}
+            <div className="max-w-5xl">{children}</div>
+          </main>
+          {/* common footer component (/components/footer.jsx)*/}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

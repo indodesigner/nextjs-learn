@@ -4,11 +4,7 @@ import Image from "next/image";
 import { getBlog } from "../../../../sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import urlFor from "../../../../components/urlFor";
-import {
-  BsImageAlt,
-  BsChevronRight,
-  BsFillCalendar2WeekFill,
-} from "react-icons/bs";
+import { BsImageAlt, BsChevronRight } from "react-icons/bs";
 
 const Blog = async ({ params }) => {
   const slug = params.blog;
@@ -49,7 +45,7 @@ const Blog = async ({ params }) => {
           href={blog.href}
           rel="noopener noreferrer"
           target="_blank"
-          className="bg-purple-600 px-4 py-1 rounded-2xl hover:bg-purple-700 transition duration-200"
+          className="btn-primary"
         >
           {blog.href}
         </Link>
