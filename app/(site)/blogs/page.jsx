@@ -5,7 +5,7 @@ import urlFor from "../../../components/urlFor";
 import { BsImageAlt } from "react-icons/bs";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../../components/RichTextComponents";
-import { BsFillCalendar2WeekFill } from "react-icons/bs";
+import calculateDateTime from "../utils/calculateDateTime";
 
 export default async function Blogs() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
@@ -19,7 +19,7 @@ export default async function Blogs() {
             // display blog items as list
             <li className="group p-1" key={blog._id}>
               <Link href={`blogs/${blog.slug}`}>
-                <div className="flex hover:bg-neutral-900 hover:bg-opacity-40 transition p-1 rounded-md">
+                <div className="flex hover:bg-neutral-200 hover:dark:bg-neutral-900 hover:bg-opacity-40 hover:dark:bg-opacity-40 transition p-1 rounded-md">
                   <div className="basis-2/5 sm:basis-1/5">
                     {blog.postImage ? (
                       <Image
@@ -47,9 +47,8 @@ export default async function Blogs() {
                       <h1 className="text-sm sm:text-md md:text-lg font-bold mb-2 line-clamp-2 group-hover:text-purple-400">
                         {blog.title}
                       </h1>
-                      <h6 className="text-[10px] font-bold min-w-[80px] flex gap-1 pt-1">
-                        <BsFillCalendar2WeekFill className="w-3 h-3" />
-                        {blog.releaseDate}
+                      <h6 className="text-[10px] font-bold min-w-[80px] pt-1 text-right">
+                        {calculateDateTime(blog.releaseDate)}
                       </h6>
                     </div>
                     {/* rich text component with line clamped to 2 lines */}

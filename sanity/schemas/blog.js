@@ -29,7 +29,7 @@ export default {
       type: "datetime",
       options: {
         dateFormat: "YYYY-MM-DD",
-        timeFormat: "HH:mm",
+        timeFormat: "hh:mm A",
         timeStep: 15,
         calendarTodayLabel: "Today",
       },

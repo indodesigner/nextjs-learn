@@ -5,6 +5,7 @@ import { getBlog } from "../../../../sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import urlFor from "../../../../components/urlFor";
 import { BsImageAlt, BsChevronRight } from "react-icons/bs";
+import calculateDateTime from "../../utils/calculateDateTime";
 
 const Blog = async ({ params }) => {
   const slug = params.blog;
@@ -54,7 +55,7 @@ const Blog = async ({ params }) => {
 
       <div className="flex justify-end my-3 gap-2">
         <h6 className="text-sm">Posted on</h6>
-        <h6 className="text-sm">{blog.releaseDate}</h6>
+        <h6 className="text-sm">{calculateDateTime(blog.releaseDate)}</h6>
       </div>
     </div>
   );

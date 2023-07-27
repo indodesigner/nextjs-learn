@@ -5,10 +5,12 @@ import urlFor from "../../components/urlFor";
 import { BsImageAlt } from "react-icons/bs";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../components/RichTextComponents";
+import calculateDateTime from "./utils/calculateDateTime";
 import { BsFillCaretRightFill, BsFillCalendar2WeekFill } from "react-icons/bs";
 
 export default async function HomePage() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
+
   return (
     <div>
       {/* <h1 className="text-3xl font-bold mb-2">Welcome to TechCrush</h1> */}
@@ -49,7 +51,7 @@ export default async function HomePage() {
                     ></Image>
                   ) : (
                     // else part for no blog image
-                    <div className="grid place-items-center border border-neutral-750 bg-neutral-800 rounded-md">
+                    <div className="grid place-items-center border border-neutral-700 bg-neutral-800 rounded-md">
                       <div>
                         <BsImageAlt className="w-16 h-32 md:h-64 text-neutral-500" />
                       </div>
@@ -68,8 +70,7 @@ export default async function HomePage() {
                     />
                   </div>
                   <h6 className="text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
-                    <BsFillCalendar2WeekFill className="w-3 h-3" />
-                    {blog.releaseDate}
+                    {calculateDateTime(blog.releaseDate)}
                   </h6>
                 </Link>
               </div>
@@ -109,8 +110,7 @@ export default async function HomePage() {
                     />
                   </div>
                   <h6 className="text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
-                    <BsFillCalendar2WeekFill className="w-3 h-3" />
-                    {blog.releaseDate}
+                    {calculateDateTime(blog.releaseDate)}
                   </h6>
                 </Link>
               </div>
