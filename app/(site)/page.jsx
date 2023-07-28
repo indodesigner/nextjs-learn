@@ -6,7 +6,6 @@ import { BsImageAlt } from "react-icons/bs";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../components/RichTextComponents";
 import calculateDateTime from "./utils/calculateDateTime";
-import { BsFillCaretRightFill, BsFillCalendar2WeekFill } from "react-icons/bs";
 
 export default async function HomePage() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
@@ -27,7 +26,6 @@ export default async function HomePage() {
           className="group font-medium link-hover flex items-center"
         >
           view all
-          <BsFillCaretRightFill className="group-hover:text-primary-color" />
         </Link>
       </div>
 
@@ -58,7 +56,7 @@ export default async function HomePage() {
                     </div>
                   )}
 
-                  <h6 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-bold mt-2 mb-1 line-clamp-3 group-hover:text-primary-color">
+                  <h6 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                     {blog.title}
                   </h6>
 
@@ -98,7 +96,7 @@ export default async function HomePage() {
                     </div>
                   )}
 
-                  <h6 className="text-sm sm:text-md md:text-lg font-bold mt-2 mb-1 line-clamp-3 group-hover:text-primary-color">
+                  <h6 className="text-sm sm:text-md md:text-lg font-bold mt-2 mb-1 line-clamp-2 group-hover:gradient-text">
                     {blog.title}
                   </h6>
 

@@ -5,28 +5,28 @@
 /*-- tailwindcss custom styles -- START -------------------------------------------*/
 @layer components {
   .text-primary-color {
-    @apply text-purple-400;
-  }
-  .decoration-primary-color {
-    @apply decoration-purple-400;
+    @apply text-indigo-400;
   }
   .bg-primary-color {
-    @apply bg-purple-400;
+    @apply bg-indigo-400;
   }
   .bg-primary-color-hover {
-    @apply bg-purple-600;
+    @apply bg-indigo-600;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-400 to-orange-400 bg-clip-text text-transparent;
   }
   .btn-primary {
     @apply bg-primary-color px-4 py-1 rounded-2xl hover:bg-primary-color-hover transition duration-200 focus:outline-none focus:ring-2 focus:bg-purple-400 focus:ring-opacity-75;
   }
   .card {
-    @apply backdrop-filter backdrop-blur-xl bg-opacity-50 dark:bg-opacity-25 bg-white dark:bg-neutral-500 rounded-md border-[1px] border-neutral-500 border-opacity-20  transition duration-300;
+    @apply backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-opacity-25 bg-white dark:bg-neutral-500 rounded-md border-[1px] border-neutral-400 border-opacity-20  transition duration-300;
   }
   .card-hover {
     @apply hover:bg-neutral-200 dark:hover:bg-neutral-900 hover:bg-opacity-30 dark:hover:bg-opacity-30;
   }
   .link-hover {
-    @apply hover:underline hover:decoration-wavy hover:decoration-primary-color duration-200;
+    @apply hover:gradient-text transition duration-200;
   }
 }
 

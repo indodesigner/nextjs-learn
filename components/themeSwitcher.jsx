@@ -26,7 +26,7 @@ const ThemeSwitch = () => {
         <option value="light">Light</option>
       </select> */}
 
-      <div className="group hover:bg-gray-200 dark:hover:bg-gray-800 hover:rounded-3xl p-1">
+      <div className="group hover:bg-gray-200 dark:hover:bg-neutral-800 hover:bg-opacity-50 hover:dark:bg-opacity-50 hover:rounded-3xl p-1">
         {currentTheme === "dark" ? (
           <BsFillSunFill
             className="text-white cursor-pointer h-4 w-4 group-hover:scale-90 transition"

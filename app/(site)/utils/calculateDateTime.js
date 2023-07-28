@@ -18,7 +18,7 @@ const calculateDateTime = (fetchedDate) => {
   // Step 5: Determine the appropriate status based on the time difference
   let status;
   const options = {
-    weekday: "long", // or 'short', 'narrow'
+    // weekday: "long", // or 'short', 'narrow'
     year: "numeric", // or '2-digit'
     month: "long", // or 'short', 'narrow'
     day: "numeric", // or '2-digit'

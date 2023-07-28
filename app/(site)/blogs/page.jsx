@@ -44,7 +44,7 @@ export default async function Blogs() {
 
                   <div className="px-2 basis-3/5 sm:basis-4/5">
                     <div className="flex justify-between">
-                      <h1 className="text-sm sm:text-md md:text-lg font-bold mb-2 line-clamp-2 group-hover:text-purple-400">
+                      <h1 className="text-sm sm:text-md md:text-lg font-bold mb-2 line-clamp-2 group-hover:gradient-text">
                         {blog.title}
                       </h1>
                       <h6 className="text-[10px] font-bold min-w-[80px] pt-1 text-right">
