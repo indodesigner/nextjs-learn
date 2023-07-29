@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
+import { LuMoon, LuSun } from "react-icons/lu";
 
 // Do NOT use this! It will throw a hydration mismatch error.
 const ThemeSwitch = () => {
@@ -28,12 +28,12 @@ const ThemeSwitch = () => {
 
       <div className="group hover:bg-gray-200 dark:hover:bg-neutral-800 hover:bg-opacity-50 hover:dark:bg-opacity-50 hover:rounded-3xl p-1">
         {currentTheme === "dark" ? (
-          <BsFillSunFill
+          <LuSun
             className="text-white cursor-pointer h-4 w-4 group-hover:scale-90 transition"
             onClick={() => setTheme("light")}
           />
         ) : (
-          <BsFillMoonStarsFill
+          <LuMoon
             className="text-neutral-600 cursor-pointer h-4 w-4 group-hover:scale-90 transition"
             onClick={() => setTheme("dark")}
           />

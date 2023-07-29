@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getBlogs } from "../../sanity/sanity-utils";
 import urlFor from "../../components/urlFor";
-import { BsImageAlt } from "react-icons/bs";
+import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../components/RichTextComponents";
 import calculateDateTime from "./utils/calculateDateTime";
@@ -20,7 +20,7 @@ export default async function HomePage() {
       </p> */}
 
       <div className="flex justify-between mt-8 mb-2">
-        <h2 className="text-2xl font-bold">Latest News</h2>
+        <h2 className="text-2xl font-bold">Latest Blogs</h2>
         <Link
           href="/blogs"
           className="group font-medium link-hover flex items-center"
@@ -51,7 +51,7 @@ export default async function HomePage() {
                     // else part for no blog image
                     <div className="grid place-items-center border border-neutral-700 bg-neutral-800 rounded-md">
                       <div>
-                        <BsImageAlt className="w-16 h-32 md:h-64 text-neutral-500" />
+                        <LuImageOff className="w-16 h-32 md:h-64 text-neutral-500" />
                       </div>
                     </div>
                   )}
@@ -91,7 +91,7 @@ export default async function HomePage() {
                     // else part for no blog image
                     <div className="grid place-items-center border border-neutral-700 bg-neutral-800 rounded-md">
                       <div>
-                        <BsImageAlt className="w-16 h-32 text-neutral-500" />
+                        <LuImageOff className="w-16 h-32 text-neutral-500" />
                       </div>
                     </div>
                   )}
