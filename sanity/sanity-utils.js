@@ -30,3 +30,14 @@ export async function getBlog({ slug }) {
         }`
   );
 }
+
+export async function getSlides() {
+  return client.fetch(
+    groq`*[_type == "slide"] | order(releaseDate asc){
+        _id,
+        title,
+        caption,
+        "slideImage": slideImage.asset->url,
+      }`
+  );
+}

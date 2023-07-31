@@ -34,9 +34,9 @@ export default function RootLayout({ children }) {
         <Providers>
           {/* common navbar component (/components/navbar.jsx)*/}
           <Header />
-          <main className="p-4 flex justify-center min-h-screen">
+          <main className="min-h-screen">
             {/* rendering childrens - Next Js */}
-            <div className="max-w-5xl">{children}</div>
+            {children}
           </main>
           {/* common footer component (/components/footer.jsx)*/}
           <Footer />

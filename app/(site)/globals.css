@@ -83,6 +83,10 @@
 
 /*-- tailwindcss custom styles -- START -------------------------------------------*/
 @layer components {
+  .container {
+    @apply max-w-5xl p-4;
+  }
+
   .text-primary-color {
     @apply text-indigo-400;
   }
@@ -94,6 +98,9 @@
   }
   .gradient-text {
     @apply bg-gradient-to-r from-indigo-400 to-orange-400 bg-clip-text text-transparent;
+  }
+  .gradient-bg {
+    @apply bg-gradient-to-r from-indigo-400 to-orange-400;
   }
   .btn-primary {
     @apply bg-primary-color px-4 py-1 rounded-2xl hover:bg-primary-color-hover transition duration-200 focus:outline-none focus:ring-2 focus:bg-purple-400 focus:ring-opacity-75;
@@ -139,15 +146,37 @@ p {
   animation: scaleAnimation 5s infinite alternate;
 }
 
-.repo_status span {
+/* .repo_status span {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
   gap: 0.2rem;
   font-size: small;
+} */
+
+.swiper {
+  width: 100%;
+  height: 50%;
 }
 
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #fff !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff !important;
+}
 /* .tab {
   flex: 1;
   padding: 1rem;

@@ -1,3 +1,4 @@
 import blog from "./blog";
+import slide from "./slide";
 
-export const schemaTypes = [blog];
+export const schemaTypes = [slide, blog];
