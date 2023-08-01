@@ -12,7 +12,7 @@ const Blog = async ({ params }) => {
   const blog = await getBlog({ slug });
 
   return (
-    <div>
+    <div className="container">
       <div className="flex items-center mb-3">
         <Link href="/blogs" className="link-hover">
           Blogs

@@ -41,3 +41,23 @@ export async function getSlides() {
       }`
   );
 }
+export async function getSlidesIndia() {
+  return client.fetch(
+    groq`*[_type == "slideIndia"] | order(releaseDate asc){
+        _id,
+        title,
+        caption,
+        "slideImage": slideImage.asset->url,
+      }`
+  );
+}
+export async function getSlidesJapan() {
+  return client.fetch(
+    groq`*[_type == "slideJapan"] | order(releaseDate asc){
+        _id,
+        title,
+        caption,
+        "slideImage": slideImage.asset->url,
+      }`
+  );
+}

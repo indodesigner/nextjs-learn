@@ -172,6 +172,7 @@ p {
 .swiper-button-prev::after,
 .swiper-button-next::after {
   color: #fff !important;
+  font-size: 1.5rem !important;
 }
 
 .swiper-pagination-bullet-active {

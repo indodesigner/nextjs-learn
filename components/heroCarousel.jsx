@@ -2,43 +2,50 @@
 // import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import Image from "next/image";
-import { getSlides } from "../sanity/sanity-utils";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const HeroCarousel = async () => {
-  const slides = await getSlides();
+const HeroCarousel = ({ slides }) => {
   return (
     <div>
       <Swiper
-        // direction={"vertical"}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: true,
+        }}
         slidesPerView={1}
         spaceBetween={10}
-        // mousewheel={true}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
         navigation={true}
       >
         {slides.map((slide) => (
           <SwiperSlide>
-            <div className="group relative bg-neutral-900 bg-opacity-20 hover:bg-opacity-40">
+            <div className="relative bg-neutral-900">
               <Image
                 src={slide.slideImage}
                 width={3000}
                 height={3000}
-                className="min-w-screen max-h-[70vh] object-cover group-hover:blur-md transition duration-500"
+                className="min-w-screen max-h-[80vh] object-cover"
               ></Image>
-              <div className="absolute grid grid-cols-1 top-40 xl:top-60 min-w-[100%]  text-white px-24 text-center group-hover:scale-105 transition duration-300">
-                <h1 className="text-3xl font-bold mb-2">{slide.title}</h1>
-                <p>{slide.caption}</p>
+              <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-70 hover:bg-opacity-80 text-white px-24 transition duration-300">
+                <span className="flex flex-col items-center">
+                  <h1 className="text-3xl  sm:text-5xl lg:text-7xl font-bold drop-shadow-md gradient-text py-2">
+                    {slide.title}
+                  </h1>
+                  <span className="bg-white py-[1.5px] sm:py-[2px] px-4 rounded-2xl mb-2"></span>
+                  <p className="text-xs sm:text-sm md:text-md lg:text-lg font-light max-w-[100%] sm:max-w-[80%] md:max-w-[50%]">
+                    {slide.caption}
+                  </p>
+                </span>
               </div>
             </div>
           </SwiperSlide>

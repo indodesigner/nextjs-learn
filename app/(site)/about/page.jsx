@@ -5,7 +5,7 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <div className="">
+    <div className="container">
       <h1 className="text-4xl font-bold my-4">About us</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
