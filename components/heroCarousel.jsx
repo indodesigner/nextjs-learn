@@ -27,7 +27,7 @@ const HeroCarousel = ({ slides }) => {
         navigation={true}
       >
         {slides.map((slide) => (
-          <SwiperSlide>
+          <SwiperSlide key={slide._id}>
             <div className="relative bg-neutral-900">
               <Image
                 src={slide.slideImage}
