@@ -112,7 +112,7 @@
     @apply hover:bg-neutral-200 dark:hover:bg-neutral-900 hover:bg-opacity-30 dark:hover:bg-opacity-30;
   }
   .link-hover {
-    @apply hover:gradient-text transition duration-200;
+    @apply hover:gradient-text group-hover:gradient-text transition duration-200;
   }
 }
 
@@ -178,6 +178,7 @@ p {
 .swiper-pagination-bullet-active {
   background-color: #fff !important;
 }
+
 /* .tab {
   flex: 1;
   padding: 1rem;

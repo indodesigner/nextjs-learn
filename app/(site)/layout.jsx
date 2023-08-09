@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Providers from "../../components/providers";
+import Navbar from "../../components/navbar/Navbar";
 
 const outfit = Outfit({
   weight: ["variable"],
@@ -33,7 +34,13 @@ export default function RootLayout({ children }) {
         <div className="bg-header-gradient"></div>
         <Providers>
           {/* common navbar component (/components/navbar.jsx)*/}
-          <Header />
+          <div className="hidden md:block sticky top-0 z-50">
+            <Header />
+          </div>
+          <div className="block md:hidden sticky top-0 z-50">
+            <Navbar />
+          </div>
+
           <main className="min-h-screen">
             {/* rendering childrens - Next Js */}
             {children}
