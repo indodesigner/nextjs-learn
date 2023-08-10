@@ -1,15 +1,18 @@
 "use client";
 import { getSlides } from "../../sanity/sanity-utils";
-import BlogSection from "../../components/blogs";
-import HeroCarousel from "../../components/heroCarousel";
-import { motion, AnimatePresence } from "framer-motion";
+// import BlogSection from "../../components/blogs";
+// import HeroCarousel from "../../components/heroCarousel";
+// import { motion, AnimatePresence } from "framer-motion";
+import ParallaxComponent from "../../components/parallax";
 
 export default async function HomePage() {
   const slides = await getSlides();
   return (
     <div>
-      <HeroCarousel slides={slides} />
-      <motion.section
+      {/* <HeroCarousel slides={slides} /> */}
+      <ParallaxComponent />
+
+      {/* <motion.section
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 15 }}
@@ -17,7 +20,7 @@ export default async function HomePage() {
         className="container"
       >
         <BlogSection />
-      </motion.section>
+      </motion.section> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { Outfit, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "../../components/header";
-import Footer from "../../components/footer";
+// import Footer from "../../components/footer";
 import Providers from "../../components/providers";
 import Navbar from "../../components/navbar/Navbar";
 
@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
       {/* main layout page */}
       <body className="min-h-screen bg-white dark:bg-black">
         {/* apply background gradient top and bottom images through css (globals.css) */}
-        <div className="bg-header-gradient"></div>
+        {/* <div className="bg-header-gradient"></div> */}
         <Providers>
           {/* common navbar component (/components/navbar.jsx)*/}
           <div className="hidden md:block sticky top-0 z-50">
@@ -41,12 +41,12 @@ export default function RootLayout({ children }) {
             <Navbar />
           </div>
 
-          <main className="min-h-screen">
+          <main className="">
             {/* rendering childrens - Next Js */}
             {children}
           </main>
           {/* common footer component (/components/footer.jsx)*/}
-          <Footer />
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>

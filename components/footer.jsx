@@ -10,7 +10,7 @@ import {
 
 export default function Footer() {
   return (
-    <div className="flex items-center justify-between py-3 sm:py-4 px-4 md:px-16 sticky top-0 z-50 bg-neutral-100 dark:bg-neutral-900 backdrop-filter backdrop-blur-xl bg-opacity-30 dark:bg-opacity-30 border-t-[1px] border-neutral-700 dark:border-neutral-500 border-opacity-10 dark:border-opacity-10 min-w-full scroll-auto">
+    <div className="flex items-center justify-between py-3 sm:py-4 px-4 md:px-16 bg-neutral-100 dark:bg-neutral-900 backdrop-filter backdrop-blur-xl bg-opacity-30 dark:bg-opacity-30 border-t-[1px] border-neutral-700 dark:border-neutral-500 border-opacity-10 dark:border-opacity-10 min-w-full scroll-auto">
       <Link href="/" className="font-medium text-center">
         <Image
           src={Logo}
