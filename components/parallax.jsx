@@ -1,8 +1,6 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import BlogSection from "./blogs";
-import Footer from "./footer";
 
 export default function ParallaxComponent() {
   return (
@@ -35,11 +33,8 @@ export default function ParallaxComponent() {
         <ParallaxLayer offset={0} speed={0.35}>
           <div class="animation_layer parallax" id="layer-9"></div>
         </ParallaxLayer>
-        {/* <ParallaxLayer offset={1} speed={0.25}>
-          <TextBlock />
-        </ParallaxLayer> */}
         <ParallaxLayer offset={1} speed={0.25}>
-          <motion.section
+          <section
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
@@ -47,8 +42,7 @@ export default function ParallaxComponent() {
             className="container"
           >
             <BlogSection />
-          </motion.section>
-          <Footer />
+          </section>
         </ParallaxLayer>
       </Parallax>
     </>

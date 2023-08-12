@@ -21,7 +21,7 @@ export default async function Blogs() {
 
     // const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
     return (
-      <div className="container">
+      <div className="container mt-0 md:mt-24">
         <h1 className="text-4xl font-bold my-4">Blogs</h1>
 
         <ul className="divide-y divide-neutral-500 divide-opacity-20">

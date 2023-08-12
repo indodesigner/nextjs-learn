@@ -7,7 +7,7 @@ export async function getBlogs() {
         _id,
         title,
         "slug": slug.current,
-        categories,
+        "place": place[]->placeName,
         releaseDate,
         "postImage": postImage.asset->url,
         content,
@@ -22,7 +22,7 @@ export async function getBlog({ slug }) {
           _id,
           title,
           "slug": slug.current,
-          categories,
+          "place": place[]->placeName,
           releaseDate,
           "postImage": postImage.asset->url,
           content,
@@ -58,6 +58,34 @@ export async function getSlidesJapan() {
         title,
         caption,
         "slideImage": slideImage.asset->url,
+      }`
+  );
+}
+
+export async function getPlaces() {
+  return client.fetch(
+    groq`*[_type == "place"] | order(releaseDate desc){
+        _id,
+        placeName,
+        "slug": slug.current,
+        placeImages[0]{asset->{url}},
+        content,
+      }`
+  );
+}
+export async function getPlace({ slug }) {
+  return client.fetch(
+    groq`*[_type == "place" && slug.current == "${slug}"][0] {
+        _id,
+        placeName,
+        "slug": slug.current,
+        placeImages[] {
+          asset->{
+            url
+          },
+          caption
+        },
+        content,
       }`
   );
 }

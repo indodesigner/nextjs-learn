@@ -13,7 +13,7 @@ export default async function BlogSection() {
   return (
     <div>
       <div className="flex justify-between mt-8 mb-2">
-        <h2 className="text-2xl font-bold">Latest Blogs</h2>
+        <h2 className="text-xl sm:text-4xl font-bold">Latest Blogs</h2>
         <Link
           href="/blogs"
           className="group font-medium link-hover flex items-center"
@@ -49,7 +49,15 @@ export default async function BlogSection() {
                     </div>
                   )}
 
-                  <h6 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+                  <div className="flex gap-1">
+                    {blog.place &&
+                      blog.place.map((item) => (
+                        <h6 className="text-sm font-light text-neutral-500 pt-[3px]">
+                          {item}
+                        </h6>
+                      ))}
+                  </div>
+                  <h6 className="text-sm sm:text-md md:text-xl lg:text-2xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                     {blog.title}
                   </h6>
 
@@ -88,6 +96,14 @@ export default async function BlogSection() {
                       </div>
                     </div>
                   )}
+                  <div className="flex gap-1">
+                    {blog.place &&
+                      blog.place.map((item) => (
+                        <h6 className="text-sm font-light text-neutral-500 pt-[3px]">
+                          {item}
+                        </h6>
+                      ))}
+                  </div>
 
                   <h6 className="text-sm sm:text-md md:text-lg font-bold mt-2 mb-1 line-clamp-2 group-hover:gradient-text">
                     {blog.title}

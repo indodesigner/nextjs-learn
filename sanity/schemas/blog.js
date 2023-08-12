@@ -35,18 +35,10 @@ export default {
       },
     },
     {
-      title: "Categories",
-      name: "categories",
+      title: "Places",
+      name: "place",
       type: "array",
-      of: [{ type: "string" }],
-      options: {
-        list: [
-          { title: "Technology", value: "Technology" },
-          { title: "Softwares", value: "Softwares" },
-          { title: "Marketing", value: "Marketing" },
-          { title: "Personal Development", value: "Personal Development" },
-        ],
-      },
+      of: [{ type: "reference", to: { type: "place" } }],
     },
     {
       title: "Post Image",

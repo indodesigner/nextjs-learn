@@ -20,7 +20,7 @@ export default function Header() {
         <Image src={Logo} width={80} height={48} alt="logo image"></Image>
       </Link>
 
-      <ul className="flex flex-row gap-5 bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-70 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-6 py-2 rounded-3xl shadow-sm">
+      <ul className="flex flex-row gap-5 bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-6 py-2 rounded-3xl shadow-sm">
         {links.map((link) => (
           <li className="pr" key={link.href}>
             <Link

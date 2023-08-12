@@ -12,23 +12,33 @@ const Blog = async ({ params }) => {
   const blog = await getBlog({ slug });
 
   return (
-    <div className="container">
+    <div className="container mt-0 md:mt-24">
       <div className="flex items-center mb-3">
         <Link href="/blogs" className="link-hover">
           Blogs
         </Link>
         <h6 className="text-sm">
-          <BsChevronRight />
+          <BsChevronRight className="pt-[2px]" />
         </h6>
-        <h6 className="text-sm">{blog.title}</h6>
+        <div className="flex gap-1">
+          {blog.place !== null ? (
+            blog.place.map((item) => (
+              <h6 className="text-sm pt-[3px]">{item}</h6>
+            ))
+          ) : (
+            <h6 className="text-sm ">Somewhere on earth</h6>
+          )}
+        </div>
       </div>
+
+      <h2 className="text-md sm:text-lg md:text-2xl font-bold">{blog.title}</h2>
 
       {blog.postImage ? (
         <Image
           src={urlFor(blog.postImage).url()}
           width={1080}
           height={480}
-          className="mb-4"
+          className="mb-4 h-[400px] object-cover rounded-sm"
           alt={`${blog.slug}-image`}
         ></Image>
       ) : (
@@ -36,7 +46,6 @@ const Blog = async ({ params }) => {
           <BsImageAlt className="w-16 h-16 text-white" />
         </div>
       )}
-      <h2 className="text-md sm:text-lg md:text-2xl font-bold">{blog.title}</h2>
 
       <div className="mb-4 px-4">
         <PortableText value={blog.content} components={RichTextComponents} />

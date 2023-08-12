@@ -1,30 +1,34 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import LottieArrow from "../public/lottie/down-arrow.json";
 import Image from "next/image";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 const HeroCarousel = ({ slides }) => {
   return (
     <div>
       <Swiper
         autoplay={{
-          delay: 5000,
+          delay: 4000,
           disableOnInteraction: true,
         }}
+        effect={"fade"}
         slidesPerView={1}
         spaceBetween={10}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[Pagination, Navigation, Autoplay, EffectFade]}
         className="mySwiper"
-        navigation={true}
+        // navigation={true}
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide._id}>
@@ -33,7 +37,7 @@ const HeroCarousel = ({ slides }) => {
                 src={slide.slideImage}
                 width={3000}
                 height={3000}
-                className="min-w-screen max-h-[80vh] object-cover"
+                className="min-w-screen max-h-[70vh] md:max-h-screen object-cover"
               ></Image>
               <AnimatePresence>
                 <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-70 hover:bg-opacity-80 text-white px-24 transition duration-300">
@@ -63,6 +67,17 @@ const HeroCarousel = ({ slides }) => {
                     >
                       {slide.caption}
                     </motion.p>
+                    <Player
+                      autoplay
+                      loop
+                      src={LottieArrow}
+                      style={{ height: "64px", width: "64px" }}
+                    >
+                      {/* <Controls
+                      visible={true}
+                      buttons={["play", "repeat", "frame", "debug"]}
+                    /> */}
+                    </Player>
                   </span>
                 </div>
               </AnimatePresence>
