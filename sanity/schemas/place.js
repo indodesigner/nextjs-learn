@@ -13,7 +13,7 @@ export default {
       type: "slug",
       title: "Slug",
       options: {
-        source: "name",
+        source: "placeName",
         maxLength: 15, // will be ignored if slugify is set
         slugify: (input) =>
           input
@@ -29,6 +29,11 @@ export default {
       type: "array",
       of: [{ type: "reference", to: { type: "country" } }],
       validation: (Rule) => Rule.max(1),
+    },
+    {
+      name: "createdAt",
+      type: "datetime",
+      title: "Created at",
     },
     {
       name: "placeImages",

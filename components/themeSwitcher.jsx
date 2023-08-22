@@ -26,17 +26,23 @@ const ThemeSwitch = () => {
         <option value="light">Light</option>
       </select> */}
 
-      <div className="group hover:bg-gray-200 dark:hover:bg-neutral-800 hover:bg-opacity-50 hover:dark:bg-opacity-50 hover:rounded-3xl p-1">
+      <div className="group bg-neutral-800 dark:bg-neutral-200 hover:bg-neutral-900 dark:hover:bg-neutral-300 hover:bg-opacity-80 hover:dark:bg-opacity-80 hover:rounded-3xl p-1 rounded-3xl transition">
         {currentTheme === "dark" ? (
-          <LuSun
-            className="text-white cursor-pointer h-4 w-4 group-hover:scale-90 transition"
+          <div
+            className="flex gap-2 cursor-pointer px-2 text-neutral-800"
             onClick={() => setTheme("light")}
-          />
+          >
+            <LuSun className=" cursor-pointer h-4 w-4 group-hover:scale-90 transition" />
+            <h6 className="text-xs">Go Light</h6>
+          </div>
         ) : (
-          <LuMoon
-            className="text-neutral-600 cursor-pointer h-4 w-4 group-hover:scale-90 transition"
+          <div
+            className="flex gap-2 cursor-pointer px-2 text-neutral-200"
             onClick={() => setTheme("dark")}
-          />
+          >
+            <LuMoon className="cursor-pointer h-4 w-4 group-hover:scale-90 transition" />
+            <h6 className="text-xs">Go Dark</h6>
+          </div>
         )}
       </div>
     </div>

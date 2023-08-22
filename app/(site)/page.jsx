@@ -18,6 +18,7 @@ export default async function HomePage() {
         exit={{ opacity: 0, y: 15 }}
         transition={{ delay: 0.5 }}
         className="container"
+        id="places"
       >
         <PlacesSection />
       </motion.section>

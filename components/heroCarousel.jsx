@@ -67,17 +67,20 @@ const HeroCarousel = ({ slides }) => {
                     >
                       {slide.caption}
                     </motion.p>
-                    <Player
-                      autoplay
-                      loop
-                      src={LottieArrow}
-                      style={{ height: "64px", width: "64px" }}
-                    >
-                      {/* <Controls
+
+                    <a href="#places">
+                      <Player
+                        autoplay
+                        loop
+                        src={LottieArrow}
+                        style={{ height: "64px", width: "64px" }}
+                      >
+                        {/* <Controls
                       visible={true}
                       buttons={["play", "repeat", "frame", "debug"]}
                     /> */}
-                    </Player>
+                      </Player>
+                    </a>
                   </span>
                 </div>
               </AnimatePresence>

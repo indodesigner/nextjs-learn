@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import ThemeChanger from "../themeSwitcher";
 
 const Navbar = ({ closeNavbar, enableScroll }) => {
   const links = [
@@ -63,14 +64,21 @@ const Navbar = ({ closeNavbar, enableScroll }) => {
             }}
           >
             <motion.li
-              className="nav-item text-white text-2xl sm:text-3xl mb-2"
+              className="nav-item text-white text-2xl sm:text-3xl mb-2 ps-2"
               variants={navItem}
               key={link.text}
             >
-              <span className="link-hover">{link.text}</span>
+              <h6 className="link-hover">{link.text}</h6>
             </motion.li>
           </Link>
         ))}
+
+        <motion.li
+          className="nav-item text-white text-2xl sm:text-3xl mt-8"
+          variants={navItem}
+        >
+          <ThemeChanger />
+        </motion.li>
       </motion.ul>
     </>
   );

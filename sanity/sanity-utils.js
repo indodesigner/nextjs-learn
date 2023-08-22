@@ -64,7 +64,7 @@ export async function getSlidesJapan() {
 
 export async function getPlaces() {
   return client.fetch(
-    groq`*[_type == "place"] | order(releaseDate desc){
+    groq`*[_type == "place"] | order(createdAt desc){
         _id,
         placeName,
         "slug": slug.current,
