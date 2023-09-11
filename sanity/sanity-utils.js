@@ -85,6 +85,41 @@ export async function getPlace({ slug }) {
           },
           caption
         },
+        "country":country[]->name,slug,
+        content,
+      }`
+  );
+}
+
+export async function getPackages() {
+  return client.fetch(
+    groq`*[_type == "tourPackage"] | order(createdAt desc){
+        _id,
+        packageName,
+        "slug": slug.current,
+        packageImages[0]{asset->{url}},
+        content,
+      }`
+  );
+}
+
+export async function getPackage({ slug }) {
+  return client.fetch(
+    groq`*[_type == "tourPackage" && slug.current == "${slug}"][0] {
+        _id,
+        packageName,
+        "slug": slug.current,
+        packageImages[] {
+          asset->{
+            url
+          },
+          caption
+        },
+        departureDate,
+        returnDate,
+        rate,
+        place,
+        "country":country[]->name,
         content,
       }`
   );

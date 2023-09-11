@@ -1,7 +1,7 @@
 export default {
   name: "slide",
   type: "document",
-  title: "Slide",
+  title: "Slides - Home",
   fields: [
     {
       name: "title",

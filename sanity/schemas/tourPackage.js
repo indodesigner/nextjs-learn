@@ -1,19 +1,19 @@
 export default {
-  name: "place",
-  title: "Places",
+  name: "tourPackage",
   type: "document",
+  title: "Packages",
   fields: [
     {
-      name: "placeName",
-      title: "Place Name",
+      name: "packageName",
       type: "string",
+      title: "Package Name",
     },
     {
       name: "slug",
       type: "slug",
       title: "Slug",
       options: {
-        source: "placeName",
+        source: "packageName",
         maxLength: 15, // will be ignored if slugify is set
         slugify: (input) =>
           input
@@ -24,6 +24,39 @@ export default {
       },
     },
     {
+      title: "Departure date",
+      name: "departureDate",
+      type: "datetime",
+      options: {
+        dateFormat: "DD-MMM-YYYY",
+        timeFormat: "hh:mm A",
+        timeStep: 15,
+        calendarTodayLabel: "Today",
+      },
+    },
+    {
+      title: "Return date",
+      name: "returnDate",
+      type: "datetime",
+      options: {
+        dateFormat: "DD-MMM-YYYY",
+        timeFormat: "hh:mm A",
+        timeStep: 15,
+        calendarTodayLabel: "Today",
+      },
+    },
+    {
+      name: "rate",
+      type: "number",
+      title: "Package Rate",
+    },
+    {
+      title: "Places",
+      name: "place",
+      type: "array",
+      of: [{ type: "reference", to: { type: "place" } }],
+    },
+    {
       title: "Country",
       name: "country",
       type: "array",
@@ -31,13 +64,21 @@ export default {
       validation: (Rule) => Rule.max(1),
     },
     {
-      name: "createdAt",
-      type: "datetime",
-      title: "Created at",
+      title: "Tour Category",
+      name: "category",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+      validation: (Rule) => Rule.max(1),
     },
     {
-      name: "placeImages",
-      title: "Place Images",
+      title: "Filter",
+      name: "packagefilter",
+      type: "array",
+      of: [{ type: "reference", to: { type: "filter" } }],
+    },
+    {
+      title: "Package Images",
+      name: "packageImages",
       type: "array",
       of: [
         {

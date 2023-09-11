@@ -1,6 +1,6 @@
 export default {
   name: "country",
-  title: "Country",
+  title: "Countries",
   type: "document",
   fields: [
     {

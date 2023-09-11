@@ -68,7 +68,7 @@ const HeroCarousel = ({ slides }) => {
                       {slide.caption}
                     </motion.p>
 
-                    <a href="#places">
+                    <a href="#packages">
                       <Player
                         autoplay
                         loop

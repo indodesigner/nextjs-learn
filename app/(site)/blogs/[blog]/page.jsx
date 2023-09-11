@@ -11,16 +11,20 @@ const Blog = async ({ params }) => {
   const slug = params.blog;
   const blog = await getBlog({ slug });
 
+  const placeName =
+    Array.isArray(blog.place) && blog.place.length > 0
+      ? blog.place.map((item) => item.toLowerCase())
+      : "";
   return (
     <div className="container mt-0 md:mt-24">
       <div className="flex items-center mb-3">
-        <Link href="/blogs" className="link-hover">
+        <Link href="/blogs" className="gradient-text pb-[2px]">
           Blogs
         </Link>
         <h6 className="text-sm">
-          <BsChevronRight className="pt-[2px]" />
+          <BsChevronRight className="pt-[1px]" />
         </h6>
-        <div className="flex gap-1">
+        {/* <div className="flex gap-1">
           {blog.place !== null ? (
             blog.place.map((item) => (
               <h6 className="text-sm pt-[3px]">{item}</h6>
@@ -28,7 +32,17 @@ const Blog = async ({ params }) => {
           ) : (
             <h6 className="text-sm ">Somewhere on earth</h6>
           )}
-        </div>
+        </div> */}
+
+        {placeName.map((item, index) => (
+          <Link
+            key={index}
+            href={`/places/${item}`}
+            className=" text-neutral-50 mx-1 bg-neutral-900 dark:bg-neutral-50 dark:text-neutral-800 rounded-2xl px-3 text-sm pb-[2px] font-medium"
+          >
+            {item}
+          </Link>
+        ))}
       </div>
 
       <h2 className="text-md sm:text-lg md:text-2xl font-bold">{blog.title}</h2>
@@ -38,7 +52,7 @@ const Blog = async ({ params }) => {
           src={urlFor(blog.postImage).url()}
           width={1080}
           height={480}
-          className="mb-4 h-[400px] object-cover rounded-sm"
+          className="mb-4 h-[400px] object-cover rounded-md"
           alt={`${blog.slug}-image`}
         ></Image>
       ) : (

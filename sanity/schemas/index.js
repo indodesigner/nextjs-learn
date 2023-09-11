@@ -4,6 +4,9 @@ import slideJapan from "./slideJapan";
 import slideIndia from "./slideIndia";
 import place from "./place";
 import country from "./country";
+import filter from "./filter";
+import category from "./category";
+import tourPackage from "./tourPackage";
 
 export const schemaTypes = [
   slide,
@@ -12,4 +15,7 @@ export const schemaTypes = [
   blog,
   place,
   country,
+  filter,
+  category,
+  tourPackage,
 ];
