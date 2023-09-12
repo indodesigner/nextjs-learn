@@ -30,7 +30,6 @@ export default function RootLayout({ children }) {
       {/* main layout page */}
       <body className="min-h-screen bg-white dark:bg-black">
         <Providers>
-          {/* common navbar component (/components/navbar.jsx)*/}
           <Navbar />
           <main className="min-h-screen">
             {/* rendering childrens - Next Js */}
