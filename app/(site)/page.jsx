@@ -1,11 +1,10 @@
 "use client";
-import { getSlides } from "../../sanity/sanity-utils";
-import BlogSection from "../../components/blogs";
-import PlacesSection from "../../components/places";
-import PackagesSection from "../../components/packages";
-import HeroCarousel from "../../components/heroCarousel";
+import { getSlides } from "/sanity/sanity-utils";
+import BlogSection from "/components/blogs";
+import PlacesSection from "/components/places";
+import PackagesSection from "/components/packages";
+import HeroCarousel from "/components/heroCarousel";
 import { motion, AnimatePresence } from "framer-motion";
-// import ParallaxComponent from "../../components/parallax";
 
 export default async function HomePage() {
   const slides = await getSlides();

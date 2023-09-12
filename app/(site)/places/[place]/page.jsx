@@ -1,9 +1,9 @@
-import { RichTextComponents } from "../../../../components/RichTextComponents";
+import { RichTextComponents } from "/components/RichTextComponents";
 import Link from "next/link";
 import Image from "next/image";
-import { getPlace } from "../../../../sanity/sanity-utils";
+import { getPlace } from "/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
-// import urlFor from "../../../../components/urlFor";
+// import urlFor from "/components/urlFor";
 import { BsImageAlt, BsChevronRight } from "react-icons/bs";
 
 const Place = async ({ params }) => {

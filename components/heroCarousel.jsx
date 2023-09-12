@@ -40,7 +40,7 @@ const HeroCarousel = ({ slides }) => {
                 className="min-w-screen max-h-[70vh] md:max-h-screen object-cover"
               ></Image>
               <AnimatePresence>
-                <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-70 hover:bg-opacity-80 text-white px-24 transition duration-300">
+                <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-70 hover:bg-opacity-80 text-white px-3 transition duration-300">
                   <span className="flex flex-col items-center">
                     <motion.h1
                       initial={{ opacity: 0, y: 20 }}
@@ -56,30 +56,25 @@ const HeroCarousel = ({ slides }) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 0.75 }}
-                      className="bg-white py-[1.5px] sm:py-[2px] px-4 rounded-2xl mb-2"
+                      className="bg-white py-[1.5px] sm:py-[2px] px-4 rounded-2xl mb-2 sm:block hidden"
                     ></motion.span>
                     <motion.p
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 1 }}
-                      className="text-xs sm:text-sm md:text-md lg:text-lg font-light max-w-[100%] sm:max-w-[80%] md:max-w-[50%]"
+                      className="text-xs sm:text-sm md:text-md lg:text-lg font-light w-[100%] sm:max-w-[80%] md:max-w-[50%] sm:block hidden"
                     >
                       {slide.caption}
                     </motion.p>
 
-                    <a href="#packages">
+                    <a href="#packages" className="sm:block hidden">
                       <Player
                         autoplay
                         loop
                         src={LottieArrow}
                         style={{ height: "64px", width: "64px" }}
-                      >
-                        {/* <Controls
-                      visible={true}
-                      buttons={["play", "repeat", "frame", "debug"]}
-                    /> */}
-                      </Player>
+                      ></Player>
                     </a>
                   </span>
                 </div>

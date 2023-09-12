@@ -1,11 +1,11 @@
-import { RichTextComponents } from "../../../../components/RichTextComponents";
+import { RichTextComponents } from "/components/RichTextComponents";
 import Link from "next/link";
 import Image from "next/image";
-import { getBlog } from "../../../../sanity/sanity-utils";
+import { getBlog } from "/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
-import urlFor from "../../../../components/urlFor";
+import urlFor from "/components/urlFor";
 import { BsImageAlt, BsChevronRight } from "react-icons/bs";
-import calculateDateTime from "../../../../utils/calculateDateTime";
+import calculateDateTime from "/utils/calculateDateTime";
 
 const Blog = async ({ params }) => {
   const slug = params.blog;
@@ -24,15 +24,6 @@ const Blog = async ({ params }) => {
         <h6 className="text-sm">
           <BsChevronRight className="pt-[1px]" />
         </h6>
-        {/* <div className="flex gap-1">
-          {blog.place !== null ? (
-            blog.place.map((item) => (
-              <h6 className="text-sm pt-[3px]">{item}</h6>
-            ))
-          ) : (
-            <h6 className="text-sm ">Somewhere on earth</h6>
-          )}
-        </div> */}
 
         {placeName.map((item, index) => (
           <Link

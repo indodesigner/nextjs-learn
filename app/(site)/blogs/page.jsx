@@ -1,11 +1,11 @@
-import { getBlogs } from "../../../sanity/sanity-utils";
+import { getBlogs } from "/sanity/sanity-utils";
 import Link from "next/link";
 import Image from "next/image";
-import urlFor from "../../../components/urlFor";
+import urlFor from "/components/urlFor";
 import { LuFrown, LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
-import { RichTextComponents } from "../../../components/RichTextComponents";
-import calculateDateTime from "../../../utils/calculateDateTime";
+import { RichTextComponents } from "/components/RichTextComponents";
+import calculateDateTime from "/utils/calculateDateTime";
 
 const TIMEOUT_DURATION = 5000;
 export default async function Blogs() {
