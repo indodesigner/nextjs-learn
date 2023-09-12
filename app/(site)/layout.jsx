@@ -1,8 +1,8 @@
 import { Outfit, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "/components/footer";
-import Providers from "../../components/providers";
-// import Navbar from "/components/Navbar";
+import Providers from "/components/providers";
+import Navbar from "/components/Navbar";
 
 const outfit = Outfit({
   weight: ["variable"],
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       {/* main layout page */}
       <body className="min-h-screen bg-white dark:bg-black">
         <Providers>
-          {/* <Navbar /> */}
+          <Navbar />
           <main className="min-h-screen">
             {/* rendering childrens - Next Js */}
             {children}
