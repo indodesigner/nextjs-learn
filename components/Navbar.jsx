@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { LuMenu, LuX } from "react-icons/lu";
-import Logo from "/public/images/techcrush-logo.svg";
+import Logo from "/public/images/logo.png";
 import ThemeChanger from "./themeSwitcher";
 import { usePathname } from "next/navigation";
 
@@ -94,7 +94,7 @@ const Navbar = () => {
             href="/"
             className="font-medium flex items-center gap-1 link-hover"
           >
-            <Image src={Logo} width={80} height={48} alt="logo image"></Image>
+            <Image src={Logo} width={56} height={56} alt="logo image"></Image>
           </Link>
 
           <ul className="flex flex-row gap-5 bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-6 py-2 rounded-3xl shadow-sm">
@@ -130,7 +130,7 @@ const Navbar = () => {
               href="/"
               className="font-medium flex items-center gap-1 link-hover"
             >
-              <Image src={Logo} width={80} height={48} alt="logo image"></Image>
+              <Image src={Logo} width={56} height={56} alt="logo image"></Image>
             </Link>
             <button
               className="text-3xl"

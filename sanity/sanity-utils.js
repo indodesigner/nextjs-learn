@@ -41,6 +41,7 @@ export async function getSlides() {
       }`
   );
 }
+
 export async function getSlidesIndia() {
   return client.fetch(
     groq`*[_type == "slideIndia"] | order(releaseDate asc){
@@ -51,6 +52,7 @@ export async function getSlidesIndia() {
       }`
   );
 }
+
 export async function getSlidesJapan() {
   return client.fetch(
     groq`*[_type == "slideJapan"] | order(releaseDate asc){
@@ -73,6 +75,7 @@ export async function getPlaces() {
       }`
   );
 }
+
 export async function getPlace({ slug }) {
   return client.fetch(
     groq`*[_type == "place" && slug.current == "${slug}"][0] {
@@ -124,3 +127,15 @@ export async function getPackage({ slug }) {
       }`
   );
 }
+
+// export async function getIndianPackages() {
+//   return client.fetch(
+//     groq`*[_type == "tourPackage" && references(*[_type == "country" && name == "India"])] | order(createdAt desc){
+//         _id,
+//         packageName,
+//         "slug": slug.current,
+//         packageImages[0]{asset->{url}},
+//         content,
+//       }`
+//   );
+// }

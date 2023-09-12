@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../public/images/techcrush-logo-white.svg";
-import logoDark from "../public/images/techcrush-logo-dark.svg";
+import Logo from "../public/images/logo.png";
+import logoDark from "../public/images/logo.png";
 import {
   AiFillInstagram,
   AiFillFacebook,
@@ -14,19 +14,19 @@ export default function Footer() {
       <Link href="/" className="font-medium text-center">
         <Image
           src={Logo}
-          width={64}
-          height={64}
+          width={48}
+          height={48}
           alt="logo image"
           className="hidden dark:block"
         ></Image>
         <Image
-          src={logoDark}
-          width={64}
-          height={64}
+          src={Logo}
+          width={48}
+          height={48}
           alt="logo image"
           className="dark:hidden"
         ></Image>
-        <h6 className="text-xs font-mediun ">TechCrush</h6>
+        {/* <h6 className="text-xs font-mediun ">TechCrush</h6> */}
       </Link>
       <div>
         <ul className="flex flex-row gap-3">

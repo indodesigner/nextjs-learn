@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getPackages } from "../sanity/sanity-utils";
 import urlFor from "./urlFor";
 import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "./RichTextComponents";
 
-export default async function PackagesSection() {
-  const packages = await getPackages(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
-
+export default async function PackagesSection({ packages }) {
   return (
     <div>
       <div className="flex justify-between mt-8 mb-2">
