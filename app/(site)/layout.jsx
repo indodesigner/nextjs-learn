@@ -1,7 +1,7 @@
 import { Outfit, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "/components/footer";
-import Providers from "/components/providers";
+import Providers from "../../components/providers";
 import Navbar from "/components/Navbar";
 
 const outfit = Outfit({
