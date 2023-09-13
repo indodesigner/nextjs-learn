@@ -10,7 +10,7 @@ export default async function HomePage() {
   const slides = await getSlides();
   const packages = await getPackages(); //fetch packages from sanity query can be fount in (sanity/sanity-utils.js)
 
-  const packFilters = await getFilters();
+  // const packFilters = await getFilters();
 
   const trendingPackages = packages.filter((pack) => {
     return pack.packageFilter && pack.packageFilter.includes("Trending");
