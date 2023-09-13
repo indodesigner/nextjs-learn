@@ -5,22 +5,26 @@ import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "./RichTextComponents";
 
-export default async function PackagesSection({ packages }) {
+export default async function PackagesSection({ heading, packages }) {
+  const showViewAllLink = packages.length > 4;
+  const packagesToDisplay = packages.slice(0, 4); // Get the first 4 packages
   return (
     <div>
       <div className="flex justify-between mt-8 mb-2">
-        <h2 className="text-xl sm:text-4xl font-bold">Packages</h2>
-        <Link
-          href="/blogs"
-          className="group font-medium link-hover flex items-center"
-        >
-          view all
-        </Link>
+        <h2 className="text-xl sm:text-4xl font-bold">{heading} Packages</h2>
+        {showViewAllLink && (
+          <Link
+            href="/blogs"
+            className="group font-medium link-hover flex items-center"
+          >
+            view all
+          </Link>
+        )}
       </div>
 
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-        {packages &&
-          packages.map((tourPackage) => (
+        {packagesToDisplay &&
+          packagesToDisplay.map((tourPackage) => (
             <Link
               id={tourPackage._id}
               href={`/packages/${tourPackage.slug}`}

@@ -101,6 +101,9 @@ export async function getPackages() {
         packageName,
         "slug": slug.current,
         packageImages[0]{asset->{url}},
+        "category": category[]->name,
+        "packageFilter": packageFilter[]->name,
+        "country":country[]->name,
         content,
       }`
   );
@@ -128,14 +131,10 @@ export async function getPackage({ slug }) {
   );
 }
 
-// export async function getIndianPackages() {
-//   return client.fetch(
-//     groq`*[_type == "tourPackage" && references(*[_type == "country" && name == "India"])] | order(createdAt desc){
-//         _id,
-//         packageName,
-//         "slug": slug.current,
-//         packageImages[0]{asset->{url}},
-//         content,
-//       }`
-//   );
-// }
+export async function getFilters() {
+  return client.fetch(
+    groq`*[_type == "packageFilter"]{
+      name
+      }`
+  );
+}

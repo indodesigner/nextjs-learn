@@ -72,9 +72,9 @@ export default {
     },
     {
       title: "Filter",
-      name: "packagefilter",
+      name: "packageFilter",
       type: "array",
-      of: [{ type: "reference", to: { type: "filter" } }],
+      of: [{ type: "reference", to: { type: "packageFilter" } }],
     },
     {
       title: "Package Images",

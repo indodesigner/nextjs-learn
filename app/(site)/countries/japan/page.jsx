@@ -1,5 +1,5 @@
-import { getSlidesJapan } from "../../../../sanity/sanity-utils";
-import HeroCarousel from "../../../../components/heroCarousel";
+import { getSlidesJapan } from "/sanity/sanity-utils";
+import HeroCarousel from "/components/heroCarousel";
 
 export default async function ExploreJapan() {
   const slidesJapan = await getSlidesJapan();

@@ -1,5 +1,5 @@
 export default {
-  name: "filter",
+  name: "packageFilter",
   title: "Filters",
   type: "document",
   fields: [

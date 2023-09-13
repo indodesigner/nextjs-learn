@@ -130,7 +130,7 @@ const Navbar = () => {
               href="/"
               className="font-medium flex items-center gap-1 link-hover"
             >
-              <Image src={Logo} width={56} height={56} alt="logo image"></Image>
+              <Image src={Logo} width={48} height={48} alt="logo image"></Image>
             </Link>
             <button
               className="text-3xl"

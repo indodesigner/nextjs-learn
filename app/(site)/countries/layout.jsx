@@ -1,4 +1,4 @@
-import BlogSection from "../../../components/blogs";
+import BlogSection from "/components/blogs";
 
 const Countrieslayout = ({ children }) => {
   return (
