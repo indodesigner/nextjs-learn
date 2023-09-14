@@ -19,7 +19,7 @@ const Place = async ({ params }) => {
     <div className="container mt-0 md:mt-24">
       <div className="flex items-center mb-3">
         <Link href="/places" className="gradient-text">
-          Places
+          Destinations
         </Link>
         <h6 className="text-sm">
           <BsChevronRight className="pt-[2px]" />

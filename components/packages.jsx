@@ -11,7 +11,7 @@ export default async function PackagesSection({ heading, packages }) {
   return (
     <div>
       <div className="flex justify-between mt-8 mb-2">
-        <h2 className="text-xl sm:text-4xl font-bold">{heading} Packages</h2>
+        <h2 className="text-xl sm:text-3xl font-bold">{heading} Packages</h2>
         {showViewAllLink && (
           <Link
             href="/blogs"
@@ -47,7 +47,7 @@ export default async function PackagesSection({ heading, packages }) {
                 </div>
               )}
 
-              <h6 className="text-sm sm:text-md md:text-xl lg:text-2xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h6 className="text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {tourPackage.packageName}
               </h6>
 

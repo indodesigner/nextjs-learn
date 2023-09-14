@@ -97,24 +97,30 @@ const Navbar = () => {
             <Image src={Logo} width={56} height={56} alt="logo image"></Image>
           </Link>
 
-          <ul className="flex flex-row gap-5 bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-6 py-2 rounded-3xl shadow-sm">
+          <ul className="flex flex-row bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-2 py-2 rounded-3xl shadow-sm">
             {links.map((link) => (
               <li className="pr" key={link.href}>
                 <Link
                   href={link.href}
                   className={`${
                     link.href === path
-                      ? "font-medium gradient-text"
+                      ? "font-medium py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-3xl shadow-sm"
                       : "font-normal"
                   }  link-hover"`}
                 >
-                  {link.text}
+                  <span
+                    className={`${
+                      link.href === path ? "gradient-text" : "px-4"
+                    } ""`}
+                  >
+                    {link.text}
+                  </span>
                 </Link>
               </li>
             ))}
 
             <li>
-              <div>
+              <div className="ps-3">
                 <ThemeChanger />
               </div>
             </li>

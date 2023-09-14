@@ -55,7 +55,7 @@ p {
   font-family: var(--font-primary);
 }
 
-.bg-header-gradient {
+/* .bg-header-gradient {
   background-image: url("../../public/images/header-gradient.svg"),
     url("../../public/images/footer-gradient.svg");
   background-repeat: no-repeat;
@@ -68,17 +68,7 @@ p {
   width: 100%;
   height: 100%;
   animation: scaleAnimation 5s infinite alternate;
-}
-
-/* .repo_status span {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 1rem;
-  gap: 0.2rem;
-  font-size: small;
 } */
-
 .swiper {
   width: 100%;
   height: 50%;
@@ -103,20 +93,6 @@ p {
   background-color: #fff !important;
 }
 
-/* .tab {
-  flex: 1;
-  padding: 1rem;
-  cursor: pointer;
-  text-align: center;
-}
-
-.tab.active {
-  background-color: #f7fafc;
-  font-weight: 600;
-  color: rgb(19, 26, 35);
-  border-radius: 0.75em;
-} */
-
 /*-- keyframes for the animation --------------------------------------------*/
 @keyframes scaleAnimation {
   0% {
@@ -126,57 +102,3 @@ p {
     transform: scale(1.5); /* Final scale, 20% larger than the original size */
   }
 }
-
-/* --swiper-carousel------------------------------------------------------------- */
-
-/* --parallx-----------------------------------------------------------------*/
-/* 
-.animation,
-.animation_layer {
-  height: 860px;
-}
-
-.animation {
-  display: block;
-  position: relative;
-  z-index: 10;
-}
-
-.animation_layer {
-  background-position: bottom center;
-  background-size: auto 920px;
-  background-repeat: no-repeat;
-  width: 100%;
-  position: absolute;
-}
-.animation_layer.parallax {
-  position: fixed;
-}
-
-#layer-1 {
-  background-image: url(../../public/images/parallax/layer-1.png);
-}
-#layer-2 {
-  background-image: url(../../public/images/parallax/layer-2.png);
-}
-#layer-3 {
-  background-image: url(../../public/images/parallax/layer-3.png);
-}
-#layer-4 {
-  background-image: url(../../public/images/parallax/layer-4.png);
-}
-#layer-5 {
-  background-image: url(../../public/images/parallax/layer-5.png);
-}
-#layer-6 {
-  background-image: url(../../public/images/parallax/layer-6.png);
-}
-#layer-7 {
-  background-image: url(../../public/images/parallax/layer-7.png);
-}
-#layer-8 {
-  background-image: url(../../public/images/parallax/layer-8.png);
-}
-#layer-9 {
-  background-image: url(../../public/images/parallax/layer-9.png);
-} */

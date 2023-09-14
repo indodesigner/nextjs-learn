@@ -13,7 +13,7 @@ export default async function BlogSection() {
   return (
     <div>
       <div className="flex justify-between mt-8 mb-2">
-        <h2 className="text-xl sm:text-4xl font-bold">Latest Blogs</h2>
+        <h2 className="text-xl sm:text-3xl font-bold">Latest Blogs</h2>
         <Link
           href="/blogs"
           className="group font-medium link-hover flex items-center"

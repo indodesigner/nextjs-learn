@@ -1,14 +1,5 @@
-import BlogSection from "/components/blogs";
-
 const Countrieslayout = ({ children }) => {
-  return (
-    <div>
-      {children}
-      <section className="container">
-        <BlogSection />
-      </section>
-    </div>
-  );
+  return <div>{children}</div>;
 };
 
 export default Countrieslayout;

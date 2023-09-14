@@ -1,6 +1,5 @@
 import { getSlidesIndia, getPackages } from "/sanity/sanity-utils";
-import HeroCarousel from "/components/heroCarousel";
-import PackageSection from "/components/packages";
+import CommonSections from "/components/commonSections";
 
 export default async function ExploreIndia() {
   const slidesIndia = await getSlidesIndia();
@@ -27,17 +26,14 @@ export default async function ExploreIndia() {
 
   return (
     <div>
-      <HeroCarousel slides={slidesIndia} />
-      <section id="packages" className="container">
-        {trendingPackages != 0 ? (
-          <PackageSection packages={trendingPackages} heading={headings[0]} />
-        ) : null}
-        {popularPackages != 0 ? (
-          <PackageSection packages={popularPackages} heading={headings[1]} />
-        ) : null}
-        <PackageSection packages={businessPackages} heading={headings[2]} />
-        <PackageSection packages={allPackages} heading={headings[3]} />
-      </section>
+      <CommonSections
+        slides={slidesIndia}
+        packages={allPackages}
+        trendingPackages={trendingPackages}
+        popularPackages={popularPackages}
+        businessPackages={businessPackages}
+        headings={headings}
+      />
     </div>
   );
 }

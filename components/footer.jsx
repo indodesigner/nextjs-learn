@@ -11,23 +11,7 @@ import {
 export default function Footer() {
   return (
     <div className="flex items-center justify-between py-3 sm:py-4 px-4 md:px-16 bg-neutral-100 dark:bg-neutral-900 backdrop-filter backdrop-blur-xl bg-opacity-30 dark:bg-opacity-30 border-t-[1px] border-neutral-700 dark:border-neutral-500 border-opacity-10 dark:border-opacity-10 min-w-full scroll-auto">
-      <Link href="/" className="font-medium text-center">
-        <Image
-          src={Logo}
-          width={48}
-          height={48}
-          alt="logo image"
-          className="hidden dark:block"
-        ></Image>
-        <Image
-          src={Logo}
-          width={48}
-          height={48}
-          alt="logo image"
-          className="dark:hidden"
-        ></Image>
-        {/* <h6 className="text-xs font-mediun ">TechCrush</h6> */}
-      </Link>
+      <h6 className="text-xs sm:text-sm">Copyright © 2023 Nikotravels.com</h6>
       <div>
         <ul className="flex flex-row gap-3">
           <li>
