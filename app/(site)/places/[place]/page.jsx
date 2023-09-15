@@ -1,14 +1,14 @@
 import { RichTextComponents } from "/components/RichTextComponents";
 import Link from "next/link";
-import Image from "next/image";
 import { getPlace } from "/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
-// import urlFor from "/components/urlFor";
 import { BsImageAlt, BsChevronRight } from "react-icons/bs";
+import PackageCarousel from "/components/packageCarousel";
 
 const Place = async ({ params }) => {
   const slug = params.place;
   const place = await getPlace({ slug });
+  const slides = place.placeImages;
 
   const countryName =
     Array.isArray(place.country) && place.country.length > 0
@@ -32,27 +32,19 @@ const Place = async ({ params }) => {
         </Link>
       </div>
 
-      <h2 className="text-2xl md:text-4xl font-bold">{place.placeName}</h2>
+      <h2 className="text-2xl md:text-4xl font-bold mb-2">{place.placeName}</h2>
 
-      <div className="grid sm:grid-cols-2 gap-3">
-        {place.placeImages ? (
-          place.placeImages.map((image) => (
-            <Image
-              src={image.asset.url}
-              width={1080}
-              height={480}
-              className="mb-4 h-[400px] object-cover rounded-md"
-              alt={`${place.slug}-image`}
-            ></Image>
-          ))
-        ) : (
+      {slides && slides.length > 0 ? (
+        <PackageCarousel slides={slides} />
+      ) : (
+        <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
           <div className="flex justify-center my-8">
-            <BsImageAlt className="w-16 h-16 text-white" />
+            <BsImageAlt className="w-16 h-16 text-neutral-300 dark:text-neutral-500" />
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
-      <div className="mb-4 px-4">
+      <div className="mb-4 px-4 mt-2">
         <PortableText value={place.content} components={RichTextComponents} />
       </div>
     </div>

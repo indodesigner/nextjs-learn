@@ -26,7 +26,7 @@ const TourPackage = async ({ params }) => {
   return (
     <div className="container mt-0 md:mt-24">
       <div className="flex items-center mb-3">
-        <Link href="/places" className="gradient-text">
+        <Link href="/packages" className="gradient-text">
           Packages
         </Link>
         <h6 className="text-sm">

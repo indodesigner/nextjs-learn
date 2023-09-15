@@ -16,6 +16,8 @@ const Navbar = () => {
   const links = [
     { href: "/countries/india", text: "India" },
     { href: "/countries/japan", text: "Japan" },
+    { href: "packages", text: "Packages" },
+    { href: "/places", text: "Places" },
     { href: "/blogs", text: "Blogs" },
     { href: "/about", text: "About" },
   ];
@@ -89,7 +91,7 @@ const Navbar = () => {
   return (
     <>
       <div className="hidden md:block fixed top-0 z-50 min-w-[100%]">
-        <header className="flex items-center justify-between py-2 sm:py-4 px-4 md:px-16 min-w-full scroll-auto">
+        <header className="flex items-center justify-between py-2 sm:py-4 px-4 md:px-8 min-w-full scroll-auto">
           <Link
             href="/"
             className="font-medium flex items-center gap-1 link-hover"
@@ -111,7 +113,7 @@ const Navbar = () => {
                   <span
                     className={`${
                       link.href === path ? "gradient-text" : "px-4"
-                    } ""`}
+                    } "hover:underline"`}
                   >
                     {link.text}
                   </span>

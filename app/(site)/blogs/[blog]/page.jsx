@@ -36,7 +36,9 @@ const Blog = async ({ params }) => {
         ))}
       </div>
 
-      <h2 className="text-md sm:text-lg md:text-2xl font-bold">{blog.title}</h2>
+      <h2 className="text-md sm:text-lg md:text-2xl font-bold mb-2">
+        {blog.title}
+      </h2>
 
       {blog.postImage ? (
         <Image

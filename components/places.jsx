@@ -7,23 +7,27 @@ import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "./RichTextComponents";
 
 export default async function PlacesSection() {
-  const places = await getPlaces(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
+  const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
+  const showViewAllLink = places.length > 4;
+  const placesToDisplay = places.slice(0, 4); // Get the first 4 packages
 
   return (
     <div>
       <div className="flex justify-between mt-8 mb-2">
         <h2 className="text-xl sm:text-3xl font-bold">Destinations</h2>
-        <Link
-          href="/blogs"
-          className="group font-medium link-hover flex items-center"
-        >
-          view all
-        </Link>
+        {showViewAllLink && (
+          <Link
+            href="/places"
+            className="group font-medium link-hover flex items-center"
+          >
+            view all
+          </Link>
+        )}
       </div>
 
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-        {places &&
-          places.map((place) => (
+        {placesToDisplay &&
+          placesToDisplay.map((place) => (
             <Link
               id={place._id}
               href={`/places/${place.slug}`}
@@ -38,10 +42,10 @@ export default async function PlacesSection() {
                   className="object-cover h-32 md:h-32 rounded-md"
                 ></Image>
               ) : (
-                // else part for no blog image
-                <div className="grid place-items-center border border-neutral-700 bg-neutral-800 rounded-md">
+                // else part for no place image
+                <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
                   <div>
-                    <LuImageOff className="w-16 h-32 md:h-32 text-neutral-500" />
+                    <LuImageOff className="w-16 h-32 md:h-32 text-neutral-300 dark:text-neutral-500" />
                   </div>
                 </div>
               )}
@@ -50,7 +54,7 @@ export default async function PlacesSection() {
                 {place.placeName}
               </h6>
 
-              {/* rich text component with line clamped to 2 lines */}
+              {/* rich text component with line clamped to 3 lines */}
               <div className="text-sm line-clamp-2 md:line-clamp-3">
                 <PortableText
                   value={place.content}
