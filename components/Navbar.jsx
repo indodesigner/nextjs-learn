@@ -16,7 +16,7 @@ const Navbar = () => {
   const links = [
     { href: "/countries/india", text: "India" },
     { href: "/countries/japan", text: "Japan" },
-    { href: "packages", text: "Packages" },
+    { href: "/packages", text: "Packages" },
     { href: "/places", text: "Places" },
     { href: "/blogs", text: "Blogs" },
     { href: "/about", text: "About" },
