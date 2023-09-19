@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { LuMenu, LuX } from "react-icons/lu";
 import Logo from "/public/images/logo.png";
-import ThemeChanger from "./themeSwitcher";
+import ThemeChanger from "/components/themeSwitcher";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -14,12 +14,12 @@ const Navbar = () => {
   const [isToggled, setToggle] = useState(false);
 
   const links = [
-    { href: "/countries/india", text: "India" },
-    { href: "/countries/japan", text: "Japan" },
-    { href: "/packages", text: "Packages" },
-    { href: "/places", text: "Places" },
-    { href: "/blogs", text: "Blogs" },
-    { href: "/about", text: "About" },
+    { href: "/countries/india", name: "India" },
+    { href: "/countries/japan", name: "Japan" },
+    { href: "/packages", name: "Packages" },
+    { href: "/places", name: "Places" },
+    { href: "/blogs", name: "Blogs" },
+    { href: "/about", name: "About" },
   ];
 
   const closeNavbar = () => {
@@ -101,21 +101,21 @@ const Navbar = () => {
 
           <ul className="flex flex-row bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-2 py-2 rounded-3xl shadow-sm">
             {links.map((link) => (
-              <li className="pr" key={link.href}>
+              <li key={link.href}>
                 <Link
                   href={link.href}
                   className={`${
-                    link.href === path
+                    path === link.href
                       ? "font-medium py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-3xl shadow-sm"
                       : "font-normal"
                   }  link-hover"`}
                 >
                   <span
                     className={`${
-                      link.href === path ? "gradient-text" : "px-4"
+                      path === link.href ? "gradient-text" : "px-4"
                     } "hover:underline"`}
                   >
-                    {link.text}
+                    {link.name}
                   </span>
                 </Link>
               </li>
@@ -193,9 +193,9 @@ const Navbar = () => {
                         <motion.li
                           className="nav-item dark:text-white text-2xl sm:text-3xl mb-2 ps-2"
                           variants={navItem}
-                          key={link.text}
+                          key={link.name}
                         >
-                          <h6 className="link-hover">{link.text}</h6>
+                          <h6 className="link-hover">{link.name}</h6>
                         </motion.li>
                       </Link>
                     ))}
