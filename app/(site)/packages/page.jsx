@@ -1,10 +1,4 @@
-// import Image from "next/image";
-// import Link from "next/link";
 import { getPackages } from "/sanity/sanity-utils";
-// import urlFor from "/components/urlFor";
-// import { LuImageOff } from "react-icons/lu";
-// import { PortableText } from "@portabletext/react";
-// import { RichTextComponents } from "/components/RichTextComponents";
 import PackagesTabs from "/components/packagesTabs";
 
 import {
@@ -43,7 +37,7 @@ export default async function Packages() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
-              <PackagesTabs packageTab={indianPacks} />
+              <PackagesTabs packages={indianPacks} />
             </CardContent>
             <CardFooter></CardFooter>
           </Card>
@@ -57,7 +51,7 @@ export default async function Packages() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
-              <PackagesTabs packageTab={japanesePacks} />
+              <PackagesTabs packages={japanesePacks} />
             </CardContent>
             <CardFooter></CardFooter>
           </Card>

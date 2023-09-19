@@ -5,22 +5,22 @@ import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "/components/RichTextComponents";
 
-export default async function PackagesTabs({ packages }) {
+export default async function PlacesTabs({ places }) {
   return (
     <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-      {packages &&
-        packages.map((pack) => (
+      {places &&
+        places.map((place) => (
           <Link
-            id={pack._id}
-            href={`/packages/${pack.slug}`}
+            id={place._id}
+            href={`/places/${place.slug}`}
             className="group card card-hover p-2"
           >
-            {pack.packageImages ? (
+            {place.placeImages ? (
               <Image
-                src={urlFor(pack.packageImages).url()}
+                src={urlFor(place.placeImages).url()}
                 width={800}
                 height={500}
-                alt={`${pack.slug}-image`}
+                alt={`${place.slug}-image`}
                 className="object-cover h-32 md:h-32 rounded-md"
               ></Image>
             ) : (
@@ -33,13 +33,13 @@ export default async function PackagesTabs({ packages }) {
             )}
 
             <h6 className="text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
-              {pack.packageName}
+              {place.placeName}
             </h6>
 
             {/* rich text component with line clamped to 3 lines */}
             <div className="text-sm line-clamp-2 md:line-clamp-3">
               <PortableText
-                value={pack.content}
+                value={place.content}
                 components={RichTextComponents}
               />
             </div>

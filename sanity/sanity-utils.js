@@ -71,6 +71,7 @@ export async function getPlaces() {
         placeName,
         "slug": slug.current,
         placeImages[0]{asset->{url}},
+        "country":country[]->name,
         content,
       }`
   );
