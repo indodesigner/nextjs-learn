@@ -22,6 +22,11 @@ const Navbar = () => {
     { href: "/about", name: "About" },
   ];
 
+  // const countryLinks = [
+  //   { href: "/countries/india", name: "India" },
+  //   { href: "/countries/japan", name: "Japan" },
+  // ];
+
   const closeNavbar = () => {
     setToggle(false);
     enableScroll();
@@ -99,14 +104,36 @@ const Navbar = () => {
             <Image src={Logo} width={56} height={56} alt="logo image"></Image>
           </Link>
 
-          <ul className="flex flex-row bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-80 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-2 py-2 rounded-3xl shadow-sm">
+          <ul className="flex flex-row bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-[5px] py-[6px] rounded-xl shadow-md">
+            {/* <li>
+              {countryLinks &&
+                countryLinks.map((link) => (
+                  <a
+                    href={link.href}
+                    className={`${
+                      path === link.href
+                        ? "font-medium py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-3xl shadow-sm"
+                        : "font-normal"
+                    }  link-hover"`}
+                  >
+                    <span
+                      className={`${
+                        path === link.href ? "gradient-text" : "px-4"
+                      } "hover:underline"`}
+                    >
+                      {link.name}
+                    </span>
+                  </a>
+                ))}
+            </li> */}
+
             {links.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   className={`${
                     path === link.href
-                      ? "font-medium py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-3xl shadow-sm"
+                      ? "font-medium py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-lg"
                       : "font-normal"
                   }  link-hover"`}
                 >
@@ -138,7 +165,7 @@ const Navbar = () => {
               href="/"
               className="font-medium flex items-center gap-1 link-hover"
             >
-              <Image src={Logo} width={48} height={48} alt="logo image"></Image>
+              <Image src={Logo} width={32} height={32} alt="logo image"></Image>
             </Link>
             <button
               className="text-3xl"

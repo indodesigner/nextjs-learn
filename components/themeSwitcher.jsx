@@ -26,7 +26,7 @@ const ThemeSwitch = () => {
         <option value="light">Light</option>
       </select> */}
 
-      <div className="group bg-neutral-800 dark:bg-neutral-200 hover:bg-neutral-900 dark:hover:bg-neutral-300 hover:bg-opacity-80 hover:dark:bg-opacity-80 hover:rounded-3xl p-1 rounded-3xl transition">
+      <div className="group bg-neutral-800 dark:bg-neutral-200 hover:bg-neutral-900 dark:hover:bg-neutral-300 hover:bg-opacity-80 hover:dark:bg-opacity-80 p-1 rounded-lg hover:rounded-lg transition">
         {currentTheme === "dark" ? (
           <div
             className="flex gap-2 cursor-pointer px-2 text-neutral-800"
