@@ -1,10 +1,10 @@
-import { getSlidesJapan, getPackages } from "/sanity/sanity-utils";
+import { getSlidesJapan, getPackages, getPlaces } from "/sanity/sanity-utils";
 import CommonSections from "/components/commonSections";
 
 export default async function ExploreJapan() {
   const slidesJapan = await getSlidesJapan();
-
   const packs = await getPackages();
+  const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
 
   const allPackages = packs.filter((pack) => {
     return pack.country && pack.country.includes("Japan");
@@ -24,14 +24,19 @@ export default async function ExploreJapan() {
 
   const headings = ["Trending", "Popular", "Business", "All"];
 
+  const placesJapan = places.filter((pack) => {
+    return pack.country && pack.country.includes("Japan");
+  });
+
   return (
     <div>
       <CommonSections
         slides={slidesJapan}
         packages={allPackages}
-        trendingPackages={trendingPackages}
-        popularPackages={popularPackages}
+        firstSectionPackages={trendingPackages}
+        secondSectionPackages={popularPackages}
         businessPackages={businessPackages}
+        places={placesJapan}
         headings={headings}
       />
     </div>

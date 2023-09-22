@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getPlaces } from "../sanity/sanity-utils";
+// import { getPlaces } from "../sanity/sanity-utils";
 import urlFor from "./urlFor";
 import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "./RichTextComponents";
 
-export default async function PlacesSection() {
-  const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
+export default async function PlacesSection({ places }) {
   const showViewAllLink = places.length > 4;
   const placesToDisplay = places.slice(0, 4); // Get the first 4 packages
 

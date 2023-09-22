@@ -7,6 +7,7 @@ import { PortableText } from "@portabletext/react";
 // import urlFor from "/components/urlFor";
 import { BsImageAlt, BsChevronRight } from "react-icons/bs";
 import PackageCarousel from "/components/packageCarousel";
+import GetCountry from "/components/getCountry";
 
 const TourPackage = async ({ params }) => {
   const slug = params.package;
@@ -17,6 +18,8 @@ const TourPackage = async ({ params }) => {
     Array.isArray(tourPackage.country) && tourPackage.country.length > 0
       ? tourPackage.country[0].toLowerCase()
       : "";
+
+  // console.log(countryName);
 
   const retdate = new Date(tourPackage.returnDate);
   const depDate = new Date(tourPackage.departureDate);
@@ -71,6 +74,7 @@ const TourPackage = async ({ params }) => {
           components={RichTextComponents}
         />
       </div>
+      <GetCountry country={countryName} />
     </div>
   );
 };

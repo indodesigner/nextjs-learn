@@ -5,16 +5,16 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 async function sendEmail(req, res) {
   try {
     await sendgrid.send({
-      to: "youremail@gmail.com", // Your email where you'll receive emails
-      from: "youremail@gmail.com", // your website email address here
+      to: "webdesigner@indocosmo.com", // Your email where you'll receive emails
+      from: "webdesigner@indocosmo.com", // your website email address here
       subject: `[Lead from website] : ${req.body.subject}`,
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" >
       <html lang="en">
       <head>
         <meta charset="utf-8">
       
-        <title>The HTML5 Herald</title>
-        <meta name="description" content="The HTML5 Herald">
+        <title>Niko Travels</title>
+        <meta name="description" content="Niko Travels">
         <meta name="author" content="SitePoint">
       <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
       

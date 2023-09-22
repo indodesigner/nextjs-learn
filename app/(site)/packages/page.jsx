@@ -1,14 +1,7 @@
 import { getPackages } from "/sanity/sanity-utils";
 import PackagesTabs from "/components/packagesTabs";
+import GetCountry from "/components/getCountry";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "/components/ui/tabs";
 
 export default async function Packages() {
@@ -19,6 +12,21 @@ export default async function Packages() {
   const japanesePacks = packages.filter((pack) => {
     return pack.country && pack.country.includes("Japan");
   });
+
+  const trendingIndia = indianPacks.filter((pack) => {
+    return pack.packageFilter && pack.packageFilter.includes("Trending");
+  });
+  const trendingJapan = japanesePacks.filter((pack) => {
+    return pack.packageFilter && pack.packageFilter.includes("Trending");
+  });
+
+  const popularIndia = indianPacks.filter((pack) => {
+    return pack.packageFilter && pack.packageFilter.includes("Popular");
+  });
+  const popularJapan = japanesePacks.filter((pack) => {
+    return pack.packageFilter && pack.packageFilter.includes("Popular");
+  });
+
   return (
     <div className="container mt-0 md:mt-24">
       <h1 className="text-4xl font-bold my-4">Packages</h1>
@@ -28,35 +36,42 @@ export default async function Packages() {
           <TabsTrigger value="india">India</TabsTrigger>
           <TabsTrigger value="japan">Japan</TabsTrigger>
         </TabsList>
-        <TabsContent value="india">
-          <Card>
-            <CardHeader>
-              <CardTitle>India</CardTitle>
-              <CardDescription>
-                All the Indian tour packages are listes below
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <PackagesTabs packages={indianPacks} />
-            </CardContent>
-            <CardFooter></CardFooter>
-          </Card>
+        <TabsContent value="india" className="flex flex-col gap-2">
+          {trendingIndia != 0 ? (
+            <PackagesTabs
+              packages={trendingIndia}
+              heading={trendingIndia[0].packageFilter}
+            />
+          ) : null}
+          {popularIndia != 0 ? (
+            <PackagesTabs
+              packages={popularIndia}
+              heading={popularIndia[0].packageFilter}
+            />
+          ) : null}
+          {indianPacks != 0 ? (
+            <PackagesTabs packages={indianPacks} heading={"All"} />
+          ) : null}
         </TabsContent>
-        <TabsContent value="japan">
-          <Card>
-            <CardHeader>
-              <CardTitle>Japan</CardTitle>
-              <CardDescription>
-                All the Japanese tour packages are listes below
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <PackagesTabs packages={japanesePacks} />
-            </CardContent>
-            <CardFooter></CardFooter>
-          </Card>
+        <TabsContent value="japan" className="flex flex-col gap-2">
+          {trendingJapan != 0 ? (
+            <PackagesTabs
+              packages={trendingJapan}
+              heading={trendingJapan[0].packageFilter}
+            />
+          ) : null}
+          {popularJapan != 0 ? (
+            <PackagesTabs
+              packages={popularJapan}
+              heading={popularJapan[0].packageFilter}
+            />
+          ) : null}
+          {japanesePacks != 0 ? (
+            <PackagesTabs packages={japanesePacks} heading={"All"} />
+          ) : null}
         </TabsContent>
       </Tabs>
+      <GetCountry country={null} />
     </div>
   );
 }

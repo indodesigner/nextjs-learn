@@ -52,9 +52,11 @@ export default async function BlogSection() {
                   <div className="flex gap-1">
                     {blog.place &&
                       blog.place.map((item) => (
-                        <h6 className="text-sm font-light text-neutral-500 pt-[3px]">
-                          {item}
-                        </h6>
+                        <div key={item}>
+                          <h6 className="text-sm font-light text-neutral-500 pt-[3px]">
+                            {item}
+                          </h6>
+                        </div>
                       ))}
                   </div>
                   <h6 className="text-sm sm:text-md md:text-xl lg:text-2xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">

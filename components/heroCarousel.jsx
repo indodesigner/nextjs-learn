@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import LottieArrow from "../public/lottie/down-arrow.json";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,6 +14,13 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
 const HeroCarousel = ({ slides }) => {
+  const path = usePathname();
+
+  const links = [
+    { href: "india", name: "India" },
+    { href: "japan", name: "Japan" },
+  ];
+
   return (
     <div>
       <Swiper
@@ -56,19 +64,40 @@ const HeroCarousel = ({ slides }) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 0.75 }}
-                      className="bg-white py-[1.5px] sm:py-[2px] px-4 rounded-2xl mb-2 sm:block hidden"
+                      className="bg-white py-[1.5px] sm:py-[2px] px-4 rounded-2xl mb-2 md:block hidden"
                     ></motion.span>
                     <motion.p
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 1 }}
-                      className="text-xs sm:text-sm md:text-md lg:text-lg font-light w-[100%] sm:max-w-[80%] md:max-w-[50%] sm:block hidden"
+                      className="mb-4 text-xs sm:text-sm md:text-md lg:text-lg font-light w-[100%] sm:max-w-[80%] md:max-w-[60%] md:block hidden"
                     >
                       {slide.caption}
                     </motion.p>
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 15 }}
+                      transition={{ delay: 1.25 }}
+                    >
+                      <div className="grid grid-cols-2 gap-3">
+                        {path == "/"
+                          ? links.map((link) => (
+                              <a
+                                href={`/countries/${link.href}`}
+                                className="py-2 px-4 sm:py-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-lg"
+                              >
+                                <h5 className="text-lg font-medium sm:text-xl sm:font-semibold">
+                                  {link.name}
+                                </h5>
+                              </a>
+                            ))
+                          : null}
+                      </div>
+                    </motion.span>
 
-                    <a href="#packages" className="sm:block hidden">
+                    <a href="#packages" className="lg:block hidden">
                       <Player
                         autoplay
                         loop

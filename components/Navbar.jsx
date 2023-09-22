@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,25 +7,27 @@ import { LuMenu, LuX } from "react-icons/lu";
 import Logo from "/public/images/logo.png";
 import ThemeChanger from "/components/themeSwitcher";
 import { usePathname } from "next/navigation";
+import { useCountry } from "/contexts/countryContext";
 
 const Navbar = () => {
   const path = usePathname();
+  const { country } = useCountry();
 
   const [isToggled, setToggle] = useState(false);
 
-  const links = [
+  const countryLinks = [
     { href: "/countries/india", name: "India" },
     { href: "/countries/japan", name: "Japan" },
+  ];
+
+  const links = [
+    // { href: "/countries/india", name: "India" },
+    // { href: "/countries/japan", name: "Japan" },
     { href: "/packages", name: "Packages" },
-    { href: "/places", name: "Places" },
+    { href: "/places", name: "Destinations" },
     { href: "/blogs", name: "Blogs" },
     { href: "/about", name: "About" },
   ];
-
-  // const countryLinks = [
-  //   { href: "/countries/india", name: "India" },
-  //   { href: "/countries/japan", name: "Japan" },
-  // ];
 
   const closeNavbar = () => {
     setToggle(false);
@@ -105,27 +107,30 @@ const Navbar = () => {
           </Link>
 
           <ul className="flex flex-row bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-[5px] py-[6px] rounded-xl shadow-md">
-            {/* <li>
+            <li>
               {countryLinks &&
                 countryLinks.map((link) => (
                   <a
                     href={link.href}
                     className={`${
-                      path === link.href
-                        ? "font-medium py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-3xl shadow-sm"
+                      path === link.href || country === link.name.toLowerCase()
+                        ? "font-medium py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm"
                         : "font-normal"
                     }  link-hover"`}
                   >
                     <span
                       className={`${
-                        path === link.href ? "gradient-text" : "px-4"
+                        path === link.href ||
+                        country === link.name.toLowerCase()
+                          ? "gradient-text"
+                          : "px-4"
                       } "hover:underline"`}
                     >
                       {link.name}
                     </span>
                   </a>
                 ))}
-            </li> */}
+            </li>
 
             {links.map((link) => (
               <li key={link.href}>

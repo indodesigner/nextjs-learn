@@ -8,18 +8,31 @@ import { RichTextComponents } from "./RichTextComponents";
 export default async function PackagesSection({ heading, packages }) {
   const showViewAllLink = packages.length > 4;
   const packagesToDisplay = packages.slice(0, 4); // Get the first 4 packages
+  const countries = packages[0].country;
+
+  const country = countries.map((item) => item.toLowerCase());
+
   return (
     <div>
       <div className="flex justify-between mt-8 mb-2">
         <h2 className="text-xl sm:text-3xl font-bold">{heading} Packages</h2>
-        {showViewAllLink && (
-          <Link
-            href="/packages"
-            className="group font-medium link-hover flex items-center"
-          >
-            view all
-          </Link>
-        )}
+        {showViewAllLink ? (
+          heading == "India" || heading == "Japan" ? (
+            <Link
+              href={`/countries/${country}`}
+              className="group font-medium link-hover flex items-center"
+            >
+              view all
+            </Link>
+          ) : (
+            <Link
+              href="/packages"
+              className="group font-medium link-hover flex items-center"
+            >
+              view all
+            </Link>
+          )
+        ) : null}
       </div>
 
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">

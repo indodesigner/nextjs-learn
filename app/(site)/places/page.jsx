@@ -1,5 +1,6 @@
 import { getPlaces } from "/sanity/sanity-utils";
 import PlacesTabs from "/components/placesTabs";
+import GetCountry from "/components/getCountry";
 
 import {
   Card,
@@ -59,6 +60,7 @@ export default async function Places() {
           </Card>
         </TabsContent>
       </Tabs>
+      <GetCountry country={null} />
     </div>
   );
 }

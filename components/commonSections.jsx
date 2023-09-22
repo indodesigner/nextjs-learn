@@ -8,15 +8,16 @@ import { motion } from "framer-motion";
 export default async function CommonSections({
   slides,
   packages,
-  trendingPackages,
-  popularPackages,
+  firstSectionPackages,
+  secondSectionPackages,
   businessPackages,
+  places,
   headings,
 }) {
   return (
     <div>
       <HeroCarousel slides={slides} />
-      {trendingPackages != 0 ? (
+      {firstSectionPackages != 0 ? (
         <motion.section
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,10 +26,13 @@ export default async function CommonSections({
           className="container"
           id="packages"
         >
-          <PackagesSection packages={trendingPackages} heading={headings[0]} />
+          <PackagesSection
+            packages={firstSectionPackages}
+            heading={headings[0]}
+          />
         </motion.section>
       ) : null}
-      {popularPackages != 0 ? (
+      {secondSectionPackages != 0 ? (
         <motion.section
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +40,10 @@ export default async function CommonSections({
           transition={{ delay: 0.5 }}
           className="container"
         >
-          <PackagesSection packages={popularPackages} heading={headings[1]} />
+          <PackagesSection
+            packages={secondSectionPackages}
+            heading={headings[1]}
+          />
         </motion.section>
       ) : null}
 
@@ -67,7 +74,7 @@ export default async function CommonSections({
         transition={{ delay: 0.5 }}
         className="container"
       >
-        <PlacesSection />
+        <PlacesSection places={places} />
       </motion.section>
       <motion.section
         initial={{ opacity: 0, y: 15 }}

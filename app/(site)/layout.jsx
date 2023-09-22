@@ -2,6 +2,7 @@ import { Outfit, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "/components/footer";
 import Providers from "/components/providers";
+import { CountryProvider } from "/contexts/countryContext";
 import Navbar from "/components/Navbar";
 
 const outfit = Outfit({
@@ -30,13 +31,15 @@ export default function RootLayout({ children }) {
       {/* main layout page */}
       <body className="min-h-screen bg-white dark:bg-neutral-900">
         <Providers>
-          <Navbar />
-          <main className="min-h-screen">
-            {/* rendering childrens - Next Js */}
-            {children}
-          </main>
-          {/* common footer component (/components/footer.jsx)*/}
-          <Footer />
+          <CountryProvider>
+            <Navbar />
+            <main className="min-h-screen">
+              {/* rendering childrens - Next Js */}
+              {children}
+            </main>
+            {/* common footer component (/components/footer.jsx)*/}
+            <Footer />
+          </CountryProvider>
         </Providers>
       </body>
     </html>

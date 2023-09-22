@@ -132,10 +132,10 @@ export async function getPackage({ slug }) {
   );
 }
 
-export async function getFilters() {
-  return client.fetch(
-    groq`*[_type == "packageFilter"]{
-      name
-      }`
-  );
-}
+// export async function getFilters() {
+//   return client.fetch(
+//     groq`*[_type == "packageFilter"]{
+//       name
+//       }`
+//   );
+// }

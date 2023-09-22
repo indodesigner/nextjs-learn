@@ -6,6 +6,7 @@ import { LuFrown, LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "/components/RichTextComponents";
 import calculateDateTime from "/utils/calculateDateTime";
+import GetCountry from "/components/getCountry";
 
 const TIMEOUT_DURATION = 5000;
 export default async function Blogs() {
@@ -74,7 +75,7 @@ export default async function Blogs() {
                       <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-2">
                         {blog.categories &&
                           blog.categories.map((categ) => (
-                            <span className="min-w-max">
+                            <span key={categ} className="min-w-max">
                               <h6 className="text-xs font-bold">#{categ}</h6>
                             </span>
                           ))}
@@ -85,6 +86,7 @@ export default async function Blogs() {
               </li>
             ))}
         </ul>
+        <GetCountry country={null} />
       </div>
     );
   } catch (error) {
@@ -100,6 +102,7 @@ export default async function Blogs() {
         <Link href={"/"} className="text-sm link-hover underline">
           Go back
         </Link>
+        <GetCountry country={null} />
       </div>
     );
   }
