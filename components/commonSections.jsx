@@ -16,7 +16,10 @@ export default async function CommonSections({
 }) {
   return (
     <div>
-      <HeroCarousel slides={slides} />
+      <section className="p-4 md:px-8 md:py-20 lg:py-[86px] lg:px-16">
+        <HeroCarousel slides={slides} />
+      </section>
+
       {firstSectionPackages != 0 ? (
         <motion.section
           initial={{ opacity: 0, y: 15 }}

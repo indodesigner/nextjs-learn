@@ -1,6 +1,10 @@
 import sendgrid from "@sendgrid/mail";
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+const sendGridKey = process.env.SENDGRID_API_KEY;
+
+sendgrid.setApiKey(sendGridKey);
+
+console.log(sendGridKey);
 
 async function sendEmail(req, res) {
   try {
@@ -8,7 +12,8 @@ async function sendEmail(req, res) {
       to: "webdesigner@indocosmo.com", // Your email where you'll receive emails
       from: "webdesigner@indocosmo.com", // your website email address here
       subject: `[Lead from website] : ${req.body.subject}`,
-      html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" >
+      html: `
+      
       <html lang="en">
       <head>
         <meta charset="utf-8">
@@ -45,7 +50,9 @@ async function sendEmail(req, res) {
               </div>
               </div>
       </body>
-      </html>`,
+      </html>
+      
+      `,
     });
   } catch (error) {
     // console.log(error);

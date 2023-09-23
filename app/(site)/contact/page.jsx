@@ -1,4 +1,4 @@
-import ContactForm from "/components/contactForm";
+import ContactForm from "/components/cForm";
 import GetCountry from "/components/getCountry";
 
 export const metadata = {
@@ -10,7 +10,7 @@ const ContactPage = () => {
   return (
     <div className="container mt-0 md:mt-24">
       <h1 className="text-4xl font-bold my-4">Contact us</h1>
-      {/* <ContactForm /> */}
+      <ContactForm />
       <GetCountry country={null} />
     </div>
   );

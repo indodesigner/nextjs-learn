@@ -27,6 +27,7 @@ const Navbar = () => {
     { href: "/places", name: "Destinations" },
     { href: "/blogs", name: "Blogs" },
     { href: "/about", name: "About" },
+    { href: "/contact", name: "Contact" },
   ];
 
   const closeNavbar = () => {
@@ -98,10 +99,10 @@ const Navbar = () => {
   return (
     <>
       <div className="hidden md:block fixed top-0 z-50 min-w-[100%]">
-        <header className="flex items-center justify-between py-2 sm:py-4 px-4 md:px-8 min-w-full scroll-auto">
+        <header className="flex items-center justify-between py-2 sm:py-4 px-4 md:px-10 lg:px-20 min-w-full scroll-auto">
           <Link
             href="/"
-            className="font-medium flex items-center gap-1 link-hover"
+            className="font-medium flex items-center gap-1 link-hover shadow-md rounded-3xl"
           >
             <Image src={Logo} width={56} height={56} alt="logo image"></Image>
           </Link>
@@ -214,6 +215,24 @@ const Navbar = () => {
                     exit="hidden"
                     variants={navList}
                   >
+                    {countryLinks &&
+                      countryLinks.map((link) => (
+                        <a
+                          href={link.href}
+                          className="group"
+                          onClick={() => {
+                            closeNavbar();
+                          }}
+                          key={link.name}
+                        >
+                          <motion.li
+                            className="nav-item dark:text-white text-2xl font-semibold sm:text-3xl mb-4 ps-2"
+                            variants={navItem}
+                          >
+                            <h6 className="link-hover">{link.name}</h6>
+                          </motion.li>
+                        </a>
+                      ))}
                     {links.map((link) => (
                       <Link
                         href={link.href}
@@ -221,11 +240,11 @@ const Navbar = () => {
                         onClick={() => {
                           closeNavbar();
                         }}
+                        key={link.name}
                       >
                         <motion.li
-                          className="nav-item dark:text-white text-2xl sm:text-3xl mb-2 ps-2"
+                          className="nav-item dark:text-white text-2xl font-semibold sm:text-3xl mb-4 ps-2"
                           variants={navItem}
-                          key={link.name}
                         >
                           <h6 className="link-hover">{link.name}</h6>
                         </motion.li>
