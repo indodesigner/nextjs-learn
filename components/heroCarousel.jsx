@@ -35,7 +35,7 @@ const HeroCarousel = ({ slides }) => {
           clickable: true,
         }}
         modules={[Pagination, Navigation, Autoplay, EffectFade]}
-        className="mySwiper rounded-xl md:rounded-3xl"
+        className="mySwiper rounded-xl md:rounded-3xl shadow-xl shadow-neutral-300 dark:shadow-neutral-900"
         // navigation={true}
       >
         {slides.map((slide) => (
@@ -86,7 +86,7 @@ const HeroCarousel = ({ slides }) => {
                           ? links.map((link) => (
                               <a
                                 href={`/countries/${link.href}`}
-                                className="py-2 px-4 sm:py-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-lg"
+                                className="py-2 px-4 sm:py-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
                               >
                                 <h5 className="text-lg font-medium sm:text-xl sm:font-semibold">
                                   {link.name}

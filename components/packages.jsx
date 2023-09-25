@@ -4,6 +4,7 @@ import urlFor from "./urlFor";
 import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "./RichTextComponents";
+import { Button } from "/components/ui/button";
 
 export default async function PackagesSection({ heading, packages }) {
   const showViewAllLink = packages.length > 4;
@@ -14,22 +15,26 @@ export default async function PackagesSection({ heading, packages }) {
 
   return (
     <div>
-      <div className="flex justify-between mt-8 mb-2">
+      <div className="flex justify-between mt-8 mb-4">
         <h2 className="text-xl sm:text-3xl font-bold">{heading} Packages</h2>
         {showViewAllLink ? (
           heading == "India" || heading == "Japan" ? (
             <Link
               href={`/countries/${country}`}
-              className="group font-medium link-hover flex items-center"
+              className="text-sm font-medium flex items-center"
             >
-              view all
+              <span className="link-hover py-1 px-2 border-2 border-neutral-500 rounded-xl">
+                View all
+              </span>
             </Link>
           ) : (
             <Link
               href="/packages"
-              className="group font-medium link-hover flex items-center"
+              className="text-sm font-medium flex items-center"
             >
-              view all
+              <span className="link-hover py-1 px-2 border-2 border-neutral-500 rounded-xl">
+                View all
+              </span>
             </Link>
           )
         ) : null}
@@ -60,12 +65,12 @@ export default async function PackagesSection({ heading, packages }) {
                 </div>
               )}
 
-              <h6 className="text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h6 className="px-2 text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {tourPackage.packageName}
               </h6>
 
               {/* rich text component with line clamped to 2 lines */}
-              <div className="text-sm line-clamp-2 md:line-clamp-3">
+              <div className="px-2 mb-2 text-sm line-clamp-2 md:line-clamp-3">
                 <PortableText
                   value={tourPackage.content}
                   components={RichTextComponents}

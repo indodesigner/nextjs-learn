@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
     // passing font variables to global.css can be accessed there and used
     <html lang="en" className={`${outfit.variable} ${noto_sans.variable}`}>
       {/* main layout page */}
-      <body className="min-h-screen bg-white dark:bg-neutral-900">
+      <body className="min-h-screen bg-neutral-100 dark:bg-neutral-900">
         <Providers>
           <CountryProvider>
             <Navbar />

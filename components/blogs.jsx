@@ -12,13 +12,12 @@ export default async function BlogSection() {
 
   return (
     <div>
-      <div className="flex justify-between mt-8 mb-2">
+      <div className="flex justify-between mt-8 mb-4">
         <h2 className="text-xl sm:text-3xl font-bold">Latest Blogs</h2>
-        <Link
-          href="/blogs"
-          className="group font-medium link-hover flex items-center"
-        >
-          view all
+        <Link href="/blogs" className="text-sm font-medium flex items-center">
+          <span className="link-hover py-1 px-2 border-2 border-neutral-500 rounded-xl">
+            View all
+          </span>
         </Link>
       </div>
 
@@ -49,28 +48,28 @@ export default async function BlogSection() {
                     </div>
                   )}
 
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 px-2">
                     {blog.place &&
                       blog.place.map((item) => (
                         <div key={item}>
-                          <h6 className="text-sm font-light text-neutral-500 pt-[3px]">
+                          <h6 className="text-xs font-light text-neutral-500 dark:text-neutral-300 pt-[3px]">
                             {item}
                           </h6>
                         </div>
                       ))}
                   </div>
-                  <h6 className="text-sm sm:text-md md:text-xl lg:text-2xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+                  <h6 className="px-2 text-sm sm:text-md md:text-xl lg:text-2xl font-bold mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                     {blog.title}
                   </h6>
 
                   {/* rich text component with line clamped to 2 lines */}
-                  <div className="text-sm line-clamp-2 md:line-clamp-5">
+                  <div className="px-2 text-sm line-clamp-2 md:line-clamp-5">
                     <PortableText
                       value={blog.content}
                       components={RichTextComponents}
                     />
                   </div>
-                  <h6 className="text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
+                  <h6 className="px-2 mb-2 text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
                     {calculateDateTime(blog.releaseDate)}
                   </h6>
                 </Link>
@@ -98,27 +97,27 @@ export default async function BlogSection() {
                       </div>
                     </div>
                   )}
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 px-2">
                     {blog.place &&
                       blog.place.map((item) => (
-                        <h6 className="text-sm font-light text-neutral-500 pt-[3px]">
+                        <h6 className="text-xs font-light text-neutral-500 dark:text-neutral-300 pt-[3px]">
                           {item}
                         </h6>
                       ))}
                   </div>
 
-                  <h6 className="text-sm sm:text-md md:text-lg font-bold mt-2 mb-1 line-clamp-2 group-hover:gradient-text">
+                  <h6 className="px-2 text-sm sm:text-md font-bold mb-1 line-clamp-2 group-hover:gradient-text">
                     {blog.title}
                   </h6>
 
                   {/* rich text component with line clamped to 2 lines */}
-                  <div className="text-sm line-clamp-2">
+                  <div className="px-2 text-xs line-clamp-2">
                     <PortableText
                       value={blog.content}
                       components={RichTextComponents}
                     />
                   </div>
-                  <h6 className="text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
+                  <h6 className="px-2 mb-2 text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
                     {calculateDateTime(blog.releaseDate)}
                   </h6>
                 </Link>

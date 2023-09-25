@@ -30,10 +30,10 @@
     @apply backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-opacity-25 bg-white dark:bg-neutral-500 rounded-md border-[1px] border-neutral-400 border-opacity-20  transition duration-300;
   } */
   .card {
-    @apply backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-opacity-25 bg-white dark:bg-neutral-500 shadow-lg rounded-lg border-[1px] border-neutral-300 border-opacity-20  transition duration-300;
+    @apply backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-opacity-25 bg-white dark:bg-neutral-500 shadow-xl shadow-neutral-200 dark:shadow-neutral-900 rounded-xl transition duration-300;
   }
   .card-hover {
-    @apply hover:bg-neutral-200 dark:hover:bg-neutral-900 hover:bg-opacity-30 dark:hover:bg-opacity-30 hover:scale-95 transition;
+    @apply hover:shadow-neutral-300 dark:hover:shadow-neutral-950 hover:-translate-y-2 transition;
   }
   .link-hover {
     @apply hover:gradient-text group-hover:gradient-text transition duration-200;

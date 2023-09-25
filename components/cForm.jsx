@@ -20,7 +20,7 @@ export default function cForm() {
     setErrors({});
     setLoading(true);
     try {
-      const res = await fetch("/api/sendMail", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -89,6 +89,7 @@ export default function cForm() {
                 className="animate-spin"
                 width="30"
                 height="30"
+                alt="loading animation"
               />
             </div>
           )}
