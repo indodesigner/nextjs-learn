@@ -1,4 +1,4 @@
-import ContactForm from "/components/cForm";
+import ContactForm from "/components/contactForm";
 import GetCountry from "/components/getCountry";
 
 export const metadata = {
