@@ -43,12 +43,12 @@ const TourPackage = async ({ params }) => {
         </Link>
       </div>
 
-      <h2 className="text-2xl md:text-4xl font-bold">
+      <h2 className="text-2xl md:text-4xl font-bold mb-2">
         {tourPackage.packageName}
       </h2>
 
       <PackageCarousel slides={slides} />
-      <div className="my-5 px-4 py-5 bg-neutral-100 dark:bg-neutral-900 rounded-md">
+      <div className="my-5 px-4 py-5 bg-white dark:bg-neutral-900 shadow-lg shadow-neutral-200 dark:shadow-neutral-900 rounded-md">
         <div className="flex flex-row justify-between">
           <h4 className="font-bold text-lg mb-4">{duration} Days</h4>
           <h4 className="font-bold text-lg mb-4">₹{tourPackage.rate}</h4>
@@ -56,13 +56,13 @@ const TourPackage = async ({ params }) => {
         <div className="flex flex-col sm:flex-row sm:gap-8 gap-2">
           <div className="flex flex-row place-items-center">
             <h5 className="min-w-[80px] sm:min-w-fit font-light">Departure</h5>
-            <span className="bg-neutral-50 dark:bg-neutral-800 px-2 py-1 ms-2 rounded-lg font-medium">
+            <span className="bg-neutral-100 dark:bg-neutral-800 px-2 py-1 ms-2 rounded-lg font-medium">
               {format(parseISO(tourPackage.departureDate), "dd MMMM yyyy")}
             </span>
           </div>
           <div className="flex flex-row place-items-center">
             <h5 className="min-w-[80px] sm:min-w-fit font-light">Return</h5>
-            <span className="bg-neutral-50 dark:bg-neutral-800 px-2 py-1 ms-2 rounded-lg font-medium">
+            <span className="bg-neutral-100 dark:bg-neutral-800 px-2 py-1 ms-2 rounded-lg font-medium">
               {format(parseISO(tourPackage.returnDate), "dd MMMM yyyy")}
             </span>
           </div>

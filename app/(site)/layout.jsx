@@ -29,15 +29,13 @@ export default function RootLayout({ children }) {
     // passing font variables to global.css can be accessed there and used
     <html lang="en" className={`${outfit.variable} ${noto_sans.variable}`}>
       {/* main layout page */}
-      <body className="min-h-screen bg-neutral-100 dark:bg-neutral-900">
+      <body className="bg-neutral-100 dark:bg-neutral-900">
         <Providers>
           <CountryProvider>
             <Navbar />
-            <main className="min-h-screen">
-              {/* rendering childrens - Next Js */}
+            <main className="min-h-[84vh] sm:min-h-[80vh] md:min-h-[78vh]">
               {children}
             </main>
-            {/* common footer component (/components/footer.jsx)*/}
             <Footer />
           </CountryProvider>
         </Providers>

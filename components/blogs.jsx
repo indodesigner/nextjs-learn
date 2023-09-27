@@ -52,7 +52,7 @@ export default async function BlogSection() {
                     {blog.place &&
                       blog.place.map((item) => (
                         <div key={item}>
-                          <h6 className="text-xs font-light text-neutral-500 dark:text-neutral-300 pt-[3px]">
+                          <h6 className="text-xs font-bold text-neutral-500 dark:text-neutral-300 pt-[3px]">
                             {item}
                           </h6>
                         </div>
@@ -63,7 +63,7 @@ export default async function BlogSection() {
                   </h6>
 
                   {/* rich text component with line clamped to 2 lines */}
-                  <div className="px-2 text-sm line-clamp-2 md:line-clamp-5">
+                  <div className="px-2 text-sm line-clamp-2 md:line-clamp-6 lg:line-clamp-12">
                     <PortableText
                       value={blog.content}
                       components={RichTextComponents}
@@ -100,7 +100,7 @@ export default async function BlogSection() {
                   <div className="flex gap-1 px-2">
                     {blog.place &&
                       blog.place.map((item) => (
-                        <h6 className="text-xs font-light text-neutral-500 dark:text-neutral-300 pt-[3px]">
+                        <h6 className="text-xs font-bold text-neutral-500 dark:text-neutral-300 pt-[3px]">
                           {item}
                         </h6>
                       ))}

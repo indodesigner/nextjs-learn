@@ -1,17 +1,19 @@
 import Link from "next/link";
-import Image from "next/image";
-import Logo from "../public/images/logo.png";
-import logoDark from "../public/images/logo.png";
+// import Image from "next/image";
+// import Logo from "../public/images/logo.png";
+// import logoDark from "../public/images/logo.png";
 import {
-  AiFillInstagram,
-  AiFillFacebook,
-  AiFillTwitterCircle,
-} from "react-icons/ai";
+  FaSquareInstagram,
+  FaSquareFacebook,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 export default function Footer() {
   return (
     <div className="flex items-center justify-between py-3 sm:py-4 px-4 md:px-16 bg-neutral-100 dark:bg-neutral-900 backdrop-filter backdrop-blur-xl bg-opacity-30 dark:bg-opacity-30 border-t-[1px] border-neutral-700 dark:border-neutral-500 border-opacity-10 dark:border-opacity-10 min-w-full scroll-auto">
-      <h6 className="text-xs sm:text-sm">Copyright © 2023 Nikotravels.com</h6>
+      <h6 className="text-[10px] sm:text-xs">
+        Copyright © 2023 Nikotravels.com
+      </h6>
       <div className="hidden sm:block">
         <ul className="flex flex-row gap-3">
           <li>
@@ -35,19 +37,19 @@ export default function Footer() {
 
       <div className="">
         <ul className="flex flex-row gap-5">
-          <li>
-            <Link href="/blogs" className="text-medium md:text-2xl link-hover">
-              <AiFillInstagram />
+          <li className="hover:scale-90 transition">
+            <Link href="/blogs" className="text-medium md:text-2xl">
+              <FaSquareInstagram />
             </Link>
           </li>
-          <li>
-            <Link href="/about" className="text-medium md:text-2xl link-hover">
-              <AiFillFacebook />
+          <li className="hover:scale-90 transition">
+            <Link href="/about" className="text-medium md:text-2xl">
+              <FaSquareFacebook />
             </Link>
           </li>
-          <li>
-            <Link href="/about" className="text-medium md:text-2xl link-hover">
-              <AiFillTwitterCircle />
+          <li className="hover:scale-90 transition">
+            <Link href="/about" className="text-medium md:text-2xl">
+              <FaXTwitter />
             </Link>
           </li>
         </ul>

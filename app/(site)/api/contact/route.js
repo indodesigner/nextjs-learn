@@ -4,7 +4,7 @@ import sgMail from "@sendgrid/mail";
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const sendEmail = async (res) => {
-  const { name, email, message } = res;
+  const { name, countryCode, phone, email, selectedPackage, message } = res;
 
   const msg = {
     to: "webdesigner@indocosmo.com",
@@ -12,7 +12,9 @@ export const sendEmail = async (res) => {
     subject: `New Enquiry from ${name}`,
     text: `
           Name: ${name}
+          Phone: ${countryCode}${phone}
           Email: ${email}
+          Interested Package: ${selectedPackage}
           Message: ${message}`,
   };
 

@@ -35,6 +35,11 @@ module.exports = {
       },
     },
     extend: {
+      lineClamp: {
+        8: "8",
+        10: "10",
+        12: "12",
+      },
       //   backgroundImage: {
       //     "header-gradient": "url('/public/images/header-gradient.svg')",
       //     "footer-gradient": "url('/public/images/footer-gradient.svg')",

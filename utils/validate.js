@@ -1,8 +1,13 @@
-export const validate = ({ name, email, message }) => {
+export const validate = ({ name, phone, email, message }) => {
   const errors = {};
   console.log(name, email, message);
   if (!name || name.trim() === "") {
     errors.name = "Name is required";
+  }
+  if (!phone || phone.trim() === "") {
+    errors.phone = "Phone number is required";
+  } else if (!/^\d{10}$/i.test(phone)) {
+    errors.phone = "Invalid phone number. Please enter a 10-digit number.";
   }
   if (!email || email.trim() === "") {
     errors.email = "Email is required";
