@@ -27,7 +27,6 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
     message: "",
   });
 
-  console.log("bkhjkjhh", values);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
