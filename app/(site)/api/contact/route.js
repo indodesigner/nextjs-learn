@@ -4,7 +4,17 @@ import sgMail from "@sendgrid/mail";
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const sendEmail = async (res) => {
-  const { name, countryCode, phone, email, selectedPackage, message } = res;
+  const {
+    name,
+    countryCode,
+    phone,
+    email,
+    selectedPackageName,
+    selectedPackageSlug,
+    message,
+  } = res;
+
+  const href = "http://localhost:3000/packages/"; //change this to domain after hosting <<<<<<<important>
 
   const msg = {
     to: "webdesigner@indocosmo.com",
@@ -12,9 +22,10 @@ export const sendEmail = async (res) => {
     subject: `New Enquiry from ${name}`,
     text: `
           Name: ${name}
-          Phone: ${countryCode}${phone}
+          Phone: (${countryCode}) ${phone}
           Email: ${email}
-          Interested Package: ${selectedPackage}
+          Interested Package: ${selectedPackageName}
+          Link to Pack: ${href}${selectedPackageSlug}
           Message: ${message}`,
   };
 
@@ -28,7 +39,6 @@ export const sendEmail = async (res) => {
 
 export async function POST(request) {
   const res = await request.json();
-  console.log("123456Data", res);
   try {
     await sendEmail(res);
     return NextResponse.json({ message: "Email sent successfully" });

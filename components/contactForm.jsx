@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "/components/ui/input";
 import { Textarea } from "/components/ui/textarea";
 import { Button } from "/components/ui/button";
@@ -13,11 +13,14 @@ import {
 import { Tabs, TabsList, TabsTrigger } from "/components/ui/tabs";
 
 import { validate } from "/utils/validate";
-import { Alert, AlertDescription, AlertTitle } from "/components/ui/alert";
+import { Alert, AlertTitle } from "/components/ui/alert";
 import { FaCircleExclamation } from "react-icons/fa6";
 import Image from "next/image";
 
-export default function ContactForm({ indianPackNames, japanesePackNames }) {
+export default function ContactForm({
+  indianPackDetails,
+  japanesePackDetails,
+}) {
   const [values, setValues] = useState({
     name: "",
     countryCode: "+91",
@@ -29,12 +32,12 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [sentStatus, setSentStatus] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const errors = validate(values);
-    console.log("er", errors);
 
     if (errors && Object.keys(errors).length > 0) {
       return setErrors(errors);
@@ -44,13 +47,16 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
     setLoading(true);
 
     try {
+      const { name, slug } = values.selectedPackage;
+
       const dataToSend = {
         name: values.name,
-        email: values.email,
+        countryCode: values.countryCode,
         phone: values.phone,
+        email: values.email,
+        selectedPackageName: name,
+        selectedPackageSlug: slug,
         message: values.message,
-        countryCode: values.countryCode, // Include the selected country code
-        selectedPackage: values.selectedPackage, // Include the selected package
       };
 
       const res = await fetch("/api/contact", {
@@ -63,12 +69,13 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
       if (res.ok) {
         setValues({
           name: "",
-          email: "",
+          countryCode: "",
           phone: "",
+          email: "",
+          selectedPackage: "",
           message: "",
-          countryCode: "+91", // Reset country code to default
-          selectedPackage: "", // Reset selected package
         });
+        setSentStatus(true);
       }
     } catch (err) {
       console.log(err);
@@ -77,35 +84,33 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
   };
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setValues((prevInput) => ({
       ...prevInput,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
+  const handleChangeCountryCode = (value) => {
+    setValues((prevInput) => ({
+      ...prevInput,
+      countryCode: value,
+    }));
+  };
+  const handleChangePackage = (value) => {
+    try {
+      const packageObj = JSON.parse(value);
 
-  //   if (name === "countryCode") {
-  //     setValues((prevInput) => ({
-  //       ...prevInput,
-  //       countryCode: value,
-  //     }));
-  //   } else if (name === "selectedPackage") {
-  //     setValues((prevInput) => ({
-  //       ...prevInput,
-  //       selectedPackage: value,
-  //     }));
-  //   } else {
-  //     setValues((prevInput) => ({
-  //       ...prevInput,
-  //       [name]: value,
-  //     }));
-  //   }
-  // };
+      setValues((prevInput) => ({
+        ...prevInput,
+        selectedPackage: packageObj,
+      }));
+    } catch (error) {
+      console.error("Error parsing JSON:", error);
+    }
+  };
 
   const [selectedTab, setSelectedTab] = useState("india");
-  // Function to handle tab change
   const handleTabChange = (tabValue) => {
     setSelectedTab(tabValue);
   };
@@ -114,6 +119,18 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
     { code: "+91", label: "India" },
     { code: "+81", label: "Japan" },
   ];
+
+  useEffect(() => {
+    if (sentStatus) {
+      // Set a timer to reset sentStatus after 10 seconds
+      const timer = setTimeout(() => {
+        setSentStatus(false);
+      }, 10000); // 10 seconds in milliseconds
+
+      // Clear the timer if the component unmounts or sentStatus changes
+      return () => clearTimeout(timer);
+    }
+  }, [sentStatus]);
 
   return (
     <form
@@ -124,7 +141,7 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
         value={values.name}
         onChange={(e) => {
           handleChange(e);
-          setErrors({ ...errors, name: "" }); // You might need to pass some arguments to setErrors if required
+          setErrors({ ...errors, name: "" });
         }}
         id="name"
         name="name"
@@ -136,9 +153,10 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
           <AlertTitle className="text-sm">{errors.name}</AlertTitle>
         </Alert>
       ) : null}
+
       <Select
         value={values.countryCode}
-        onChange={handleChange}
+        onValueChange={handleChangeCountryCode}
         name="countryCode"
         className="mr-2"
       >
@@ -146,8 +164,8 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          {countryCodes.map((country) => (
-            <SelectItem key={country.code} value={country.code}>
+          {countryCodes.map((country, index) => (
+            <SelectItem key={index} value={country.code}>
               {country.label} ({country.code})
             </SelectItem>
           ))}
@@ -193,33 +211,32 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
           </TabsList>
         </Tabs>
 
-        <Select
-          value={values.selectedPackage}
-          onChange={handleChange}
-          name="selectedPackage"
-        >
+        <Select onValueChange={handleChangePackage}>
           <SelectTrigger>
             <SelectValue placeholder="Interested Package" />
           </SelectTrigger>
           <SelectContent>
             {selectedTab === "india" &&
-              indianPackNames &&
-              indianPackNames.map((name) => (
-                <span key={name}>
-                  <SelectItem value={name}>{name}</SelectItem>
+              indianPackDetails &&
+              indianPackDetails.map((details, index) => (
+                <span key={index}>
+                  <SelectItem value={JSON.stringify(details)}>
+                    {details.name}
+                  </SelectItem>
                 </span>
               ))}
             {selectedTab === "japan" &&
-              japanesePackNames &&
-              japanesePackNames.map((name) => (
-                <span key={name}>
-                  <SelectItem value={name}>{name}</SelectItem>
+              japanesePackDetails &&
+              japanesePackDetails.map((details, index) => (
+                <span key={index}>
+                  <SelectItem value={JSON.stringify(details)}>
+                    {details.name}
+                  </SelectItem>
                 </span>
               ))}
           </SelectContent>
         </Select>
       </div>
-
       <Textarea
         value={values.message}
         onChange={handleChange}
@@ -227,9 +244,19 @@ export default function ContactForm({ indianPackNames, japanesePackNames }) {
         name="message"
         placeholder="Your message"
       />
+      {errors.message ? (
+        <Alert className="py-1 text-red-500 dark:text-red-400">
+          <FaCircleExclamation />
+          <AlertTitle className="text-sm">{errors.message}</AlertTitle>
+        </Alert>
+      ) : null}
       <Button type="submit" disabled={loading}>
         {!loading ? (
-          "Submit"
+          sentStatus ? (
+            "Sent Successfully"
+          ) : (
+            "Send"
+          )
         ) : (
           <div className="flex items-center justify-center w-full h-full ">
             <Image

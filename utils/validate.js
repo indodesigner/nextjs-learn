@@ -1,6 +1,5 @@
 export const validate = ({ name, phone, email, message }) => {
   const errors = {};
-  console.log(name, email, message);
   if (!name || name.trim() === "") {
     errors.name = "Name is required";
   }

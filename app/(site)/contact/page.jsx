@@ -15,8 +15,14 @@ const ContactPage = async () => {
   const japanesePacks = packages.filter((pack) => {
     return pack.country && pack.country.includes("Japan");
   });
-  const indianPackNames = indianPacks.map((item) => item.packageName);
-  const japanesePackNames = japanesePacks.map((item) => item.packageName);
+  const indianPackDetails = indianPacks.map((item) => ({
+    name: item.packageName,
+    slug: item.slug,
+  }));
+  const japanesePackDetails = japanesePacks.map((item) => ({
+    name: item.packageName,
+    slug: item.slug,
+  }));
 
   return (
     <div className="container mt-0 md:mt-24">
@@ -25,8 +31,8 @@ const ContactPage = async () => {
         <div>content</div>
         <div className="flex justify-center">
           <ContactForm
-            indianPackNames={indianPackNames}
-            japanesePackNames={japanesePackNames}
+            indianPackDetails={indianPackDetails}
+            japanesePackDetails={japanesePackDetails}
           />
         </div>
       </div>
