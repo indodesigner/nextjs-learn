@@ -45,6 +45,7 @@ const HeroCarousel = ({ slides }) => {
                 src={slide.slideImage}
                 width={3000}
                 height={3000}
+                alt={slide.alt}
                 className="min-w-screen max-h-[70vh] md:max-h-screen object-cover"
               ></Image>
               <AnimatePresence>
@@ -83,8 +84,9 @@ const HeroCarousel = ({ slides }) => {
                     >
                       <div className="grid grid-cols-2 gap-3">
                         {path == "/"
-                          ? links.map((link) => (
+                          ? links.map((link, index) => (
                               <a
+                                key={index}
                                 href={`/countries/${link.href}`}
                                 className="py-2 px-4 sm:py-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
                               >

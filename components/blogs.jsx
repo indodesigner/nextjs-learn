@@ -9,7 +9,7 @@ import calculateDateTime from "../utils/calculateDateTime";
 
 export default async function BlogSection() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
-
+  console.log(blogs);
   return (
     <div>
       <div className="flex justify-between mt-8 mb-4">
@@ -25,7 +25,10 @@ export default async function BlogSection() {
         {blogs &&
           blogs.slice(0, 5).map((blog, index) =>
             index === 0 ? (
-              <div className="grid row-span-1 col-span-1 md:row-span-2 md:col-span-2">
+              <div
+                key={index}
+                className="grid row-span-1 col-span-1 md:row-span-2 md:col-span-2"
+              >
                 <Link
                   id={blog._id}
                   href={`/blogs/${blog.slug}`}
@@ -36,7 +39,7 @@ export default async function BlogSection() {
                       src={urlFor(blog.postImage).url()}
                       width={800}
                       height={500}
-                      alt={`${blog.slug}-image`}
+                      alt={blog.alt}
                       className="object-cover h-32 md:h-64 rounded-md"
                     ></Image>
                   ) : (
@@ -50,8 +53,8 @@ export default async function BlogSection() {
 
                   <div className="flex gap-1 px-2">
                     {blog.place &&
-                      blog.place.map((item) => (
-                        <div key={item}>
+                      blog.place.map((item, index) => (
+                        <div key={index}>
                           <h6 className="text-xs font-bold text-neutral-500 dark:text-neutral-300 pt-[3px]">
                             {item}
                           </h6>
@@ -75,7 +78,7 @@ export default async function BlogSection() {
                 </Link>
               </div>
             ) : (
-              <div className="grid grid-cols-1">
+              <div key={index} className="grid grid-cols-1">
                 <Link
                   id={blog._id}
                   href={`blogs/${blog.slug}`}
@@ -86,7 +89,7 @@ export default async function BlogSection() {
                       src={urlFor(blog.postImage).url()}
                       width={800}
                       height={500}
-                      alt={`${blog.slug}-image`}
+                      alt={blog.alt}
                       className="object-cover h-32 rounded-md"
                     ></Image>
                   ) : (

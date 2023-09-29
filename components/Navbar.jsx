@@ -110,8 +110,9 @@ const Navbar = () => {
           <ul className="flex flex-row bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-[5px] py-[6px] rounded-xl shadow-md">
             <li>
               {countryLinks &&
-                countryLinks.map((link) => (
+                countryLinks.map((link, index) => (
                   <a
+                    key={index}
                     href={link.href}
                     className={`${
                       path === link.href || country === link.name.toLowerCase()
@@ -133,8 +134,8 @@ const Navbar = () => {
                 ))}
             </li>
 
-            {links.map((link) => (
-              <li key={link.href}>
+            {links.map((link, index) => (
+              <li key={index}>
                 <Link
                   href={link.href}
                   className={`${
@@ -216,14 +217,14 @@ const Navbar = () => {
                     variants={navList}
                   >
                     {countryLinks &&
-                      countryLinks.map((link) => (
+                      countryLinks.map((link, index) => (
                         <a
+                          key={index}
                           href={link.href}
                           className="group"
                           onClick={() => {
                             closeNavbar();
                           }}
-                          key={link.name}
                         >
                           <motion.li
                             className="nav-item dark:text-white text-2xl font-semibold sm:text-3xl mb-4 ps-2"
@@ -233,14 +234,14 @@ const Navbar = () => {
                           </motion.li>
                         </a>
                       ))}
-                    {links.map((link) => (
+                    {links.map((link, index) => (
                       <Link
+                        key={index}
                         href={link.href}
                         className="group"
                         onClick={() => {
                           closeNavbar();
                         }}
-                        key={link.name}
                       >
                         <motion.li
                           className="nav-item dark:text-white text-2xl font-semibold sm:text-3xl mb-4 ps-2"

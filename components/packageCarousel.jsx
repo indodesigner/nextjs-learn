@@ -34,6 +34,7 @@ const PackageCarousel = ({ slides }) => {
               width={3000}
               height={3000}
               className="min-w-screen max-h-[40vh] md:max-h-[60vh] object-cover rounded-md"
+              alt={slide.alt}
             ></Image>
           </SwiperSlide>
         ))}

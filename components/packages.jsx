@@ -5,6 +5,8 @@ import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "./RichTextComponents";
 import { Button } from "/components/ui/button";
+import { format } from "date-fns";
+import { parseISO } from "date-fns";
 
 export default async function PackagesSection({ heading, packages }) {
   const showViewAllLink = packages.length > 4;
@@ -44,7 +46,7 @@ export default async function PackagesSection({ heading, packages }) {
         {packagesToDisplay &&
           packagesToDisplay.map((tourPackage) => (
             <Link
-              id={tourPackage._id}
+              key={tourPackage._id}
               href={`/packages/${tourPackage.slug}`}
               className="group card card-hover p-2"
             >
@@ -53,7 +55,7 @@ export default async function PackagesSection({ heading, packages }) {
                   src={urlFor(tourPackage.packageImages).url()}
                   width={800}
                   height={500}
-                  alt={`${tourPackage.slug}-image`}
+                  alt={tourPackage.alt}
                   className="object-cover h-32 md:h-32 rounded-md"
                 ></Image>
               ) : (
@@ -71,10 +73,16 @@ export default async function PackagesSection({ heading, packages }) {
 
               {/* rich text component with line clamped to 2 lines */}
               <div className="px-2 mb-2 text-sm line-clamp-2 md:line-clamp-3">
-                <PortableText
+                {/* <PortableText
                   value={tourPackage.content}
                   components={RichTextComponents}
-                />
+                /> */}
+                <h6>₹{tourPackage.rate}</h6>
+                <h6>
+                  {/* {new Date(tourPackage.returnDate).getTime() -
+                    new Date(tourPackage.departureDate).getTime() /
+                      (1000 * 60 * 60 * 24)} */}
+                </h6>
               </div>
             </Link>
           ))}

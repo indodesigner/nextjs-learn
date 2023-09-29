@@ -28,8 +28,9 @@ export default async function PlacesSection({ places }) {
 
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
         {placesToDisplay &&
-          placesToDisplay.map((place) => (
+          placesToDisplay.map((place, index) => (
             <Link
+              key={index}
               id={place._id}
               href={`/places/${place.slug}`}
               className="group card card-hover p-2"
@@ -39,7 +40,7 @@ export default async function PlacesSection({ places }) {
                   src={urlFor(place.placeImages).url()}
                   width={800}
                   height={500}
-                  alt={`${place.slug}-image`}
+                  alt={place.alt}
                   className="object-cover h-32 md:h-32 rounded-md"
                 ></Image>
               ) : (

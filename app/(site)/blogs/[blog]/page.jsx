@@ -46,7 +46,7 @@ const Blog = async ({ params }) => {
           width={1080}
           height={480}
           className="mb-4 h-[400px] object-cover rounded-md"
-          alt={`${blog.slug}-image`}
+          alt={blog.alt}
         ></Image>
       ) : (
         <div className="flex justify-center my-8">

@@ -42,7 +42,7 @@ export default async function Blogs() {
                           width={500}
                           height={500}
                           className="object-cover h-24 rounded-md group-hover:drop-shadow-sm"
-                          alt={`${blog.slug}-image`}
+                          alt={blog.alt}
                         ></Image>
                       ) : (
                         // else part for no blog image
@@ -74,8 +74,8 @@ export default async function Blogs() {
                       {/* grid to display blog categries inside blogs list */}
                       <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-2">
                         {blog.categories &&
-                          blog.categories.map((categ) => (
-                            <span key={categ} className="min-w-max">
+                          blog.categories.map((categ, index) => (
+                            <span key={index} className="min-w-max">
                               <h6 className="text-xs font-bold">#{categ}</h6>
                             </span>
                           ))}

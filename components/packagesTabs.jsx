@@ -34,7 +34,7 @@ export default async function PackagesTabs({ packages, heading }) {
             {packages &&
               packages.map((pack) => (
                 <Link
-                  id={pack._id}
+                  key={pack._id}
                   href={`/packages/${pack.slug}`}
                   className="group card card-hover p-2"
                 >
@@ -43,7 +43,7 @@ export default async function PackagesTabs({ packages, heading }) {
                       src={urlFor(pack.packageImages).url()}
                       width={800}
                       height={500}
-                      alt={`${pack.slug}-image`}
+                      alt={pack.alt}
                       className="object-cover h-32 md:h-32 rounded-md"
                     ></Image>
                   ) : (

@@ -19,8 +19,6 @@ const TourPackage = async ({ params }) => {
       ? tourPackage.country[0].toLowerCase()
       : "";
 
-  // console.log(countryName);
-
   const retdate = new Date(tourPackage.returnDate);
   const depDate = new Date(tourPackage.departureDate);
   const dateDiff = retdate - depDate;
@@ -50,20 +48,37 @@ const TourPackage = async ({ params }) => {
       <PackageCarousel slides={slides} />
       <div className="my-5 px-4 py-5 bg-white dark:bg-neutral-900 shadow-lg shadow-neutral-200 dark:shadow-neutral-900 rounded-md">
         <div className="flex flex-row justify-between">
-          <h4 className="font-bold text-lg mb-4">{duration} Days</h4>
-          <h4 className="font-bold text-lg mb-4">₹{tourPackage.rate}</h4>
+          {duration == 0 ? (
+            <h6>Duration depends on your schedule</h6>
+          ) : (
+            <h4 className="font-bold text-lg mb-4">{duration} Days</h4>
+          )}
+
+          {tourPackage.rate ? (
+            <h4 className="font-bold text-lg mb-4">₹{tourPackage.rate}</h4>
+          ) : (
+            <h6>Package rate depends on the schedule</h6>
+          )}
         </div>
         <div className="flex flex-col sm:flex-row sm:gap-8 gap-2">
           <div className="flex flex-row place-items-center">
             <h5 className="min-w-[80px] sm:min-w-fit font-light">Departure</h5>
             <span className="bg-neutral-100 dark:bg-neutral-800 px-2 py-1 ms-2 rounded-lg font-medium">
-              {format(parseISO(tourPackage.departureDate), "dd MMMM yyyy")}
+              {tourPackage.departureDate ? (
+                format(parseISO(tourPackage.departureDate), "dd MMMM yyyy")
+              ) : (
+                <h6>You Pick</h6>
+              )}
             </span>
           </div>
           <div className="flex flex-row place-items-center">
             <h5 className="min-w-[80px] sm:min-w-fit font-light">Return</h5>
             <span className="bg-neutral-100 dark:bg-neutral-800 px-2 py-1 ms-2 rounded-lg font-medium">
-              {format(parseISO(tourPackage.returnDate), "dd MMMM yyyy")}
+              {tourPackage.returnDate ? (
+                format(parseISO(tourPackage.returnDate), "dd MMMM yyyy")
+              ) : (
+                <h6>You Pick</h6>
+              )}
             </span>
           </div>
         </div>

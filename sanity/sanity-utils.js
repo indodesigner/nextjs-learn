@@ -10,6 +10,7 @@ export async function getBlogs() {
         "place": place[]->placeName,
         releaseDate,
         "postImage": postImage.asset->url,
+        "alt": postImage.alt,
         content,
         href,
       }`
@@ -25,6 +26,7 @@ export async function getBlog({ slug }) {
           "place": place[]->placeName,
           releaseDate,
           "postImage": postImage.asset->url,
+          "alt": postImage.alt,
           content,
           href,
         }`
@@ -38,6 +40,7 @@ export async function getSlides() {
         title,
         caption,
         "slideImage": slideImage.asset->url,
+        "alt": slideImage.alt,
       }`
   );
 }
@@ -49,6 +52,7 @@ export async function getSlidesIndia() {
         title,
         caption,
         "slideImage": slideImage.asset->url,
+        "alt": slideImage.alt,
       }`
   );
 }
@@ -60,6 +64,7 @@ export async function getSlidesJapan() {
         title,
         caption,
         "slideImage": slideImage.asset->url,
+        "alt": slideImage.alt,
       }`
   );
 }
@@ -71,6 +76,7 @@ export async function getPlaces() {
         placeName,
         "slug": slug.current,
         placeImages[0]{asset->{url}},
+        "alt": coalesce(placeImages[0].alt, "Image of the destination"),
         "country":country[]->name,
         content,
       }`
@@ -87,6 +93,7 @@ export async function getPlace({ slug }) {
           asset->{
             url
           },
+          alt,
           caption
         },
         "country":country[]->name,slug,
@@ -102,8 +109,13 @@ export async function getPackages() {
         packageName,
         "slug": slug.current,
         packageImages[0]{asset->{url}},
+        "alt": coalesce(packageImages[0].alt, "Image of the tour package"),
         "category": category[]->name,
         "packageFilter": packageFilter[]->name,
+        departureDate,
+        returnDate,
+        rate,
+        place,
         "country":country[]->name,
         content,
       }`
@@ -120,6 +132,7 @@ export async function getPackage({ slug }) {
           asset->{
             url
           },
+          alt
           caption
         },
         departureDate,

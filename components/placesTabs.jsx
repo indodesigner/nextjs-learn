@@ -11,7 +11,7 @@ export default async function PlacesTabs({ places }) {
       {places &&
         places.map((place) => (
           <Link
-            id={place._id}
+            key={place._id}
             href={`/places/${place.slug}`}
             className="group card card-hover p-2"
           >
@@ -20,7 +20,7 @@ export default async function PlacesTabs({ places }) {
                 src={urlFor(place.placeImages).url()}
                 width={800}
                 height={500}
-                alt={`${place.slug}-image`}
+                alt={place.alt}
                 className="object-cover h-32 md:h-32 rounded-md"
               ></Image>
             ) : (
