@@ -59,7 +59,7 @@ export default function ContactForm({
         message: values.message,
       };
 
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api", {
         method: "POST",
         headers: {
           "content-type": "application/json",
