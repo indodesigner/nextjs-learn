@@ -3,7 +3,9 @@ import sgMail from "@sendgrid/mail";
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-export const sendEmail = async (res) => {
+export const dynamic = "auto";
+
+export const sendEmail = async (response) => {
   const {
     name,
     countryCode,
@@ -12,7 +14,7 @@ export const sendEmail = async (res) => {
     selectedPackageName,
     selectedPackageSlug,
     message,
-  } = res;
+  } = response;
 
   const href = "http://localhost:3000/packages/"; //change this to domain after hosting <<<<<<<important>
 
@@ -38,9 +40,9 @@ export const sendEmail = async (res) => {
 };
 
 export async function POST(request) {
-  const res = await request.json();
+  const response = await request.json();
   try {
-    await sendEmail(res);
+    await sendEmail(response);
     return NextResponse.json({ message: "Email sent successfully" });
   } catch (error) {
     console.error(error);
