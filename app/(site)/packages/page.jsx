@@ -6,10 +6,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "/components/ui/tabs";
 
 export default async function Packages() {
   const packages = await getPackages(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
-  const indianPacks = packages.filter((pack) => {
+
+  const packagesWithDuration = packages.map((pack) => {
+    const retdate = new Date(pack.returnDate);
+    const depDate = new Date(pack.departureDate);
+    const dateDiff = retdate - depDate;
+    const duration = dateDiff / (1000 * 60 * 60 * 24);
+    return { ...pack, duration };
+  });
+  const indianPacks = packagesWithDuration.filter((pack) => {
     return pack.country && pack.country.includes("India");
   });
-  const japanesePacks = packages.filter((pack) => {
+  const japanesePacks = packagesWithDuration.filter((pack) => {
     return pack.country && pack.country.includes("Japan");
   });
 

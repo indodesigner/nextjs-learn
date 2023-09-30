@@ -9,7 +9,6 @@ import calculateDateTime from "../utils/calculateDateTime";
 
 export default async function BlogSection() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
-  console.log(blogs);
   return (
     <div>
       <div className="flex justify-between mt-8 mb-4">

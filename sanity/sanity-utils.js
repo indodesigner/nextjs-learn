@@ -132,7 +132,7 @@ export async function getPackage({ slug }) {
           asset->{
             url
           },
-          alt
+          alt,
           caption
         },
         departureDate,

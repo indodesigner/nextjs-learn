@@ -6,10 +6,18 @@ export default async function HomePage() {
   const packages = await getPackages(); //fetch packages from sanity query can be fount in (sanity/sanity-utils.js)
   const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
 
-  const indianPackages = packages.filter((pack) => {
+  const packagesWithDuration = packages.map((pack) => {
+    const retdate = new Date(pack.returnDate);
+    const depDate = new Date(pack.departureDate);
+    const dateDiff = retdate - depDate;
+    const duration = dateDiff / (1000 * 60 * 60 * 24);
+    return { ...pack, duration };
+  });
+
+  const indianPackages = packagesWithDuration.filter((pack) => {
     return pack.country && pack.country.includes("India");
   });
-  const japanesePackages = packages.filter((pack) => {
+  const japanesePackages = packagesWithDuration.filter((pack) => {
     return pack.country && pack.country.includes("Japan");
   });
 
@@ -22,7 +30,7 @@ export default async function HomePage() {
   //   return pack.packageFilter && pack.packageFilter.includes("Popular");
   // });
 
-  const businessPackages = packages.filter((pack) => {
+  const businessPackages = packagesWithDuration.filter((pack) => {
     return pack.category && pack.category.includes("Business");
   });
 

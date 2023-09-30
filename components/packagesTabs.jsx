@@ -55,17 +55,42 @@ export default async function PackagesTabs({ packages, heading }) {
                     </div>
                   )}
 
-                  <h6 className="text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+                  <h6 className="px-2 text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                     {pack.packageName}
                   </h6>
 
                   {/* rich text component with line clamped to 3 lines */}
-                  <div className="text-sm line-clamp-2 md:line-clamp-3">
+                  {/* <div className="text-sm line-clamp-2 md:line-clamp-3">
                     <PortableText
                       value={pack.content}
                       components={RichTextComponents}
                     />
-                  </div>
+                  </div> */}
+
+                  {pack.duration ? (
+                    <div className="grid grid-cols-2 px-2 mb-2 text-sm end">
+                      <span className="bg-neutral-200 dark:bg-neutral-800 rounded-md py-[2px]">
+                        <h6 className="font-semibold grid justify-items-center text-center content-center">
+                          {pack.duration} Days
+                        </h6>
+                      </span>
+
+                      <h6 className="text-xs grid justify-items-end content-center">
+                        ₹{pack.rate}
+                      </h6>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-2 px-2 mb-2 text-sm end">
+                      <span className="bg-neutral-200 dark:bg-neutral-800 rounded-md py-[2px] px-1">
+                        <h6 className="text-xs grid justify-items-center content-center text-center">
+                          Custom duration
+                        </h6>
+                      </span>
+                      <h6 className="grid justify-items-end content-center">
+                        Custom rate
+                      </h6>
+                    </div>
+                  )}
                 </Link>
               ))}
           </div>

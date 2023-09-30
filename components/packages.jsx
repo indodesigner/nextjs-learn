@@ -2,11 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import urlFor from "./urlFor";
 import { LuImageOff } from "react-icons/lu";
-import { PortableText } from "@portabletext/react";
-import { RichTextComponents } from "./RichTextComponents";
-import { Button } from "/components/ui/button";
-import { format } from "date-fns";
-import { parseISO } from "date-fns";
+// import { PortableText } from "@portabletext/react";
+// import { RichTextComponents } from "./RichTextComponents";
+// import { Button } from "/components/ui/button";
 
 export default async function PackagesSection({ heading, packages }) {
   const showViewAllLink = packages.length > 4;
@@ -72,18 +70,36 @@ export default async function PackagesSection({ heading, packages }) {
               </h6>
 
               {/* rich text component with line clamped to 2 lines */}
-              <div className="px-2 mb-2 text-sm line-clamp-2 md:line-clamp-3">
-                {/* <PortableText
+              {/* <div className="px-2 mb-2 text-sm line-clamp-2 md:line-clamp-3">
+                <PortableText
                   value={tourPackage.content}
                   components={RichTextComponents}
-                /> */}
-                <h6>₹{tourPackage.rate}</h6>
-                <h6>
-                  {/* {new Date(tourPackage.returnDate).getTime() -
-                    new Date(tourPackage.departureDate).getTime() /
-                      (1000 * 60 * 60 * 24)} */}
-                </h6>
-              </div>
+                />
+              </div> */}
+              {tourPackage.duration ? (
+                <div className="grid grid-cols-2 px-2 mb-2 text-sm end">
+                  <span className="bg-neutral-200 dark:bg-neutral-800 rounded-md py-[2px]">
+                    <h6 className="font-semibold grid justify-items-center text-center content-center">
+                      {tourPackage.duration} Days
+                    </h6>
+                  </span>
+
+                  <h6 className="text-xs grid justify-items-end content-center">
+                    ₹{tourPackage.rate}
+                  </h6>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 px-2 mb-2 text-sm end">
+                  <span className="bg-neutral-200 dark:bg-neutral-800 rounded-md py-[2px] px-1">
+                    <h6 className="text-xs grid justify-items-center content-center text-center">
+                      Custom duration
+                    </h6>
+                  </span>
+                  <h6 className="grid justify-items-end content-center">
+                    Custom rate
+                  </h6>
+                </div>
+              )}
             </Link>
           ))}
       </div>
