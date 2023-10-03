@@ -1,8 +1,8 @@
 "use client";
-import BlogSection from "/components/blogs";
-import PlacesSection from "/components/places";
-import PackagesSection from "/components/packages";
-import HeroCarousel from "/components/heroCarousel";
+import BlogSection from "@/components/blogs";
+import PlacesSection from "@/components/places";
+import PackagesSection from "@/components/packages";
+import HeroCarousel from "@/components/heroCarousel";
 import { motion } from "framer-motion";
 
 export default async function CommonSections({

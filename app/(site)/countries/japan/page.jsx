@@ -1,12 +1,20 @@
 import { getSlidesJapan, getPackages, getPlaces } from "/sanity/sanity-utils";
-import CommonSections from "/components/commonSections";
+import CommonSections from "@/components/commonSections";
 
 export default async function ExploreJapan() {
   const slidesJapan = await getSlidesJapan();
   const packs = await getPackages();
   const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
 
-  const allPackages = packs.filter((pack) => {
+  const packagesWithDuration = packs.map((pack) => {
+    const retdate = new Date(pack.returnDate);
+    const depDate = new Date(pack.departureDate);
+    const dateDiff = retdate - depDate;
+    const duration = dateDiff / (1000 * 60 * 60 * 24);
+    return { ...pack, duration };
+  });
+
+  const allPackages = packagesWithDuration.filter((pack) => {
     return pack.country && pack.country.includes("Japan");
   });
 

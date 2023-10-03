@@ -21,14 +21,17 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["app/(site)/*"]}
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/Navbar.jsx"  ],
+, "app/components/Navbar.jsx"  ],
   "exclude": [
     "node_modules"
   ]

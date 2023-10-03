@@ -1,8 +1,8 @@
 import { getPackages } from "/sanity/sanity-utils";
-import PackagesTabs from "/components/packagesTabs";
-import GetCountry from "/components/getCountry";
+import PackagesTabs from "@/components/packagesTabs";
+import GetCountry from "@/components/getCountry";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default async function Packages() {
   const packages = await getPackages(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)

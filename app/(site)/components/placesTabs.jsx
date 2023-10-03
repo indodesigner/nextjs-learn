@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import urlFor from "/components/urlFor";
+import urlFor from "@/components/urlFor";
 import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
-import { RichTextComponents } from "/components/RichTextComponents";
+import { RichTextComponents } from "@/components/RichTextComponents";
 
 export default async function PlacesTabs({ places }) {
   return (

@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getBlogs } from "../sanity/sanity-utils";
+import { getBlogs } from "/sanity/sanity-utils";
 import urlFor from "./urlFor";
 import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
-import { RichTextComponents } from "./RichTextComponents";
-import calculateDateTime from "../utils/calculateDateTime";
+import { RichTextComponents } from "@/components/RichTextComponents";
+import calculateDateTime from "/utils/calculateDateTime";
 
 export default async function BlogSection() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
@@ -13,8 +13,11 @@ export default async function BlogSection() {
     <div>
       <div className="flex justify-between mt-8 mb-4">
         <h2 className="text-xl sm:text-3xl font-bold">Latest Blogs</h2>
-        <Link href="/blogs" className="text-sm font-medium flex items-center">
-          <span className="link-hover py-1 px-2 border-2 border-neutral-500 rounded-xl">
+        <Link
+          href="/blogs"
+          className="group text-sm font-medium flex items-center link-hover py-1 px-2"
+        >
+          <span className="border-b-2 border-neutral-900 dark:border-neutral-200 group-hover:border-neutral-300 dark:group-hover:border-neutral-500">
             View all
           </span>
         </Link>
@@ -60,7 +63,7 @@ export default async function BlogSection() {
                         </div>
                       ))}
                   </div>
-                  <h6 className="px-2 text-sm sm:text-md md:text-xl lg:text-2xl font-bold mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+                  <h6 className="px-2 text-sm sm:text-md md:text-xl lg:text-2xl font-semibold mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                     {blog.title}
                   </h6>
 

@@ -1,19 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Input } from "/components/ui/input";
-import { Textarea } from "/components/ui/textarea";
-import { Button } from "/components/ui/button";
+import { useState, useEffect, useRef } from "react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "/components/ui/select";
-import { Tabs, TabsList, TabsTrigger } from "/components/ui/tabs";
+} from "@/components/ui/select";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { validate } from "/utils/validate";
-import { Alert, AlertTitle } from "/components/ui/alert";
+import { Alert, AlertTitle } from "@/components/ui/alert";
 import { FaCircleExclamation } from "react-icons/fa6";
 import Image from "next/image";
 
@@ -34,13 +34,29 @@ export default function ContactForm({
   const [loading, setLoading] = useState(false);
   const [sentStatus, setSentStatus] = useState(false);
 
+  const nameInputRef = useRef(null);
+  const phoneInputRef = useRef(null);
+  const emailInputRef = useRef(null);
+  const messageInputRef = useRef(null);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const errors = validate(values);
 
     if (errors && Object.keys(errors).length > 0) {
-      return setErrors(errors);
+      // Set errors state and focus on the first input field with an error
+      setErrors(errors);
+      if (errors.name) {
+        nameInputRef.current.focus();
+      } else if (errors.phone) {
+        phoneInputRef.current.focus();
+      } else if (errors.email) {
+        emailInputRef.current.focus();
+      } else if (errors.message) {
+        messageInputRef.current.focus();
+      }
+      return;
     }
 
     setErrors({});
@@ -146,6 +162,7 @@ export default function ContactForm({
         id="name"
         name="name"
         placeholder="Your Name"
+        ref={nameInputRef}
       />
       {errors.name ? (
         <Alert className="py-1 text-red-500 dark:text-red-400">
@@ -178,6 +195,7 @@ export default function ContactForm({
         id="phone"
         name="phone"
         placeholder="Your Phone Number"
+        ref={phoneInputRef}
       />
       {errors.phone ? (
         <Alert className="py-1 text-red-500 dark:text-red-400">
@@ -192,6 +210,7 @@ export default function ContactForm({
         id="email"
         name="email"
         placeholder="Your Email"
+        ref={emailInputRef}
       />
       {errors.email ? (
         <Alert className="py-1 text-red-500 dark:text-red-400">
@@ -243,6 +262,7 @@ export default function ContactForm({
         id="message"
         name="message"
         placeholder="Your message"
+        ref={messageInputRef}
       />
       {errors.message ? (
         <Alert className="py-1 text-red-500 dark:text-red-400">

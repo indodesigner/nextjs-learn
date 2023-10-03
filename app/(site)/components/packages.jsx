@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import urlFor from "./urlFor";
+import urlFor from "@/components/urlFor";
 import { LuImageOff } from "react-icons/lu";
+import { format } from "date-fns";
+import { parseISO } from "date-fns";
 // import { PortableText } from "@portabletext/react";
 // import { RichTextComponents } from "./RichTextComponents";
 // import { Button } from "/components/ui/button";
@@ -21,18 +23,18 @@ export default async function PackagesSection({ heading, packages }) {
           heading == "India" || heading == "Japan" ? (
             <Link
               href={`/countries/${country}`}
-              className="text-sm font-medium flex items-center"
+              className="group text-sm font-medium flex items-center link-hover py-1 px-2"
             >
-              <span className="link-hover py-1 px-2 border-2 border-neutral-500 rounded-xl">
+              <span className="border-b-2 border-neutral-900 dark:border-neutral-200 group-hover:border-neutral-300 dark:group-hover:border-neutral-500">
                 View all
               </span>
             </Link>
           ) : (
             <Link
               href="/packages"
-              className="text-sm font-medium flex items-center"
+              className="group text-sm font-medium flex items-center link-hover py-1 px-2"
             >
-              <span className="link-hover py-1 px-2 border-2 border-neutral-500 rounded-xl">
+              <span className="border-b-2 border-neutral-900 dark:border-neutral-200 group-hover:border-neutral-300 dark:group-hover:border-neutral-500">
                 View all
               </span>
             </Link>
@@ -40,7 +42,7 @@ export default async function PackagesSection({ heading, packages }) {
         ) : null}
       </div>
 
-      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+      <div className="grid grid-cols-1  xs:grid-cols-2 lg:grid-cols-4 gap-2">
         {packagesToDisplay &&
           packagesToDisplay.map((tourPackage) => (
             <Link
@@ -65,9 +67,35 @@ export default async function PackagesSection({ heading, packages }) {
                 </div>
               )}
 
-              <h6 className="px-2 text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h5 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {tourPackage.packageName}
-              </h6>
+              </h5>
+
+              <div className="flex flex-col px-2 mb-3">
+                <div className="flex flex-row place-items-center">
+                  <h5 className="text-xs min-w-[64px] font-light">Departure</h5>
+                  <span className="text-xs px-2 py-1 ms-2 rounded-lg font-medium">
+                    {tourPackage.departureDate ? (
+                      format(
+                        parseISO(tourPackage.departureDate),
+                        "dd MMMM yyyy"
+                      )
+                    ) : (
+                      <h6 className="text-sm">Custom</h6>
+                    )}
+                  </span>
+                </div>
+                <div className="flex flex-row place-items-center">
+                  <h5 className="text-xs min-w-[64px] font-light">Return</h5>
+                  <span className="text-xs px-2 py-1 ms-2 rounded-lg font-medium">
+                    {tourPackage.returnDate ? (
+                      format(parseISO(tourPackage.returnDate), "dd MMMM yyyy")
+                    ) : (
+                      <h6 className="text-sm">Custom</h6>
+                    )}
+                  </span>
+                </div>
+              </div>
 
               {/* rich text component with line clamped to 2 lines */}
               {/* <div className="px-2 mb-2 text-sm line-clamp-2 md:line-clamp-3">
@@ -79,7 +107,7 @@ export default async function PackagesSection({ heading, packages }) {
               {tourPackage.duration ? (
                 <div className="grid grid-cols-2 px-2 mb-2 text-sm end">
                   <span className="bg-neutral-200 dark:bg-neutral-800 rounded-md py-[2px]">
-                    <h6 className="font-semibold grid justify-items-center text-center content-center">
+                    <h6 className="text-xs font-semibold grid justify-items-center text-center content-center">
                       {tourPackage.duration} Days
                     </h6>
                   </span>
@@ -95,7 +123,7 @@ export default async function PackagesSection({ heading, packages }) {
                       Custom duration
                     </h6>
                   </span>
-                  <h6 className="grid justify-items-end content-center">
+                  <h6 className="text-xs grid justify-items-end content-center">
                     Custom rate
                   </h6>
                 </div>

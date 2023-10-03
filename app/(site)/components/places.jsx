@@ -17,16 +17,16 @@ export default async function PlacesSection({ places }) {
         {showViewAllLink && (
           <Link
             href="/places"
-            className="text-sm font-medium flex items-center"
+            className="group text-sm font-medium flex items-center link-hover py-1 px-2"
           >
-            <span className="link-hover py-1 px-2 border-2 border-neutral-500 rounded-xl">
+            <span className="border-b-2 border-neutral-900 dark:border-neutral-200 group-hover:border-neutral-300 dark:group-hover:border-neutral-500">
               View all
             </span>
           </Link>
         )}
       </div>
 
-      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-2">
         {placesToDisplay &&
           placesToDisplay.map((place, index) => (
             <Link
@@ -52,7 +52,7 @@ export default async function PlacesSection({ places }) {
                 </div>
               )}
 
-              <h6 className="px-2 text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h6 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {place.placeName}
               </h6>
 

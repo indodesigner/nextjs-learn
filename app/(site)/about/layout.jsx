@@ -1,4 +1,4 @@
-import GetCountry from "/components/getCountry";
+import GetCountry from "@/components/getCountry";
 
 const Aboutlayout = ({ children }) => {
   return (

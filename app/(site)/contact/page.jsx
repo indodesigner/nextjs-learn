@@ -1,5 +1,5 @@
-import ContactForm from "/components/contactForm";
-import GetCountry from "/components/getCountry";
+import ContactForm from "@/components/contactForm";
+import GetCountry from "@/components/getCountry";
 import { getPackages } from "/sanity/sanity-utils";
 
 export const metadata = {

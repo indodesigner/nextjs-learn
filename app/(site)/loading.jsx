@@ -1,4 +1,4 @@
-import { Skeleton } from "/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 // import Logo from "/public/images/logo.png";
 // import Image from "next/image";
 

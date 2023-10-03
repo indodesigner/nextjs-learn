@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { LuMenu, LuX } from "react-icons/lu";
 import Logo from "/public/images/logo.png";
-import ThemeChanger from "/components/themeSwitcher";
+import ThemeChanger from "@/components/themeSwitcher";
 import { usePathname } from "next/navigation";
 import { useCountry } from "/contexts/countryContext";
 

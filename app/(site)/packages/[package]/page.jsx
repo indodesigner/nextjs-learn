@@ -1,4 +1,4 @@
-import { RichTextComponents } from "/components/RichTextComponents";
+import { RichTextComponents } from "@/components/RichTextComponents";
 import Link from "next/link";
 import { format } from "date-fns";
 import { parseISO } from "date-fns";
@@ -6,8 +6,8 @@ import { getPackage } from "/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 // import urlFor from "/components/urlFor";
 import { BsImageAlt, BsChevronRight } from "react-icons/bs";
-import PackageCarousel from "/components/packageCarousel";
-import GetCountry from "/components/getCountry";
+import PackageCarousel from "@/components/packageCarousel";
+import GetCountry from "@/components/getCountry";
 
 const TourPackage = async ({ params }) => {
   const slug = params.package;

@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import client from "../lib/sanity";
+import client from "/lib/sanity";
 
 export async function getBlogs() {
   return client.fetch(

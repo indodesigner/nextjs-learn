@@ -1,9 +1,9 @@
-import { RichTextComponents } from "/components/RichTextComponents";
+import { RichTextComponents } from "@/components/RichTextComponents";
 import Link from "next/link";
 import { getPlace } from "/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { BsImageAlt, BsChevronRight } from "react-icons/bs";
-import PackageCarousel from "/components/packageCarousel";
+import PackageCarousel from "@/components/packageCarousel";
 
 const Place = async ({ params }) => {
   const slug = params.place;

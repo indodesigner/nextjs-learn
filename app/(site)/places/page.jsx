@@ -1,6 +1,6 @@
 import { getPlaces } from "/sanity/sanity-utils";
-import PlacesTabs from "/components/placesTabs";
-import GetCountry from "/components/getCountry";
+import PlacesTabs from "@/components/placesTabs";
+import GetCountry from "@/components/getCountry";
 
 import {
   Card,
@@ -9,8 +9,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "/components/ui/tabs";
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default async function Places() {
   const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import urlFor from "/components/urlFor";
+import urlFor from "@/components/urlFor";
 import { LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
-import { RichTextComponents } from "/components/RichTextComponents";
+import { RichTextComponents } from "@/components/RichTextComponents";
 import {
   Card,
   CardContent,
@@ -11,7 +11,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "/components/ui/card";
+} from "@/components/ui/card";
 
 export default async function PackagesTabs({ packages, heading }) {
   return (
