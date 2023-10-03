@@ -13,6 +13,8 @@ export default async function PackagesSection({ heading, packages }) {
   const packagesToDisplay = packages.slice(0, 4); // Get the first 4 packages
   const countries = packages[0].country;
 
+  console.log(packagesToDisplay);
+
   const country = countries.map((item) => item.toLowerCase());
 
   return (
@@ -66,6 +68,9 @@ export default async function PackagesSection({ heading, packages }) {
                   </div>
                 </div>
               )}
+
+              {/* {tourPackage.place &&
+                tourPackage.place.map((item) => <p>{item}</p>)} */}
 
               <h5 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {tourPackage.packageName}

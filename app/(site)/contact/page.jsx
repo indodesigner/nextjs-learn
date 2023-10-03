@@ -1,6 +1,7 @@
 import ContactForm from "@/components/contactForm";
 import GetCountry from "@/components/getCountry";
 import { getPackages } from "/sanity/sanity-utils";
+import { FaPhone, FaWhatsapp } from "react-icons/fa6";
 
 export const metadata = {
   title: "Contact page metadata",
@@ -28,7 +29,28 @@ const ContactPage = async () => {
     <div className="container mt-0 md:mt-24">
       <h1 className="text-4xl font-bold my-4">Contact us</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2">
-        <div>content</div>
+        <div>
+          <p className="mb-4">
+            Niko Travels, Hikari Bldg. - Niko Hotels 4th Floor, K.P. Vallon
+            Road, Cochin-20 Kerala, India
+          </p>
+          <a
+            href="tel:+917902867672"
+            className="flex items-center text-xl font-semibold gap-1"
+          >
+            <FaPhone />
+            +91 7902867672
+          </a>
+          <a
+            href="https://wa.me/919207806444"
+            target="_blank"
+            className="flex items-center text-xl font-semibold gap-1"
+          >
+            <FaWhatsapp />
+            +91 9207806444
+          </a>
+        </div>
+
         <div className="flex justify-center">
           <ContactForm
             indianPackDetails={indianPackDetails}

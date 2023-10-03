@@ -25,7 +25,7 @@ const TourPackage = async ({ params }) => {
   const duration = dateDiff / (1000 * 60 * 60 * 24);
 
   return (
-    <div className="container mt-0 md:mt-24">
+    <div className="container mt-0 md:mt-24 pb-8">
       <div className="flex items-center mb-3">
         <Link href="/packages" className="gradient-text">
           Packages
@@ -83,12 +83,18 @@ const TourPackage = async ({ params }) => {
           </div>
         </div>
       </div>
-      <div className="mb-4 px-4">
+      <div className="mb-8 px-4">
         <PortableText
           value={tourPackage.content}
           components={RichTextComponents}
         />
       </div>
+      <Link
+        href="/contact"
+        className="font-medium text-white bg-neutral-950 dark:text-neutral-900 dark:bg-neutral-100 hover:bg-neutral-700 hover:dark:bg-neutral-300 p-2 px-4 ms-4 rounded-xl transition"
+      >
+        Book now
+      </Link>
       <GetCountry country={countryName} />
     </div>
   );
