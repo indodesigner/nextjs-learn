@@ -9,13 +9,13 @@
   }
 
   .text-primary-color {
-    @apply text-indigo-400;
+    @apply text-red-500 dark:text-red-500;
   }
   .bg-primary-color {
-    @apply bg-indigo-400;
+    @apply bg-red-500;
   }
   .bg-primary-color-hover {
-    @apply bg-indigo-600;
+    @apply bg-red-600;
   }
   .gradient-text {
     @apply bg-gradient-to-r from-indigo-400 to-orange-400 bg-clip-text text-transparent;

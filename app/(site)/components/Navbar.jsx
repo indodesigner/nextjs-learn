@@ -15,14 +15,9 @@ const Navbar = () => {
 
   const [isToggled, setToggle] = useState(false);
 
-  const countryLinks = [
-    { href: "/countries/india", name: "India" },
-    { href: "/countries/japan", name: "Japan" },
-  ];
-
   const links = [
-    // { href: "/countries/india", name: "India" },
-    // { href: "/countries/japan", name: "Japan" },
+    { href: "/india", name: "India" },
+    { href: "/japan", name: "Japan" },
     { href: "/packages", name: "Packages" },
     { href: "/places", name: "Destinations" },
     { href: "/blogs", name: "Blogs" },
@@ -108,45 +103,21 @@ const Navbar = () => {
           </Link>
 
           <ul className="flex flex-row bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 ps-[5px] py-[6px] rounded-xl shadow-md">
-            <li>
-              {countryLinks &&
-                countryLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className={`${
-                      path === link.href || country === link.name.toLowerCase()
-                        ? "font-medium py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm"
-                        : "font-normal"
-                    }  link-hover"`}
-                  >
-                    <span
-                      className={`${
-                        path === link.href ||
-                        country === link.name.toLowerCase()
-                          ? "gradient-text"
-                          : "px-4"
-                      } "hover:underline"`}
-                    >
-                      {link.name}
-                    </span>
-                  </a>
-                ))}
-            </li>
-
             {links.map((link, index) => (
               <li key={index}>
                 <Link
                   href={link.href}
                   className={`${
-                    path === link.href
+                    path === link.href || country === link.name.toLowerCase()
                       ? "font-medium py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-lg"
                       : "font-normal"
                   }  link-hover"`}
                 >
                   <span
                     className={`${
-                      path === link.href ? "gradient-text" : "px-4"
+                      path === link.href || country === link.name.toLowerCase()
+                        ? "gradient-text"
+                        : "px-4"
                     } "hover:underline"`}
                   >
                     {link.name}
@@ -164,7 +135,7 @@ const Navbar = () => {
         </header>
       </div>
 
-      {/* ------------------------------------------------------ */}
+      {/* ------------------------mobile nav------------------------------ */}
       <div className="block md:hidden sticky top-0 z-50">
         <div className="py-4 sm:py-6 px-4 md:px-16 bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-70 dark:bg-opacity-30 border-b-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 min-w-full scroll-auto">
           <div className="flex justify-between">
@@ -216,24 +187,6 @@ const Navbar = () => {
                     exit="hidden"
                     variants={navList}
                   >
-                    {countryLinks &&
-                      countryLinks.map((link, index) => (
-                        <a
-                          key={index}
-                          href={link.href}
-                          className="group"
-                          onClick={() => {
-                            closeNavbar();
-                          }}
-                        >
-                          <motion.li
-                            className="nav-item dark:text-white text-2xl font-semibold sm:text-3xl mb-4 ps-2"
-                            variants={navItem}
-                          >
-                            <h6 className="link-hover">{link.name}</h6>
-                          </motion.li>
-                        </a>
-                      ))}
                     {links.map((link, index) => (
                       <Link
                         key={index}

@@ -4,6 +4,7 @@ import { Pagination, Navigation, Autoplay, EffectFade } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import LottieArrow from "/public/lottie/down-arrow.json";
+import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
@@ -85,15 +86,15 @@ const HeroCarousel = ({ slides }) => {
                       <div className="grid grid-cols-2 gap-3">
                         {path == "/"
                           ? links.map((link, index) => (
-                              <a
+                              <Link
                                 key={index}
-                                href={`/countries/${link.href}`}
+                                href={`/${link.href}`}
                                 className="py-2 px-4 sm:py-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
                               >
                                 <h5 className="text-lg font-medium sm:text-xl">
                                   {link.name}
                                 </h5>
-                              </a>
+                              </Link>
                             ))
                           : null}
                       </div>

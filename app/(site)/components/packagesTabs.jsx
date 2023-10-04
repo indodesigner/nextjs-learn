@@ -55,7 +55,7 @@ export default async function PackagesTabs({ packages, heading }) {
                     </div>
                   )}
 
-                  <h6 className="px-2 text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+                  <h6 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                     {pack.packageName}
                   </h6>
 
@@ -67,7 +67,7 @@ export default async function PackagesTabs({ packages, heading }) {
                     />
                   </div> */}
 
-                  {pack.duration ? (
+                  {/* {pack.duration ? (
                     <div className="grid grid-cols-2 px-2 mb-2 text-sm end">
                       <span className="bg-neutral-200 dark:bg-neutral-800 rounded-md py-[2px]">
                         <h6 className="font-semibold grid justify-items-center text-center content-center">
@@ -90,7 +90,7 @@ export default async function PackagesTabs({ packages, heading }) {
                         Custom rate
                       </h6>
                     </div>
-                  )}
+                  )} */}
                 </Link>
               ))}
           </div>

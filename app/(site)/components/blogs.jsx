@@ -9,6 +9,7 @@ import calculateDateTime from "/utils/calculateDateTime";
 
 export default async function BlogSection() {
   const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
+
   return (
     <div>
       <div className="flex justify-between mt-8 mb-4">
@@ -105,7 +106,7 @@ export default async function BlogSection() {
                   <div className="flex gap-1 px-2">
                     {blog.place &&
                       blog.place.map((item) => (
-                        <h6 className="text-xs font-bold text-neutral-500 dark:text-neutral-300 pt-[3px]">
+                        <h6 className="text-xs font-bold text-primary-color pt-[3px]">
                           {item}
                         </h6>
                       ))}

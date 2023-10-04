@@ -13,8 +13,6 @@ export default async function PackagesSection({ heading, packages }) {
   const packagesToDisplay = packages.slice(0, 4); // Get the first 4 packages
   const countries = packages[0].country;
 
-  console.log(packagesToDisplay);
-
   const country = countries.map((item) => item.toLowerCase());
 
   return (
@@ -69,14 +67,18 @@ export default async function PackagesSection({ heading, packages }) {
                 </div>
               )}
 
-              {/* {tourPackage.place &&
-                tourPackage.place.map((item) => <p>{item}</p>)} */}
-
               <h5 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {tourPackage.packageName}
               </h5>
 
-              <div className="flex flex-col px-2 mb-3">
+              <div className="px-2 flex flex-wrap gap-2">
+                {tourPackage.place &&
+                  tourPackage.place.map((item) => (
+                    <h6 className="text-xs text-primary-color">#{item}</h6>
+                  ))}
+              </div>
+
+              {/* <div className="flex flex-col px-2 mb-3">
                 <div className="flex flex-row place-items-center">
                   <h5 className="text-xs min-w-[64px] font-light">Departure</h5>
                   <span className="text-xs px-2 py-1 ms-2 rounded-lg font-medium">
@@ -100,7 +102,7 @@ export default async function PackagesSection({ heading, packages }) {
                     )}
                   </span>
                 </div>
-              </div>
+              </div> */}
 
               {/* rich text component with line clamped to 2 lines */}
               {/* <div className="px-2 mb-2 text-sm line-clamp-2 md:line-clamp-3">
@@ -109,7 +111,7 @@ export default async function PackagesSection({ heading, packages }) {
                   components={RichTextComponents}
                 />
               </div> */}
-              {tourPackage.duration ? (
+              {/* {tourPackage.duration ? (
                 <div className="grid grid-cols-2 px-2 mb-2 text-sm end">
                   <span className="bg-neutral-200 dark:bg-neutral-800 rounded-md py-[2px]">
                     <h6 className="text-xs font-semibold grid justify-items-center text-center content-center">
@@ -132,7 +134,7 @@ export default async function PackagesSection({ heading, packages }) {
                     Custom rate
                   </h6>
                 </div>
-              )}
+              )} */}
             </Link>
           ))}
       </div>

@@ -1,4 +1,5 @@
 import { getSlidesIndia, getPackages, getPlaces } from "/sanity/sanity-utils";
+import GetCountry from "@/components/getCountry";
 import CommonSections from "@/components/commonSections";
 
 export default async function ExploreIndia() {
@@ -46,6 +47,7 @@ export default async function ExploreIndia() {
         places={placesIndian}
         headings={headings}
       />
+      <GetCountry country={null} />
     </div>
   );
 }

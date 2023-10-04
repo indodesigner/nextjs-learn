@@ -32,12 +32,12 @@ export default async function PlacesTabs({ places }) {
               </div>
             )}
 
-            <h6 className="text-sm sm:text-md md:text-lg lg:text-xl font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+            <h6 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
               {place.placeName}
             </h6>
 
             {/* rich text component with line clamped to 3 lines */}
-            <div className="text-sm line-clamp-2 md:line-clamp-3">
+            <div className="px-2 mb-2 text-sm line-clamp-2 md:line-clamp-3">
               <PortableText
                 value={place.content}
                 components={RichTextComponents}

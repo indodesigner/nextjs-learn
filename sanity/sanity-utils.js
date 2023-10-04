@@ -115,7 +115,7 @@ export async function getPackages() {
         departureDate,
         returnDate,
         rate,
-        place,
+        "place":place[]->placeName,
         "country":country[]->name,
         content,
       }`
@@ -138,7 +138,7 @@ export async function getPackage({ slug }) {
         departureDate,
         returnDate,
         rate,
-        place,
+        "place": place[]->placeName,
         "country":country[]->name,
         content,
       }`
