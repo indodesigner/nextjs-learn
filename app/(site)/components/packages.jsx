@@ -74,7 +74,9 @@ export default async function PackagesSection({ heading, packages }) {
               <div className="px-2 flex flex-wrap gap-2">
                 {tourPackage.place &&
                   tourPackage.place.map((item) => (
-                    <h6 className="text-xs text-primary-color">#{item}</h6>
+                    <h6 className="text-xs font-bold text-primary-color">
+                      #{item}
+                    </h6>
                   ))}
               </div>
 
