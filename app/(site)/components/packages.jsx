@@ -18,7 +18,7 @@ export default async function PackagesSection({ heading, packages }) {
   return (
     <div>
       <div className="flex justify-between mt-8 mb-4">
-        <h2 className="text-xl sm:text-3xl font-bold">{heading} Packages</h2>
+        <h4 className="text-xl sm:text-3xl font-bold">{heading} Packages</h4>
         {showViewAllLink ? (
           heading == "India" || heading == "Japan" ? (
             <Link
@@ -67,16 +67,18 @@ export default async function PackagesSection({ heading, packages }) {
                 </div>
               )}
 
-              <h5 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {tourPackage.packageName}
               </h5>
 
-              <div className="px-2 flex flex-wrap gap-2">
+              <div className="px-2 flex flex-wrap gap-1 mb-2">
                 {tourPackage.place &&
                   tourPackage.place.map((item) => (
-                    <h6 className="text-xs font-bold text-primary-color">
-                      #{item}
-                    </h6>
+                    <span className="bg-black dark:bg-neutral-300 px-2 rounded-2xl">
+                      <h6 className="text-xs font-bold text-white dark:text-neutral-900">
+                        {item.toUpperCase()}
+                      </h6>
+                    </span>
                   ))}
               </div>
 

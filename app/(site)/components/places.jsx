@@ -13,7 +13,7 @@ export default async function PlacesSection({ places }) {
   return (
     <div>
       <div className="flex justify-between mt-8 mb-4">
-        <h2 className="text-xl sm:text-3xl font-bold">Destinations</h2>
+        <h4 className="text-xl sm:text-3xl font-bold">Destinations</h4>
         {showViewAllLink && (
           <Link
             href="/places"
@@ -52,7 +52,7 @@ export default async function PlacesSection({ places }) {
                 </div>
               )}
 
-              <h6 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h6 className="px-2 text-sm sm:text-md md:text-lg font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {place.placeName}
               </h6>
 

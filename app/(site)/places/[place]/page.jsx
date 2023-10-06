@@ -32,7 +32,7 @@ const Place = async ({ params }) => {
         </Link>
       </div>
 
-      <h2 className="text-2xl md:text-4xl font-bold mb-2">{place.placeName}</h2>
+      <h3 className="text-2xl md:text-3xl mb-2">{place.placeName}</h3>
 
       {slides && slides.length > 0 ? (
         <PackageCarousel slides={slides} />

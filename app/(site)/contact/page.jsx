@@ -27,7 +27,7 @@ const ContactPage = async () => {
 
   return (
     <div className="container mt-0 md:mt-24">
-      <h1 className="text-4xl font-bold my-4">Contact us</h1>
+      <h3 className="text-3xl my-4">Contact us</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2">
         <div>
           <p className="mb-4">

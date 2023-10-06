@@ -1,19 +1,20 @@
-import { Plus_Jakarta_Sans, Roboto } from "next/font/google";
+import { Bebas_Neue, Onest } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Providers from "@/components/providers";
 import { CountryProvider } from "/contexts/countryContext";
 import Navbar from "@/components/Navbar";
 
-const jakarta = Plus_Jakarta_Sans({
-  weight: ["variable"],
+const display = Bebas_Neue({
+  weight: ["400"],
   subsets: ["latin"],
   variable: "--font-headings",
   display: "swap",
 });
 
-const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
+const primary = Onest({
+  // weight: ["100", "300", "400", "500", "700", "900"],
+  weight: ["variable"],
   subsets: ["latin"],
   variable: "--font-primary",
   display: "swap",
@@ -27,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     // passing font variables to global.css can be accessed there and used
-    <html lang="en" className={`${jakarta.variable} ${roboto.variable}`}>
+    <html lang="en" className={`${display.variable} ${primary.variable}`}>
       {/* main layout page */}
       <body className="bg-neutral-100 dark:bg-neutral-900">
         <Providers>

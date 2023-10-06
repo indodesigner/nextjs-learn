@@ -37,7 +37,7 @@ export default async function Packages() {
 
   return (
     <div className="container mt-0 md:mt-24">
-      <h1 className="text-4xl font-bold my-4">Packages</h1>
+      <h3 className="text-3xl my-4">Packages</h3>
 
       <Tabs defaultValue="india">
         <TabsList className="grid w-full grid-cols-2">

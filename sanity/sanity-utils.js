@@ -138,7 +138,10 @@ export async function getPackage({ slug }) {
         departureDate,
         returnDate,
         rate,
-        "place": place[]->placeName,
+        "place": place[]->{
+          "placeName": placeName,
+          "slug": slug.current
+        },
         "country":country[]->name,
         content,
       }`

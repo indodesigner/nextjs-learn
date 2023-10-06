@@ -13,7 +13,7 @@ export default async function BlogSection() {
   return (
     <div>
       <div className="flex justify-between mt-8 mb-4">
-        <h2 className="text-xl sm:text-3xl font-bold">Latest Blogs</h2>
+        <h4 className="text-xl sm:text-3xl font-bold">Latest Blogs</h4>
         <Link
           href="/blogs"
           className="group text-sm font-medium flex items-center link-hover py-1 px-2"
@@ -58,8 +58,8 @@ export default async function BlogSection() {
                     {blog.place &&
                       blog.place.map((item, index) => (
                         <div key={index}>
-                          <h6 className="text-xs font-bold text-neutral-500 dark:text-neutral-300 pt-[3px]">
-                            {item}
+                          <h6 className="text-[10px] font-bold text-primary-color pt-[3px]">
+                            {item.toUpperCase()}
                           </h6>
                         </div>
                       ))}
@@ -105,9 +105,12 @@ export default async function BlogSection() {
                   )}
                   <div className="flex gap-1 px-2">
                     {blog.place &&
-                      blog.place.map((item) => (
-                        <h6 className="text-xs font-bold text-primary-color pt-[3px]">
-                          {item}
+                      blog.place.map((item, index) => (
+                        <h6
+                          key={index}
+                          className="text-[10px] font-bold text-primary-color pt-[3px]"
+                        >
+                          {item.toUpperCase()}
                         </h6>
                       ))}
                   </div>

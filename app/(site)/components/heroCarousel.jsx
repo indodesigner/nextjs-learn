@@ -50,14 +50,14 @@ const HeroCarousel = ({ slides }) => {
                 className="min-w-screen max-h-[70vh] md:max-h-screen object-cover"
               ></Image>
               <AnimatePresence>
-                <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-70 hover:bg-opacity-80 text-white px-3 transition duration-300">
+                <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">
                   <span className="flex flex-col items-center">
                     <motion.h1
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 0.5 }}
-                      className="text-3xl  sm:text-5xl lg:text-7xl font-bold drop-shadow-md gradient-text py-2 mb-2"
+                      className="text-3xl  sm:text-5xl lg:text-7xl font-bold tracking-wide drop-shadow-md gradient-text py-4 mb-2"
                     >
                       {slide.title}
                     </motion.h1>

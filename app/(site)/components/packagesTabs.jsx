@@ -59,6 +59,16 @@ export default async function PackagesTabs({ packages, heading }) {
                     {pack.packageName}
                   </h6>
 
+                  <div className="px-2 flex flex-wrap gap-1 mb-2">
+                    {pack.place &&
+                      pack.place.map((item, index) => (
+                        <span key={index} className="bg-black px-2 rounded-2xl">
+                          <h6 className="text-xs font-bold text-white">
+                            {item.toUpperCase()}
+                          </h6>
+                        </span>
+                      ))}
+                  </div>
                   {/* rich text component with line clamped to 3 lines */}
                   {/* <div className="text-sm line-clamp-2 md:line-clamp-3">
                     <PortableText
