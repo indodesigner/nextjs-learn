@@ -11,7 +11,7 @@ export const sendEmail = async (response) => {
     message,
   } = response;
 
-  const href = "http://localhost:3000/packages/"; //change this to domain after hosting <<<<<<<important>
+  const href = "https://nikotravels.vercel.app/packages/"; //change this to domain after hosting <<<<<<<important>
 
   const msg = {
     to: "webdesigner@indocosmo.com",
