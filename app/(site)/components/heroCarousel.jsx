@@ -57,7 +57,7 @@ const HeroCarousel = ({ slides }) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 0.5 }}
-                      className="text-3xl  sm:text-5xl lg:text-7xl font-bold tracking-wide drop-shadow-md gradient-text py-4 mb-2"
+                      className="text-3xl  sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-4 mb-2"
                     >
                       {slide.title}
                     </motion.h1>

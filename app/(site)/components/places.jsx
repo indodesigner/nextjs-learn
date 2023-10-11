@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 // import { getPlaces } from "../sanity/sanity-utils";
 import urlFor from "./urlFor";
-import { LuImageOff } from "react-icons/lu";
+import { LuImageOff, LuChevronRight } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "./RichTextComponents";
 
@@ -19,9 +19,8 @@ export default async function PlacesSection({ places }) {
             href="/places"
             className="group text-sm font-medium flex items-center link-hover py-1 px-2"
           >
-            <span className="border-b-2 border-neutral-900 dark:border-neutral-200 group-hover:border-neutral-300 dark:group-hover:border-neutral-500">
-              View all
-            </span>
+            View all
+            <LuChevronRight className="group-hover:text-red-300 transition" />
           </Link>
         )}
       </div>
@@ -57,7 +56,7 @@ export default async function PlacesSection({ places }) {
               </h6>
 
               {/* rich text component with line clamped to 3 lines */}
-              <div className="px-2 mb-2 text-sm line-clamp-2 md:line-clamp-3">
+              <div className="px-2 mb-2 text-neutral-600 dark:text-neutral-100 text-sm line-clamp-2 md:line-clamp-3">
                 <PortableText
                   value={place.content}
                   components={RichTextComponents}

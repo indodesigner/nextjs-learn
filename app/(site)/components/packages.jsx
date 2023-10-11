@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import urlFor from "@/components/urlFor";
-import { LuImageOff } from "react-icons/lu";
+import { LuImageOff, LuChevronRight } from "react-icons/lu";
 import { format } from "date-fns";
 import { parseISO } from "date-fns";
 // import { PortableText } from "@portabletext/react";
@@ -25,18 +25,16 @@ export default async function PackagesSection({ heading, packages }) {
               href={`/countries/${country}`}
               className="group text-sm font-medium flex items-center link-hover py-1 px-2"
             >
-              <span className="border-b-2 border-neutral-900 dark:border-neutral-200 group-hover:border-neutral-300 dark:group-hover:border-neutral-500">
-                View all
-              </span>
+              View all
+              <LuChevronRight className="group-hover:text-red-300 transition" />
             </Link>
           ) : (
             <Link
               href="/packages"
               className="group text-sm font-medium flex items-center link-hover py-1 px-2"
             >
-              <span className="border-b-2 border-neutral-900 dark:border-neutral-200 group-hover:border-neutral-300 dark:group-hover:border-neutral-500">
-                View all
-              </span>
+              View all
+              <LuChevronRight className="group-hover:text-red-300 transition" />
             </Link>
           )
         ) : null}

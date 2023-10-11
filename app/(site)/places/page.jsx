@@ -24,7 +24,7 @@ export default async function Places() {
 
   return (
     <div className="container mt-0 md:mt-24">
-      <h3 className="text-3xl my-4">Destinations</h3>
+      <h3 className="text-3xl font-bold my-4">Destinations</h3>
 
       <Tabs defaultValue="india">
         <TabsList className="grid w-full grid-cols-2">

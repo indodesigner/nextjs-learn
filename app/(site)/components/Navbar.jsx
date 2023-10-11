@@ -127,7 +127,7 @@ const Navbar = () => {
             ))}
 
             <li>
-              <div className="ps-3">
+              <div className="ps-2">
                 <ThemeChanger />
               </div>
             </li>

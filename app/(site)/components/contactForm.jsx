@@ -20,6 +20,7 @@ import Image from "next/image";
 export default function ContactForm({
   indianPackDetails,
   japanesePackDetails,
+  currentPack,
 }) {
   const [values, setValues] = useState({
     name: "",
@@ -61,41 +62,76 @@ export default function ContactForm({
 
     setErrors({});
     setLoading(true);
+    if (currentPack != null) {
+      try {
+        const dataToSend = {
+          name: values.name,
+          countryCode: values.countryCode,
+          phone: values.phone,
+          email: values.email,
+          selectedPackageName: currentPack.packageName,
+          selectedPackageSlug: currentPack.slug,
+          message: values.message,
+        };
 
-    try {
-      const { name, slug } = values.selectedPackage;
-
-      const dataToSend = {
-        name: values.name,
-        countryCode: values.countryCode,
-        phone: values.phone,
-        email: values.email,
-        selectedPackageName: name,
-        selectedPackageSlug: slug,
-        message: values.message,
-      };
-
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(dataToSend),
-      });
-      if (res.ok) {
-        setValues({
-          name: "",
-          countryCode: "",
-          phone: "",
-          email: "",
-          selectedPackage: "",
-          message: "",
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
         });
-        setSentStatus(true);
+        if (res.ok) {
+          setValues({
+            name: "",
+            countryCode: "",
+            phone: "",
+            email: "",
+            selectedPackage: "",
+            message: "",
+          });
+          setSentStatus(true);
+        }
+      } catch (err) {
+        console.log(err);
       }
-    } catch (err) {
-      console.log(err);
+    } else {
+      try {
+        const { name, slug } = values.selectedPackage;
+
+        const dataToSend = {
+          name: values.name,
+          countryCode: values.countryCode,
+          phone: values.phone,
+          email: values.email,
+          selectedPackageName: name,
+          selectedPackageSlug: slug,
+          message: values.message,
+        };
+
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        });
+        if (res.ok) {
+          setValues({
+            name: "",
+            countryCode: "",
+            phone: "",
+            email: "",
+            selectedPackage: "",
+            message: "",
+          });
+          setSentStatus(true);
+        }
+      } catch (err) {
+        console.log(err);
+      }
     }
+
     setLoading(false);
   };
 
@@ -151,7 +187,7 @@ export default function ContactForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-3 w-full sm:w-[350px] bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl shadow-neutral-200 dark:shadow-neutral-900"
+      className="flex flex-col gap-3 w-full sm:w-[350px]"
     >
       <Input
         value={values.name}
@@ -218,44 +254,78 @@ export default function ContactForm({
           <AlertTitle className="text-sm">{errors.email}</AlertTitle>
         </Alert>
       ) : null}
-      <div className="bg-neutral-100 dark:bg-neutral-900 p-2 rounded-xl flex flex-col items-center gap-2">
-        <Tabs defaultValue="india">
-          <TabsList>
-            <TabsTrigger value="india" onClick={() => handleTabChange("india")}>
-              India Packages
-            </TabsTrigger>
-            <TabsTrigger value="japan" onClick={() => handleTabChange("japan")}>
-              Japan Packages
-            </TabsTrigger>
-          </TabsList>
-        </Tabs>
 
-        <Select onValueChange={handleChangePackage}>
-          <SelectTrigger>
-            <SelectValue placeholder="Interested Package" />
-          </SelectTrigger>
-          <SelectContent>
-            {selectedTab === "india" &&
-              indianPackDetails &&
-              indianPackDetails.map((details, index) => (
-                <span key={index}>
-                  <SelectItem value={JSON.stringify(details)}>
-                    {details.name}
-                  </SelectItem>
-                </span>
-              ))}
-            {selectedTab === "japan" &&
-              japanesePackDetails &&
-              japanesePackDetails.map((details, index) => (
-                <span key={index}>
-                  <SelectItem value={JSON.stringify(details)}>
-                    {details.name}
-                  </SelectItem>
-                </span>
-              ))}
-          </SelectContent>
-        </Select>
-      </div>
+      {currentPack != null ? (
+        <div className="bg-neutral-100 dark:bg-neutral-900 p-2 rounded-xl flex flex-col items-center gap-2">
+          <Tabs defaultValue={currentPack.country[0].toLowerCase()}>
+            <TabsList>
+              <TabsTrigger value="india" disabled>
+                India Packages
+              </TabsTrigger>
+              <TabsTrigger value="japan" disabled>
+                Japan Packages
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
+
+          <Select>
+            <SelectTrigger disabled>
+              <SelectValue placeholder={currentPack.packageName} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value={currentPack.packageName}>
+                {currentPack.packageName}
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      ) : (
+        <div className="bg-neutral-100 dark:bg-neutral-900 p-2 rounded-xl flex flex-col items-center gap-2">
+          <Tabs defaultValue="india">
+            <TabsList>
+              <TabsTrigger
+                value="india"
+                onClick={() => handleTabChange("india")}
+              >
+                India Packages
+              </TabsTrigger>
+              <TabsTrigger
+                value="japan"
+                onClick={() => handleTabChange("japan")}
+              >
+                Japan Packages
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
+
+          <Select onValueChange={handleChangePackage}>
+            <SelectTrigger>
+              <SelectValue placeholder="Interested Package" />
+            </SelectTrigger>
+            <SelectContent>
+              {selectedTab === "india" &&
+                indianPackDetails &&
+                indianPackDetails.map((details, index) => (
+                  <span key={index}>
+                    <SelectItem value={JSON.stringify(details)}>
+                      {details.name}
+                    </SelectItem>
+                  </span>
+                ))}
+              {selectedTab === "japan" &&
+                japanesePackDetails &&
+                japanesePackDetails.map((details, index) => (
+                  <span key={index}>
+                    <SelectItem value={JSON.stringify(details)}>
+                      {details.name}
+                    </SelectItem>
+                  </span>
+                ))}
+            </SelectContent>
+          </Select>
+        </div>
+      )}
+
       <Textarea
         value={values.message}
         onChange={handleChange}

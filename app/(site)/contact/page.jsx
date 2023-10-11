@@ -27,7 +27,7 @@ const ContactPage = async () => {
 
   return (
     <div className="container mt-0 md:mt-24">
-      <h3 className="text-3xl my-4">Contact us</h3>
+      <h3 className="text-3xl font-bold my-4">Contact us</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2">
         <div>
           <p className="mb-4">
@@ -52,10 +52,13 @@ const ContactPage = async () => {
         </div>
 
         <div className="flex justify-center">
-          <ContactForm
-            indianPackDetails={indianPackDetails}
-            japanesePackDetails={japanesePackDetails}
-          />
+          <div className=" bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl shadow-neutral-200 dark:shadow-neutral-900">
+            <ContactForm
+              indianPackDetails={indianPackDetails}
+              japanesePackDetails={japanesePackDetails}
+              currentPack={null}
+            />
+          </div>
         </div>
       </div>
       <GetCountry country={null} />

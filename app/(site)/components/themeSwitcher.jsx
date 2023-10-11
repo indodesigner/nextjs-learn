@@ -29,19 +29,19 @@ const ThemeSwitch = () => {
       <div className="group bg-neutral-800 dark:bg-neutral-200 hover:bg-neutral-900 dark:hover:bg-neutral-300 hover:bg-opacity-80 hover:dark:bg-opacity-80 p-1 rounded-2xl  transition">
         {currentTheme === "dark" ? (
           <div
-            className="flex gap-2 cursor-pointer px-2 text-neutral-800"
+            className="flex gap-2 cursor-pointer  text-neutral-800"
             onClick={() => setTheme("light")}
           >
             <LuSun className=" cursor-pointer h-4 w-4 group-hover:scale-90 transition" />
-            <h6 className="text-xs">Go Light</h6>
+            {/* <h6 className="text-xs">Light</h6> */}
           </div>
         ) : (
           <div
-            className="flex gap-2 cursor-pointer px-2 text-neutral-200"
+            className="flex gap-2 cursor-pointer  text-neutral-200"
             onClick={() => setTheme("dark")}
           >
             <LuMoon className="cursor-pointer h-4 w-4 group-hover:scale-90 transition" />
-            <h6 className="text-xs">Go Dark</h6>
+            {/* <h6 className="text-xs">Dark</h6> */}
           </div>
         )}
       </div>

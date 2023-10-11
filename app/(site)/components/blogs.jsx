@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getBlogs } from "/sanity/sanity-utils";
 import urlFor from "./urlFor";
-import { LuImageOff } from "react-icons/lu";
+import { LuImageOff, LuChevronRight } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
 import calculateDateTime from "/utils/calculateDateTime";
@@ -18,9 +18,8 @@ export default async function BlogSection() {
           href="/blogs"
           className="group text-sm font-medium flex items-center link-hover py-1 px-2"
         >
-          <span className="border-b-2 border-neutral-900 dark:border-neutral-200 group-hover:border-neutral-300 dark:group-hover:border-neutral-500">
-            View all
-          </span>
+          View all
+          <LuChevronRight className="group-hover:text-red-300 transition" />
         </Link>
       </div>
 
@@ -69,7 +68,7 @@ export default async function BlogSection() {
                   </h6>
 
                   {/* rich text component with line clamped to 2 lines */}
-                  <div className="px-2 text-sm line-clamp-2 md:line-clamp-6 lg:line-clamp-12">
+                  <div className="px-2 text-neutral-600 dark:text-neutral-100 text-sm line-clamp-2 md:line-clamp-6 lg:line-clamp-12">
                     <PortableText
                       value={blog.content}
                       components={RichTextComponents}
@@ -115,17 +114,17 @@ export default async function BlogSection() {
                       ))}
                   </div>
 
-                  <h6 className="px-2 text-sm sm:text-md font-bold mb-1 line-clamp-2 group-hover:gradient-text">
+                  <h6 className="px-2 text-sm sm:text-md font-bold mb-1 line-clamp-3 group-hover:gradient-text">
                     {blog.title}
                   </h6>
 
                   {/* rich text component with line clamped to 2 lines */}
-                  <div className="px-2 text-xs line-clamp-2">
+                  {/* <div className="px-2 text-xs line-clamp-2">
                     <PortableText
                       value={blog.content}
                       components={RichTextComponents}
                     />
-                  </div>
+                  </div> */}
                   <h6 className="px-2 mb-2 text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
                     {calculateDateTime(blog.releaseDate)}
                   </h6>

@@ -1,20 +1,20 @@
-import { Bebas_Neue, Onest } from "next/font/google";
+import { DM_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Providers from "@/components/providers";
 import { CountryProvider } from "/contexts/countryContext";
 import Navbar from "@/components/Navbar";
 
-const display = Bebas_Neue({
+const display = DM_Sans({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--font-headings",
   display: "swap",
 });
 
-const primary = Onest({
-  // weight: ["100", "300", "400", "500", "700", "900"],
-  weight: ["variable"],
+const primary = Roboto({
+  weight: ["100", "300", "400", "500", "700", "900"],
+  // weight: ["variable"],
   subsets: ["latin"],
   variable: "--font-primary",
   display: "swap",

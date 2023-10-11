@@ -62,8 +62,11 @@ export default async function PackagesTabs({ packages, heading }) {
                   <div className="px-2 flex flex-wrap gap-1 mb-2">
                     {pack.place &&
                       pack.place.map((item, index) => (
-                        <span key={index} className="bg-black px-2 rounded-2xl">
-                          <h6 className="text-xs font-bold text-white">
+                        <span
+                          key={index}
+                          className="bg-black dark:bg-neutral-300 px-2 rounded-2xl"
+                        >
+                          <h6 className="text-xs font-bold text-white dark:text-neutral-900">
                             {item.toUpperCase()}
                           </h6>
                         </span>

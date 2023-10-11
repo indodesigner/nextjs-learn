@@ -20,7 +20,7 @@ const calculateDateTime = (fetchedDate) => {
   const options = {
     // weekday: "long", // or 'short', 'narrow'
     year: "numeric", // or '2-digit'
-    month: "long", // or 'short', 'narrow'
+    month: "short", // or 'short', 'narrow'
     day: "numeric", // or '2-digit'
   };
 
