@@ -1,7 +1,9 @@
 import ContactForm from "@/components/contactForm";
 import GetCountry from "@/components/getCountry";
+import Image from "next/image";
 import { getPackages } from "/sanity/sanity-utils";
-import { FaPhone, FaWhatsapp } from "react-icons/fa6";
+import { FaPhone, FaWhatsapp, FaRegBuilding } from "react-icons/fa6";
+import Illustration from "/public/images/contact-illustration.svg";
 
 export const metadata = {
   title: "Contact page metadata",
@@ -26,43 +28,66 @@ const ContactPage = async () => {
   }));
 
   return (
-    <div className="container mt-0 md:mt-24">
-      <h3 className="text-3xl font-bold my-4">Contact us</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2">
-        <div>
-          <p className="mb-4">
-            Niko Travels, Hikari Bldg. - Niko Hotels 4th Floor, K.P. Vallon
-            Road, Cochin-20 Kerala, India
-          </p>
-          <a
-            href="tel:+917902867672"
-            className="flex items-center text-xl font-semibold gap-1"
-          >
-            <FaPhone />
-            +91 7902867672
-          </a>
-          <a
-            href="https://wa.me/919207806444"
-            target="_blank"
-            className="flex items-center text-xl font-semibold gap-1"
-          >
-            <FaWhatsapp />
-            +91 9207806444
-          </a>
-        </div>
+    <>
+      <div className="container mt-0 md:mt-24">
+        <h3 className="text-3xl font-bold my-4">Contact us</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="flex flex-col justify-center items-center">
+            <div className="p-2">
+              <Image src={Illustration} width={400} height={400}></Image>
+            </div>
 
-        <div className="flex justify-center">
-          <div className=" bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl shadow-neutral-200 dark:shadow-neutral-900">
-            <ContactForm
-              indianPackDetails={indianPackDetails}
-              japanesePackDetails={japanesePackDetails}
-              currentPack={null}
-            />
+            <div className="bg-white dark:bg-neutral-950 px-2 py-1 rounded-lg shadow-lg">
+              <a
+                href="tel:+914842867618"
+                className="flex items-center text-xl font-semibold gap-1 mb-1 p-1 px-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md"
+              >
+                <FaPhone />
+                {/* +91 7902867672 */}
+                +91 4842867618
+              </a>
+              <hr />
+              <a
+                href="tel:+919895058745"
+                className="flex items-center text-xl font-semibold gap-1 my-1 p-1 px-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md"
+              >
+                <FaPhone />
+                +91 9895058745
+              </a>
+              <hr />
+              <a
+                href="https://wa.me/919207806444"
+                target="_blank"
+                className="flex items-center text-xl font-semibold gap-1 mt-1 p-1 px-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md"
+              >
+                <FaWhatsapp />
+                +91 9207806444
+              </a>
+            </div>
+          </div>
+
+          <div className="flex justify-center mb-4">
+            <div className=" bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl shadow-neutral-200 dark:shadow-neutral-900">
+              <ContactForm
+                indianPackDetails={indianPackDetails}
+                japanesePackDetails={japanesePackDetails}
+                currentPack={null}
+              />
+            </div>
           </div>
         </div>
+        <GetCountry country={null} />
       </div>
-      <GetCountry country={null} />
-    </div>
+      <div className="px-8 bg-neutral-900 dark:bg-neutral-800 flex justify-center lg:items-center gap-1 py-2">
+        <div>
+          <FaRegBuilding className="text-white text-2xl lg:text-sm pt-2 lg:py-0" />
+        </div>
+        <p className="text-white">
+          Niko Travels Pvt Ltd (Evergreen Travels), Hikari Bldg. - Niko Hotels
+          4th Floor, K.P. Vallon Road, Cochin-20 Kerala, India
+        </p>
+      </div>
+    </>
   );
 };
 

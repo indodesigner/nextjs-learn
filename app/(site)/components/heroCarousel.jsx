@@ -36,7 +36,8 @@ const HeroCarousel = ({ slides }) => {
           clickable: true,
         }}
         modules={[Pagination, Navigation, Autoplay, EffectFade]}
-        className="mySwiper rounded-xl md:rounded-3xl shadow-xl shadow-neutral-300 dark:shadow-neutral-900"
+        // className="mySwiper rounded-xl md:rounded-3xl shadow-xl shadow-neutral-300 dark:shadow-neutral-900"
+        className="mySwiper rounded-xl md:rounded-3xl"
         // navigation={true}
       >
         {slides.map((slide) => (

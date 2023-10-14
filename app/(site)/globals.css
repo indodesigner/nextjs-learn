@@ -26,14 +26,16 @@
   .btn-primary {
     @apply bg-primary-color px-4 py-1 rounded-2xl hover:bg-primary-color-hover transition duration-200 focus:outline-none focus:ring-2 focus:bg-purple-400 focus:ring-opacity-75;
   }
-  /* .card {
-    @apply backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-opacity-25 bg-white dark:bg-neutral-500 rounded-md border-[1px] border-neutral-400 border-opacity-20  transition duration-300;
-  } */
   .card {
-    @apply backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-opacity-25 bg-white dark:bg-neutral-500 shadow-xl shadow-neutral-200 dark:shadow-neutral-900 rounded-xl transition duration-300;
+    @apply backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-opacity-25 bg-white dark:bg-neutral-500 rounded-xl border-[1px] border-neutral-400 border-opacity-20  transition duration-300;
   }
+
+  /*.....card with shadows.............................. */
+  /* .card {
+    @apply backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-opacity-25 bg-white dark:bg-neutral-500 shadow-xl shadow-neutral-200 dark:shadow-neutral-900 rounded-xl transition duration-300;
+  } */
   .card-hover {
-    @apply hover:shadow-neutral-300 dark:hover:shadow-neutral-950 hover:-translate-y-2 transition;
+    @apply hover:shadow-md hover:shadow-neutral-300 dark:hover:shadow-neutral-950 hover:-translate-y-2 transition;
   }
   .link-hover {
     @apply hover:gradient-text group-hover:gradient-text transition duration-200;

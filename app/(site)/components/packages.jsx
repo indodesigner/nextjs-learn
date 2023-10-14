@@ -65,7 +65,7 @@ export default async function PackagesSection({ heading, packages }) {
                 </div>
               )}
 
-              <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h5 className="px-2 text-sm sm:text-md md:text-lg font-bold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {tourPackage.packageName}
               </h5>
 

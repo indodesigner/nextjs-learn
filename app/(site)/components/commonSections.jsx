@@ -6,7 +6,6 @@ import HeroCarousel from "@/components/heroCarousel";
 import { motion } from "framer-motion";
 
 export default async function CommonSections({
-  slides,
   packages,
   firstSectionPackages,
   secondSectionPackages,
@@ -16,10 +15,6 @@ export default async function CommonSections({
 }) {
   return (
     <div>
-      <section className="p-4 md:px-8 md:py-20 lg:py-[86px] lg:px-16">
-        <HeroCarousel slides={slides} />
-      </section>
-
       {firstSectionPackages != 0 ? (
         <motion.section
           initial={{ opacity: 0, y: 15 }}

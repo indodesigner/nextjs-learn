@@ -1,4 +1,5 @@
 import { getSlides, getPackages, getPlaces } from "/sanity/sanity-utils";
+import SlidesSection from "@/components/slidesSection";
 import CommonSections from "@/components/commonSections";
 
 export default async function HomePage() {
@@ -49,8 +50,9 @@ export default async function HomePage() {
         headings={headings}
       /> */
       }
+      <SlidesSection slides={slides} />
+
       <CommonSections
-        slides={slides}
         packages={packagesWithDuration}
         firstSectionPackages={indianPackages}
         secondSectionPackages={japanesePackages}
