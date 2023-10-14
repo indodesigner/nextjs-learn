@@ -19,8 +19,6 @@ export default async function Blogs() {
   try {
     // Use Promise.race to wait for the getBlogs promise or the timeout promise
     const blogs = await Promise.race([getBlogs(), timeoutPromise]);
-
-    // const blogs = await getBlogs(); //fetch blogs from sanity query can be fount in (sanity/sanity-utils.js)
     return (
       <div className="container mt-0 md:mt-24">
         <h3 className="text-3xl font-bold my-4">Blogs</h3>
@@ -55,11 +53,11 @@ export default async function Blogs() {
                     </div>
 
                     <div className="px-2 basis-3/5 sm:basis-4/5">
-                      <div className="flex justify-between">
+                      <div className="flex flex-col-reverse sm:flex sm:flex-row justify-between">
                         <h5 className="text-sm sm:text-md md:text-lg font-bold mb-2 line-clamp-3 group-hover:gradient-text">
                           {blog.title}
                         </h5>
-                        <h6 className="text-[10px] font-bold min-w-[80px] pt-1 text-right">
+                        <h6 className="text-[10px] font-bold min-w-[80px] pt-1 sm:text-right">
                           {calculateDateTime(blog.releaseDate)}
                         </h6>
                       </div>
@@ -73,10 +71,12 @@ export default async function Blogs() {
 
                       {/* grid to display blog categries inside blogs list */}
                       <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-2">
-                        {blog.categories &&
-                          blog.categories.map((categ, index) => (
+                        {blog.place &&
+                          blog.place.map((place, index) => (
                             <span key={index} className="min-w-max">
-                              <h6 className="text-xs font-bold">#{categ}</h6>
+                              <h6 className="text-xs font-bold text-red-500">
+                                #{place}
+                              </h6>
                             </span>
                           ))}
                       </div>

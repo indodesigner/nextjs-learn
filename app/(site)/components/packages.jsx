@@ -54,13 +54,13 @@ export default async function PackagesSection({ heading, packages }) {
                   width={800}
                   height={500}
                   alt={tourPackage.alt}
-                  className="object-cover h-32 md:h-32 rounded-md"
+                  className="object-cover h-40 lg:h-32 rounded-md"
                 ></Image>
               ) : (
                 // else part for no blog image
                 <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
                   <div>
-                    <LuImageOff className="w-16 h-32 md:h-32 text-neutral-300 dark:text-neutral-500" />
+                    <LuImageOff className="w-16 h-40 lg:h-32 text-neutral-300 dark:text-neutral-500" />
                   </div>
                 </div>
               )}
