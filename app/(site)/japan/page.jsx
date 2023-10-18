@@ -45,22 +45,20 @@ export default async function ExploreJapan() {
       <SlidesSection slides={slidesJapan} />
       <section className="container">
         <h4 className="text-3xl font-bold mb-4">About Japan</h4>
-        <div className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-4 bg-neutral-200 py-2 px-4 rounded-2xl">
+        <div className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-4 bg-neutral-200 dark:bg-neutral-800 py-2 px-4 rounded-2xl">
           <Image src={JapanMapImage} width={500} height={400}></Image>
           <p className="text-sm">
-            Welcome to India's enchanting paradise, Kerala, where nature's
-            poetry unfolds in every corner. Nestled in the embrace of the
-            Western Ghats, this coastal gem is a tapestry of lush landscapes and
-            cultural richness. Glide through the serene backwaters of Alleppey
-            on traditional houseboats, where palm-fringed canals whisper tales
-            of tranquility. Discover the spice-scented hills of Munnar, a haven
-            for tea plantations and mist-kissed vistas. Immerse yourself in the
-            vibrant hues of Kathakali dance and rejuvenate with Ayurvedic
-            traditions. Kerala's cuisine, steeped in coconut and spices, invites
-            a gastronomic journey. From the tranquil beaches of Kovalam to the
-            vibrant markets of Kochi, Kerala beckons with an immersive blend of
-            nature, culture, and serenity. Your escape to this South Indian
-            haven begins here.
+            Discover the captivating allure of Japan, a land where ancient
+            traditions harmonize with cutting-edge modernity. Immerse yourself
+            in the vibrant tapestry of cherry blossoms, historic temples, and
+            futuristic cities. Traverse Tokyo's bustling streets, where neon
+            lights and traditional markets coexist seamlessly. Experience the
+            serenity of Kyoto's iconic bamboo forests and timeless tea
+            ceremonies. Indulge in culinary delights, from sushi masterpieces to
+            savory ramen. Explore the cultural richness of Hiroshima's Peace
+            Memorial Park and the majestic Mount Fuji. Japan, a fusion of past
+            and present, beckons you to embark on a journey of unparalleled
+            beauty, innovation, and cultural enchantment.
           </p>
         </div>
       </section>
