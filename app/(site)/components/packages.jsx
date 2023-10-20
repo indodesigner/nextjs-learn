@@ -8,17 +8,18 @@ import { parseISO } from "date-fns";
 // import { RichTextComponents } from "./RichTextComponents";
 // import { Button } from "/components/ui/button";
 
-export default async function PackagesSection({ heading, packages }) {
+export default async function PackagesSection({ heading, packages, language }) {
   const showViewAllLink = packages.length > 4;
   const packagesToDisplay = packages.slice(0, 4); // Get the first 4 packages
   const countries = packages[0].country;
-
   const country = countries.map((item) => item.toLowerCase());
 
   return (
     <div>
       <div className="flex justify-between mt-8 mb-4">
-        <h4 className="text-xl sm:text-3xl font-bold">{heading} Packages</h4>
+        <h4 className="text-xl sm:text-2xl font-bold">
+          {heading} {language === "english" ? "Packages" : "パッケージ"}
+        </h4>
         {showViewAllLink ? (
           heading == "India" || heading == "Japan" ? (
             <Link
@@ -65,8 +66,10 @@ export default async function PackagesSection({ heading, packages }) {
                 </div>
               )}
 
-              <h5 className="px-2 text-sm sm:text-md md:text-lg font-bold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
-                {tourPackage.packageName}
+              <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
+                {language === "english"
+                  ? tourPackage.packageName
+                  : tourPackage.packageNamejp}
               </h5>
 
               <div className="px-2 flex flex-wrap gap-1 mb-2">

@@ -34,7 +34,8 @@ export default async function ExploreJapan() {
     return pack.category && pack.category.includes("Business");
   });
 
-  const headings = ["Trending", "Popular", "Business", "All"];
+  // const headings = ["Trending", "Popular", "Business", "All"];
+  // const headingsJp = ["インド", "日本", "仕事", "全て"];
 
   const placesJapan = places.filter((pack) => {
     return pack.country && pack.country.includes("Japan");
@@ -68,7 +69,6 @@ export default async function ExploreJapan() {
         secondSectionPackages={popularPackages}
         businessPackages={businessPackages}
         places={placesJapan}
-        headings={headings}
       />
       <GetCountry country={null} />
     </div>

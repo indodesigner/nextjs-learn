@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Providers from "@/components/providers";
 import { CountryProvider } from "/contexts/countryContext";
+import { LanguageProvider } from "/contexts/languageContext";
 import Navbar from "@/components/Navbar";
 
 const display = DM_Sans({
@@ -32,13 +33,15 @@ export default function RootLayout({ children }) {
       {/* main layout page */}
       <body className="bg-neutral-100 dark:bg-neutral-900">
         <Providers>
-          <CountryProvider>
-            <Navbar />
-            <main className="min-h-[84vh] sm:min-h-[80vh] md:min-h-[78vh]">
-              {children}
-            </main>
-            <Footer />
-          </CountryProvider>
+          <LanguageProvider>
+            <CountryProvider>
+              <Navbar />
+              <main className="min-h-[84vh] sm:min-h-[80vh] md:min-h-[78vh]">
+                {children}
+              </main>
+              <Footer />
+            </CountryProvider>
+          </LanguageProvider>
         </Providers>
       </body>
     </html>

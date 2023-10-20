@@ -38,7 +38,9 @@ export async function getSlides() {
     groq`*[_type == "slide"] | order(releaseDate asc){
         _id,
         title,
+        titlejp,
         caption,
+        captionjp,
         "slideImage": slideImage.asset->url,
         "alt": slideImage.alt,
       }`
@@ -50,7 +52,9 @@ export async function getSlidesIndia() {
     groq`*[_type == "slideIndia"] | order(releaseDate asc){
         _id,
         title,
+        titlejp,
         caption,
+        captionjp,
         "slideImage": slideImage.asset->url,
         "alt": slideImage.alt,
       }`
@@ -62,7 +66,9 @@ export async function getSlidesJapan() {
     groq`*[_type == "slideJapan"] | order(releaseDate asc){
         _id,
         title,
+        titlejp,
         caption,
+        captionjp,
         "slideImage": slideImage.asset->url,
         "alt": slideImage.alt,
       }`
@@ -107,6 +113,7 @@ export async function getPackages() {
     groq`*[_type == "tourPackage"] | order(createdAt desc){
         _id,
         packageName,
+        packageNamejp,
         "slug": slug.current,
         packageImages[0]{asset->{url}},
         "alt": coalesce(packageImages[0].alt, "Image of the tour package"),
@@ -118,6 +125,7 @@ export async function getPackages() {
         "place":place[]->placeName,
         "country":country[]->name,
         content,
+        contentjp,
       }`
   );
 }
@@ -127,6 +135,7 @@ export async function getPackage({ slug }) {
     groq`*[_type == "tourPackage" && slug.current == "${slug}"][0] {
         _id,
         packageName,
+        packageNamejp,
         "slug": slug.current,
         packageImages[] {
           asset->{
@@ -144,6 +153,7 @@ export async function getPackage({ slug }) {
         },
         "country":country[]->name,
         content,
+        contentjp,
       }`
   );
 }

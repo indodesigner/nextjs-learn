@@ -9,9 +9,19 @@ export default {
       title: "Title",
     },
     {
+      name: "titlejp",
+      type: "string",
+      title: "Title - Japanese",
+    },
+    {
       name: "caption",
       type: "string",
       title: "Caption",
+    },
+    {
+      name: "captionjp",
+      type: "string",
+      title: "Caption - Japanese",
     },
     {
       title: "Slide Image",

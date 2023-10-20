@@ -2,8 +2,8 @@
 import BlogSection from "@/components/blogs";
 import PlacesSection from "@/components/places";
 import PackagesSection from "@/components/packages";
-import HeroCarousel from "@/components/heroCarousel";
 import { motion } from "framer-motion";
+import { useLanguage } from "/contexts/languageContext";
 
 export default async function CommonSections({
   packages,
@@ -11,8 +11,11 @@ export default async function CommonSections({
   secondSectionPackages,
   businessPackages,
   places,
-  headings,
 }) {
+  const { language } = useLanguage();
+  const headings = ["Trending", "Popular", "Business", "All"];
+  const headingsJp = ["インド", "日本", "仕事", "全て"];
+
   return (
     <div>
       {firstSectionPackages != 0 ? (
@@ -26,7 +29,8 @@ export default async function CommonSections({
         >
           <PackagesSection
             packages={firstSectionPackages}
-            heading={headings[0]}
+            heading={language === "english" ? headings[0] : headingsJp[0]}
+            language={language}
           />
         </motion.section>
       ) : null}
@@ -40,7 +44,8 @@ export default async function CommonSections({
         >
           <PackagesSection
             packages={secondSectionPackages}
-            heading={headings[1]}
+            heading={language === "english" ? headings[1] : headingsJp[1]}
+            language={language}
           />
         </motion.section>
       ) : null}
@@ -53,7 +58,11 @@ export default async function CommonSections({
           transition={{ delay: 0.5 }}
           className="container"
         >
-          <PackagesSection packages={businessPackages} heading={headings[2]} />
+          <PackagesSection
+            packages={businessPackages}
+            heading={language === "english" ? headings[2] : headingsJp[2]}
+            language={language}
+          />
         </motion.section>
       ) : null}
       <motion.section
@@ -63,7 +72,11 @@ export default async function CommonSections({
         transition={{ delay: 0.5 }}
         className="container"
       >
-        <PackagesSection packages={packages} heading={headings[3]} />
+        <PackagesSection
+          packages={packages}
+          heading={language === "english" ? headings[3] : headingsJp[3]}
+          language={language}
+        />
       </motion.section>
       <motion.section
         initial={{ opacity: 0, y: 15 }}

@@ -9,6 +9,11 @@ export default {
       title: "Package Name",
     },
     {
+      name: "packageNamejp",
+      type: "string",
+      title: "Package Name - Japanese",
+    },
+    {
       name: "slug",
       type: "slug",
       title: "Slug",
@@ -109,6 +114,12 @@ export default {
     {
       name: "content",
       title: "Content",
+      type: "array",
+      of: [{ type: "block" }, { type: "image" }],
+    },
+    {
+      name: "contentjp",
+      title: "Content - Japanese",
       type: "array",
       of: [{ type: "block" }, { type: "image" }],
     },

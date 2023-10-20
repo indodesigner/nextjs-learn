@@ -33,7 +33,8 @@ export default async function ExploreIndia() {
     return pack.category && pack.category.includes("Business");
   });
 
-  const headings = ["Trending", "Popular", "Business", "All"];
+  // const headings = ["Trending", "Popular", "Business", "All"];
+  // const headingsJp = ["インド", "日本", "仕事", "全て"];
 
   const placesIndian = places.filter((pack) => {
     return pack.country && pack.country.includes("India");
@@ -69,7 +70,6 @@ export default async function ExploreIndia() {
         secondSectionPackages={popularPackages}
         businessPackages={businessPackages}
         places={placesIndian}
-        headings={headings}
       />
       <GetCountry country={null} />
     </div>

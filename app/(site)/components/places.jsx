@@ -13,7 +13,7 @@ export default async function PlacesSection({ places }) {
   return (
     <div>
       <div className="flex justify-between mt-8 mb-4">
-        <h4 className="text-xl sm:text-3xl font-bold">Destinations</h4>
+        <h4 className="text-xl sm:text-2xl font-bold">Destinations</h4>
         {showViewAllLink && (
           <Link
             href="/places"

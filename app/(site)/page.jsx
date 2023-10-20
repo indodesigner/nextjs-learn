@@ -1,6 +1,7 @@
 import { getSlides, getPackages, getPlaces } from "/sanity/sanity-utils";
 import SlidesSection from "@/components/slidesSection";
 import CommonSections from "@/components/commonSections";
+// import GetLanguage from "@/components/getLanguage";
 
 export default async function HomePage() {
   const slides = await getSlides();
@@ -35,8 +36,8 @@ export default async function HomePage() {
     return pack.category && pack.category.includes("Business");
   });
 
-  const headings = ["India", "Japan", "Business", "All"];
-
+  // const headings = ["India", "Japan", "Business", "All"];
+  // const headingsJp = ["インド", "日本", "仕事", "全て"];
   return (
     <div>
       {
@@ -51,14 +52,13 @@ export default async function HomePage() {
       /> */
       }
       <SlidesSection slides={slides} />
-
+      {/* <GetLanguage /> */}
       <CommonSections
         packages={packagesWithDuration}
         firstSectionPackages={indianPackages}
         secondSectionPackages={japanesePackages}
         businessPackages={businessPackages}
         places={places}
-        headings={headings}
       />
     </div>
   );

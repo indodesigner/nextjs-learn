@@ -7,6 +7,7 @@ import LottieArrow from "/public/lottie/down-arrow.json";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "/contexts/languageContext";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,6 +17,7 @@ import "swiper/css/effect-fade";
 
 const HeroCarousel = ({ slides }) => {
   const path = usePathname();
+  const { language } = useLanguage();
 
   const links = [
     { href: "india", name: "India" },
@@ -60,7 +62,7 @@ const HeroCarousel = ({ slides }) => {
                       transition={{ delay: 0.5 }}
                       className="text-3xl  sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-4 mb-2"
                     >
-                      {slide.title}
+                      {language === "english" ? slide.title : slide.titlejp}
                     </motion.h1>
                     <motion.span
                       initial={{ opacity: 0, y: 20 }}
@@ -76,7 +78,7 @@ const HeroCarousel = ({ slides }) => {
                       transition={{ delay: 1 }}
                       className="mb-4 text-xs sm:text-sm md:text-md lg:text-lg font-light w-[100%] sm:max-w-[80%] md:max-w-[60%] md:block hidden"
                     >
-                      {slide.caption}
+                      {language === "english" ? slide.caption : slide.captionjp}
                     </motion.p>
                     <motion.span
                       initial={{ opacity: 0, y: 20 }}

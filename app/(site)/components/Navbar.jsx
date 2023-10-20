@@ -3,17 +3,19 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { LuMenu, LuX } from "react-icons/lu";
+import { LuMenu, LuX, LuLanguages } from "react-icons/lu";
 import Logo from "/public/images/logo.png";
 import ThemeChanger from "@/components/themeSwitcher";
 import { usePathname } from "next/navigation";
 import { useCountry } from "/contexts/countryContext";
+import { useLanguage } from "/contexts/languageContext";
 
 const Navbar = () => {
   const path = usePathname();
   const { country } = useCountry();
 
   const [isToggled, setToggle] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
 
   const links = [
     { href: "/india", name: "India" },
@@ -127,7 +129,19 @@ const Navbar = () => {
             ))}
 
             <li>
-              <div className="ps-2">
+              <div>
+                <button
+                  onClick={toggleLanguage}
+                  className="flex items-center px-3 gap-2 bg-neutral-200 dark:bg-neutral-700 rounded-md"
+                >
+                  <LuLanguages />
+                  <h6>{language === "english" ? "JP" : "EN"}</h6>
+                </button>
+              </div>
+            </li>
+
+            <li>
+              <div className="ps-3">
                 <ThemeChanger />
               </div>
             </li>

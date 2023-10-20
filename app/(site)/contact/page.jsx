@@ -34,7 +34,12 @@ const ContactPage = async () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           <div className="flex flex-col justify-center items-center">
             <div className="p-2 relative">
-              <Image src={Illustration} width={400} height={400}></Image>
+              <Image
+                src={Illustration}
+                width={400}
+                height={400}
+                alt="Contact Us Illustration"
+              ></Image>
               <div className="bg-white dark:bg-neutral-800 px-2 py-1 rounded-lg shadow-lg absolute top-0 right-0">
                 <a
                   href="tel:+914842867618"
