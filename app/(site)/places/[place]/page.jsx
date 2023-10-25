@@ -1,9 +1,9 @@
-import { RichTextComponents } from "@/components/RichTextComponents";
+import { RichTextComponents } from "/utils/RichTextComponents";
 import Link from "next/link";
 import { getPlace } from "/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import { BsImageAlt, BsChevronRight } from "react-icons/bs";
-import PackageCarousel from "@/components/packageCarousel";
+import CommonCarousel from "@/components/commonCarousel";
 
 const Place = async ({ params }) => {
   const slug = params.place;
@@ -35,7 +35,7 @@ const Place = async ({ params }) => {
       <h3 className="text-2xl md:text-3xl font-bold mb-2">{place.placeName}</h3>
 
       {slides && slides.length > 0 ? (
-        <PackageCarousel slides={slides} />
+        <CommonCarousel slides={slides} />
       ) : (
         <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
           <div className="flex justify-center my-8">

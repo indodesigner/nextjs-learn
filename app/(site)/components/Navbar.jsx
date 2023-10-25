@@ -1,30 +1,31 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { LuMenu, LuX, LuLanguages } from "react-icons/lu";
+import { LuMenu, LuX } from "react-icons/lu";
 import Logo from "/public/images/logo.png";
 import ThemeChanger from "@/components/themeSwitcher";
 import { usePathname } from "next/navigation";
 import { useCountry } from "/contexts/countryContext";
 import { useLanguage } from "/contexts/languageContext";
+import SwitchLanguage from "@/components/switchLanguage";
 
 const Navbar = () => {
   const path = usePathname();
   const { country } = useCountry();
+  const { language } = useLanguage();
 
   const [isToggled, setToggle] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
 
   const links = [
-    { href: "/india", name: "India" },
-    { href: "/japan", name: "Japan" },
-    { href: "/packages", name: "Packages" },
-    { href: "/places", name: "Destinations" },
-    { href: "/blogs", name: "Blogs" },
-    { href: "/about", name: "About" },
-    { href: "/contact", name: "Contact" },
+    { href: "/india", name: "India", namejp: "インド" },
+    { href: "/japan", name: "Japan", namejp: "日本" },
+    { href: "/packages", name: "Packages", namejp: "パッケージ" },
+    { href: "/places", name: "Destinations", namejp: "目的地" },
+    { href: "/blogs", name: "Blogs", namejp: "ブログ" },
+    { href: "/about", name: "About", namejp: "について" },
+    { href: "/contact", name: "Contact", namejp: "接触" },
   ];
 
   const closeNavbar = () => {
@@ -122,21 +123,15 @@ const Navbar = () => {
                         : "px-4"
                     } "hover:underline"`}
                   >
-                    {link.name}
+                    {language === "english" ? link.name : link.namejp}
                   </span>
                 </Link>
               </li>
             ))}
 
             <li>
-              <div>
-                <button
-                  onClick={toggleLanguage}
-                  className="flex items-center px-3 gap-2 bg-neutral-200 dark:bg-neutral-700 rounded-md"
-                >
-                  <LuLanguages />
-                  <h6>{language === "english" ? "JP" : "EN"}</h6>
-                </button>
+              <div className="px-2">
+                <SwitchLanguage />
               </div>
             </li>
 
@@ -214,13 +209,21 @@ const Navbar = () => {
                           className="nav-item dark:text-white text-2xl font-semibold sm:text-3xl mb-4 ps-2"
                           variants={navItem}
                         >
-                          <h6 className="link-hover">{link.name}</h6>
+                          <h6 className="link-hover">
+                            {language === "english" ? link.name : link.namejp}
+                          </h6>
                         </motion.li>
                       </Link>
                     ))}
-
                     <motion.li
                       className="nav-item dark:text-white text-2xl sm:text-3xl mt-8"
+                      variants={navItem}
+                    >
+                      <SwitchLanguage />
+                    </motion.li>
+
+                    <motion.li
+                      className="nav-item dark:text-white text-2xl sm:text-3xl mt-8 ps-2"
                       variants={navItem}
                     >
                       <ThemeChanger />

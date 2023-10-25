@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import urlFor from "./urlFor";
+import urlFor from "/utils/urlFor";
 
 export const RichTextComponents = {
   types: {

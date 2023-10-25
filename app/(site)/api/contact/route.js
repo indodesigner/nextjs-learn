@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { sendEmail } from "@/components/sendMail";
+import { sendEmail } from "/utils/sendMail";
 
 export async function POST(request) {
   const response = await request.json();

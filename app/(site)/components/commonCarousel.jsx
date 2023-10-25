@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-const PackageCarousel = ({ slides }) => {
+const CommonCarousel = ({ slides }) => {
   return (
     <div>
       <Swiper
@@ -43,4 +43,4 @@ const PackageCarousel = ({ slides }) => {
   );
 };
 
-export default PackageCarousel;
+export default CommonCarousel;

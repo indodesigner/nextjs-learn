@@ -1,5 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import { validate } from "/utils/validate";
+import { FaCircleExclamation } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -11,11 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import { validate } from "/utils/validate";
 import { Alert, AlertTitle } from "@/components/ui/alert";
-import { FaCircleExclamation } from "react-icons/fa6";
-import Image from "next/image";
 
 export default function ContactForm({
   indianPackDetails,

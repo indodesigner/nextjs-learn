@@ -1,8 +1,6 @@
+import PackagesTabs from "@/components/packages/packagesTabs";
 import { getPackages } from "/sanity/sanity-utils";
-import PackagesTabs from "@/components/packagesTabs";
 import GetCountry from "@/components/getCountry";
-
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default async function Packages() {
   const packages = await getPackages(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
@@ -37,48 +35,14 @@ export default async function Packages() {
 
   return (
     <div className="container mt-0 md:mt-24">
-      <h3 className="text-3xl font-bold my-4">Packages</h3>
-
-      <Tabs defaultValue="india">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="india">India</TabsTrigger>
-          <TabsTrigger value="japan">Japan</TabsTrigger>
-        </TabsList>
-        <TabsContent value="india" className="flex flex-col gap-2">
-          {trendingIndia != 0 ? (
-            <PackagesTabs
-              packages={trendingIndia}
-              heading={trendingIndia[0].packageFilter}
-            />
-          ) : null}
-          {popularIndia != 0 ? (
-            <PackagesTabs
-              packages={popularIndia}
-              heading={popularIndia[0].packageFilter}
-            />
-          ) : null}
-          {indianPacks != 0 ? (
-            <PackagesTabs packages={indianPacks} heading={"All"} />
-          ) : null}
-        </TabsContent>
-        <TabsContent value="japan" className="flex flex-col gap-2">
-          {trendingJapan != 0 ? (
-            <PackagesTabs
-              packages={trendingJapan}
-              heading={trendingJapan[0].packageFilter}
-            />
-          ) : null}
-          {popularJapan != 0 ? (
-            <PackagesTabs
-              packages={popularJapan}
-              heading={popularJapan[0].packageFilter}
-            />
-          ) : null}
-          {japanesePacks != 0 ? (
-            <PackagesTabs packages={japanesePacks} heading={"All"} />
-          ) : null}
-        </TabsContent>
-      </Tabs>
+      <PackagesTabs
+        indianPacks={indianPacks}
+        japanesePacks={japanesePacks}
+        trendingIndia={trendingIndia}
+        trendingJapan={trendingJapan}
+        popularIndia={popularIndia}
+        popularJapan={popularJapan}
+      />
       <GetCountry country={null} />
     </div>
   );

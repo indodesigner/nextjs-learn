@@ -1,9 +1,9 @@
-import { RichTextComponents } from "@/components/RichTextComponents";
+import { RichTextComponents } from "/utils/RichTextComponents";
 import Link from "next/link";
 import Image from "next/image";
 import { getBlog } from "/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
-import urlFor from "@/components/urlFor";
+import urlFor from "/utils/urlFor";
 import { BsImageAlt, BsChevronRight } from "react-icons/bs";
 import calculateDateTime from "/utils/calculateDateTime";
 

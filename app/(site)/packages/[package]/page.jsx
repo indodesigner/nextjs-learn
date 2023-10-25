@@ -1,10 +1,10 @@
-// import { RichTextComponents } from "@/components/RichTextComponents";
+// import { RichTextComponents } from "/utils/RichTextComponents";
 // import Link from "next/link";
 // import { format } from "date-fns";
 // import { parseISO } from "date-fns";
 import { getPackage, getPackages } from "/sanity/sanity-utils";
 // import { PortableText } from "@portabletext/react";
-// import urlFor from "/components/urlFor";
+// import urlFor from "/utils/urlFor";
 import { BsXLg } from "react-icons/bs";
 // import PackageCarousel from "@/components/packageCarousel";
 import GetCountry from "@/components/getCountry";

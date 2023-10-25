@@ -1,7 +1,7 @@
 "use client";
 import BlogSection from "@/components/blogs";
-import PlacesSection from "@/components/places";
-import PackagesSection from "@/components/packages";
+import PlacesSection from "@/components/destinations/places";
+import PackagesSection from "@/components/packages/packages";
 import { motion } from "framer-motion";
 import { useLanguage } from "/contexts/languageContext";
 

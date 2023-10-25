@@ -1,10 +1,10 @@
 import { getBlogs } from "/sanity/sanity-utils";
 import Link from "next/link";
 import Image from "next/image";
-import urlFor from "@/components/urlFor";
+import urlFor from "/utils/urlFor";
 import { LuFrown, LuImageOff } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
-import { RichTextComponents } from "@/components/RichTextComponents";
+import { RichTextComponents } from "/utils/RichTextComponents";
 import calculateDateTime from "/utils/calculateDateTime";
 import GetCountry from "@/components/getCountry";
 

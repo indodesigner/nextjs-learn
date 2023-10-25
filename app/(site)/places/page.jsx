@@ -1,5 +1,5 @@
 import { getPlaces } from "/sanity/sanity-utils";
-import PlacesTabs from "@/components/placesTabs";
+import PlacesTabs from "@/components/destinations/placesTabs";
 import GetCountry from "@/components/getCountry";
 
 import {

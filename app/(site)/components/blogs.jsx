@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getBlogs } from "/sanity/sanity-utils";
-import urlFor from "./urlFor";
+import urlFor from "/utils/urlFor";
 import { LuImageOff, LuChevronRight } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
-import { RichTextComponents } from "@/components/RichTextComponents";
+import { RichTextComponents } from "/utils/RichTextComponents";
 import calculateDateTime from "/utils/calculateDateTime";
 
 export default async function BlogSection() {

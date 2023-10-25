@@ -31,17 +31,17 @@ export default function RootLayout({ children }) {
     // passing font variables to global.css can be accessed there and used
     <html lang="en" className={`${display.variable} ${primary.variable}`}>
       {/* main layout page */}
-      <body className="bg-neutral-100 dark:bg-neutral-900">
+      <body className="bg-neutral-50 dark:bg-neutral-900">
         <Providers>
-          <LanguageProvider>
-            <CountryProvider>
+          <CountryProvider>
+            <LanguageProvider>
               <Navbar />
               <main className="min-h-[84vh] sm:min-h-[80vh] md:min-h-[78vh]">
                 {children}
               </main>
               <Footer />
-            </CountryProvider>
-          </LanguageProvider>
+            </LanguageProvider>
+          </CountryProvider>
         </Providers>
       </body>
     </html>

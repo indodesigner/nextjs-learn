@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import { RichTextComponents } from "@/components/RichTextComponents";
+import { RichTextComponents } from "/utils/RichTextComponents";
 import Link from "next/link";
 // import { format } from "date-fns";
 // import { parseISO } from "date-fns";
 import { PortableText } from "@portabletext/react";
 // import urlFor from "/components/urlFor";
 import { BsChevronRight } from "react-icons/bs";
-import PackageCarousel from "@/components/packageCarousel";
+import CommonCarousel from "@/components/commonCarousel";
 import { useLanguage } from "/contexts/languageContext";
 
 const packageContent = ({ countryName, slides, tourPackage }) => {
@@ -36,7 +36,7 @@ const packageContent = ({ countryName, slides, tourPackage }) => {
           : tourPackage.packageNamejp}
       </h3>
 
-      <PackageCarousel slides={slides} />
+      <CommonCarousel slides={slides} />
 
       <div className="px-2 flex flex-wrap gap-2 my-6">
         {tourPackage.place &&

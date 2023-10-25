@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import urlFor from "@/components/urlFor";
+import urlFor from "/utils/urlFor";
 import { LuImageOff, LuChevronRight } from "react-icons/lu";
 import { format } from "date-fns";
 import { parseISO } from "date-fns";
 // import { PortableText } from "@portabletext/react";
-// import { RichTextComponents } from "./RichTextComponents";
+// import { RichTextComponents } from "/utils/RichTextComponents";
 // import { Button } from "/components/ui/button";
 
 export default async function PackagesSection({ heading, packages, language }) {

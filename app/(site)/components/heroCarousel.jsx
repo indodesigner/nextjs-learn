@@ -20,8 +20,8 @@ const HeroCarousel = ({ slides }) => {
   const { language } = useLanguage();
 
   const links = [
-    { href: "india", name: "India" },
-    { href: "japan", name: "Japan" },
+    { href: "india", name: "India", namejp: "インド" },
+    { href: "japan", name: "Japan", namejp: "日本" },
   ];
 
   return (
@@ -95,7 +95,9 @@ const HeroCarousel = ({ slides }) => {
                                 className="py-2 px-4 sm:py-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
                               >
                                 <h5 className="text-lg font-medium sm:text-xl">
-                                  {link.name}
+                                  {language === "english"
+                                    ? link.name
+                                    : link.namejp}
                                 </h5>
                               </Link>
                             ))
