@@ -80,11 +80,13 @@ export async function getPlaces() {
     groq`*[_type == "place"] | order(createdAt desc){
         _id,
         placeName,
+        placeNamejp,
         "slug": slug.current,
         placeImages[0]{asset->{url}},
         "alt": coalesce(placeImages[0].alt, "Image of the destination"),
         "country":country[]->name,
         content,
+        contentjp,
       }`
   );
 }
@@ -94,6 +96,7 @@ export async function getPlace({ slug }) {
     groq`*[_type == "place" && slug.current == "${slug}"][0] {
         _id,
         placeName,
+        placeNamejp,
         "slug": slug.current,
         placeImages[] {
           asset->{
@@ -104,6 +107,7 @@ export async function getPlace({ slug }) {
         },
         "country":country[]->name,slug,
         content,
+        contentjp,
       }`
   );
 }
@@ -122,7 +126,10 @@ export async function getPackages() {
         departureDate,
         returnDate,
         rate,
-        "place":place[]->placeName,
+        "place": place[]->{
+          "placeName": placeName,
+          "placeNamejp": placeNamejp
+        },
         "country":country[]->name,
         content,
         contentjp,
@@ -149,6 +156,7 @@ export async function getPackage({ slug }) {
         rate,
         "place": place[]->{
           "placeName": placeName,
+          "placeNamejp": placeNamejp,
           "slug": slug.current
         },
         "country":country[]->name,

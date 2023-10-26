@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import PackagesCards from "@/components/packages/packagesCards";
+import PackagesTabContent from "@/components/packages/packagesTabContent";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from "/contexts/languageContext";
 
@@ -22,41 +21,63 @@ const PackagesTabs = ({
 
       <Tabs defaultValue="india">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="india">India</TabsTrigger>
-          <TabsTrigger value="japan">Japan</TabsTrigger>
+          <TabsTrigger value="india">
+            {language === "english" ? "India" : "インド"}
+          </TabsTrigger>
+          <TabsTrigger value="japan">
+            {language === "english" ? "Japan" : "日本"}
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="india" className="flex flex-col gap-2">
           {trendingIndia != 0 ? (
-            <PackagesCards
+            <PackagesTabContent
               packages={trendingIndia}
-              heading={trendingIndia[0].packageFilter}
+              // heading={trendingIndia[0].packageFilter}
+              heading={language === "english" ? "Trending" : "トレンド"}
+              language={language}
             />
           ) : null}
           {popularIndia != 0 ? (
-            <PackagesCards
+            <PackagesTabContent
               packages={popularIndia}
-              heading={popularIndia[0].packageFilter}
+              // heading={popularIndia[0].packageFilter}
+              heading={language === "english" ? "Popular" : "人気のある"}
+              language={language}
             />
           ) : null}
           {indianPacks != 0 ? (
-            <PackagesCards packages={indianPacks} heading={"All"} />
+            <PackagesTabContent
+              packages={indianPacks}
+              // heading={"All"}
+              heading={language === "english" ? "All" : "全て"}
+              language={language}
+            />
           ) : null}
         </TabsContent>
         <TabsContent value="japan" className="flex flex-col gap-2">
           {trendingJapan != 0 ? (
-            <PackagesCards
+            <PackagesTabContent
               packages={trendingJapan}
-              heading={trendingJapan[0].packageFilter}
+              // heading={trendingJapan[0].packageFilter}
+              heading={language === "english" ? "Trending" : "トレンド"}
+              language={language}
             />
           ) : null}
           {popularJapan != 0 ? (
-            <PackagesCards
+            <PackagesTabContent
               packages={popularJapan}
-              heading={popularJapan[0].packageFilter}
+              // heading={popularJapan[0].packageFilter}
+              heading={language === "english" ? "Popular" : "人気のある"}
+              language={language}
             />
           ) : null}
           {japanesePacks != 0 ? (
-            <PackagesCards packages={japanesePacks} heading={"All"} />
+            <PackagesTabContent
+              packages={japanesePacks}
+              // heading={"All"}
+              heading={language === "english" ? "All" : "全て"}
+              language={language}
+            />
           ) : null}
         </TabsContent>
       </Tabs>

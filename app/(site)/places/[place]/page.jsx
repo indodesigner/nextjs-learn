@@ -1,9 +1,6 @@
-import { RichTextComponents } from "/utils/RichTextComponents";
-import Link from "next/link";
+import PlaceContent from "../placeContent";
 import { getPlace } from "/sanity/sanity-utils";
-import { PortableText } from "@portabletext/react";
-import { BsImageAlt, BsChevronRight } from "react-icons/bs";
-import CommonCarousel from "@/components/commonCarousel";
+import GetCountry from "@/components/getCountry";
 
 const Place = async ({ params }) => {
   const slug = params.place;
@@ -17,36 +14,8 @@ const Place = async ({ params }) => {
 
   return (
     <div className="container mt-0 md:mt-24">
-      <div className="flex items-center mb-3">
-        <Link href="/places" className="gradient-text">
-          Destinations
-        </Link>
-        <h6 className="text-sm">
-          <BsChevronRight className="pt-[2px]" />
-        </h6>
-        <Link
-          href={`/countries/${countryName}`}
-          className=" text-neutral-500 dark:text-neutral-400"
-        >
-          {place.country}
-        </Link>
-      </div>
-
-      <h3 className="text-2xl md:text-3xl font-bold mb-2">{place.placeName}</h3>
-
-      {slides && slides.length > 0 ? (
-        <CommonCarousel slides={slides} />
-      ) : (
-        <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
-          <div className="flex justify-center my-8">
-            <BsImageAlt className="w-16 h-16 text-neutral-300 dark:text-neutral-500" />
-          </div>
-        </div>
-      )}
-
-      <div className="mb-4 px-4 mt-2">
-        <PortableText value={place.content} components={RichTextComponents} />
-      </div>
+      <PlaceContent place={place} slides={slides} country={countryName} />
+      <GetCountry country={countryName} />
     </div>
   );
 };

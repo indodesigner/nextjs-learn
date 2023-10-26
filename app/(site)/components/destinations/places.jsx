@@ -6,14 +6,16 @@ import { LuImageOff, LuChevronRight } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "/utils/RichTextComponents";
 
-export default async function PlacesSection({ places }) {
+export default async function PlacesSection({ places, language }) {
   const showViewAllLink = places.length > 4;
   const placesToDisplay = places.slice(0, 4); // Get the first 4 packages
 
   return (
     <div>
       <div className="flex justify-between mt-8 mb-4">
-        <h4 className="text-xl sm:text-2xl font-bold">Destinations</h4>
+        <h4 className="text-xl sm:text-2xl font-bold">
+          {language === "english" ? "Destinations" : "目的地"}
+        </h4>
         {showViewAllLink && (
           <Link
             href="/places"
@@ -52,13 +54,23 @@ export default async function PlacesSection({ places }) {
               )}
 
               <h6 className="px-2 text-sm sm:text-md md:text-lg font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
-                {place.placeName}
+                {language === "english"
+                  ? place.placeName
+                  : place.placeNamejp != null
+                  ? place.placeNamejp
+                  : place.placeName}
               </h6>
 
               {/* rich text component with line clamped to 3 lines */}
               <div className="px-2 mb-2 text-neutral-600 dark:text-neutral-100 text-sm line-clamp-2 md:line-clamp-3">
                 <PortableText
-                  value={place.content}
+                  value={
+                    language === "english"
+                      ? place.content
+                      : place.contentjp != null
+                      ? place.contentjp
+                      : place.content
+                  }
                   components={RichTextComponents}
                 />
               </div>

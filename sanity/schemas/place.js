@@ -9,6 +9,11 @@ export default {
       type: "string",
     },
     {
+      name: "placeNamejp",
+      title: "Place Name - Japanese",
+      type: "string",
+    },
+    {
       name: "slug",
       type: "slug",
       title: "Slug",
@@ -68,6 +73,12 @@ export default {
     {
       name: "content",
       title: "Content",
+      type: "array",
+      of: [{ type: "block" }, { type: "image" }],
+    },
+    {
+      name: "contentjp",
+      title: "Content - Japanese",
       type: "array",
       of: [{ type: "block" }, { type: "image" }],
     },

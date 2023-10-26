@@ -85,7 +85,7 @@ export default async function CommonSections({
         transition={{ delay: 0.5 }}
         className="container"
       >
-        <PlacesSection places={places} />
+        <PlacesSection places={places} language={language} />
       </motion.section>
       <motion.section
         initial={{ opacity: 0, y: 15 }}
@@ -94,7 +94,7 @@ export default async function CommonSections({
         transition={{ delay: 0.5 }}
         className="container"
       >
-        <BlogSection />
+        <BlogSection language={language} />
       </motion.section>
     </div>
   );

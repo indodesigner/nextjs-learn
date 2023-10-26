@@ -57,7 +57,7 @@ const TourPackage = async ({ params }) => {
   return (
     <div className="container mt-0 md:mt-24 pb-8">
       <PackageContent
-        countryName={countryName}
+        country={countryName}
         slides={slides}
         tourPackage={tourPackage}
       />

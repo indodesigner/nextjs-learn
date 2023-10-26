@@ -10,11 +10,11 @@ import { BsChevronRight } from "react-icons/bs";
 import CommonCarousel from "@/components/commonCarousel";
 import { useLanguage } from "/contexts/languageContext";
 
-const packageContent = ({ countryName, slides, tourPackage }) => {
+const packageContent = ({ tourPackage, slides, country }) => {
   const { language } = useLanguage();
 
   return (
-    <div>
+    <>
       <div className="flex items-center mb-3">
         <Link href="/packages" className="gradient-text">
           {language === "english" ? "Packages" : "パッケージ"}
@@ -23,7 +23,7 @@ const packageContent = ({ countryName, slides, tourPackage }) => {
           <BsChevronRight className="pt-[2px]" />
         </h6>
         <Link
-          href={`/countries/${countryName}`}
+          href={`/${country}`}
           className=" text-neutral-500 dark:text-neutral-400"
         >
           {tourPackage.country}
@@ -33,7 +33,9 @@ const packageContent = ({ countryName, slides, tourPackage }) => {
       <h3 className="text-2xl md:text-3xl font-bold mb-2">
         {language === "english"
           ? tourPackage.packageName
-          : tourPackage.packageNamejp}
+          : tourPackage.packageNamejp != null
+          ? tourPackage.packageNamejp
+          : tourPackage.packageName}
       </h3>
 
       <CommonCarousel slides={slides} />
@@ -46,7 +48,11 @@ const packageContent = ({ countryName, slides, tourPackage }) => {
               className="group border-2 border-red-600 dark:border-red-500 hover:bg-red-600 dark:hover:bg-red-900 p-1 px-5 rounded-3xl transition"
             >
               <h6 className="text-xs sm:text-sm font-medium group-hover:text-white">
-                {item.placeName}
+                {language === "english"
+                  ? item.placeName.toUpperCase()
+                  : item.placeNamejp != null
+                  ? item.placeNamejp
+                  : item.placeName.toUpperCase()}
               </h6>
             </Link>
           ))}
@@ -94,12 +100,16 @@ const packageContent = ({ countryName, slides, tourPackage }) => {
       <div className="mb-8 px-4">
         <PortableText
           value={
-            language === "english" ? tourPackage.content : tourPackage.contentjp
+            language === "english"
+              ? tourPackage.content
+              : tourPackage.contentjp != null
+              ? tourPackage.contentjp
+              : tourPackage.content
           }
           components={RichTextComponents}
         />
       </div>
-    </div>
+    </>
   );
 };
 

@@ -13,21 +13,36 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default async function PackagesCards({ packages, heading }) {
+export default async function PackagesTabContent({
+  packages,
+  heading,
+  language,
+}) {
   return (
     <>
       <Card>
         <CardHeader>
-          <CardTitle>{heading} Packages</CardTitle>
-          {heading == "All" ? (
+          <CardTitle>
+            {heading} {language === "english" ? "Packages" : "パッケージ"}
+          </CardTitle>
+          {/* {heading == "All" ? (
             <CardDescription>
-              {heading} tour packages are listes below
+              {heading}
+              {language === "english"
+                ? "tour packages are listed below"
+                : "ツアーパッケージは以下にリストされています"}
             </CardDescription>
           ) : (
             <CardDescription>
-              All the {heading} tour packages are listes below
+              All the {heading} tour packages are listed below
             </CardDescription>
-          )}
+          )} */}
+          <CardDescription>
+            {heading}
+            {language === "english"
+              ? " tour packages are listed below"
+              : "ツアーパッケージは以下にリストされています"}
+          </CardDescription>
         </CardHeader>
         <CardContent className="space-y-2">
           <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
@@ -56,7 +71,11 @@ export default async function PackagesCards({ packages, heading }) {
                   )}
 
                   <h6 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
-                    {pack.packageName}
+                    {language === "english"
+                      ? pack.packageName
+                      : pack.packageNamejp != null
+                      ? pack.packageNamejp
+                      : pack.packageName}
                   </h6>
 
                   <div className="px-2 flex flex-wrap gap-1 mb-2">
@@ -67,7 +86,11 @@ export default async function PackagesCards({ packages, heading }) {
                           className="bg-black dark:bg-neutral-300 px-2 rounded-2xl"
                         >
                           <h6 className="text-xs font-bold text-white dark:text-neutral-900">
-                            {item.toUpperCase()}
+                            {language === "english"
+                              ? item.placeName.toUpperCase()
+                              : item.placeNamejp != null
+                              ? item.placeNamejp
+                              : item.placeName.toUpperCase()}
                           </h6>
                         </span>
                       ))}

@@ -80,7 +80,6 @@ const ContactPage = async () => {
             </div>
           </div>
         </div>
-        <GetCountry country={null} />
       </div>
       <div className="px-8 bg-neutral-900 dark:bg-neutral-800 flex justify-center lg:items-center gap-1 py-2">
         <div>
@@ -91,6 +90,7 @@ const ContactPage = async () => {
           4th Floor, K.P. Vallon Road, Cochin-20 Kerala, India
         </p>
       </div>
+      <GetCountry country={null} />
     </>
   );
 };

@@ -69,7 +69,9 @@ export default async function PackagesSection({ heading, packages, language }) {
               <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {language === "english"
                   ? tourPackage.packageName
-                  : tourPackage.packageNamejp}
+                  : tourPackage.packageNamejp != null
+                  ? tourPackage.packageNamejp
+                  : tourPackage.packageName}
               </h5>
 
               <div className="px-2 flex flex-wrap gap-1 mb-2">
@@ -77,7 +79,11 @@ export default async function PackagesSection({ heading, packages, language }) {
                   tourPackage.place.map((item) => (
                     <span className="bg-black dark:bg-neutral-300 px-2 rounded-2xl">
                       <h6 className="text-xs font-bold text-white dark:text-neutral-900">
-                        {item.toUpperCase()}
+                        {language === "english"
+                          ? item.placeName.toUpperCase()
+                          : item.placeNamejp != null
+                          ? item.placeNamejp
+                          : item.placeName.toUpperCase()}
                       </h6>
                     </span>
                   ))}
