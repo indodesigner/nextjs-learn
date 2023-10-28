@@ -46,7 +46,13 @@ export default async function ExploreIndia() {
       <section className="container">
         <h4 className="text-3xl font-bold mb-4">About India</h4>
         <div className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-4 bg-neutral-200 dark:bg-neutral-800 py-2 px-4 rounded-2xl">
-          <Image src={IndiaMapImage} width={500} height={400}></Image>
+          <Image
+            src={IndiaMapImage}
+            width={500}
+            height={400}
+            alt="india in globe image"
+            className="w-auto h-auto"
+          ></Image>
           <p className="text-sm">
             Welcome to India's enchanting paradise, Kerala, where nature's
             poetry unfolds in every corner. Nestled in the embrace of the

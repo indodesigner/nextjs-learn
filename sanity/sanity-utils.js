@@ -105,7 +105,8 @@ export async function getPlace({ slug }) {
           alt,
           caption
         },
-        "country":country[]->name,slug,
+        "country":country[]->name,
+        "countryjp":country[]->namejp,
         content,
         contentjp,
       }`
@@ -160,6 +161,7 @@ export async function getPackage({ slug }) {
           "slug": slug.current
         },
         "country":country[]->name,
+        "countryjp":country[]->namejp,
         content,
         contentjp,
       }`

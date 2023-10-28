@@ -9,6 +9,11 @@ export default {
       type: "string",
     },
     {
+      name: "namejp",
+      title: "Country Name - Japanese",
+      type: "string",
+    },
+    {
       name: "countryImage",
       title: "Country Images",
       type: "array",

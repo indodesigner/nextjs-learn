@@ -76,8 +76,11 @@ export default async function PackagesSection({ heading, packages, language }) {
 
               <div className="px-2 flex flex-wrap gap-1 mb-2">
                 {tourPackage.place &&
-                  tourPackage.place.map((item) => (
-                    <span className="bg-black dark:bg-neutral-300 px-2 rounded-2xl">
+                  tourPackage.place.map((item, index) => (
+                    <span
+                      className="bg-black dark:bg-neutral-300 px-2 rounded-2xl"
+                      key={index}
+                    >
                       <h6 className="text-xs font-bold text-white dark:text-neutral-900">
                         {language === "english"
                           ? item.placeName.toUpperCase()

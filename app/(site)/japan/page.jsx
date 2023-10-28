@@ -47,7 +47,13 @@ export default async function ExploreJapan() {
       <section className="container">
         <h4 className="text-3xl font-bold mb-4">About Japan</h4>
         <div className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-4 bg-neutral-200 dark:bg-neutral-800 py-2 px-4 rounded-2xl">
-          <Image src={JapanMapImage} width={500} height={400}></Image>
+          <Image
+            src={JapanMapImage}
+            width={500}
+            height={400}
+            alt="japan in globe image"
+            className="w-auto h-auto"
+          ></Image>
           <p className="text-sm">
             Discover the captivating allure of Japan, a land where ancient
             traditions harmonize with cutting-edge modernity. Immerse yourself

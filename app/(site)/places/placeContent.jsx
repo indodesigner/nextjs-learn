@@ -23,7 +23,7 @@ const PlaceContent = ({ place, slides, country }) => {
           href={`/${country}`}
           className=" text-neutral-500 dark:text-neutral-400"
         >
-          {place.country}
+          {language === "english" ? place.country : place.countryjp}
         </Link>
       </div>
 

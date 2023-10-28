@@ -19,6 +19,7 @@ import { Alert, AlertTitle } from "@/components/ui/alert";
 export default function ContactForm({
   indianPackDetails,
   japanesePackDetails,
+  language,
   currentPack,
 }) {
   const [values, setValues] = useState({
@@ -196,7 +197,7 @@ export default function ContactForm({
         }}
         id="name"
         name="name"
-        placeholder="Your Name"
+        placeholder={language === "english" ? "Name" : "名前"}
         ref={nameInputRef}
       />
       {errors.name ? (
@@ -229,7 +230,7 @@ export default function ContactForm({
         onChange={handleChange}
         id="phone"
         name="phone"
-        placeholder="Your Phone Number"
+        placeholder={language === "english" ? "Phone Number" : "電話番号"}
         ref={phoneInputRef}
       />
       {errors.phone ? (
@@ -244,7 +245,7 @@ export default function ContactForm({
         onChange={handleChange}
         id="email"
         name="email"
-        placeholder="Your Email"
+        placeholder={language === "english" ? "Email" : "Eメール"}
         ref={emailInputRef}
       />
       {errors.email ? (
@@ -259,10 +260,12 @@ export default function ContactForm({
           <Tabs defaultValue={currentPack.country[0].toLowerCase()}>
             <TabsList>
               <TabsTrigger value="india" disabled>
-                India Packages
+                {language === "english"
+                  ? "India Packages"
+                  : "インドのパッケージ"}
               </TabsTrigger>
               <TabsTrigger value="japan" disabled>
-                Japan Packages
+                {language === "english" ? "Japan Packages" : "日本パッケージ"}
               </TabsTrigger>
             </TabsList>
           </Tabs>
@@ -286,20 +289,28 @@ export default function ContactForm({
                 value="india"
                 onClick={() => handleTabChange("india")}
               >
-                India Packages
+                {language === "english"
+                  ? "India Packages"
+                  : "インドのパッケージ"}
               </TabsTrigger>
               <TabsTrigger
                 value="japan"
                 onClick={() => handleTabChange("japan")}
               >
-                Japan Packages
+                {language === "english" ? "Japan Packages" : "日本パッケージ"}
               </TabsTrigger>
             </TabsList>
           </Tabs>
 
           <Select onValueChange={handleChangePackage}>
             <SelectTrigger>
-              <SelectValue placeholder="Interested Package" />
+              <SelectValue
+                placeholder={
+                  language === "english"
+                    ? "Interested Package"
+                    : "興味のあるパッケージ"
+                }
+              />
             </SelectTrigger>
             <SelectContent>
               {selectedTab === "india" &&
@@ -330,7 +341,7 @@ export default function ContactForm({
         onChange={handleChange}
         id="message"
         name="message"
-        placeholder="Your message"
+        placeholder={language === "english" ? "Message" : "メッセージ"}
         ref={messageInputRef}
       />
       {errors.message ? (
@@ -342,9 +353,15 @@ export default function ContactForm({
       <Button type="submit" disabled={loading}>
         {!loading ? (
           sentStatus ? (
-            "Sent Successfully"
-          ) : (
+            language === "english" ? (
+              "Sent Successfully"
+            ) : (
+              "正常に送信されました"
+            )
+          ) : language === "english" ? (
             "Send"
+          ) : (
+            "送信"
           )
         ) : (
           <div className="flex items-center justify-center w-full h-full ">
