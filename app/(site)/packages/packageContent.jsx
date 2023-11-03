@@ -6,22 +6,10 @@ import Link from "next/link";
 // import { parseISO } from "date-fns";
 import { PortableText } from "@portabletext/react";
 // import urlFor from "/components/urlFor";
-import { BsChevronRight, BsXLg } from "react-icons/bs";
+import { BsChevronRight } from "react-icons/bs";
 import CommonCarousel from "@/components/commonCarousel";
+import DialogContactForm from "@/components/dialogContactForm";
 import { useLanguage } from "/contexts/languageContext";
-import ContactForm from "@/components/contactForm";
-
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 
 const packageContent = ({
   tourPackage,
@@ -49,33 +37,49 @@ const packageContent = ({
         </Link>
       </div>
 
-      <h3 className="text-2xl md:text-3xl font-bold mb-2">
-        {language === "english"
-          ? tourPackage.packageName
-          : tourPackage.packageNamejp != null
-          ? tourPackage.packageNamejp
-          : tourPackage.packageName}
-      </h3>
-
       <CommonCarousel slides={slides} />
 
-      <div className="px-2 flex flex-wrap gap-2 my-6">
-        {tourPackage.place &&
-          tourPackage.place.map((item, index) => (
-            <Link
-              href={`/places/${item.slug}`}
-              key={index}
-              className="group border-2 border-red-600 dark:border-red-500 hover:bg-red-600 dark:hover:bg-red-900 p-1 px-5 rounded-3xl transition"
-            >
-              <h6 className="text-xs sm:text-sm font-medium group-hover:text-white">
-                {language === "english"
-                  ? item.placeName.toUpperCase()
-                  : item.placeNamejp != null
-                  ? item.placeNamejp
-                  : item.placeName.toUpperCase()}
-              </h6>
-            </Link>
-          ))}
+      <div className="bg-neutral-100 dark:bg-neutral-800 rounded-md my-3 p-2">
+        <div className="grid grid-cols-3 md:grid-cols-4 mb-2 px-1">
+          <div className="col-span-2 md:col-span-3">
+            <h3 className="text-lg sm:text-2xl md:text-3xl font-semibold mb-2">
+              {language === "english"
+                ? tourPackage.packageName
+                : tourPackage.packageNamejp != null
+                ? tourPackage.packageNamejp
+                : tourPackage.packageName}
+            </h3>
+          </div>
+          <div className="place-self-end self-center">
+            <DialogContactForm
+              indianPackDetails={indianPackDetails}
+              japanesePackDetails={japanesePackDetails}
+              tourPackage={tourPackage}
+              language={language}
+            />
+          </div>
+        </div>
+
+        <div className="bg-neutral-200 dark:bg-neutral-900 rounded-lg py-2">
+          <div className="px-2 flex flex-wrap gap-2 ">
+            {tourPackage.place &&
+              tourPackage.place.map((item, index) => (
+                <Link
+                  href={`/places/${item.slug}`}
+                  key={index}
+                  className="group border-2 border-red-600 dark:border-red-500 hover:bg-red-600 dark:hover:bg-red-900 p-1 px-5 rounded-3xl transition"
+                >
+                  <h6 className="text-xs sm:text-sm font-medium group-hover:text-white">
+                    {language === "english"
+                      ? item.placeName.toUpperCase()
+                      : item.placeNamejp != null
+                      ? item.placeNamejp
+                      : item.placeName.toUpperCase()}
+                  </h6>
+                </Link>
+              ))}
+          </div>
+        </div>
       </div>
 
       {/* <div className="my-5 px-4 py-5 bg-white dark:bg-neutral-900 shadow-lg shadow-neutral-200 dark:shadow-neutral-900 rounded-md">
@@ -129,37 +133,12 @@ const packageContent = ({
           components={RichTextComponents}
         />
       </div>
-      <AlertDialog>
-        <AlertDialogTrigger className="font-medium text-white bg-neutral-950 dark:text-neutral-900 dark:bg-neutral-100 hover:bg-neutral-700 hover:dark:bg-neutral-300 p-2 px-4 ms-4 rounded-lg transition">
-          Book now
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogHeader className="flex flex-row justify-between items-center">
-            <AlertDialogTitle>
-              Interested?
-              <p className="text-sm font-normal">
-                Send your details we will get back to you within 24 Hrs
-              </p>
-            </AlertDialogTitle>
-
-            <AlertDialogCancel className="rounded-3xl">
-              <BsXLg />
-            </AlertDialogCancel>
-          </AlertDialogHeader>
-
-          <AlertDialogDescription className="flex justify-center mt-2">
-            <ContactForm
-              indianPackDetails={indianPackDetails}
-              japanesePackDetails={japanesePackDetails}
-              currentPack={tourPackage}
-              language={language}
-            />
-          </AlertDialogDescription>
-          <AlertDialogFooter>
-            {/* <AlertDialogAction>Continue</AlertDialogAction> */}
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+      {/* <DialogContactForm
+        indianPackDetails={indianPackDetails}
+        japanesePackDetails={japanesePackDetails}
+        tourPackage={tourPackage}
+        language={language}
+      /> */}
     </>
   );
 };

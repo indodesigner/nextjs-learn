@@ -66,7 +66,7 @@ export default async function PackagesSection({ heading, packages, language }) {
                 </div>
               )}
 
-              <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h5 className="px-2 text-sm sm:text-md md:text-lg font-medium my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {language === "english"
                   ? tourPackage.packageName
                   : tourPackage.packageNamejp != null

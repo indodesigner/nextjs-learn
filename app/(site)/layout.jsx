@@ -5,9 +5,10 @@ import Providers from "@/components/providers";
 import { CountryProvider } from "/contexts/countryContext";
 import { LanguageProvider } from "/contexts/languageContext";
 import Navbar from "@/components/Navbar";
+import ScrollToTopButton from "@/components/scrollToTopButton";
 
 const display = DM_Sans({
-  weight: ["400"],
+  weight: ["variable"],
   subsets: ["latin"],
   variable: "--font-headings",
   display: "swap",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
               <main className="min-h-[84vh] sm:min-h-[80vh] md:min-h-[78vh]">
                 {children}
               </main>
+              <ScrollToTopButton />
               <Footer />
             </LanguageProvider>
           </CountryProvider>
