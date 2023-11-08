@@ -8,6 +8,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "/contexts/languageContext";
+import IndiaFlagIcon from "/public/images/india-flag-icon.svg";
+import JapanFlagIcon from "/public/images/japan-flag-icon.svg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,8 +22,8 @@ const HeroCarousel = ({ slides }) => {
   const { language } = useLanguage();
 
   const links = [
-    { href: "india", name: "India", namejp: "インド" },
-    { href: "japan", name: "Japan", namejp: "日本" },
+    { href: "india", name: "India", namejp: "インド", icon: "IndiaFlagIcon" },
+    { href: "japan", name: "Japan", namejp: "日本", icon: "JapanFlagIcon" },
   ];
 
   return (
@@ -56,33 +58,34 @@ const HeroCarousel = ({ slides }) => {
                 <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">
                   <span className="flex flex-col items-center">
                     <motion.h1
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 0.5 }}
-                      className="text-3xl  sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-4 mb-2"
+                      className="text-3xl  sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-3 mb-2"
                     >
                       {language === "english" ? slide.title : slide.titlejp}
                     </motion.h1>
-                    <motion.span
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 15 }}
-                      transition={{ delay: 0.75 }}
-                      className="bg-white py-[1.5px] sm:py-[2px] px-4 rounded-2xl mb-2 md:block hidden"
-                    ></motion.span>
+
                     <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 1 }}
                       className="mb-4 text-xs sm:text-sm md:text-md lg:text-lg font-light w-[100%] sm:max-w-[80%] md:max-w-[60%] md:block hidden"
                     >
                       {language === "english" ? slide.caption : slide.captionjp}
                     </motion.p>
+                    {/* <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0, y: 15 }}
+                      transition={{ delay: 0.75 }}
+                      className="bg-white py-[1px] sm:py-[1.5px] px-4 rounded-2xl mb-6 md:block hidden"
+                    ></motion.span> */}
                     <motion.span
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 1.25 }}
                     >
@@ -92,8 +95,21 @@ const HeroCarousel = ({ slides }) => {
                               <Link
                                 key={index}
                                 href={`/${link.href}`}
-                                className="py-2 px-4 sm:py-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
+                                className="flex flex-col items-center py-2 px-4 sm:py-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
                               >
+                                {link.icon === "IndiaFlagIcon" ? (
+                                  <Image
+                                    src={IndiaFlagIcon}
+                                    width={48}
+                                    height={48}
+                                  ></Image>
+                                ) : (
+                                  <Image
+                                    src={JapanFlagIcon}
+                                    width={48}
+                                    height={48}
+                                  ></Image>
+                                )}
                                 <h5 className="text-lg font-medium sm:text-xl">
                                   {language === "english"
                                     ? link.name

@@ -1,4 +1,4 @@
-import { DM_Sans, Roboto } from "next/font/google";
+import { DM_Sans, Geologica, Roboto } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Providers from "@/components/providers";
@@ -7,7 +7,7 @@ import { LanguageProvider } from "/contexts/languageContext";
 import Navbar from "@/components/Navbar";
 import ScrollToTopButton from "@/components/scrollToTopButton";
 
-const display = DM_Sans({
+const display = Geologica({
   weight: ["variable"],
   subsets: ["latin"],
   variable: "--font-headings",

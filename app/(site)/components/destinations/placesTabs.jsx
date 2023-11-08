@@ -1,6 +1,9 @@
 "use client";
+import Image from "next/image";
 import { useLanguage } from "/contexts/languageContext";
 import PlacesTabContent from "@/components/destinations/placesTabContent";
+import IndiaFlagIcon from "/public/images/india-flag-icon.svg";
+import JapanFlagIcon from "/public/images/japan-flag-icon.svg";
 import {
   Card,
   CardContent,
@@ -22,9 +25,21 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces }) => {
       <Tabs defaultValue="india">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="india">
+            <Image
+              src={IndiaFlagIcon}
+              width={20}
+              height={20}
+              className="me-1"
+            ></Image>
             {language === "english" ? "India" : "インド"}
           </TabsTrigger>
           <TabsTrigger value="japan">
+            <Image
+              src={JapanFlagIcon}
+              width={20}
+              height={20}
+              className="me-1"
+            ></Image>
             {language === "english" ? "Japan" : "日本"}
           </TabsTrigger>
         </TabsList>

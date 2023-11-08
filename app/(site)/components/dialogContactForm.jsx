@@ -28,12 +28,21 @@ const DialogContactForm = ({
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader className="flex flex-row justify-between items-center">
-            <AlertDialogTitle>
-              Interested?
-              <p className="text-sm font-normal">
-                Send your details we will get back to you within 24 Hrs
-              </p>
-            </AlertDialogTitle>
+            {language === "english" ? (
+              <AlertDialogTitle>
+                Interested?
+                <p className="text-sm font-normal">
+                  Send your details we will get back to you within 24 Hrs
+                </p>
+              </AlertDialogTitle>
+            ) : (
+              <AlertDialogTitle>
+                興味がある？
+                <p className="text-sm font-normal">
+                  詳細を送信してください。24 時間以内にご連絡いたします
+                </p>
+              </AlertDialogTitle>
+            )}
 
             <AlertDialogCancel className="rounded-3xl">
               <BsXLg />
