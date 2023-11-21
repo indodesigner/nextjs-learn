@@ -84,6 +84,10 @@ export async function getPlaces() {
         "slug": slug.current,
         placeImages[0]{asset->{url}},
         "alt": coalesce(placeImages[0].alt, "Image of the destination"),
+        "placeTypes":placeType[]->{
+          "placeTypeName":placeTypeName,
+          "placeTypeNamejp":placeTypeNamejp
+        },
         "country":country[]->name,
         content,
         contentjp,
@@ -104,6 +108,10 @@ export async function getPlace({ slug }) {
           },
           alt,
           caption
+        },
+        "placeTypes":placeType[]->{
+          "placeTypeName":placeTypeName,
+          "placeTypeNamejp":placeTypeNamejp
         },
         "country":country[]->name,
         "countryjp":country[]->namejp,
@@ -129,7 +137,8 @@ export async function getPackages() {
         rate,
         "place": place[]->{
           "placeName": placeName,
-          "placeNamejp": placeNamejp
+          "placeNamejp": placeNamejp,
+          "placeType":placeType
         },
         "country":country[]->name,
         content,

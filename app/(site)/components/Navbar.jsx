@@ -11,6 +11,17 @@ import { useCountry } from "/contexts/countryContext";
 import { useLanguage } from "/contexts/languageContext";
 import SwitchLanguage from "@/components/switchLanguage";
 
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+
 const Navbar = () => {
   const path = usePathname();
   const { country } = useCountry();
@@ -27,6 +38,8 @@ const Navbar = () => {
     { href: "/about", name: "About", namejp: "について" },
     { href: "/contact", name: "Contact", namejp: "接触" },
   ];
+
+  const contactLinks = links.slice(-2);
 
   const closeNavbar = () => {
     setToggle(false);
@@ -96,7 +109,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="hidden md:block fixed top-0 z-50 min-w-[100%]">
+      <div className="hidden lg:block fixed top-0 z-50 min-w-[100%]">
         <header className="flex items-center justify-between py-2 sm:py-4 px-4 md:px-10 lg:px-20 min-w-full scroll-auto">
           <Link
             href="/"
@@ -105,30 +118,61 @@ const Navbar = () => {
             <Image src={Logo} width={56} height={56} alt="logo image"></Image>
           </Link>
 
-          <ul className="ps-[7px] py-2 flex flex-row items-center bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 rounded-3xl">
-            {links.map((link, index) => (
-              <li key={index}>
-                <Link
-                  href={link.href}
-                  className={`${
-                    path === link.href || country === link.name.toLowerCase()
-                      ? "font-bold py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-2xl"
-                      : "font-medium"
-                  }  link-hover"`}
-                >
-                  <span
+          <ul className="ps-[7px] flex flex-row items-center bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 rounded-3xl">
+            {links
+              .map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
                     className={`${
                       path === link.href || country === link.name.toLowerCase()
-                        ? "gradient-text"
-                        : "px-4"
-                    } "hover:underline"`}
+                        ? "font-bold py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-2xl"
+                        : "font-medium"
+                    }  link-hover "`}
                   >
-                    {language === "english" ? link.name : link.namejp}
-                  </span>
-                </Link>
-              </li>
-            ))}
-
+                    <span
+                      className={`${
+                        path === link.href ||
+                        country === link.name.toLowerCase()
+                          ? "gradient-text"
+                          : "px-4"
+                      } "hover:underline"`}
+                    >
+                      {language === "english" ? link.name : link.namejp}
+                    </span>
+                  </Link>
+                </li>
+              ))
+              .slice(0, -2)}
+            <li>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>
+                      {language === "english" ? "Contact" : "接触"}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="flex flex-col bg-white p-4 px-8 gap-4">
+                      {contactLinks &&
+                        contactLinks.map((link, index) => (
+                          <NavigationMenuLink key={index}>
+                            <Link
+                              href={link.href}
+                              className={`${
+                                path === link.href ||
+                                country === link.name.toLowerCase()
+                                  ? "font-bold py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-2xl"
+                                  : "font-medium"
+                              }  link-hover "`}
+                            >
+                              {language === "english" ? link.name : link.namejp}
+                            </Link>
+                          </NavigationMenuLink>
+                        ))}
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </li>
             <li>
               <div className="px-2">
                 <SwitchLanguage />
@@ -145,7 +189,7 @@ const Navbar = () => {
       </div>
 
       {/* ------------------------mobile nav------------------------------ */}
-      <div className="block md:hidden sticky top-0 z-50">
+      <div className="block lg:hidden sticky top-0 z-50">
         <div className="py-4 sm:py-6 px-4 md:px-16 bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-70 dark:bg-opacity-30 border-b-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 min-w-full scroll-auto">
           <div className="flex justify-between">
             <Link
@@ -206,7 +250,7 @@ const Navbar = () => {
                         }}
                       >
                         <motion.li
-                          className="nav-item dark:text-white text-2xl font-semibold sm:text-3xl mb-4 ps-2"
+                          className="nav-item dark:text-white text-lg sm:text-xl font-semibold mb-4 ps-2"
                           variants={navItem}
                         >
                           <h6 className="link-hover">
@@ -216,7 +260,7 @@ const Navbar = () => {
                       </Link>
                     ))}
                     <motion.li
-                      className="nav-item dark:text-white text-2xl sm:text-3xl mt-8"
+                      className="nav-item dark:text-white text-lg sm:text-xl mt-8"
                       variants={navItem}
                     >
                       <SwitchLanguage />

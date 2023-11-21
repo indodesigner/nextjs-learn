@@ -1,16 +1,16 @@
 export default {
-  name: "place",
-  title: "Destinations",
+  name: "placeType",
+  title: "Destination Types",
   type: "document",
   fields: [
     {
-      name: "placeName",
-      title: "Place Name",
+      name: "placeTypeName",
+      title: "Destination Type",
       type: "string",
     },
     {
-      name: "placeNamejp",
-      title: "Place Name - Japanese",
+      name: "placeTypeNamejp",
+      title: "Place Type - Japanese",
       type: "string",
     },
     {
@@ -18,7 +18,7 @@ export default {
       type: "slug",
       title: "Slug",
       options: {
-        source: "placeName",
+        source: "placeTypeName",
         maxLength: 15, // will be ignored if slugify is set
         slugify: (input) =>
           input
@@ -29,26 +29,8 @@ export default {
       },
     },
     {
-      title: "Destination Types",
-      name: "placeType",
-      type: "array",
-      of: [{ type: "reference", to: { type: "placeType" } }],
-    },
-    {
-      title: "Country",
-      name: "country",
-      type: "array",
-      of: [{ type: "reference", to: { type: "country" } }],
-      validation: (Rule) => Rule.max(1),
-    },
-    {
-      name: "createdAt",
-      type: "datetime",
-      title: "Created at",
-    },
-    {
-      name: "placeImages",
-      title: "Place Images",
+      name: "placeTypeImages",
+      title: "Place Type Images",
       type: "array",
       of: [
         {

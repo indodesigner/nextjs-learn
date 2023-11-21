@@ -7,8 +7,8 @@ import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "/utils/RichTextComponents";
 
 export default async function PlacesSection({ places, language }) {
-  const showViewAllLink = places.length > 4;
-  const placesToDisplay = places.slice(0, 4); // Get the first 4 packages
+  const showViewAllLink = places.length > 3;
+  const placesToDisplay = places.slice(0, 3); // Get the first 4 packages
 
   return (
     <div>
@@ -27,7 +27,7 @@ export default async function PlacesSection({ places, language }) {
         )}
       </div>
 
-      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-2">
+      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2">
         {placesToDisplay &&
           placesToDisplay.map((place, index) => (
             <Link
@@ -42,13 +42,13 @@ export default async function PlacesSection({ places, language }) {
                   width={800}
                   height={500}
                   alt={place.alt}
-                  className="object-cover h-40 lg:h-32 rounded-md"
+                  className="object-cover h-40 lg:h-36 rounded-md"
                 ></Image>
               ) : (
                 // else part for no place image
                 <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
                   <div>
-                    <LuImageOff className="w-16 h-40 lg:h-32 text-neutral-300 dark:text-neutral-500" />
+                    <LuImageOff className="w-16 h-40 lg:h-36 text-neutral-300 dark:text-neutral-500" />
                   </div>
                 </div>
               )}

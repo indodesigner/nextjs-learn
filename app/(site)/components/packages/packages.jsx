@@ -9,8 +9,8 @@ import { parseISO } from "date-fns";
 // import { Button } from "/components/ui/button";
 
 export default async function PackagesSection({ heading, packages, language }) {
-  const showViewAllLink = packages.length > 4;
-  const packagesToDisplay = packages.slice(0, 4); // Get the first 4 packages
+  const showViewAllLink = packages.length > 3;
+  const packagesToDisplay = packages.slice(0, 3); // Get the first 4 packages
   const countries = packages[0].country;
   const country = countries.map((item) => item.toLowerCase());
 
@@ -41,7 +41,7 @@ export default async function PackagesSection({ heading, packages, language }) {
         ) : null}
       </div>
 
-      <div className="grid grid-cols-1  xs:grid-cols-2 lg:grid-cols-4 gap-2">
+      <div className="grid grid-cols-1  xs:grid-cols-2 lg:grid-cols-3 gap-2">
         {packagesToDisplay &&
           packagesToDisplay.map((tourPackage) => (
             <Link
@@ -55,7 +55,7 @@ export default async function PackagesSection({ heading, packages, language }) {
                   width={800}
                   height={500}
                   alt={tourPackage.alt}
-                  className="object-cover h-40 lg:h-32 rounded-md"
+                  className="object-cover h-40 lg:h-36 rounded-md"
                 ></Image>
               ) : (
                 // else part for no blog image
@@ -66,7 +66,7 @@ export default async function PackagesSection({ heading, packages, language }) {
                 </div>
               )}
 
-              <h5 className="px-2 text-sm sm:text-md md:text-lg font-medium my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {language === "english"
                   ? tourPackage.packageName
                   : tourPackage.packageNamejp != null
@@ -78,7 +78,7 @@ export default async function PackagesSection({ heading, packages, language }) {
                 {tourPackage.place &&
                   tourPackage.place.map((item, index) => (
                     <span
-                      className="bg-black dark:bg-neutral-300 px-2 rounded-2xl"
+                      className="bg-black dark:bg-neutral-300 px-3 py-1 rounded-2xl"
                       key={index}
                     >
                       <h6 className="text-xs font-bold text-white dark:text-neutral-900">

@@ -45,7 +45,7 @@ export default async function PackagesTabContent({
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-2">
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2">
             {packages &&
               packages.map((pack) => (
                 <Link
@@ -59,7 +59,7 @@ export default async function PackagesTabContent({
                       width={800}
                       height={500}
                       alt={pack.alt}
-                      className="object-cover h-32 md:h-32 rounded-md"
+                      className="object-cover h-36 md:h-36 rounded-md"
                     ></Image>
                   ) : (
                     // else part for no place image
