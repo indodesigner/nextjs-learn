@@ -11,16 +11,16 @@ import { useCountry } from "/contexts/countryContext";
 import { useLanguage } from "/contexts/languageContext";
 import SwitchLanguage from "@/components/switchLanguage";
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
+// import {
+//   NavigationMenu,
+//   NavigationMenuContent,
+//   NavigationMenuIndicator,
+//   NavigationMenuItem,
+//   NavigationMenuLink,
+//   NavigationMenuList,
+//   NavigationMenuTrigger,
+//   NavigationMenuViewport,
+// } from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const path = usePathname();
@@ -39,7 +39,7 @@ const Navbar = () => {
     { href: "/contact", name: "Contact", namejp: "接触" },
   ];
 
-  const contactLinks = links.slice(-2);
+  // const contactLinks = links.slice(-2);
 
   const closeNavbar = () => {
     setToggle(false);
@@ -118,33 +118,30 @@ const Navbar = () => {
             <Image src={Logo} width={56} height={56} alt="logo image"></Image>
           </Link>
 
-          <ul className="ps-[7px] flex flex-row items-center bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 rounded-3xl">
-            {links
-              .map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link.href}
+          <ul className="ps-[7px] py-2 flex flex-row items-center bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 rounded-3xl">
+            {links.map((link, index) => (
+              <li key={index}>
+                <Link
+                  href={link.href}
+                  className={`${
+                    path === link.href || country === link.name.toLowerCase()
+                      ? "font-bold py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-2xl"
+                      : "font-medium"
+                  }  link-hover "`}
+                >
+                  <span
                     className={`${
                       path === link.href || country === link.name.toLowerCase()
-                        ? "font-bold py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-2xl"
-                        : "font-medium"
-                    }  link-hover "`}
+                        ? "gradient-text"
+                        : "px-4"
+                    } "hover:underline"`}
                   >
-                    <span
-                      className={`${
-                        path === link.href ||
-                        country === link.name.toLowerCase()
-                          ? "gradient-text"
-                          : "px-4"
-                      } "hover:underline"`}
-                    >
-                      {language === "english" ? link.name : link.namejp}
-                    </span>
-                  </Link>
-                </li>
-              ))
-              .slice(0, -2)}
-            <li>
+                    {language === "english" ? link.name : link.namejp}
+                  </span>
+                </Link>
+              </li>
+            ))}
+            {/* <li>
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -172,7 +169,7 @@ const Navbar = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-            </li>
+            </li> */}
             <li>
               <div className="px-2">
                 <SwitchLanguage />
