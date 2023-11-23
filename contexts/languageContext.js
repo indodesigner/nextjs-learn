@@ -11,7 +11,10 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   // Check if window is defined (client side) before accessing localStorage
-  const initialLanguage = localStorage.getItem("language") || "english";
+  const initialLanguage =
+    typeof window !== "undefined"
+      ? localStorage.getItem("language") || "english"
+      : "english";
 
   const [language, setLanguage] = useState(initialLanguage);
 
