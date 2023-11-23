@@ -40,3 +40,5 @@ export default async function Blogs() {
     );
   }
 }
+
+export const revalidate = 10;

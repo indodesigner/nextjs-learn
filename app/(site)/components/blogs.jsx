@@ -136,3 +136,5 @@ export default async function BlogSection() {
     </div>
   );
 }
+
+export const revalidate = 10;
