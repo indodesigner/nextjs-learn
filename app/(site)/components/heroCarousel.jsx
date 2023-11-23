@@ -95,22 +95,24 @@ const HeroCarousel = ({ slides }) => {
                               <Link
                                 key={index}
                                 href={`/${link.href}`}
-                                className="flex flex-col items-center py-2 px-4 sm:py-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
+                                className="flex flex-col items-center py-2 px-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
                               >
                                 {link.icon === "IndiaFlagIcon" ? (
                                   <Image
                                     src={IndiaFlagIcon}
                                     width={48}
                                     height={48}
+                                    className="w-12 md:w-16 h-auto"
                                   ></Image>
                                 ) : (
                                   <Image
                                     src={JapanFlagIcon}
                                     width={48}
                                     height={48}
+                                    className="w-12 md:w-16 h-auto"
                                   ></Image>
                                 )}
-                                <h5 className="text-lg font-medium sm:text-xl">
+                                <h5 className="text-lg font-light sm:text-xl">
                                   {language === "english"
                                     ? link.name
                                     : link.namejp}

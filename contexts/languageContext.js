@@ -1,27 +1,47 @@
 "use client";
-import React, { createContext, useContext, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+} from "react";
 
-// Create a context with default values
 const LanguageContext = createContext();
 
-// Create a provider component to wrap your app
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("english"); // Default language is English
+  // Check if window is defined (client side) before accessing localStorage
+  const initialLanguage = localStorage.getItem("language") || "english";
+
+  const [language, setLanguage] = useState(initialLanguage);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Save the selected language to localStorage whenever it changes
+      localStorage.setItem("language", language);
+    }
+  }, [language]);
 
   const toggleLanguage = () => {
-    setLanguage((prevLanguage) =>
-      prevLanguage === "english" ? "japanese" : "english"
-    );
+    const newLanguage = language === "english" ? "japanese" : "english";
+    setLanguage(newLanguage);
+
+    // Reload the page only if you want to force a full reload
+    window.location.reload();
   };
 
+  const contextValue = useMemo(
+    () => ({ language, toggleLanguage }),
+    [language, toggleLanguage]
+  );
+
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+    <LanguageContext.Provider value={contextValue}>
       {children}
     </LanguageContext.Provider>
   );
 };
 
-// Create a custom hook to easily access the context
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
