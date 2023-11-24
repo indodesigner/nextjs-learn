@@ -62,7 +62,7 @@ const HeroCarousel = ({ slides }) => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 0.5 }}
-                      className="text-3xl  sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-3 mb-2"
+                      className="text-2xl  sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-3 mb-2"
                     >
                       {language === "english" ? slide.title : slide.titlejp}
                     </motion.h1>
@@ -102,17 +102,17 @@ const HeroCarousel = ({ slides }) => {
                                     src={IndiaFlagIcon}
                                     width={48}
                                     height={48}
-                                    className="w-12 md:w-16 h-auto"
+                                    className="w-8 sm:w-12 md:w-16 h-auto"
                                   ></Image>
                                 ) : (
                                   <Image
                                     src={JapanFlagIcon}
                                     width={48}
                                     height={48}
-                                    className="w-12 md:w-16 h-auto"
+                                    className="w-8 sm:w-12 md:w-16 h-auto"
                                   ></Image>
                                 )}
-                                <h5 className="text-lg font-light sm:text-xl">
+                                <h5 className="text-sm font-light sm:text-xl">
                                   {language === "english"
                                     ? link.name
                                     : link.namejp}

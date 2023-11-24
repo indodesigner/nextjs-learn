@@ -36,10 +36,18 @@ export default function RootLayout({ children }) {
         <Providers>
           <CountryProvider>
             <LanguageProvider>
+              <div
+                className="absolute top-0 left-0 right-0 h-full"
+                style={{
+                  backgroundImage: `url(/images/header-gradient.svg)`,
+                  backgroundSize: "cover",
+                }}
+              />
               <Navbar />
               <main className="min-h-[84vh] sm:min-h-[80vh] md:min-h-[78vh]">
                 {children}
               </main>
+
               <ScrollToTopButton />
               <Footer />
             </LanguageProvider>
