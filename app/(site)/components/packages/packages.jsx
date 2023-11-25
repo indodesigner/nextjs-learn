@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import urlFor from "/utils/urlFor";
 import { LuImageOff, LuChevronRight } from "react-icons/lu";
-import { format } from "date-fns";
-import { parseISO } from "date-fns";
+// import { format } from "date-fns";
+// import { parseISO } from "date-fns";
 // import { PortableText } from "@portabletext/react";
 // import { RichTextComponents } from "/utils/RichTextComponents";
 // import { Button } from "/components/ui/button";
 
-export default async function PackagesSection({ heading, packages, language }) {
+export default function PackagesSection({ heading, packages, language }) {
   const showViewAllLink = packages.length > 3;
   const packagesToDisplay = packages.slice(0, 3); // Get the first 4 packages
   const countries = packages[0].country;
@@ -67,11 +67,9 @@ export default async function PackagesSection({ heading, packages, language }) {
               )}
 
               <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
-                {language === "english"
+                {(language === "english"
                   ? tourPackage.packageName
-                  : tourPackage.packageNamejp != null
-                  ? tourPackage.packageNamejp
-                  : tourPackage.packageName}
+                  : tourPackage.packageNamejp) || tourPackage.packageName}
               </h5>
 
               <div className="px-2 flex flex-wrap gap-1 mb-2">
@@ -84,9 +82,7 @@ export default async function PackagesSection({ heading, packages, language }) {
                       <h6 className="text-xs font-bold text-white dark:text-neutral-900">
                         {language === "english"
                           ? item.placeName.toUpperCase()
-                          : item.placeNamejp != null
-                          ? item.placeNamejp
-                          : item.placeName.toUpperCase()}
+                          : item.placeNamejp || item.placeName.toUpperCase()}
                       </h6>
                     </span>
                   ))}

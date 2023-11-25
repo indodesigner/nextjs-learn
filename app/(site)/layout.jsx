@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           <CountryProvider>
             <LanguageProvider>
               <div
-                className="absolute top-0 left-0 right-0 h-full"
+                className="absolute top-0 left-0 right-0 h-full -z-10"
                 style={{
                   backgroundImage: `url(/images/header-gradient.svg)`,
                   backgroundSize: "cover",

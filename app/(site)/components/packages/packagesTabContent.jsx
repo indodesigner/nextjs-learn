@@ -73,9 +73,7 @@ export default async function PackagesTabContent({
                   <h6 className="px-2 text-sm sm:text-md font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                     {language === "english"
                       ? pack.packageName
-                      : pack.packageNamejp != null
-                      ? pack.packageNamejp
-                      : pack.packageName}
+                      : pack.packageNamejp || pack.packageName}
                   </h6>
 
                   <div className="px-2 flex flex-wrap gap-1 mb-2">
@@ -88,9 +86,8 @@ export default async function PackagesTabContent({
                           <h6 className="text-xs font-bold text-white dark:text-neutral-900">
                             {language === "english"
                               ? item.placeName.toUpperCase()
-                              : item.placeNamejp != null
-                              ? item.placeNamejp
-                              : item.placeName.toUpperCase()}
+                              : item.placeNamejp ||
+                                item.placeName.toUpperCase()}
                           </h6>
                         </span>
                       ))}

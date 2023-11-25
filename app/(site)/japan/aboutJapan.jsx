@@ -8,9 +8,9 @@ const AboutJapan = () => {
 
   return (
     <section className="container">
-      <h4 className="text-3xl font-bold mb-4">
+      <h2 className="text-3xl font-bold mb-4">
         {language === "english" ? "About Japan" : "日本について"}
-      </h4>
+      </h2>
       <div className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-4 bg-neutral-200 dark:bg-neutral-800 py-2 px-4 rounded-2xl">
         <Image
           src={JapanMapImage}

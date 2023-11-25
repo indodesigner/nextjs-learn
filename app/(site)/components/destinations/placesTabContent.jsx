@@ -37,9 +37,7 @@ export default async function PlacesTabContent({ places, language }) {
                 <h5 className=" text-neutral-100 dark:text-white  px-2 text-sm sm:text-lg font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                   {language === "english"
                     ? place.placeName
-                    : place.placeNamejp != null
-                    ? place.placeNamejp
-                    : place.placeName}
+                    : place.placeNamejp || place.placeName}
                 </h5>
               </div>
             </div>
@@ -53,9 +51,8 @@ export default async function PlacesTabContent({ places, language }) {
                     <h6 className="text-xs font-bold text-neutral-800 dark:text-neutral-900">
                       {language === "english"
                         ? item.placeTypeName.toUpperCase()
-                        : item.placeTypeNamejp != null
-                        ? item.placeTypeNamejp
-                        : item.placeTypeName.toUpperCase()}
+                        : item.placeTypeNamejp ||
+                          item.placeTypeName.toUpperCase()}
                     </h6>
                   </span>
                 ))}

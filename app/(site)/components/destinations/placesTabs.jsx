@@ -18,10 +18,10 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces }) => {
   const { language } = useLanguage();
 
   return (
-    <div>
-      <h3 className="text-3xl font-bold my-4">
+    <div className="sm:mt-8">
+      <h2 className="text-3xl font-extrabold my-4">
         {language === "english" ? "Destinations" : "目的地"}
-      </h3>
+      </h2>
       <Tabs defaultValue="india">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="india">

@@ -138,7 +138,10 @@ export async function getPackages() {
         "place": place[]->{
           "placeName": placeName,
           "placeNamejp": placeNamejp,
-          "placeType":placeType
+          "placeTypes":placeType[]->{
+            "placeTypeName":placeTypeName,
+            "placeTypeNamejp":placeTypeNamejp
+          }
         },
         "country":country[]->name,
         content,
@@ -167,6 +170,10 @@ export async function getPackage({ slug }) {
         "place": place[]->{
           "placeName": placeName,
           "placeNamejp": placeNamejp,
+          "placeTypes":placeType[]->{
+            "placeTypeName":placeTypeName,
+            "placeTypeNamejp":placeTypeNamejp
+          },
           "slug": slug.current
         },
         "country":country[]->name,

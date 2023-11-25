@@ -5,7 +5,7 @@ import PackagesSection from "@/components/packages/packages";
 import { motion } from "framer-motion";
 import { useLanguage } from "/contexts/languageContext";
 
-export default async function CommonSections({
+export default function CommonSections({
   packages,
   firstSectionPackages,
   secondSectionPackages,

@@ -13,10 +13,10 @@ const BlogsList = ({ blogs }) => {
   const { language } = useLanguage();
 
   return (
-    <div>
-      <h3 className="text-3xl font-bold my-4">
+    <div className="sm:mt-8">
+      <h2 className="text-3xl font-extrabold my-4">
         {language === "english" ? "Blogs" : "ブログ"}
-      </h3>
+      </h2>
 
       <ul className="divide-y divide-neutral-500 divide-opacity-20">
         {blogs &&

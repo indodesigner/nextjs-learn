@@ -6,7 +6,7 @@ import { LuImageOff, LuChevronRight } from "react-icons/lu";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "/utils/RichTextComponents";
 
-export default async function PlacesSection({ places, language }) {
+export default function PlacesSection({ places, language }) {
   const showViewAllLink = places.length > 3;
   const placesToDisplay = places.slice(0, 3); // Get the first 4 packages
 
@@ -56,9 +56,7 @@ export default async function PlacesSection({ places, language }) {
               <h6 className="px-2 text-sm sm:text-md md:text-lg font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {language === "english"
                   ? place.placeName
-                  : place.placeNamejp != null
-                  ? place.placeNamejp
-                  : place.placeName}
+                  : place.placeNamejp || place.placeName}
               </h6>
 
               {/* rich text component with line clamped to 3 lines */}
@@ -67,9 +65,7 @@ export default async function PlacesSection({ places, language }) {
                   value={
                     language === "english"
                       ? place.content
-                      : place.contentjp != null
-                      ? place.contentjp
-                      : place.content
+                      : place.contentjp || place.content
                   }
                   components={RichTextComponents}
                 />
