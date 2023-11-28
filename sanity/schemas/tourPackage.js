@@ -56,10 +56,16 @@ export default {
       title: "Package Rate",
     },
     {
-      title: "Places",
+      title: "Destinations",
       name: "place",
       type: "array",
       of: [{ type: "reference", to: { type: "place" } }],
+    },
+    {
+      title: "Destination Types",
+      name: "placeType",
+      type: "array",
+      of: [{ type: "reference", to: { type: "placeType" } }],
     },
     {
       title: "Country",

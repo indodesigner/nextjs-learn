@@ -88,6 +88,23 @@ export default function PackagesSection({ heading, packages, language }) {
                   ))}
               </div>
 
+              <div className="px-2 flex flex-wrap gap-1 mb-2">
+                {tourPackage.placeTypes &&
+                  tourPackage.placeTypes.map((item, index) => (
+                    <span
+                      className="bg-red-500 dark:bg-red-400 px-3 py-1 rounded-2xl"
+                      key={index}
+                    >
+                      <h6 className="text-xs font-bold text-white dark:text-neutral-50">
+                        {language === "english"
+                          ? item.placeTypeName.toUpperCase()
+                          : item.placeTypeNamejp ||
+                            item.placeTypeName.toUpperCase()}
+                      </h6>
+                    </span>
+                  ))}
+              </div>
+
               {/* <div className="flex flex-col px-2 mb-3">
                 <div className="flex flex-row place-items-center">
                   <h5 className="text-xs min-w-[64px] font-light">Departure</h5>
