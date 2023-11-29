@@ -50,6 +50,7 @@ const PackagesTabs = ({
               // heading={trendingIndia[0].packageFilter}
               heading={language === "english" ? "Trending" : "トレンド"}
               language={language}
+              country={"india"}
             />
           ) : null}
           {popularIndia != 0 ? (
@@ -58,6 +59,7 @@ const PackagesTabs = ({
               // heading={popularIndia[0].packageFilter}
               heading={language === "english" ? "Popular" : "人気のある"}
               language={language}
+              country={"india"}
             />
           ) : null}
           {indianPacks != 0 ? (
@@ -66,6 +68,7 @@ const PackagesTabs = ({
               // heading={"All"}
               heading={language === "english" ? "All" : "全て"}
               language={language}
+              country={"india"}
             />
           ) : null}
         </TabsContent>
@@ -76,6 +79,7 @@ const PackagesTabs = ({
               // heading={trendingJapan[0].packageFilter}
               heading={language === "english" ? "Trending" : "トレンド"}
               language={language}
+              country={"japan"}
             />
           ) : null}
           {popularJapan != 0 ? (
@@ -84,6 +88,7 @@ const PackagesTabs = ({
               // heading={popularJapan[0].packageFilter}
               heading={language === "english" ? "Popular" : "人気のある"}
               language={language}
+              country={"japan"}
             />
           ) : null}
           {japanesePacks != 0 ? (
@@ -92,6 +97,7 @@ const PackagesTabs = ({
               // heading={"All"}
               heading={language === "english" ? "All" : "全て"}
               language={language}
+              country={"japan"}
             />
           ) : null}
         </TabsContent>

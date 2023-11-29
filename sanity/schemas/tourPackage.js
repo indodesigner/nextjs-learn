@@ -51,6 +51,15 @@ export default {
       },
     },
     {
+      name: "duration",
+      type: "object",
+      title: "Duration",
+      fields: [
+        { name: "days", type: "number", title: "Days" },
+        { name: "nights", type: "number", title: "Nights" },
+      ],
+    },
+    {
       name: "rate",
       type: "number",
       title: "Package Rate",

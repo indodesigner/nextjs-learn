@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import urlFor from "/utils/urlFor";
-import { LuImageOff, LuChevronRight } from "react-icons/lu";
+import { LuImageOff, LuChevronRight, LuCalendarClock } from "react-icons/lu";
 // import { format } from "date-fns";
 // import { parseISO } from "date-fns";
 // import { PortableText } from "@portabletext/react";
 // import { RichTextComponents } from "/utils/RichTextComponents";
-// import { Button } from "/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 export default function PackagesSection({ heading, packages, language }) {
   const showViewAllLink = packages.length > 3;
@@ -66,11 +66,32 @@ export default function PackagesSection({ heading, packages, language }) {
                 </div>
               )}
 
-              <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold my-2 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {(language === "english"
                   ? tourPackage.packageName
                   : tourPackage.packageNamejp) || tourPackage.packageName}
               </h5>
+
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between px-2 mb-3">
+                {tourPackage.duration != null ? (
+                  <div className="flex flex-row place-items-center">
+                    <LuCalendarClock className="text-sm" />
+
+                    <h6 className="text-xs ps-2">
+                      <strong>{tourPackage.duration.days}</strong> Days &{" "}
+                      <strong>{tourPackage.duration.nights}</strong> Nights
+                    </h6>
+                  </div>
+                ) : null}
+
+                <div className="hidden sm:block border-r border-neutral-300 dark:border-neutral-600"></div>
+
+                {tourPackage.rate != null ? (
+                  <h6 className="text-xs">
+                    Starting from <strong>₹{tourPackage.rate}</strong>
+                  </h6>
+                ) : null}
+              </div>
 
               <div className="px-2 flex flex-wrap gap-1 mb-2">
                 {tourPackage.place &&
@@ -79,7 +100,7 @@ export default function PackagesSection({ heading, packages, language }) {
                       className="bg-black dark:bg-neutral-300 px-3 py-1 rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs font-bold text-white dark:text-neutral-900">
+                      <h6 className="text-xs font-medium text-white dark:text-neutral-900">
                         {language === "english"
                           ? item.placeName.toUpperCase()
                           : item.placeNamejp || item.placeName.toUpperCase()}
@@ -95,7 +116,7 @@ export default function PackagesSection({ heading, packages, language }) {
                       className="bg-red-500 dark:bg-red-400 px-3 py-1 rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs font-bold text-white dark:text-neutral-50">
+                      <h6 className="text-xs font-medium text-white dark:text-neutral-50">
                         {language === "english"
                           ? item.placeTypeName.toUpperCase()
                           : item.placeTypeNamejp ||
@@ -138,11 +159,11 @@ export default function PackagesSection({ heading, packages, language }) {
                   components={RichTextComponents}
                 />
               </div> */}
-              {/* {tourPackage.duration ? (
+              {/* {tourPackage.durationFromDates ? (
                 <div className="grid grid-cols-2 px-2 mb-2 text-sm end">
                   <span className="bg-neutral-200 dark:bg-neutral-800 rounded-md py-[2px]">
                     <h6 className="text-xs font-semibold grid justify-items-center text-center content-center">
-                      {tourPackage.duration} Days
+                      {tourPackage.durationFromDates} Days
                     </h6>
                   </span>
 

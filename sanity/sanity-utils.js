@@ -134,6 +134,7 @@ export async function getPackages() {
         "packageFilter": packageFilter[]->name,
         departureDate,
         returnDate,
+        duration,
         rate,
         "place": place[]->{
           "placeName": placeName,
@@ -166,6 +167,7 @@ export async function getPackage({ slug }) {
         },
         departureDate,
         returnDate,
+        duration,
         rate,
         "place": place[]->{
           "placeName": placeName,

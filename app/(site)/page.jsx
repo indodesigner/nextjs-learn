@@ -12,8 +12,8 @@ export default async function HomePage() {
     const retdate = new Date(pack.returnDate);
     const depDate = new Date(pack.departureDate);
     const dateDiff = retdate - depDate;
-    const duration = dateDiff / (1000 * 60 * 60 * 24);
-    return { ...pack, duration };
+    const durationFromDates = dateDiff / (1000 * 60 * 60 * 24);
+    return { ...pack, durationFromDates };
   });
 
   const indianPackages = packagesWithDuration.filter((pack) => {
@@ -23,21 +23,10 @@ export default async function HomePage() {
     return pack.country && pack.country.includes("Japan");
   });
 
-  // old home sections...........................
-  // const trendingPackages = packages.filter((pack) => {
-  //   return pack.packageFilter && pack.packageFilter.includes("Trending");
-  // });
-
-  // const popularPackages = packages.filter((pack) => {
-  //   return pack.packageFilter && pack.packageFilter.includes("Popular");
-  // });
-
   const businessPackages = packagesWithDuration.filter((pack) => {
     return pack.category && pack.category.includes("Business");
   });
 
-  // const headings = ["India", "Japan", "Business", "All"];
-  // const headingsJp = ["インド", "日本", "仕事", "全て"];
   return (
     <div>
       {
