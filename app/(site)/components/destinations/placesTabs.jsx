@@ -47,12 +47,14 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces }) => {
           <Card>
             <CardHeader>
               <CardTitle>
-                {language === "english" ? "India" : "インド"}
+                {language === "english"
+                  ? "Kerala Odyssey: Unveiling the Charms of God's Own Country"
+                  : "ケララ オデッセイ: 神の国の魅力を明らかにする"}
               </CardTitle>
               <CardDescription>
                 {language === "english"
-                  ? "All the Indian destinations are listed below"
-                  : "インドのすべての目的地は以下にリストされています"}
+                  ? "Explore our Curated Collection of Kerala Destinations Below"
+                  : "以下のケーララ州の目的地の厳選コレクションをご覧ください"}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
@@ -64,11 +66,15 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces }) => {
         <TabsContent value="japan">
           <Card>
             <CardHeader>
-              <CardTitle>{language === "english" ? "Japan" : "日本"}</CardTitle>
+              <CardTitle>
+                {language === "english"
+                  ? "Discover the Wonders of Japan"
+                  : "日本の不思議を発見する"}
+              </CardTitle>
               <CardDescription>
                 {language === "english"
-                  ? "All the Japanese destinations are listed below"
-                  : "日本のすべての目的地は以下にリストされています"}
+                  ? "Explore our Curated Collection of Japan Destinations Below"
+                  : "以下の厳選された日本の目的地コレクションをご覧ください"}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
