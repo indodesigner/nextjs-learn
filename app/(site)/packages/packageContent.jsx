@@ -39,7 +39,7 @@ const packageContent = ({
 
       <CommonCarousel slides={slides} />
 
-      <div className="bg-neutral-100 dark:bg-neutral-800 rounded-md my-3 p-2">
+      <div className="bg-neutral-100 dark:bg-neutral-800 rounded-md my-3 p-2 divide-y divide-neutral-200 dark:divide-neutral-700">
         <div className="grid grid-cols-3 md:grid-cols-4 mb-2 px-1">
           <div className="col-span-2 md:col-span-3">
             <h3 className="text-lg sm:text-2xl md:text-3xl font-semibold mb-2">
@@ -60,25 +60,23 @@ const packageContent = ({
           </div>
         </div>
 
-        <div className="bg-neutral-200 dark:bg-neutral-900 rounded-lg py-2">
-          <div className="px-2 flex flex-wrap gap-2 ">
-            {tourPackage.place &&
-              tourPackage.place.map((item, index) => (
-                <Link
-                  href={`/places/${item.slug}`}
-                  key={index}
-                  className="group border-2 border-red-600 dark:border-red-500 hover:bg-red-600 dark:hover:bg-red-900 p-1 px-5 rounded-3xl transition"
-                >
-                  <h6 className="text-xs sm:text-sm font-medium group-hover:text-white">
-                    {language === "english"
-                      ? item.placeName.toUpperCase()
-                      : item.placeNamejp != null
-                      ? item.placeNamejp
-                      : item.placeName.toUpperCase()}
-                  </h6>
-                </Link>
-              ))}
-          </div>
+        <div className="px-2 flex flex-wrap gap-2 pt-2">
+          {tourPackage.place &&
+            tourPackage.place.map((item, index) => (
+              <Link
+                href={`/places/${item.slug}`}
+                key={index}
+                className="group border-2 border-red-500 dark:border-neutral-200 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
+              >
+                <h6 className="text-xs font-medium dark:text-white">
+                  {language === "english"
+                    ? item.placeName.toUpperCase()
+                    : item.placeNamejp != null
+                    ? item.placeNamejp
+                    : item.placeName.toUpperCase()}
+                </h6>
+              </Link>
+            ))}
         </div>
       </div>
 
@@ -121,7 +119,7 @@ const packageContent = ({
         </div>
       </div> */}
 
-      <div className="mb-8 px-4">
+      <div className="mb-8 px-3 sm:px-0">
         <PortableText
           value={
             language === "english"

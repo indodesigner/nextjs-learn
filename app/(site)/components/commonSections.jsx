@@ -85,7 +85,9 @@ export default function CommonSections({
         transition={{ delay: 0.5 }}
         className="container"
       >
-        <PlacesSection places={places} language={language} />
+        {places != 0 ? (
+          <PlacesSection places={places} language={language} />
+        ) : null}
       </motion.section>
       <motion.section
         initial={{ opacity: 0, y: 15 }}

@@ -54,7 +54,7 @@ const Blog = async ({ params }) => {
         </div>
       )}
 
-      <article className="mb-4 px-4">
+      <article className="mb-4 px-3 sm:px-0">
         <PortableText value={blog.content} components={RichTextComponents} />
       </article>
       {blog.href ? (

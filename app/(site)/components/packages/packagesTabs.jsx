@@ -47,7 +47,6 @@ const PackagesTabs = ({
           {trendingIndia != 0 ? (
             <PackagesTabContent
               packages={trendingIndia}
-              // heading={trendingIndia[0].packageFilter}
               heading={language === "english" ? "Trending" : "トレンド"}
               language={language}
               country={"india"}
@@ -56,7 +55,6 @@ const PackagesTabs = ({
           {popularIndia != 0 ? (
             <PackagesTabContent
               packages={popularIndia}
-              // heading={popularIndia[0].packageFilter}
               heading={language === "english" ? "Popular" : "人気のある"}
               language={language}
               country={"india"}
@@ -65,7 +63,6 @@ const PackagesTabs = ({
           {indianPacks != 0 ? (
             <PackagesTabContent
               packages={indianPacks}
-              // heading={"All"}
               heading={language === "english" ? "All" : "全て"}
               language={language}
               country={"india"}
@@ -76,7 +73,6 @@ const PackagesTabs = ({
           {trendingJapan != 0 ? (
             <PackagesTabContent
               packages={trendingJapan}
-              // heading={trendingJapan[0].packageFilter}
               heading={language === "english" ? "Trending" : "トレンド"}
               language={language}
               country={"japan"}
@@ -85,7 +81,6 @@ const PackagesTabs = ({
           {popularJapan != 0 ? (
             <PackagesTabContent
               packages={popularJapan}
-              // heading={popularJapan[0].packageFilter}
               heading={language === "english" ? "Popular" : "人気のある"}
               language={language}
               country={"japan"}
@@ -94,12 +89,13 @@ const PackagesTabs = ({
           {japanesePacks != 0 ? (
             <PackagesTabContent
               packages={japanesePacks}
-              // heading={"All"}
               heading={language === "english" ? "All" : "全て"}
               language={language}
               country={"japan"}
             />
-          ) : null}
+          ) : (
+            <h1 className="mt-8">Coming soon...</h1>
+          )}
         </TabsContent>
       </Tabs>
     </div>
