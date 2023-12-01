@@ -94,7 +94,9 @@ const PackagesTabs = ({
               country={"japan"}
             />
           ) : (
-            <h1 className="mt-8">Coming soon...</h1>
+            <div className="text-center">
+              <h1 className="mt-8">Coming soon...</h1>
+            </div>
           )}
         </TabsContent>
       </Tabs>

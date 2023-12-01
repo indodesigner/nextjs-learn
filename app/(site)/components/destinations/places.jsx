@@ -58,9 +58,25 @@ export default function PlacesSection({ places, language }) {
                   ? place.placeName
                   : place.placeNamejp || place.placeName}
               </h6>
+              <div className="px-2 flex flex-wrap gap-1 mb-2">
+                {place.placeTypes &&
+                  place.placeTypes.map((item, index) => (
+                    <span
+                      className="bg-red-500 px-3 py-1 rounded-2xl"
+                      key={index}
+                    >
+                      <h6 className="text-xs font-medium text-white dark:text-neutral-50">
+                        {language === "english"
+                          ? item.placeTypeName.toUpperCase()
+                          : item.placeTypeNamejp ||
+                            item.placeTypeName.toUpperCase()}
+                      </h6>
+                    </span>
+                  ))}
+              </div>
 
               {/* rich text component with line clamped to 3 lines */}
-              <div className="px-2 mb-2 text-neutral-600 dark:text-neutral-100 text-sm line-clamp-2 md:line-clamp-3">
+              {/* <div className="px-2 mb-2 text-neutral-600 dark:text-neutral-100 text-sm line-clamp-2 md:line-clamp-3">
                 <PortableText
                   value={
                     language === "english"
@@ -69,7 +85,7 @@ export default function PlacesSection({ places, language }) {
                   }
                   components={RichTextComponents}
                 />
-              </div>
+              </div> */}
             </Link>
           ))}
       </div>

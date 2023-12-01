@@ -41,11 +41,11 @@ export default {
       of: [{ type: "reference", to: { type: "country" } }],
       validation: (Rule) => Rule.max(1),
     },
-    {
-      name: "createdAt",
-      type: "datetime",
-      title: "Created at",
-    },
+    // {
+    //   name: "createdAt",
+    //   type: "datetime",
+    //   title: "Created at",
+    // },
     {
       name: "placeImages",
       title: "Place Images",

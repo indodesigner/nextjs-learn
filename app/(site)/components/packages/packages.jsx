@@ -11,8 +11,8 @@ import { LuImageOff, LuChevronRight, LuCalendarClock } from "react-icons/lu";
 export default function PackagesSection({ heading, packages, language }) {
   const showViewAllLink = packages.length > 3;
   const packagesToDisplay = packages.slice(0, 3); // Get the first 4 packages
-  const countries = packages[0].country;
-  const country = countries.map((item) => item.toLowerCase());
+  const countries = packages[0] && packages[0].country;
+  const country = countries && countries.map((item) => item.toLowerCase());
 
   return (
     <div>
@@ -84,7 +84,9 @@ export default function PackagesSection({ heading, packages, language }) {
                   </div>
                 ) : null}
 
-                <div className="hidden sm:block border-r border-neutral-300 dark:border-neutral-600"></div>
+                {tourPackage.rate && (
+                  <div className="hidden sm:block border-r border-neutral-300 dark:border-neutral-600"></div>
+                )}
 
                 {tourPackage.rate != null ? (
                   <h6 className="text-xs">
@@ -100,7 +102,7 @@ export default function PackagesSection({ heading, packages, language }) {
                       className="bg-black dark:bg-neutral-300 px-3 py-1 rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs font-medium text-white dark:text-neutral-900">
+                      <h6 className="text-xs text-white dark:text-neutral-900">
                         {language === "english"
                           ? item.placeName.toUpperCase()
                           : item.placeNamejp || item.placeName.toUpperCase()}
@@ -113,10 +115,10 @@ export default function PackagesSection({ heading, packages, language }) {
                 {tourPackage.placeTypes &&
                   tourPackage.placeTypes.map((item, index) => (
                     <span
-                      className="bg-red-500 dark:bg-red-400 px-3 py-1 rounded-2xl"
+                      className="bg-red-500 px-3 py-1 rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs font-medium text-white dark:text-neutral-50">
+                      <h6 className="text-xs text-white dark:text-neutral-50">
                         {language === "english"
                           ? item.placeTypeName.toUpperCase()
                           : item.placeTypeNamejp ||

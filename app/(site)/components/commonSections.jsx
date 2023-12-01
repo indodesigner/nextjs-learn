@@ -65,19 +65,22 @@ export default function CommonSections({
           />
         </motion.section>
       ) : null}
-      <motion.section
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 15 }}
-        transition={{ delay: 0.5 }}
-        className="container"
-      >
-        <PackagesSection
-          packages={packages}
-          heading={language === "english" ? headings[3] : headingsJp[3]}
-          language={language}
-        />
-      </motion.section>
+
+      {packages != 0 ? (
+        <motion.section
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 15 }}
+          transition={{ delay: 0.5 }}
+          className="container"
+        >
+          <PackagesSection
+            packages={packages}
+            heading={language === "english" ? headings[3] : headingsJp[3]}
+            language={language}
+          />
+        </motion.section>
+      ) : null}
       <motion.section
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}

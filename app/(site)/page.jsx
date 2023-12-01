@@ -8,22 +8,34 @@ export default async function HomePage() {
   const packages = await getPackages(); //fetch packages from sanity query can be fount in (sanity/sanity-utils.js)
   const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
 
-  const packagesWithDuration = packages.map((pack) => {
-    const retdate = new Date(pack.returnDate);
-    const depDate = new Date(pack.departureDate);
-    const dateDiff = retdate - depDate;
-    const durationFromDates = dateDiff / (1000 * 60 * 60 * 24);
-    return { ...pack, durationFromDates };
-  });
+  // find duration from dep date and ret date.......
+  // const packagesWithDuration = packages.map((pack) => {
+  //   const retdate = new Date(pack.returnDate);
+  //   const depDate = new Date(pack.departureDate);
+  //   const dateDiff = retdate - depDate;
+  //   const durationFromDates = dateDiff / (1000 * 60 * 60 * 24);
+  //   return { ...pack, durationFromDates };
+  // });
 
-  const indianPackages = packagesWithDuration.filter((pack) => {
+  // const indianPackages = packagesWithDuration.filter((pack) => {
+  //   return pack.country && pack.country.includes("India");
+  // });
+  // const japanesePackages = packagesWithDuration.filter((pack) => {
+  //   return pack.country && pack.country.includes("Japan");
+  // });
+
+  // const businessPackages = packagesWithDuration.filter((pack) => {
+  //   return pack.category && pack.category.includes("Business");
+  // });
+
+  const indianPackages = packages.filter((pack) => {
     return pack.country && pack.country.includes("India");
   });
-  const japanesePackages = packagesWithDuration.filter((pack) => {
+  const japanesePackages = packages.filter((pack) => {
     return pack.country && pack.country.includes("Japan");
   });
 
-  const businessPackages = packagesWithDuration.filter((pack) => {
+  const businessPackages = packages.filter((pack) => {
     return pack.category && pack.category.includes("Business");
   });
 
@@ -42,7 +54,7 @@ export default async function HomePage() {
       }
       <SlidesSection slides={slides} />
       <CommonSections
-        packages={packagesWithDuration}
+        packages={packages}
         firstSectionPackages={indianPackages}
         secondSectionPackages={japanesePackages}
         businessPackages={businessPackages}

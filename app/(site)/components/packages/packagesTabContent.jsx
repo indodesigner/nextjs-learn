@@ -88,7 +88,9 @@ export default async function PackagesTabContent({
                       </div>
                     ) : null}
 
-                    <div className="hidden sm:block border-r border-neutral-300 dark:border-neutral-600"></div>
+                    {tourPackage.rate && (
+                      <div className="hidden sm:block border-r border-neutral-300 dark:border-neutral-600"></div>
+                    )}
 
                     {tourPackage.rate != null ? (
                       <h6 className="text-xs">
@@ -118,7 +120,7 @@ export default async function PackagesTabContent({
                     {tourPackage.placeTypes &&
                       tourPackage.placeTypes.map((item, index) => (
                         <span
-                          className="bg-red-500 dark:bg-red-400 px-3 py-1 rounded-2xl"
+                          className="bg-red-500 px-3 py-1 rounded-2xl"
                           key={index}
                         >
                           <h6 className="text-xs font-medium text-white dark:text-neutral-50">

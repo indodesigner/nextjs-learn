@@ -72,8 +72,8 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces }) => {
           </Card>
         </TabsContent>
         <TabsContent value="japan">
-          <Card>
-            {japanesePlaces != 0 ? (
+          {japanesePlaces != 0 ? (
+            <Card>
               <CardHeader>
                 <CardTitle>
                   {language === "english"
@@ -86,16 +86,17 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces }) => {
                     : "以下の厳選された日本の目的地コレクションをご覧ください"}
                 </CardDescription>
               </CardHeader>
-            ) : null}
-            <CardContent className="space-y-2">
-              {japanesePlaces != 0 ? (
+
+              <CardContent className="space-y-2">
                 <PlacesTabContent places={japanesePlaces} language={language} />
-              ) : (
-                <h1 className="mt-8">Coming soon...</h1>
-              )}
-            </CardContent>
-            <CardFooter></CardFooter>
-          </Card>
+              </CardContent>
+              <CardFooter></CardFooter>
+            </Card>
+          ) : (
+            <div className="text-center">
+              <h1 className="mt-8">Coming soon...</h1>
+            </div>
+          )}
         </TabsContent>
       </Tabs>
     </div>

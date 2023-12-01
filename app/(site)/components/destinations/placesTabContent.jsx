@@ -45,7 +45,7 @@ export default async function PlacesTabContent({ places, language }) {
               {place.placeTypes &&
                 place.placeTypes.map((item, index) => (
                   <span
-                    className="bg-red-500 dark:bg-red-400 px-3 py-1 rounded-2xl"
+                    className="bg-red-500 px-3 py-1 rounded-2xl"
                     key={index}
                   >
                     <h6 className="text-xs font-bold text-white dark:text-neutral-50">

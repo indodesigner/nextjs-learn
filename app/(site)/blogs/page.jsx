@@ -17,10 +17,18 @@ export default async function Blogs() {
     const blogs = await Promise.race([getBlogs(), timeoutPromise]);
 
     return (
-      <div className="container mt-0 md:mt-24">
-        <BlogContent blogs={blogs} />
-        <GetCountry country={null} />
-      </div>
+      <>
+        {blogs != 0 ? (
+          <div className="container mt-0 md:mt-24">
+            <BlogContent blogs={blogs} />
+            <GetCountry country={null} />
+          </div>
+        ) : (
+          <div className="container flex place-content-center place-items-center min-h-screen">
+            <h1>Coming soon...</h1>
+          </div>
+        )}
+      </>
     );
   } catch (error) {
     // Handle the timeout error or any other errors that may occur

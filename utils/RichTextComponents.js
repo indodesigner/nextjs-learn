@@ -22,6 +22,7 @@ export const RichTextComponents = {
   },
 
   marks: {
+    strong: ({ children }) => <strong className="font-bold">{children}</strong>,
     link: ({ children, value }) => {
       const rel = !value.href.startsWith("/")
         ? "noreferrer noopener"
@@ -35,7 +36,20 @@ export const RichTextComponents = {
   },
   block: {
     // Ex. 1: customizing common block types
-    h1: ({ children }) => <h1 className="text-2xl">{children}</h1>,
+    block: ({ children }) => <p>{children}</p>,
+    p: ({ children }) => <p className="mb-4 sm:mb-8">{children}</p>,
+    h1: ({ children }) => (
+      <h1 className="text-3xl font-bold mb-4">{children}</h1>
+    ),
+    h2: ({ children }) => (
+      <h2 className="text-2xl font-bold mb-3">{children}</h2>
+    ),
+    h3: ({ children }) => <h3 className="text-xl mb-2">{children}</h3>,
+    h4: ({ children }) => <h4 className="text-lg mb-2">{children}</h4>,
+    h5: ({ children }) => <h5 className="text-base mb-1">{children}</h5>,
+    h6: ({ children }) => (
+      <h6 className="text-sm font-bold mb-1">{children}</h6>
+    ),
     blockquote: ({ children }) => (
       <blockquote className="border-l-purple-500">{children}</blockquote>
     ),

@@ -51,7 +51,8 @@ const PlaceContent = ({ place, slides, country }) => {
           {place.placeTypes &&
             place.placeTypes.map((item, index) => (
               <Link
-                href={`/places/${item.slug}`}
+                // href={`/placetype/${item.slug}`} // need to add [page] for this
+                href={"/"}
                 key={index}
                 className="group border-2 border-red-500 dark:border-neutral-200 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
               >
