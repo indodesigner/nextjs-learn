@@ -19,3 +19,5 @@ export default async function Places() {
     </div>
   );
 }
+
+export const revalidate = 10;
