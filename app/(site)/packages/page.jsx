@@ -69,3 +69,5 @@ export default async function Packages() {
     </div>
   );
 }
+
+export const revalidate = 10;
