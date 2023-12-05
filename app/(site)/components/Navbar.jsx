@@ -118,7 +118,7 @@ const Navbar = () => {
             <Image src={Logo} width={56} height={56} alt="logo image"></Image>
           </Link>
 
-          <ul className="ps-[7px] py-2 flex flex-row items-center bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 rounded-3xl">
+          <ul className="ps-[7px] py-2 flex flex-row items-center bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 rounded-3xl shadow-lg">
             {links.map((link, index) => (
               <li key={index}>
                 <Link

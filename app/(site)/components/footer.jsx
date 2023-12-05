@@ -11,9 +11,7 @@ import {
 export default function Footer() {
   return (
     <div className="flex items-center justify-between py-3 sm:py-4 px-4 md:px-16 bg-neutral-100 dark:bg-neutral-900 backdrop-filter backdrop-blur-xl bg-opacity-30 dark:bg-opacity-30 border-t-[1px] border-neutral-700 dark:border-neutral-500 border-opacity-10 dark:border-opacity-10 min-w-full scroll-auto">
-      <h6 className="text-[10px] sm:text-xs">
-        Copyright © 2023 Nikotravels.com
-      </h6>
+      <h6 className="text-[10px] sm:text-xs">Copyright © 2023 Niko Travels</h6>
       <div className="hidden sm:block">
         <ul className="flex flex-row gap-3">
           <li>
@@ -37,21 +35,24 @@ export default function Footer() {
 
       <div className="">
         <ul className="flex flex-row gap-5">
-          <li className="hover:scale-90 transition">
-            <Link href="/blogs" className="text-medium md:text-2xl">
+          {/* <li className="hover:scale-90 transition">
+            <Link href="/about" className="text-medium md:text-2xl">
               <FaSquareInstagram />
             </Link>
-          </li>
+          </li> */}
           <li className="hover:scale-90 transition">
-            <Link href="/about" className="text-medium md:text-2xl">
+            <Link
+              href="https://www.facebook.com/nikotravelskochi/"
+              className="text-medium md:text-2xl"
+            >
               <FaSquareFacebook />
             </Link>
           </li>
-          <li className="hover:scale-90 transition">
+          {/* <li className="hover:scale-90 transition">
             <Link href="/about" className="text-medium md:text-2xl">
               <FaXTwitter />
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>
