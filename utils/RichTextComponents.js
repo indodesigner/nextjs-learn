@@ -44,9 +44,9 @@ export const RichTextComponents = {
     h2: ({ children }) => (
       <h2 className="text-2xl font-bold mb-3">{children}</h2>
     ),
-    h3: ({ children }) => <h3 className="text-xl mb-2">{children}</h3>,
-    h4: ({ children }) => <h4 className="text-lg mb-2">{children}</h4>,
-    h5: ({ children }) => <h5 className="text-base mb-1">{children}</h5>,
+    h3: ({ children }) => <h3 className="text-xl mt-4 mb-1">{children}</h3>,
+    h4: ({ children }) => <h4 className="text-lg mt-4 mb-1">{children}</h4>,
+    h5: ({ children }) => <h5 className="text-base mt-4 mb-1">{children}</h5>,
     h6: ({ children }) => (
       <h6 className="text-sm font-bold mb-1">{children}</h6>
     ),
