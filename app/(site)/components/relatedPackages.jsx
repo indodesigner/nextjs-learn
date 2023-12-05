@@ -5,8 +5,10 @@ import urlFor from "/utils/urlFor";
 import { LuImageOff, LuCalendarClock } from "react-icons/lu";
 import GetCountry from "@/components/getCountry";
 
-const RelatedPackages = async ({ place, language }) => {
+const RelatedPackages = async ({ place, placejp, language }) => {
   const packages = await getPackages(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
+
+  console.log(place);
 
   const relatedPacks = packages.filter((pack) => {
     return (
@@ -19,8 +21,11 @@ const RelatedPackages = async ({ place, language }) => {
 
   return (
     <>
-      <h4 className="text-lg sm:text-xl font-bold mt-16 mb-2">
-        {place} Packages
+      <h4 className="text-lg sm:text-xl font-bold my-4 text-red-500">
+        {language == "english" ? place : placejp}
+        <span className="text-neutral-900 dark:text-neutral-50 ms-2 font-light">
+          {language == "english" ? "Packages" : "パッケージ"}
+        </span>
       </h4>
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2">
         {relatedPacks &&
@@ -65,7 +70,9 @@ const RelatedPackages = async ({ place, language }) => {
                   </div>
                 ) : null}
 
-                <div className="hidden sm:block border-r border-neutral-300 dark:border-neutral-600"></div>
+                {tourPackage.rate && (
+                  <div className="hidden sm:block border-r border-neutral-300 dark:border-neutral-600"></div>
+                )}
 
                 {tourPackage.rate != null ? (
                   <h6 className="text-xs">

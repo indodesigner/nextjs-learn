@@ -78,8 +78,12 @@ const PlaceContent = ({ place, slides, country }) => {
           components={RichTextComponents}
         />
       </div>
-
-      <RelatedPackages place={place.placeName} language={language} />
+      <hr className="border-neutral-300 dark:border-neutral-800 mt-16" />
+      <RelatedPackages
+        place={place.placeName}
+        placejp={place.placeNamejp}
+        language={language}
+      />
     </>
   );
 };
