@@ -82,8 +82,10 @@ export default async function PackagesTabContent({
                         <LuCalendarClock className="text-sm" />
 
                         <h6 className="text-xs ps-2">
-                          <strong>{tourPackage.duration.days}</strong> Days &{" "}
-                          <strong>{tourPackage.duration.nights}</strong> Nights
+                          <strong>{tourPackage.duration.days}</strong>{" "}
+                          {language === "english" ? "Days & " : "日々 & "}
+                          <strong>{tourPackage.duration.nights}</strong>{" "}
+                          {language === "english" ? "Nights" : "夜"}
                         </h6>
                       </div>
                     ) : null}

@@ -102,11 +102,11 @@ p {
 }
 
 /*-- keyframes for the animation --------------------------------------------*/
-@keyframes scaleAnimation {
+/* @keyframes scaleAnimation {
   0% {
-    transform: scale(1); /* Initial scale, no change */
+    transform: scale(1);
   }
   100% {
-    transform: scale(1.5); /* Final scale, 20% larger than the original size */
+    transform: scale(1.5);
   }
-}
+} */

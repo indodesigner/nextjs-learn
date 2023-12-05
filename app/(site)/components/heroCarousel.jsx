@@ -52,7 +52,7 @@ const HeroCarousel = ({ slides }) => {
                 width={3000}
                 height={3000}
                 alt={slide.alt}
-                className="min-w-screen max-h-[70vh] md:max-h-screen object-cover"
+                className="min-w-screen max-h-[70vh] md:max-h-screen object-cover rounded-xl md:rounded-3xl"
               ></Image>
               <AnimatePresence>
                 <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">
