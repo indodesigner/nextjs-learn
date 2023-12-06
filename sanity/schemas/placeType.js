@@ -10,7 +10,7 @@ export default {
     },
     {
       name: "placeTypeNamejp",
-      title: "Place Type - Japanese",
+      title: "Destination Type - Japanese",
       type: "string",
     },
     {

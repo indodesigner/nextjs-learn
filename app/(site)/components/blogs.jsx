@@ -13,16 +13,20 @@ export default async function BlogSection() {
   return (
     <div>
       {blogs != 0 ? (
-        <div className="flex justify-between mt-8 mb-4">
-          <h4 className="text-xl sm:text-2xl font-bold">Latest Blogs</h4>
-          <Link
-            href="/blogs"
-            className="group text-sm font-medium flex items-center link-hover py-1 px-2"
-          >
-            View all
-            <LuChevronRight className="group-hover:text-red-300 transition" />
-          </Link>
-        </div>
+        <>
+          <hr className="border-neutral-300 dark:border-neutral-800 mt-8" />
+
+          <div className="flex justify-between mt-8 mb-4">
+            <h4 className="text-xl sm:text-2xl font-bold">Latest Blogs</h4>
+            <Link
+              href="/blogs"
+              className="group text-sm font-medium flex items-center link-hover py-1 px-2"
+            >
+              View all
+              <LuChevronRight className="group-hover:text-red-300 transition" />
+            </Link>
+          </div>
+        </>
       ) : null}
 
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">

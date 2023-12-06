@@ -1,4 +1,9 @@
-import { getSlides, getPackages, getPlaces } from "/sanity/sanity-utils";
+import {
+  getSlides,
+  getPackages,
+  getPlaces,
+  getPlaceTypes,
+} from "/sanity/sanity-utils";
 import SlidesSection from "@/components/slidesSection";
 import CommonSections from "@/components/commonSections";
 import GetCountry from "@/components/getCountry";
@@ -7,6 +12,7 @@ export default async function HomePage() {
   const slides = await getSlides();
   const packages = await getPackages(); //fetch packages from sanity query can be fount in (sanity/sanity-utils.js)
   const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
+  const placeTypes = await getPlaceTypes(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
 
   // find duration from dep date and ret date.......
   // const packagesWithDuration = packages.map((pack) => {
@@ -54,6 +60,7 @@ export default async function HomePage() {
       }
       <SlidesSection slides={slides} />
       <CommonSections
+        placeTypes={placeTypes}
         packages={packages}
         firstSectionPackages={indianPackages}
         secondSectionPackages={japanesePackages}

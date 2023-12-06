@@ -16,7 +16,7 @@ export default function PackagesSection({ heading, packages, language }) {
 
   return (
     <div>
-      <div className="flex justify-between mt-8 mb-4">
+      <div className="flex justify-between mb-4">
         <h4 className="text-xl sm:text-2xl font-bold">
           {heading} {language === "english" ? "Packages" : "パッケージ"}
         </h4>

@@ -1,28 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getPackages } from "/sanity/sanity-utils";
+// import { getPackages } from "/sanity/sanity-utils";
 import urlFor from "/utils/urlFor";
 import { LuImageOff, LuCalendarClock } from "react-icons/lu";
 import GetCountry from "@/components/getCountry";
 
-const RelatedPackages = async ({ place, placejp, language }) => {
-  const packages = await getPackages(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
-
-  console.log(place);
-
-  const relatedPacks = packages.filter((pack) => {
-    return (
-      pack.country &&
-      pack.country.includes("India") &&
-      pack.place &&
-      pack.place.map((item) => item === place)
-    );
-  });
-
+const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
   return (
     <>
       <h4 className="text-lg sm:text-xl font-bold my-4 text-red-500">
-        {language == "english" ? place : placejp}
+        {language == "english" ? heading : headingjp}
         <span className="text-neutral-900 dark:text-neutral-50 ms-2 font-light">
           {language == "english" ? "Packages" : "パッケージ"}
         </span>
