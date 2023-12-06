@@ -22,7 +22,7 @@ const packageContent = ({
 
   return (
     <>
-      <div className="flex items-center mb-3">
+      <div className="flex items-center mb-2">
         <Link href="/packages" className="gradient-text">
           {language === "english" ? "Packages" : "パッケージ"}
         </Link>
@@ -60,13 +60,13 @@ const packageContent = ({
           </div>
         </div>
 
-        <div className="px-2 flex flex-wrap gap-2 pt-2">
+        <div className="px-2 flex flex-wrap gap-2 py-2">
           {tourPackage.place &&
             tourPackage.place.map((item, index) => (
               <Link
                 href={`/places/${item.slug}`}
                 key={index}
-                className="group border-2 border-red-500 dark:border-neutral-200 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
+                className="group border-2 border-neutral-800 dark:border-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
               >
                 <h6 className="text-xs font-medium dark:text-white">
                   {language === "english"
@@ -74,6 +74,24 @@ const packageContent = ({
                     : item.placeNamejp != null
                     ? item.placeNamejp
                     : item.placeName.toUpperCase()}
+                </h6>
+              </Link>
+            ))}
+        </div>
+        <div className="px-2 flex flex-wrap gap-2 pt-2">
+          {tourPackage.placeTypes &&
+            tourPackage.placeTypes.map((item, index) => (
+              <Link
+                href={`/places/${item.slug}`}
+                key={index}
+                className="group border-2 border-red-500 dark:border-red-400 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
+              >
+                <h6 className="text-xs font-medium dark:text-white">
+                  {language === "english"
+                    ? item.placeTypeName.toUpperCase()
+                    : item.placeTypeNamejp != null
+                    ? item.placeTypeNamejp
+                    : item.placeTypeName.toUpperCase()}
                 </h6>
               </Link>
             ))}

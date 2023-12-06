@@ -193,3 +193,38 @@ export async function getPackage({ slug }) {
 //       }`
 //   );
 // }
+
+export async function getPlaceTypes() {
+  return client.fetch(
+    groq`*[_type == "placeType"] | order(createdAt desc){
+        _id,
+        placeTypeName,
+        placeTypeNamejp,
+        "slug": slug.current,
+        placeTypeImages[0]{asset->{url}},
+        "alt": coalesce(placeTypeImages[0].alt, "Image of the destination Type"),
+        content,
+        contentjp,
+      }`
+  );
+}
+
+export async function getPlaceType({ slug }) {
+  return client.fetch(
+    groq`*[_type == "placeType" && slug.current == "${slug}"][0] {
+        _id,
+        placeTypeName,
+        placeTypeNamejp,
+        "slug": slug.current,
+        placeTypeImages[] {
+          asset->{
+            url
+          },
+          alt,
+          caption
+        },
+        content,
+        contentjp,
+      }`
+  );
+}
