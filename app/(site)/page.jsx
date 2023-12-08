@@ -12,9 +12,9 @@ export default async function HomePage() {
   const slides = await getSlides();
   const packages = await getPackages(); //fetch packages from sanity query can be fount in (sanity/sanity-utils.js)
   const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
-  const placeTypes = await getPlaceTypes(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
+  const placeTypes = await getPlaceTypes();
 
-  // find duration from dep date and ret date.......
+  // find duration from dep date and ret date...dep and ret dates not used for now....
   // const packagesWithDuration = packages.map((pack) => {
   //   const retdate = new Date(pack.returnDate);
   //   const depDate = new Date(pack.departureDate);

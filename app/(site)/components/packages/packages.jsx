@@ -101,7 +101,7 @@ export default function PackagesSection({ heading, packages, language }) {
                 {tourPackage.place &&
                   tourPackage.place.map((item, index) => (
                     <span
-                      className="bg-black dark:bg-neutral-300 px-3 py-1 rounded-2xl"
+                      className="bg-neutral-900 dark:bg-neutral-300 px-3 py-1 rounded-2xl"
                       key={index}
                     >
                       <h6 className="text-xs text-white dark:text-neutral-900">

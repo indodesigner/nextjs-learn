@@ -111,7 +111,8 @@ export async function getPlace({ slug }) {
         },
         "placeTypes":placeType[]->{
           "placeTypeName":placeTypeName,
-          "placeTypeNamejp":placeTypeNamejp
+          "placeTypeNamejp":placeTypeNamejp,
+          "slug": slug.current
         },
         "country":country[]->name,
         "countryjp":country[]->namejp,
@@ -176,7 +177,8 @@ export async function getPackage({ slug }) {
         },
         "placeTypes":placeType[]->{
           "placeTypeName":placeTypeName,
-          "placeTypeNamejp":placeTypeNamejp
+          "placeTypeNamejp":placeTypeNamejp,
+          "slug": slug.current
         },
         "country":country[]->name,
         "countryjp":country[]->namejp,
@@ -201,6 +203,7 @@ export async function getPlaceTypes() {
         placeTypeName,
         placeTypeNamejp,
         "slug": slug.current,
+        "placeTypeIcon": placeTypeIcon.asset->url,
         placeTypeImages[0]{asset->{url}},
         "alt": coalesce(placeTypeImages[0].alt, "Image of the destination Type"),
         content,

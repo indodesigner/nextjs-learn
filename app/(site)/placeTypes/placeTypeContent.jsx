@@ -30,9 +30,7 @@ const PlaceTypeContent = ({ placeType, slides, relatedPacks }) => {
       <h3 className="text-2xl md:text-3xl font-bold mb-2">
         {language === "english"
           ? placeType.placeTypeName
-          : placeType.placeTypeNamejp != null
-          ? placeType.placeTypeNamejp
-          : placeType.placeTypeName}
+          : placeType.placeTypeNamejp || placeType.placeTypeName}
       </h3>
 
       {slides && slides.length > 0 ? (
@@ -70,9 +68,7 @@ const PlaceTypeContent = ({ placeType, slides, relatedPacks }) => {
           value={
             language === "english"
               ? placeType.content
-              : placeType.contentjp != null
-              ? placeType.contentjp
-              : placeType.content
+              : placeType.contentjp || placeType.content
           }
           components={RichTextComponents}
         />
