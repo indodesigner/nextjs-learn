@@ -45,9 +45,7 @@ const packageContent = ({
             <h3 className="text-lg sm:text-2xl md:text-3xl font-semibold mb-2">
               {language === "english"
                 ? tourPackage.packageName
-                : tourPackage.packageNamejp != null
-                ? tourPackage.packageNamejp
-                : tourPackage.packageName}
+                : tourPackage.packageNamejp || tourPackage.packageName}
             </h3>
           </div>
           <div className="place-self-end self-center">
@@ -71,9 +69,7 @@ const packageContent = ({
                 <h6 className="text-xs font-medium dark:text-white">
                   {language === "english"
                     ? item.placeName.toUpperCase()
-                    : item.placeNamejp != null
-                    ? item.placeNamejp
-                    : item.placeName.toUpperCase()}
+                    : item.placeNamejp || item.placeName.toUpperCase()}
                 </h6>
               </Link>
             ))}
@@ -82,16 +78,14 @@ const packageContent = ({
           {tourPackage.placeTypes &&
             tourPackage.placeTypes.map((item, index) => (
               <Link
-                href={`/places/${item.slug}`}
+                href={`/placeTypes/${item.slug}`}
                 key={index}
-                className="group border-2 border-red-500 dark:border-red-400 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
+                className="group border-2 border-red-500 dark:border-red-500 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
               >
                 <h6 className="text-xs font-medium dark:text-white">
                   {language === "english"
                     ? item.placeTypeName.toUpperCase()
-                    : item.placeTypeNamejp != null
-                    ? item.placeTypeNamejp
-                    : item.placeTypeName.toUpperCase()}
+                    : item.placeTypeNamejp || item.placeTypeName.toUpperCase()}
                 </h6>
               </Link>
             ))}
@@ -142,9 +136,7 @@ const packageContent = ({
           value={
             language === "english"
               ? tourPackage.content
-              : tourPackage.contentjp != null
-              ? tourPackage.contentjp
-              : tourPackage.content
+              : tourPackage.contentjp || tourPackage.content
           }
           components={RichTextComponents}
         />

@@ -18,10 +18,10 @@
     @apply bg-red-600;
   }
   .gradient-text {
-    @apply bg-gradient-to-r from-indigo-400 to-orange-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-indigo-400 to-red-400 bg-clip-text text-transparent;
   }
   .gradient-bg {
-    @apply bg-gradient-to-r from-indigo-400 to-orange-400;
+    @apply bg-gradient-to-r from-indigo-400 to-red-400;
   }
   .btn-primary {
     @apply bg-primary-color px-4 py-1 rounded-2xl hover:bg-primary-color-hover transition duration-200 focus:outline-none focus:ring-2 focus:bg-purple-400 focus:ring-opacity-75;

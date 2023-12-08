@@ -31,9 +31,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
       <h3 className="text-2xl md:text-3xl font-bold mb-2">
         {language === "english"
           ? place.placeName
-          : place.placeNamejp != null
-          ? place.placeNamejp
-          : place.placeName}
+          : place.placeNamejp || place.placeName}
       </h3>
 
       {slides && slides.length > 0 ? (
@@ -51,8 +49,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
           {place.placeTypes &&
             place.placeTypes.map((item, index) => (
               <Link
-                // href={`/placetype/${item.slug}`} // need to add [page] for this
-                href={"/"}
+                href={`/placeTypes/${item.slug}`}
                 key={index}
                 className="group border-2 border-red-500 dark:border-neutral-200 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
               >
@@ -71,9 +68,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
           value={
             language === "english"
               ? place.content
-              : place.contentjp != null
-              ? place.contentjp
-              : place.content
+              : place.contentjp || place.content
           }
           components={RichTextComponents}
         />

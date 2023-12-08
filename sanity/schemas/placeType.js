@@ -29,6 +29,21 @@ export default {
       },
     },
     {
+      title: "Icon",
+      name: "placeTypeIcon",
+      type: "image",
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+    },
+    {
       name: "placeTypeImages",
       title: "Place Type Images",
       type: "array",
