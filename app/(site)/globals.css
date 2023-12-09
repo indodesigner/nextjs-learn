@@ -5,7 +5,7 @@
 /*-- tailwindcss custom styles -- START -------------------------------------------*/
 @layer components {
   .container {
-    @apply max-w-5xl p-4;
+    @apply max-w-5xl p-4 mb-8;
   }
 
   .text-primary-color {
@@ -38,7 +38,7 @@
     @apply backdrop-filter backdrop-blur-xl bg-opacity-10 dark:bg-opacity-25 bg-white dark:bg-neutral-500 shadow-xl shadow-neutral-200 dark:shadow-neutral-900 rounded-xl transition duration-300;
   } */
   .card-hover {
-    @apply hover:shadow-md hover:shadow-neutral-300 dark:hover:shadow-neutral-950 hover:-translate-y-2 transition;
+    @apply hover:shadow-md hover:-translate-y-2 transition;
   }
   .link-hover {
     @apply hover:gradient-text group-hover:gradient-text transition duration-200;
@@ -85,4 +85,39 @@ p {
 
 .swiper-pagination-bullet-active {
   background-color: #fff !important;
+}
+
+/* .bg-images {
+  background-image: url(/images/header-gradient.svg),
+    url(/images/footer-gradient.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top center, bottom center;
+  background-size: contain;
+} */
+
+body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(/images/header-gradient.svg),
+    url(/images/footer-gradient.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top center, bottom center;
+  background-size: contain;
+  animation: scaleInOut 5s infinite linear; /* Adjust the duration as needed */
+}
+
+@keyframes scaleInOut {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.02) translateY(5px); /* Adjust the scale and translateY values as needed */
+  }
 }

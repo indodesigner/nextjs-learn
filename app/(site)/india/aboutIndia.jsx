@@ -11,7 +11,7 @@ const AboutIndia = () => {
       <h2 className="text-3xl font-bold mb-4">
         {language === "english" ? "About India" : "インドについて"}
       </h2>
-      <div className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-4 bg-neutral-200 dark:bg-neutral-800 py-2 px-4 rounded-2xl">
+      <div className="grid grid-cols-1 place-items-center lg:grid-cols-2 gap-4 bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 shadow-lg py-2 px-4 rounded-2xl">
         <Image
           src={IndiaMapImage}
           width={500}

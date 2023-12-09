@@ -63,3 +63,5 @@ export default async function ExploreIndia() {
     </div>
   );
 }
+
+export const revalidate = 10;

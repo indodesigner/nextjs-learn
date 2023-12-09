@@ -63,3 +63,5 @@ export default async function ExploreJapan() {
     </div>
   );
 }
+
+export const revalidate = 10;
