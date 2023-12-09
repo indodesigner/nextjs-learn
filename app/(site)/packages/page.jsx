@@ -1,6 +1,7 @@
 import PackagesTabs from "@/components/packages/packagesTabs";
 import { getPackages } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
+import GetInTouch from "@/components/getInTouch";
 
 export default async function Packages() {
   const packages = await getPackages(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
@@ -56,17 +57,22 @@ export default async function Packages() {
   });
 
   return (
-    <div className="container mt-0 md:mt-24">
-      <PackagesTabs
-        indianPacks={indianPacks}
-        japanesePacks={japanesePacks}
-        trendingIndia={trendingIndia}
-        trendingJapan={trendingJapan}
-        popularIndia={popularIndia}
-        popularJapan={popularJapan}
-      />
+    <>
+      <div className="container mt-0 md:mt-24">
+        <PackagesTabs
+          indianPacks={indianPacks}
+          japanesePacks={japanesePacks}
+          trendingIndia={trendingIndia}
+          trendingJapan={trendingJapan}
+          popularIndia={popularIndia}
+          popularJapan={popularJapan}
+        />
+      </div>
+      <div className="container">
+        <GetInTouch />
+      </div>
       <GetCountry country={null} />
-    </div>
+    </>
   );
 }
 

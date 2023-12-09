@@ -215,12 +215,12 @@ const Navbar = () => {
                 variants={navContainer}
               >
                 <div
-                  className="absolute w-[40vw] h-[100vh] top-0 left-0"
+                  className="absolute w-[40vw] sm:w-[60vw] h-[100vh] top-0 left-0"
                   onClick={() => {
                     closeNavbar();
                   }}
                 ></div>
-                <div className="absolute w-[60vw] h-[100vh] top-0 right-0 bg-white dark:bg-neutral-950 bg-opacity-100">
+                <div className="absolute w-[60vw] sm:w-[40vw] h-[100vh] top-0 right-0 bg-white dark:bg-neutral-950 bg-opacity-100">
                   <div className="px-4 py-4 flex justify-end">
                     <button
                       className="text-3xl dark:text-white"
@@ -257,18 +257,21 @@ const Navbar = () => {
                       </Link>
                     ))}
                     <motion.li
-                      className="nav-item dark:text-white text-lg sm:text-xl mt-8"
+                      className="ps-2 flex flex-row gap-4 divide-x-2 divide-neutral-300 dark:divide-neutral-600 items-center nav-item dark:text-white text-lg sm:text-xl mt-8"
                       variants={navItem}
                     >
                       <SwitchLanguage />
+                      <div className="ps-3">
+                        <ThemeChanger />
+                      </div>
                     </motion.li>
 
-                    <motion.li
+                    {/* <motion.li
                       className="nav-item dark:text-white text-2xl sm:text-3xl mt-8 ps-2"
                       variants={navItem}
                     >
                       <ThemeChanger />
-                    </motion.li>
+                    </motion.li> */}
                   </motion.ul>
                 </div>
               </motion.div>
