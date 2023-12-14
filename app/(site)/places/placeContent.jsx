@@ -45,7 +45,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
       )}
 
       <div className="bg-neutral-100 dark:bg-neutral-800 rounded-md my-3 p-2">
-        <div className="px-2 flex flex-wrap gap-2">
+        {/* <div className="px-2 flex flex-wrap gap-2">
           {place.placeTypes &&
             place.placeTypes.map((item, index) => (
               <Link
@@ -60,6 +60,32 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
                 </h6>
               </Link>
             ))}
+        </div> */}
+        <div className="flex items-center px-1">
+          <h4 className="text-xs ">ATTRACTIONS</h4>
+          <h6 className="text-sm">
+            <BsChevronRight className="pb-[2px]" />
+          </h6>
+          <div className="p-2 flex flex-wrap gap-2">
+            {place.placeTypes &&
+              place.placeTypes.map((item, index) => (
+                <Link
+                  href={`/placeTypes/${item.slug}`}
+                  key={index}
+                  className="group border-2 border-red-500 dark:border-red-500 hover:bg-red-100 dark:hover:bg-neutral-700 px-3 rounded-3xl transition"
+                >
+                  <h6
+                    className="text-xs font-medium text-red-500 dark:text-white ps-2"
+                    key={index}
+                  >
+                    {language === "english"
+                      ? item.placeTypeName.toUpperCase()
+                      : item.placeTypeNamejp ||
+                        item.placeTypeName.toUpperCase()}
+                  </h6>
+                </Link>
+              ))}
+          </div>
         </div>
       </div>
 

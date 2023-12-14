@@ -173,7 +173,13 @@ export async function getPackage({ slug }) {
         "place": place[]->{
           "placeName": placeName,
           "placeNamejp": placeNamejp,
-          "slug": slug.current
+          placeImages[0]{asset->{url}},
+          "alt": coalesce(placeImages[0].alt, "Image of the destination"),
+          "slug": slug.current,
+          "placeTypes":placeType[]->{
+            "placeTypeName":placeTypeName,
+            "placeTypeNamejp":placeTypeNamejp
+          }
         },
         "placeTypes":placeType[]->{
           "placeTypeName":placeTypeName,
