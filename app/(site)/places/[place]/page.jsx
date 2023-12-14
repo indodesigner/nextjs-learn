@@ -35,3 +35,5 @@ const Place = async ({ params }) => {
 };
 
 export default Place;
+
+export const revalidate = 10;

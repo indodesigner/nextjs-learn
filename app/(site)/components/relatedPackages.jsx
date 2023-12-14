@@ -9,9 +9,12 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
   return (
     <>
       <h4 className="text-lg sm:text-xl font-bold my-4 text-red-500">
+        <span className="text-neutral-900 dark:text-neutral-50 me-2 font-light">
+          {language == "english" ? "Suggested" : "パッケージ"}
+        </span>
         {language == "english" ? heading : headingjp}
         <span className="text-neutral-900 dark:text-neutral-50 ms-2 font-light">
-          {language == "english" ? "Packages" : "パッケージ"}
+          {language == "english" ? "Tour Packages" : "旅行 パッケージ"}
         </span>
       </h4>
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2">
@@ -45,12 +48,12 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                   : tourPackage.packageNamejp) || tourPackage.packageName}
               </h5>
 
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between px-2 mb-3">
+              <div className="flex flex-row gap-2 sm:gap-0 justify-between px-2 py-1 mb-3 bg-neutral-50 dark:bg-neutral-800 bg-opacity-30 dark:bg-opacity-50 rounded-lg">
                 {tourPackage.duration != null ? (
                   <div className="flex flex-row place-items-center">
-                    <LuCalendarClock className="text-sm" />
+                    <LuCalendarClock className="text-md sm:text-lg" />
 
-                    <h6 className="text-xs ps-2">
+                    <h6 className="text-md sm:text-lg ps-2">
                       <strong>{tourPackage.duration.days}</strong>{" "}
                       {language === "english" ? "Days & " : "日々 & "}
                       <strong>{tourPackage.duration.nights}</strong>{" "}
@@ -60,12 +63,15 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                 ) : null}
 
                 {tourPackage.rate && (
-                  <div className="hidden sm:block border-r border-neutral-300 dark:border-neutral-600"></div>
+                  <div className=" border-r border-neutral-300 dark:border-neutral-600 border-opacity-50 dark:border-opacity-70"></div>
                 )}
 
                 {tourPackage.rate != null ? (
-                  <h6 className="text-xs">
-                    Starting from <strong>₹{tourPackage.rate}</strong>
+                  <h6 className="text-xs flex flex-col items-center">
+                    Starting from
+                    <strong className="text-lg sm:text-lg">
+                      ₹{tourPackage.rate}
+                    </strong>
                   </h6>
                 ) : null}
               </div>

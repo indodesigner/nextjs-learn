@@ -72,7 +72,7 @@ export default function PackagesSection({ heading, packages, language }) {
                   : tourPackage.packageNamejp) || tourPackage.packageName}
               </h5>
 
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between px-2 mb-3">
+              {/* <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between px-2 mb-3">
                 {tourPackage.duration != null ? (
                   <div className="flex flex-row place-items-center">
                     <LuCalendarClock className="text-sm" />
@@ -95,16 +95,44 @@ export default function PackagesSection({ heading, packages, language }) {
                     Starting from <strong>₹{tourPackage.rate}</strong>
                   </h6>
                 ) : null}
+              </div> */}
+
+              <div className="flex flex-row gap-2 sm:gap-0 justify-between px-2 py-1 mb-3 bg-neutral-50 dark:bg-neutral-800 bg-opacity-30 dark:bg-opacity-50 rounded-lg">
+                {tourPackage.duration != null ? (
+                  <div className="flex flex-row place-items-center">
+                    <LuCalendarClock className="text-md sm:text-lg" />
+
+                    <h6 className="text-md sm:text-lg ps-2">
+                      <strong>{tourPackage.duration.days}</strong>{" "}
+                      {language === "english" ? "Days & " : "日々 & "}
+                      <strong>{tourPackage.duration.nights}</strong>{" "}
+                      {language === "english" ? "Nights" : "夜"}
+                    </h6>
+                  </div>
+                ) : null}
+
+                {tourPackage.rate && (
+                  <div className=" border-r border-neutral-300 dark:border-neutral-600 border-opacity-50 dark:border-opacity-70"></div>
+                )}
+
+                {tourPackage.rate != null ? (
+                  <h6 className="text-xs flex flex-col items-center">
+                    Starting from
+                    <strong className="text-lg sm:text-lg">
+                      ₹{tourPackage.rate}
+                    </strong>
+                  </h6>
+                ) : null}
               </div>
 
               <div className="px-2 flex flex-wrap gap-1 mb-2">
                 {tourPackage.place &&
                   tourPackage.place.map((item, index) => (
                     <span
-                      className="bg-neutral-900 dark:bg-neutral-300 px-3 py-1 rounded-2xl"
+                      className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs text-white dark:text-neutral-900">
+                      <h6 className="text-xs font-medium text-white dark:text-neutral-900">
                         {language === "english"
                           ? item.placeName.toUpperCase()
                           : item.placeNamejp || item.placeName.toUpperCase()}
@@ -112,15 +140,16 @@ export default function PackagesSection({ heading, packages, language }) {
                     </span>
                   ))}
               </div>
+              <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mb-2" />
 
               <div className="px-2 flex flex-wrap gap-1 mb-2">
                 {tourPackage.placeTypes &&
                   tourPackage.placeTypes.map((item, index) => (
                     <span
-                      className="bg-red-500 px-3 py-1 rounded-2xl"
+                      className="bg-red-500 px-2 py-[2px] rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs text-white dark:text-neutral-50">
+                      <h6 className="text-xs font-medium text-white dark:text-neutral-50">
                         {language === "english"
                           ? item.placeTypeName.toUpperCase()
                           : item.placeTypeNamejp ||
