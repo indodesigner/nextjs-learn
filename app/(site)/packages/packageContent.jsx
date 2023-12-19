@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { RichTextComponents } from "/utils/RichTextComponents";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,6 +21,26 @@ const packageContent = ({
   japanesePackDetails,
 }) => {
   const { language } = useLanguage();
+
+  const [isButtonVisible, setIsButtonVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const threshold = 500; // You can adjust this threshold as needed
+
+      // Toggle the visibility of the button based on the scroll position
+      setIsButtonVisible(scrollY > threshold);
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures that the effect runs only once on mount
 
   return (
     <>
@@ -50,7 +70,13 @@ const packageContent = ({
                 : tourPackage.packageNamejp || tourPackage.packageName}
             </h3>
           </div>
-          <div className="col-span-2 md:col-span-1 place-self-end self-center">
+          <div
+            className={`${
+              isButtonVisible
+                ? "fixed bottom-12 sm:bottom-16 right-16"
+                : "block"
+            } col-span-2 md:col-span-1 place-self-end self-center z-10`}
+          >
             <DialogContactForm
               indianPackDetails={indianPackDetails}
               japanesePackDetails={japanesePackDetails}

@@ -8,6 +8,9 @@ export const sendEmail = async (response) => {
     email,
     selectedPackageName,
     selectedPackageSlug,
+    date,
+    noOfAdults,
+    noOfChildren,
     message,
   } = response;
 
@@ -23,6 +26,9 @@ export const sendEmail = async (response) => {
             Email: ${email}
             Interested Package: ${selectedPackageName}
             Link to Pack: ${href}${selectedPackageSlug}
+            Preffered Date: ${date}
+            No of Adults: ${noOfAdults}
+            No of Children: ${noOfChildren}
             Message: ${message}`,
   };
 

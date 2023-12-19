@@ -57,6 +57,9 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
 
           <div className="flex justify-center mb-4">
             <div className=" bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl shadow-neutral-200 dark:shadow-neutral-900">
+              <p className="text-sm font-normal mb-2 text-center">
+                Send your details we will get back to you within 24 Hrs
+              </p>
               <ContactForm
                 indianPackDetails={indianPackDetails}
                 japanesePackDetails={japanesePackDetails}
