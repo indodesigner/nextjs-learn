@@ -15,7 +15,7 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
         <h2 className="text-3xl font-extrabold my-4">
           {language === "english" ? "Contact us" : "お問い合わせ"}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 place-items-center">
           <div className="flex flex-col justify-center items-center">
             <div className="p-2 relative">
               <Image
@@ -55,7 +55,7 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
             </div>
           </div>
 
-          <div className="flex justify-center mb-4">
+          <div className="w-full sm:w-[380px]">
             <div className=" bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl shadow-neutral-200 dark:shadow-neutral-900">
               <p className="text-sm font-normal mb-2 text-center">
                 Send your details we will get back to you within 24 Hrs

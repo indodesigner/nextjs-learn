@@ -43,7 +43,7 @@ export default function ContactForm({
     email: "",
     selectedPackage: "",
     date: null, // Add the date property
-    noOfAdults: 0, // Initialize slider value in the state
+    noOfAdults: 1, // Initialize slider value in the state
     noOfChildren: 0,
     message: "",
   });
@@ -241,9 +241,9 @@ export default function ContactForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-3 w-full sm:w-[380px] h-[75vh]"
+      className="flex flex-col gap-3 h-[75vh] sm:h-[100%]"
     >
-      <ScrollArea className="h-[70vh] rounded-md border">
+      <ScrollArea className="md:h-[100%] h-[70vh] rounded-md border">
         <div className="flex flex-col gap-3 w-full p-2">
           <Input
             value={values.name}
@@ -461,8 +461,11 @@ export default function ContactForm({
               </PopoverContent>
             </Popover>
           </div>
+          <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mb-2" />
+
+          <h6 className="text-center text-sm">No. of Travelers</h6>
           <div className="flex items-center gap-4 px-2 mb-4">
-            <Label htmlFor="noOfAdults">
+            <Label htmlFor="noOfAdults" className=" w-[100px]">
               <span className="bg-neutral-100 dark:bg-neutral-900 px-1 rounded-sm me-1">
                 {values.noOfAdults == 10 ? "10+" : values.noOfAdults}
               </span>
@@ -478,8 +481,8 @@ export default function ContactForm({
               onValueChange={(value) => handleSliderChange(value, "noOfAdults")}
             />
           </div>
-          <div className="flex items-center gap-4 px-2">
-            <Label htmlFor="noOfAdults">
+          <div className="flex items-center gap-4 px-2 mb-2">
+            <Label htmlFor="noOfChildren" className=" w-[100px]">
               <span className="bg-neutral-100 dark:bg-neutral-900 px-1 rounded-sm me-1">
                 {values.noOfChildren == 10 ? "10+" : values.noOfChildren}
               </span>
