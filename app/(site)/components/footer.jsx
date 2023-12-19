@@ -33,7 +33,7 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div className="">
+      <div>
         <ul className="flex flex-row gap-5">
           {/* <li className="hover:scale-90 transition">
             <Link href="/about" className="text-medium md:text-2xl">
