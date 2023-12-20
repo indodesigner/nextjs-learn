@@ -114,8 +114,8 @@ export default function ContactForm({
             email: "",
             selectedPackage: "",
             date: "",
-            noOfAdults: "",
-            noOfChildren: "",
+            noOfAdults: "1",
+            noOfChildren: "0",
             message: "",
           });
           setSentStatus(true);
@@ -155,8 +155,8 @@ export default function ContactForm({
             email: "",
             selectedPackage: "",
             date: "",
-            noOfAdults: "",
-            noOfChildren: "",
+            noOfAdults: "1",
+            noOfChildren: "0",
             message: "",
           });
           setSentStatus(true);
@@ -239,11 +239,8 @@ export default function ContactForm({
   const [date, setDate] = useState();
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-3 h-[75vh] sm:h-[100%]"
-    >
-      <ScrollArea className="md:h-[100%] h-[70vh] rounded-md border">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 h-[75vh]">
+      <ScrollArea className="md:h-[100%] h-[70vh] rounded-md border border-neutral-200 dark:border-neutral-700">
         <div className="flex flex-col gap-3 w-full p-2">
           <Input
             value={values.name}
@@ -347,7 +344,7 @@ export default function ContactForm({
           </Select> */}
               <div>
                 <h6>Selected Package Details</h6>
-                <h5 className="text-neutral-950 text-sm sm:text-lg font-medium">
+                <h5 className="text-neutral-950 dark:text-neutral-50 text-sm sm:text-lg font-medium">
                   {language === "english"
                     ? currentPack.packageName
                     : currentPack.packageNamejp || currentPack.packageName}
@@ -491,7 +488,7 @@ export default function ContactForm({
             <Slider
               id="noOfChildren"
               defaultValue={[0]}
-              min={1}
+              min={0}
               max={10}
               step={1}
               name="noOfChildren"
