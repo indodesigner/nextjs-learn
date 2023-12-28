@@ -3,7 +3,7 @@ import React from "react";
 import { RichTextComponents } from "/utils/RichTextComponents";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
-import { BsImageAlt, BsChevronRight } from "react-icons/bs";
+import { BsImageAlt, BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import CommonCarousel from "@/components/commonCarousel";
 import { useLanguage } from "/contexts/languageContext";
 import RelatedPackages from "@/components/relatedPackages";
@@ -13,26 +13,29 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
 
   return (
     <>
-      <div className="flex items-center mb-2">
-        <Link href="/places" className="gradient-text">
-          {language === "english" ? "Destinations" : "目的地"}
-        </Link>
-        <h6 className="text-sm">
-          <BsChevronRight className="pt-[2px]" />
-        </h6>
+      <div className="flex justify-between mb-4">
+        <div className="flex items-center">
+          <Link href="/places" className="gradient-text">
+            {language === "english" ? "Destinations" : "目的地"}
+          </Link>
+          <h6 className="text-sm">
+            <BsChevronRight className="pt-[2px]" />
+          </h6>
+          <Link
+            href={`/${country}`}
+            className=" text-neutral-500 dark:text-neutral-400"
+          >
+            {language === "english" ? place.country : place.countryjp}
+          </Link>
+        </div>
         <Link
-          href={`/${country}`}
-          className=" text-neutral-500 dark:text-neutral-400"
+          href={`/`}
+          className="bg-primary-color hover:bg-primary-color-hover text-neutral-50 dark:text-neutral-400 rounded-3xl ps-3 pe-4 pt-1 pb-[6px] flex items-center text-xs"
         >
-          {language === "english" ? place.country : place.countryjp}
+          <BsChevronLeft className="pt-[2px]" />
+          Back to Home
         </Link>
       </div>
-
-      <h3 className="text-2xl md:text-3xl font-bold mb-2">
-        {language === "english"
-          ? place.placeName
-          : place.placeNamejp || place.placeName}
-      </h3>
 
       {slides && slides.length > 0 ? (
         <CommonCarousel slides={slides} />
@@ -61,6 +64,12 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
               </Link>
             ))}
         </div> */}
+
+        <h3 className="text-2xl md:text-3xl font-bold mb-2">
+          {language === "english"
+            ? place.placeName
+            : place.placeNamejp || place.placeName}
+        </h3>
         <div className="flex items-center px-1">
           <h4 className="text-xs ">ATTRACTIONS</h4>
           <h6 className="text-sm">

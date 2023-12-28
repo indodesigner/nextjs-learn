@@ -12,10 +12,17 @@
     @apply text-red-500 dark:text-red-500;
   }
   .bg-primary-color {
-    @apply bg-red-500;
+    @apply bg-gradient-to-br from-red-500 to-red-400;
   }
   .bg-primary-color-hover {
-    @apply bg-red-600;
+    @apply bg-gradient-to-br from-red-600 to-red-500;
+  }
+
+  .bg-secondary-color {
+    @apply bg-gradient-to-br from-indigo-500 to-indigo-400;
+  }
+  .bg-secondary-color-hover {
+    @apply bg-gradient-to-br from-indigo-600 to-indigo-500;
   }
   .gradient-text {
     @apply bg-gradient-to-r from-indigo-400 to-red-400 bg-clip-text text-transparent;

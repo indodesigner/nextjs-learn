@@ -62,7 +62,7 @@ export default function CommonSections({
                     <Link
                       key={item._id}
                       href={`placeTypes/${item.slug}`}
-                      className="bg-red-400 dark:bg-neutral-600 dark:bg-opacity-10 dark:backdrop-blur-md p-2 ps-4 w-full flex items-center gap-2 rounded-xl hover:-translate-y-1 hover:shadow-md transition"
+                      className="bg-primary-color hover:bg-primary-color-hover dark:bg-neutral-600 dark:bg-opacity-10 dark:backdrop-blur-md p-2 ps-4 w-full flex items-center gap-2 rounded-xl hover:-translate-y-1 hover:shadow-md transition"
                     >
                       {item.placeTypeIcon ? (
                         <Image
