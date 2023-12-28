@@ -7,7 +7,7 @@ import Image from "next/image";
 // import { parseISO } from "date-fns";
 import { PortableText } from "@portabletext/react";
 import urlFor from "/utils/urlFor";
-import { BsChevronRight } from "react-icons/bs";
+import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import { LuCalendarClock } from "react-icons/lu";
 import CommonCarousel from "@/components/commonCarousel";
 import DialogContactForm from "@/components/dialogContactForm";
@@ -44,18 +44,29 @@ const packageContent = ({
 
   return (
     <>
-      <div className="flex items-center mb-2">
-        <Link href="/packages" className="gradient-text">
-          {language === "english" ? "Packages" : "パッケージ"}
-        </Link>
-        <h6 className="text-sm">
-          <BsChevronRight className="pt-[2px]" />
-        </h6>
+      <div className="flex justify-between mb-4">
+        <div className="flex items-center">
+          <Link href="/packages" className="gradient-text">
+            {language === "english" ? "Packages" : "パッケージ"}
+          </Link>
+          <h6 className="text-sm">
+            <BsChevronRight className="pt-[2px]" />
+          </h6>
+          <Link
+            href={`/${country}`}
+            className=" text-neutral-500 dark:text-neutral-400"
+          >
+            {language === "english"
+              ? tourPackage.country
+              : tourPackage.countryjp}
+          </Link>
+        </div>
         <Link
-          href={`/${country}`}
-          className=" text-neutral-500 dark:text-neutral-400"
+          href={`/`}
+          className="bg-primary-color hover:bg-primary-color-hover text-neutral-50 dark:text-neutral-50 rounded-3xl ps-3 pe-4  pt-1 pb-[6px] flex items-center text-xs"
         >
-          {language === "english" ? tourPackage.country : tourPackage.countryjp}
+          <BsChevronLeft className="pt-[2px]" />
+          Back to Home
         </Link>
       </div>
 
@@ -222,7 +233,9 @@ const packageContent = ({
 
       <hr className="border-neutral-300 dark:border-neutral-800 mt-16 mb-4" />
 
-      <h4 className="text-lg sm:text-xl font-bold">Featured Destinations</h4>
+      <h4 className="text-lg sm:text-xl font-bold mb-4">
+        Featured Destinations
+      </h4>
       <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2">
         {tourPackage.place &&
           tourPackage.place.map((place) => (
@@ -261,10 +274,10 @@ const packageContent = ({
                 {place.placeTypes &&
                   place.placeTypes.map((item, index) => (
                     <span
-                      className="bg-red-500 px-3 py-1 rounded-2xl"
+                      className="bg-neutral-900 dark:bg-neutral-300 px-3 py-1 rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs font-bold text-white dark:text-neutral-50">
+                      <h6 className="text-xs font-bold text-white dark:text-neutral-800">
                         {language === "english"
                           ? item.placeTypeName.toUpperCase()
                           : item.placeTypeNamejp ||

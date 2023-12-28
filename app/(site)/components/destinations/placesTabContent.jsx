@@ -45,10 +45,10 @@ export default async function PlacesTabContent({ places, language }) {
               {place.placeTypes &&
                 place.placeTypes.map((item, index) => (
                   <span
-                    className="bg-red-500 px-3 py-1 rounded-2xl"
+                    className="bg-neutral-900 dark:bg-neutral-300 px-3 py-1 rounded-2xl"
                     key={index}
                   >
-                    <h6 className="text-xs font-bold text-white dark:text-neutral-50">
+                    <h6 className="text-xs font-bold text-white dark:text-neutral-800">
                       {language === "english"
                         ? item.placeTypeName.toUpperCase()
                         : item.placeTypeNamejp ||

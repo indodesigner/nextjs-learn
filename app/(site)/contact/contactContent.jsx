@@ -25,7 +25,7 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
                 alt="Contact us illustration"
                 className="w-auto h-auto"
               ></Image>
-              <div className="bg-white dark:bg-neutral-800 px-2 py-1 rounded-lg shadow-lg absolute top-0 right-0">
+              <div className="bg-white dark:bg-neutral-800 px-2 py-1 rounded-lg shadow-lg absolute top-0 right-0 xs:right-[50px] sm:right-[100px] md:right-0 lg:right-[50px]">
                 <a
                   href="tel:+914842867618"
                   className="flex items-center text-xl font-semibold gap-1 mb-1 p-1 px-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md"
@@ -56,7 +56,7 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
           </div>
 
           <div className="w-full sm:w-[380px]">
-            <div className=" bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl shadow-neutral-200 dark:shadow-neutral-900">
+            <div className=" bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl">
               <p className="text-sm font-normal mb-2 text-center">
                 Send your details we will get back to you within 24 Hrs
               </p>

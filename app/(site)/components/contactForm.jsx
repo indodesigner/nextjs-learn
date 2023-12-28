@@ -114,8 +114,8 @@ export default function ContactForm({
             email: "",
             selectedPackage: "",
             date: "",
-            noOfAdults: "",
-            noOfChildren: "",
+            noOfAdults: "1",
+            noOfChildren: "0",
             message: "",
           });
           setSentStatus(true);
@@ -155,8 +155,8 @@ export default function ContactForm({
             email: "",
             selectedPackage: "",
             date: "",
-            noOfAdults: "",
-            noOfChildren: "",
+            noOfAdults: "1",
+            noOfChildren: "0",
             message: "",
           });
           setSentStatus(true);
@@ -239,12 +239,9 @@ export default function ContactForm({
   const [date, setDate] = useState();
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-3 h-[75vh] sm:h-[100%]"
-    >
-      <ScrollArea className="md:h-[100%] h-[70vh] rounded-md border">
-        <div className="flex flex-col gap-3 w-full p-2">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+      <ScrollArea className=" h-[70vh] rounded-md border border-neutral-200 dark:border-neutral-700">
+        <div className="flex flex-col gap-3 p-3">
           <Input
             value={values.name}
             onChange={(e) => {
@@ -347,7 +344,7 @@ export default function ContactForm({
           </Select> */}
               <div>
                 <h6>Selected Package Details</h6>
-                <h5 className="text-neutral-950 text-sm sm:text-lg font-medium">
+                <h5 className="text-neutral-950 dark:text-neutral-50 text-sm sm:text-lg font-medium">
                   {language === "english"
                     ? currentPack.packageName
                     : currentPack.packageNamejp || currentPack.packageName}
@@ -436,14 +433,14 @@ export default function ContactForm({
             </div>
           )}
 
-          <div className="flex items-center gap-4 px-2">
+          <div className="flex items-center justify-between gap-4 px-2">
             <Label htmlFor="prefferedDate">Preffered Date</Label>
             <Popover id="prefferedDate">
               <PopoverTrigger asChild>
                 <Button
                   variant={"outline"}
                   className={cn(
-                    "w-[200px] justify-start text-left font-normal border-neutral-200 dark:border-neutral-700 ",
+                    "w-[180px] justify-start text-left font-normal border-neutral-200 dark:border-neutral-700 ",
                     !date && "text-muted-foreground"
                   )}
                 >
@@ -462,8 +459,12 @@ export default function ContactForm({
             </Popover>
           </div>
           <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mb-2" />
-
-          <h6 className="text-center text-sm">No. of Travelers</h6>
+          <div className="mb-2">
+            <h6 className="text-center text-sm">No. of Travelers</h6>
+            <p className="text-center text-xs text-neutral-600 dark:text-neutral-500">
+              (Slide the knob to change the values)
+            </p>
+          </div>
           <div className="flex items-center gap-4 px-2 mb-4">
             <Label htmlFor="noOfAdults" className=" w-[100px]">
               <span className="bg-neutral-100 dark:bg-neutral-900 px-1 rounded-sm me-1">
@@ -491,7 +492,7 @@ export default function ContactForm({
             <Slider
               id="noOfChildren"
               defaultValue={[0]}
-              min={1}
+              min={0}
               max={10}
               step={1}
               name="noOfChildren"
