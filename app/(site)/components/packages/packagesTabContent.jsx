@@ -106,7 +106,7 @@ export default async function PackagesTabContent({
                       <div className="flex flex-row place-items-center">
                         <LuCalendarClock className="text-md sm:text-lg" />
 
-                        <h6 className="text-md sm:text-lg ps-2">
+                        <h6 className="text-base sm:text-md md:text-lg ps-2">
                           <strong>{tourPackage.duration.days}</strong>{" "}
                           {language === "english" ? "Days & " : "日々 & "}
                           <strong>{tourPackage.duration.nights}</strong>{" "}
@@ -136,7 +136,7 @@ export default async function PackagesTabContent({
                           className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl"
                           key={index}
                         >
-                          <h6 className="text-xs font-medium text-white dark:text-neutral-900">
+                          <h6 className="text-xs text-white dark:text-neutral-900">
                             {language === "english"
                               ? item.placeName.toUpperCase()
                               : item.placeNamejp ||
@@ -151,7 +151,7 @@ export default async function PackagesTabContent({
                     {tourPackage.placeTypes &&
                       tourPackage.placeTypes.map((item, index) => (
                         <span
-                          className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-30 dark:bg-opacity-50 px-2 py-[2px] rounded-2xl shadow-sm"
+                          className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-50 dark:bg-opacity-50 px-2 py-[2px] rounded-2xl shadow-sm"
                           key={index}
                         >
                           <h6 className="text-xs">
