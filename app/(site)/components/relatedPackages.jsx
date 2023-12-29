@@ -53,7 +53,7 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                   <div className="flex flex-row place-items-center">
                     <LuCalendarClock className="text-md sm:text-lg" />
 
-                    <h6 className="text-md sm:text-lg ps-2">
+                    <h6 className="text-base sm:text-md md:text-lg ps-2">
                       <strong>{tourPackage.duration.days}</strong>{" "}
                       {language === "english" ? "Days & " : "日々 & "}
                       <strong>{tourPackage.duration.nights}</strong>{" "}
@@ -83,7 +83,7 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                       className="bg-black dark:bg-neutral-300 px-3 py-1 rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs font-medium text-white dark:text-neutral-900">
+                      <h6 className="text-xs text-white dark:text-neutral-900">
                         {language === "english"
                           ? item.placeName.toUpperCase()
                           : item.placeNamejp || item.placeName.toUpperCase()}
@@ -98,7 +98,7 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                 {tourPackage.placeTypes &&
                   tourPackage.placeTypes.map((item, index) => (
                     <span
-                      className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-30 dark:bg-opacity-50 px-3 py-1 rounded-2xl shadow-sm"
+                      className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-50 dark:bg-opacity-50 px-3 py-1 rounded-2xl shadow-sm"
                       key={index}
                     >
                       <h6 className="text-xs">
