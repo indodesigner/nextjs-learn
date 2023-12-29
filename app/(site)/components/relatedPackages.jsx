@@ -48,12 +48,12 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                   : tourPackage.packageNamejp) || tourPackage.packageName}
               </h5>
 
-              <div className="flex flex-row gap-2 sm:gap-0 justify-between px-2 py-1 mb-3 bg-neutral-50 dark:bg-neutral-800 bg-opacity-30 dark:bg-opacity-50 rounded-lg">
+              <div className="flex flex-row gap-2 sm:gap-0 justify-between px-2 py-1 mb-3 bg-neutral-200 dark:bg-neutral-800 bg-opacity-30 dark:bg-opacity-50 rounded-lg">
                 {tourPackage.duration != null ? (
                   <div className="flex flex-row place-items-center">
                     <LuCalendarClock className="text-md sm:text-lg" />
 
-                    <h6 className="text-base sm:text-md md:text-lg ps-2">
+                    <h6 className="text-base sm:text-md ps-2">
                       <strong>{tourPackage.duration.days}</strong>{" "}
                       {language === "english" ? "Days & " : "日々 & "}
                       <strong>{tourPackage.duration.nights}</strong>{" "}

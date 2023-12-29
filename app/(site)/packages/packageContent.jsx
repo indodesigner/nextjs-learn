@@ -23,7 +23,7 @@ const packageContent = ({
 }) => {
   const { language } = useLanguage();
 
-  const [isButtonVisible, setIsButtonVisible] = useState(true);
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
