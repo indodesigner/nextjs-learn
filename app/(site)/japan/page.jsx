@@ -24,28 +24,28 @@ export default async function ExploreJapan() {
   //   return { ...pack, duration };
   // });
 
-  const allPackages = packs.filter((pack) => {
-    return pack.country && pack.country.includes("Japan");
-  });
+  const allPackages = packs.filter(
+    (pack) => pack.country && pack.country.includes("Japan")
+  );
 
-  const trendingPackages = allPackages.filter((pack) => {
-    return pack.packageFilter && pack.packageFilter.includes("Trending");
-  });
+  const trendingPackages = allPackages.filter(
+    (pack) => pack.packageFilter && pack.packageFilter.includes("Trending")
+  );
 
-  const popularPackages = allPackages.filter((pack) => {
-    return pack.packageFilter && pack.packageFilter.includes("Popular");
-  });
+  const popularPackages = allPackages.filter(
+    (pack) => pack.packageFilter && pack.packageFilter.includes("Popular")
+  );
 
-  const businessPackages = allPackages.filter((pack) => {
-    return pack.category && pack.category.includes("Business");
-  });
+  const businessPackages = allPackages.filter(
+    (pack) => pack.category && pack.category.includes("Business")
+  );
 
   // const headings = ["Trending", "Popular", "Business", "All"];
   // const headingsJp = ["インド", "日本", "仕事", "全て"];
 
-  const placesJapan = places.filter((pack) => {
-    return pack.country && pack.country.includes("Japan");
-  });
+  const placesJapan = places.filter(
+    (pack) => pack.country && pack.country.includes("Japan")
+  );
 
   return (
     <div>

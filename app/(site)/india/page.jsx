@@ -7,7 +7,6 @@ import {
 import GetCountry from "@/components/getCountry";
 import SlidesSection from "@/components/slidesSection";
 import CommonSections from "@/components/commonSections";
-
 import AboutIndia from "./aboutIndia";
 
 export default async function ExploreIndia() {
@@ -24,28 +23,28 @@ export default async function ExploreIndia() {
   //   const duration = dateDiff / (1000 * 60 * 60 * 24);
   //   return { ...pack, duration };
   // });
-  const allPackages = packs.filter((pack) => {
-    return pack.country && pack.country.includes("India");
-  });
+  const allPackages = packs.filter(
+    (pack) => pack.country && pack.country.includes("India")
+  );
 
-  const trendingPackages = allPackages.filter((pack) => {
-    return pack.packageFilter && pack.packageFilter.includes("Trending");
-  });
+  const trendingPackages = allPackages.filter(
+    (pack) => pack.packageFilter && pack.packageFilter.includes("Trending")
+  );
 
-  const popularPackages = allPackages.filter((pack) => {
-    return pack.packageFilter && pack.packageFilter.includes("Popular");
-  });
+  const popularPackages = allPackages.filter(
+    (pack) => pack.packageFilter && pack.packageFilter.includes("Popular")
+  );
 
-  const businessPackages = allPackages.filter((pack) => {
-    return pack.category && pack.category.includes("Business");
-  });
+  const businessPackages = allPackages.filter(
+    (pack) => pack.category && pack.category.includes("Business")
+  );
 
   // const headings = ["Trending", "Popular", "Business", "All"];
   // const headingsJp = ["インド", "日本", "仕事", "全て"];
 
-  const placesIndian = places.filter((pack) => {
-    return pack.country && pack.country.includes("India");
-  });
+  const placesIndian = places.filter(
+    (pack) => pack.country && pack.country.includes("India")
+  );
 
   return (
     <div>

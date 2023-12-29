@@ -62,7 +62,7 @@ const HeroCarousel = ({ slides }) => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ delay: 0.5 }}
-                      className="text-2xl  sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-3 mb-2"
+                      className="text-2xl sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-3 mb-2"
                     >
                       {language === "english" ? slide.title : slide.titlejp}
                     </motion.h1>

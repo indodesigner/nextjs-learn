@@ -23,17 +23,6 @@ export default async function HomePage() {
   //   return { ...pack, durationFromDates };
   // });
 
-  // const indianPackages = packagesWithDuration.filter((pack) => {
-  //   return pack.country && pack.country.includes("India");
-  // });
-  // const japanesePackages = packagesWithDuration.filter((pack) => {
-  //   return pack.country && pack.country.includes("Japan");
-  // });
-
-  // const businessPackages = packagesWithDuration.filter((pack) => {
-  //   return pack.category && pack.category.includes("Business");
-  // });
-
   const indianPackages = packages.filter((pack) => {
     return pack.country && pack.country.includes("India");
   });

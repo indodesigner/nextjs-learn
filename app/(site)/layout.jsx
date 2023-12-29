@@ -7,7 +7,7 @@ import { LanguageProvider } from "/contexts/languageContext";
 import Navbar from "@/components/Navbar";
 import ScrollToTopButton from "@/components/scrollToTopButton";
 
-const display = Geologica({
+const display = DM_Sans({
   weight: ["variable"],
   subsets: ["latin"],
   variable: "--font-headings",
