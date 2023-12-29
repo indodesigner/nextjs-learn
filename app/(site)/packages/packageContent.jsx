@@ -12,6 +12,7 @@ import { LuCalendarClock } from "react-icons/lu";
 import CommonCarousel from "@/components/commonCarousel";
 import DialogContactForm from "@/components/dialogContactForm";
 import { useLanguage } from "/contexts/languageContext";
+import BackButton from "@/components/backButton";
 
 const packageContent = ({
   tourPackage,
@@ -61,13 +62,7 @@ const packageContent = ({
               : tourPackage.countryjp}
           </Link>
         </div>
-        <Link
-          href={`/`}
-          className="bg-primary-color hover:bg-primary-color-hover text-neutral-50 dark:text-neutral-50 rounded-3xl ps-3 pe-4  pt-1 pb-[6px] flex items-center text-xs"
-        >
-          <BsChevronLeft className="pt-[2px]" />
-          Back to Home
-        </Link>
+        <BackButton />
       </div>
 
       <CommonCarousel slides={slides} />

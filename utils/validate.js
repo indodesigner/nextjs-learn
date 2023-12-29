@@ -1,4 +1,12 @@
-export const validate = ({ name, phone, email, message }) => {
+export const validate = ({
+  name,
+  phone,
+  email,
+  date,
+  noOfAdults,
+  // noOfChildren,
+  // message,
+}) => {
   const errors = {};
   if (!name || name.trim() === "") {
     errors.name = "Name is required";
@@ -13,6 +21,15 @@ export const validate = ({ name, phone, email, message }) => {
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
     errors.email = "Invalid email address";
   }
+  if (!date || date.trim() === "") {
+    errors.date = "Please pick a date";
+  }
+  if (!noOfAdults || isNaN(Number(noOfAdults))) {
+    errors.noOfAdults = "Number of travelers required";
+  }
+  // if (!noOfChildren || isNaN(Number(noOfChildren))) {
+  //   errors.noOfChildren = "Number of travelers required";
+  // }
   // if (!message || message.trim() === "") {
   //   errors.message = "Message is required";
   // }

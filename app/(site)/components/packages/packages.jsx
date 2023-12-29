@@ -66,7 +66,7 @@ export default function PackagesSection({ heading, packages, language }) {
                 </div>
               )}
 
-              <h5 className="px-2 text-sm sm:text-md md:text-lg font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <h5 className="px-2 text-base sm:text-md md:text-lg font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                 {(language === "english"
                   ? tourPackage.packageName
                   : tourPackage.packageNamejp) || tourPackage.packageName}
@@ -146,10 +146,10 @@ export default function PackagesSection({ heading, packages, language }) {
                 {tourPackage.placeTypes &&
                   tourPackage.placeTypes.map((item, index) => (
                     <span
-                      className="bg-secondary-color px-2 py-[2px] rounded-2xl"
+                      className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-30 dark:bg-opacity-50 px-2 py-[2px] rounded-2xl shadow-sm"
                       key={index}
                     >
-                      <h6 className="text-xs font-medium text-white dark:text-neutral-50">
+                      <h6 className="text-xs">
                         {language === "english"
                           ? item.placeTypeName.toUpperCase()
                           : item.placeTypeNamejp ||

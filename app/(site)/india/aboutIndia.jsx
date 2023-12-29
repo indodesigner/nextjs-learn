@@ -16,7 +16,7 @@ const AboutIndia = () => {
           src={IndiaMapImage}
           width={500}
           height={400}
-          alt="india in globe image"
+          alt="India in globe image"
           className="w-auto h-auto"
         ></Image>
         {language === "english" ? (

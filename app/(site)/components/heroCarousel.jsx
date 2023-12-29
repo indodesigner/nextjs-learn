@@ -103,6 +103,7 @@ const HeroCarousel = ({ slides }) => {
                                     width={48}
                                     height={48}
                                     className="w-8 sm:w-12 md:w-16 h-auto"
+                                    alt="Indian flag button icon"
                                   ></Image>
                                 ) : (
                                   <Image
@@ -110,6 +111,7 @@ const HeroCarousel = ({ slides }) => {
                                     width={48}
                                     height={48}
                                     className="w-8 sm:w-12 md:w-16 h-auto"
+                                    alt="Japanese flag button icon"
                                   ></Image>
                                 )}
                                 <h5 className="text-sm font-light sm:text-xl">
