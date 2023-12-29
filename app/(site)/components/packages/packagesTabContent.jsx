@@ -151,10 +151,10 @@ export default async function PackagesTabContent({
                     {tourPackage.placeTypes &&
                       tourPackage.placeTypes.map((item, index) => (
                         <span
-                          className="bg-secondary-color px-2 py-[2px] rounded-2xl"
+                          className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-30 dark:bg-opacity-50 px-2 py-[2px] rounded-2xl shadow-sm"
                           key={index}
                         >
-                          <h6 className="text-xs font-medium text-white dark:text-neutral-50">
+                          <h6 className="text-xs">
                             {language === "english"
                               ? item.placeTypeName.toUpperCase()
                               : item.placeTypeNamejp ||

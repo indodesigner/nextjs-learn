@@ -3,10 +3,11 @@ import React from "react";
 import { RichTextComponents } from "/utils/RichTextComponents";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
-import { BsImageAlt, BsChevronRight, BsChevronLeft } from "react-icons/bs";
+import { BsImageAlt, BsChevronRight } from "react-icons/bs";
 import CommonCarousel from "@/components/commonCarousel";
 import { useLanguage } from "/contexts/languageContext";
 import RelatedPackages from "@/components/relatedPackages";
+import BackButton from "@/components/backButton";
 
 const PlaceContent = ({ place, slides, country, relatedPacks }) => {
   const { language } = useLanguage();
@@ -28,13 +29,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
             {language === "english" ? place.country : place.countryjp}
           </Link>
         </div>
-        <Link
-          href={`/`}
-          className="bg-primary-color hover:bg-primary-color-hover text-neutral-50 dark:text-neutral-400 rounded-3xl ps-3 pe-4 pt-1 pb-[6px] flex items-center text-xs"
-        >
-          <BsChevronLeft className="pt-[2px]" />
-          Back to Home
-        </Link>
+        <BackButton />
       </div>
 
       {slides && slides.length > 0 ? (

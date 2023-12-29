@@ -7,31 +7,29 @@ import { BsImageAlt, BsChevronRight } from "react-icons/bs";
 import CommonCarousel from "@/components/commonCarousel";
 import { useLanguage } from "/contexts/languageContext";
 import RelatedPackages from "@/components/relatedPackages";
+import BackButton from "@/components/backButton";
 
 const PlaceTypeContent = ({ placeType, slides, relatedPacks }) => {
   const { language } = useLanguage();
 
   return (
     <>
-      <div className="flex items-center mb-2">
-        <Link href="/" className="gradient-text">
-          {language === "english" ? "Destinations types" : "目的地"}
-        </Link>
-        {/* <h6 className="text-sm">
+      <div className="flex justify-between mb-4">
+        <div className="flex items-center">
+          <Link href="/places" className="gradient-text">
+            {language === "english" ? "Destinations types" : "目的地"}
+          </Link>
+          {/* <h6 className="text-sm">
           <BsChevronRight className="pt-[2px]" />
         </h6> */}
-        {/* <h6 className="text-neutral-500 dark:text-neutral-400">
+          {/* <h6 className="text-neutral-500 dark:text-neutral-400">
           {language === "english"
             ? placeType.placeTypeName
             : placeType.placeTypeNamejp}
         </h6> */}
+        </div>
+        <BackButton />
       </div>
-
-      <h3 className="text-2xl md:text-3xl font-bold mb-2">
-        {language === "english"
-          ? placeType.placeTypeName
-          : placeType.placeTypeNamejp || placeType.placeTypeName}
-      </h3>
 
       {slides && slides.length > 0 ? (
         <CommonCarousel slides={slides} />
@@ -42,6 +40,11 @@ const PlaceTypeContent = ({ placeType, slides, relatedPacks }) => {
           </div>
         </div>
       )}
+      <h3 className="px-3 sm:px-0 text-2xl md:text-3xl font-bold my-2">
+        {language === "english"
+          ? placeType.placeTypeName
+          : placeType.placeTypeNamejp || placeType.placeTypeName}
+      </h3>
 
       {/* <div className="bg-neutral-100 dark:bg-neutral-800 rounded-md my-3 p-2">
         <div className="px-2 flex flex-wrap gap-2">

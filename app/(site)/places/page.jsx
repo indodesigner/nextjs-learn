@@ -1,10 +1,11 @@
 import PlacesTabs from "@/components/destinations/placesTabs";
-import { getPlaces } from "/sanity/sanity-utils";
+import { getPlaces, getPlaceTypes } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
 import GetInTouch from "@/components/getInTouch";
 
 export default async function Places() {
   const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
+  const placeTypes = await getPlaceTypes();
 
   const indianPlaces = places.filter((place) => {
     return place.country && place.country.includes("India");
@@ -19,6 +20,7 @@ export default async function Places() {
         <PlacesTabs
           indianPlaces={indianPlaces}
           japanesePlaces={japanesePlaces}
+          placeTypes={placeTypes}
         />
       </div>
       <div className="container">

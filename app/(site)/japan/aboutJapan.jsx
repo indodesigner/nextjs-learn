@@ -16,7 +16,7 @@ const AboutJapan = () => {
           src={JapanMapImage}
           width={500}
           height={400}
-          alt="japan in globe image"
+          alt="Japan in globe image"
           className="w-auto h-auto"
         ></Image>
         {language === "english" ? (

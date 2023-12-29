@@ -62,10 +62,10 @@ export default function PlacesSection({ places, language }) {
                 {place.placeTypes &&
                   place.placeTypes.map((item, index) => (
                     <span
-                      className="bg-neutral-800 px-3 py-1 rounded-2xl"
+                      className="bg-neutral-900 dark:bg-neutral-300 px-3 py-1 rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs font-medium text-white dark:text-neutral-50">
+                      <h6 className="text-xs font-medium text-white dark:text-neutral-800">
                         {language === "english"
                           ? item.placeTypeName.toUpperCase()
                           : item.placeTypeNamejp ||

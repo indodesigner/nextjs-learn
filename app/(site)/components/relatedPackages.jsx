@@ -92,14 +92,16 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                   ))}
               </div>
 
+              <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mb-2" />
+
               <div className="px-2 flex flex-wrap gap-1 mb-2">
                 {tourPackage.placeTypes &&
                   tourPackage.placeTypes.map((item, index) => (
                     <span
-                      className="bg-red-500 dark:bg-red-500 px-3 py-1 rounded-2xl"
+                      className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-30 dark:bg-opacity-50 px-3 py-1 rounded-2xl shadow-sm"
                       key={index}
                     >
-                      <h6 className="text-xs font-medium text-white dark:text-neutral-50">
+                      <h6 className="text-xs">
                         {language === "english"
                           ? item.placeTypeName.toUpperCase()
                           : item.placeTypeNamejp ||

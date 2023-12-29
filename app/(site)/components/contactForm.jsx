@@ -41,9 +41,9 @@ export default function ContactForm({
     countryCode: "+91",
     phone: "",
     email: "",
-    selectedPackage: "",
+    selectedPackage: "No package selected",
     date: null, // Add the date property
-    noOfAdults: 1, // Initialize slider value in the state
+    noOfAdults: 0, // Initialize slider value in the state
     noOfChildren: 0,
     message: "",
   });
@@ -56,6 +56,9 @@ export default function ContactForm({
   const phoneInputRef = useRef(null);
   const emailInputRef = useRef(null);
   const messageInputRef = useRef(null);
+  const dateInputRef = useRef(null);
+  const paxAdultInputRef = useRef(null);
+  const paxChildrenInputRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,7 +76,14 @@ export default function ContactForm({
         emailInputRef.current.focus();
       } else if (errors.message) {
         messageInputRef.current.focus();
+      } else if (errors.date) {
+        dateInputRef.current.focus();
+      } else if (errors.noOfAdults) {
+        paxAdultInputRef.current.focus();
+        // } else if (errors.noOfChildren) {
+        //   paxChildrenInputRef.current.focus();
       }
+
       return;
     }
 
@@ -114,7 +124,7 @@ export default function ContactForm({
             email: "",
             selectedPackage: "",
             date: "",
-            noOfAdults: "1",
+            noOfAdults: "0",
             noOfChildren: "0",
             message: "",
           });
@@ -155,7 +165,7 @@ export default function ContactForm({
             email: "",
             selectedPackage: "",
             date: "",
-            noOfAdults: "1",
+            noOfAdults: "0",
             noOfChildren: "0",
             message: "",
           });
@@ -443,6 +453,7 @@ export default function ContactForm({
                     "w-[180px] justify-start text-left font-normal border-neutral-200 dark:border-neutral-700 ",
                     !date && "text-muted-foreground"
                   )}
+                  ref={dateInputRef}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
                   {date ? format(date, "yyyy-MM-dd") : <span>Pick a date</span>}
@@ -458,6 +469,14 @@ export default function ContactForm({
               </PopoverContent>
             </Popover>
           </div>
+          {errors.date ? (
+            <Alert className="py-1 text-red-500 dark:text-red-400">
+              <FaCircleExclamation />
+              <AlertTitle className="text-xs font-normal pt-[3px]">
+                {errors.date}
+              </AlertTitle>
+            </Alert>
+          ) : null}
           <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mb-2" />
           <div className="mb-2">
             <h6 className="text-center text-sm">No. of Travelers</h6>
@@ -470,7 +489,7 @@ export default function ContactForm({
               <span className="bg-neutral-100 dark:bg-neutral-900 px-1 rounded-sm me-1">
                 {values.noOfAdults == 10 ? "10+" : values.noOfAdults}
               </span>
-              {values.noOfAdults == 1 ? "Adult" : "Adults"}
+              {values.noOfAdults == 0 ? "Adult" : "Adults"}
             </Label>
             <Slider
               id="noOfAdults"
@@ -480,8 +499,10 @@ export default function ContactForm({
               step={1}
               name="noOfAdults"
               onValueChange={(value) => handleSliderChange(value, "noOfAdults")}
+              ref={paxAdultInputRef}
             />
           </div>
+
           <div className="flex items-center gap-4 px-2 mb-2">
             <Label htmlFor="noOfChildren" className=" w-[100px]">
               <span className="bg-neutral-100 dark:bg-neutral-900 px-1 rounded-sm me-1">
@@ -499,8 +520,25 @@ export default function ContactForm({
               onValueChange={(value) =>
                 handleSliderChange(value, "noOfChildren")
               }
+              ref={paxChildrenInputRef}
             />
           </div>
+          {errors.noOfAdults ? (
+            <Alert className="py-1 text-red-500 dark:text-red-400">
+              <FaCircleExclamation />
+              <AlertTitle className="text-xs font-normal pt-[3px]">
+                {errors.noOfAdults}
+              </AlertTitle>
+            </Alert>
+          ) : null}
+          {/* {errors.noOfChildren ? (
+            <Alert className="py-1 text-red-500 dark:text-red-400">
+              <FaCircleExclamation />
+              <AlertTitle className="text-xs font-normal pt-[3px]">
+                {errors.noOfChildren}
+              </AlertTitle>
+            </Alert>
+          ) : null} */}
 
           <Textarea
             value={values.message}

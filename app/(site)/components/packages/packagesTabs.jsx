@@ -30,6 +30,7 @@ const PackagesTabs = ({
               width={20}
               height={20}
               className="me-1"
+              alt="Indian flag button icon"
             ></Image>
             {language === "english" ? "India" : "インド"}
           </TabsTrigger>
@@ -39,6 +40,7 @@ const PackagesTabs = ({
               width={20}
               height={20}
               className="me-1"
+              alt="Japanese flag button icon"
             ></Image>
             {language === "english" ? "Japan" : "日本"}
           </TabsTrigger>
