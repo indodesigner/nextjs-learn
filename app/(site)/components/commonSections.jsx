@@ -3,7 +3,7 @@ import BlogSection from "@/components/blogs";
 import PlacesSection from "@/components/destinations/places";
 import PackagesSection from "@/components/packages/packages";
 import DestinationCategories from "@/components/destinationCategories";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useLanguage } from "/contexts/languageContext";
 import GetInTouch from "@/components/getInTouch";
 
@@ -23,7 +23,7 @@ export default function CommonSections({
     <div>
       {firstSectionPackages != 0 ? (
         <>
-          <motion.section
+          <section
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
@@ -36,14 +36,14 @@ export default function CommonSections({
               heading={language === "english" ? headings[0] : headingsJp[0]}
               language={language}
             />
-          </motion.section>
+          </section>
           {/* <hr className="container border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-50 mt-8" /> */}
         </>
       ) : null}
 
       {placeTypes != 0 ? (
         <>
-          <motion.section
+          <section
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
@@ -55,14 +55,14 @@ export default function CommonSections({
               placeTypes={placeTypes}
               language={language}
             />
-          </motion.section>
+          </section>
           {/* <hr className="container border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-50 mt-8" /> */}
         </>
       ) : null}
 
       {secondSectionPackages != 0 ? (
         <>
-          <motion.section
+          <section
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
@@ -74,14 +74,14 @@ export default function CommonSections({
               heading={language === "english" ? headings[1] : headingsJp[1]}
               language={language}
             />
-          </motion.section>
+          </section>
           {/* <hr className="container border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-50 mt-8" /> */}
         </>
       ) : null}
 
       {businessPackages != 0 ? (
         <>
-          <motion.section
+          <section
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
@@ -93,14 +93,14 @@ export default function CommonSections({
               heading={language === "english" ? headings[2] : headingsJp[2]}
               language={language}
             />
-          </motion.section>
+          </section>
           {/* <hr className="container border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-50 mt-8" /> */}
         </>
       ) : null}
 
       {packages != 0 ? (
         <>
-          <motion.section
+          <section
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 15 }}
@@ -112,7 +112,7 @@ export default function CommonSections({
               heading={language === "english" ? headings[3] : headingsJp[3]}
               language={language}
             />
-          </motion.section>
+          </section>
           {/* <hr className="container border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-50 mt-8" /> */}
         </>
       ) : null}
@@ -123,7 +123,7 @@ export default function CommonSections({
       </section>
 
       {places != 0 ? (
-        <motion.section
+        <section
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 15 }}
@@ -131,10 +131,10 @@ export default function CommonSections({
           className="container"
         >
           <PlacesSection places={places} language={language} />
-        </motion.section>
+        </section>
       ) : null}
 
-      <motion.section
+      <section
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 15 }}
@@ -142,7 +142,7 @@ export default function CommonSections({
         className="container"
       >
         <BlogSection language={language} />
-      </motion.section>
+      </section>
     </div>
   );
 }
