@@ -151,7 +151,7 @@ export default async function PackagesTabContent({
                     {tourPackage.placeTypes &&
                       tourPackage.placeTypes.map((item, index) => (
                         <span
-                          className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-50 dark:bg-opacity-50 px-2 py-[2px] rounded-2xl shadow-sm"
+                          className="border-2 border-neutral-900 dark:border-neutral-100 px-2 rounded-2xl shadow-sm"
                           key={index}
                         >
                           <h6 className="text-xs">

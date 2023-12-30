@@ -80,7 +80,7 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                 {tourPackage.place &&
                   tourPackage.place.map((item, index) => (
                     <span
-                      className="bg-black dark:bg-neutral-300 px-3 py-1 rounded-2xl"
+                      className="bg-black dark:bg-neutral-300 px-3 py-[2px] rounded-2xl"
                       key={index}
                     >
                       <h6 className="text-xs text-white dark:text-neutral-900">
@@ -98,7 +98,7 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                 {tourPackage.placeTypes &&
                   tourPackage.placeTypes.map((item, index) => (
                     <span
-                      className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-50 dark:bg-opacity-50 px-3 py-1 rounded-2xl shadow-sm"
+                      className="border-2 border-neutral-900 dark:border-neutral-100 px-3 rounded-2xl shadow-sm"
                       key={index}
                     >
                       <h6 className="text-xs">

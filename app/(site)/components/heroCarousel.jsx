@@ -58,20 +58,20 @@ const HeroCarousel = ({ slides }) => {
               <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">
                 <span className="flex flex-col items-center">
                   <h1
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0, y: 15 }}
-                    transition={{ delay: 0.5 }}
+                    // initial={{ opacity: 0 }}
+                    // animate={{ opacity: 1 }}
+                    // exit={{ opacity: 0, y: 15 }}
+                    // transition={{ delay: 0.5 }}
                     className="text-2xl sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-3 mb-2"
                   >
                     {language === "english" ? slide.title : slide.titlejp}
                   </h1>
 
                   <p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0, y: 15 }}
-                    transition={{ delay: 1 }}
+                    // initial={{ opacity: 0 }}
+                    // animate={{ opacity: 1 }}
+                    // exit={{ opacity: 0, y: 15 }}
+                    // transition={{ delay: 1 }}
                     className="mb-4 text-xs sm:text-sm md:text-md lg:text-lg font-light w-[100%] sm:max-w-[80%] md:max-w-[60%] md:block hidden"
                   >
                     {language === "english" ? slide.caption : slide.captionjp}
@@ -84,10 +84,10 @@ const HeroCarousel = ({ slides }) => {
                       className="bg-white py-[1px] sm:py-[1.5px] px-4 rounded-2xl mb-6 md:block hidden"
                     ></motion.span> */}
                   <span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0, y: 15 }}
-                    transition={{ delay: 1.25 }}
+                  // initial={{ opacity: 0 }}
+                  // animate={{ opacity: 1 }}
+                  // exit={{ opacity: 0, y: 15 }}
+                  // transition={{ delay: 1.25 }}
                   >
                     <div className="grid grid-cols-2 gap-3">
                       {path == "/"

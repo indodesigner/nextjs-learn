@@ -24,10 +24,10 @@ export default function CommonSections({
       {firstSectionPackages != 0 ? (
         <>
           <section
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 15 }}
-            transition={{ delay: 0.5 }}
+            // initial={{ opacity: 0, y: 15 }}  commented parts are framer-motion scroll animations not used due to causing loading issues remove after full development completion
+            // whileInView={{ opacity: 1, y: 0 }}
+            // exit={{ opacity: 0, y: 15 }}
+            // transition={{ delay: 0.5 }}
             className="container"
             id="packages"
           >
@@ -44,10 +44,10 @@ export default function CommonSections({
       {placeTypes != 0 ? (
         <>
           <section
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 15 }}
-            transition={{ delay: 0.5 }}
+            // initial={{ opacity: 0, y: 15 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // exit={{ opacity: 0, y: 15 }}
+            // transition={{ delay: 0.5 }}
             className="container"
             id="categories"
           >
@@ -63,10 +63,10 @@ export default function CommonSections({
       {secondSectionPackages != 0 ? (
         <>
           <section
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 15 }}
-            transition={{ delay: 0.5 }}
+            // initial={{ opacity: 0, y: 15 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // exit={{ opacity: 0, y: 15 }}
+            // transition={{ delay: 0.5 }}
             className="container"
           >
             <PackagesSection
@@ -82,10 +82,10 @@ export default function CommonSections({
       {businessPackages != 0 ? (
         <>
           <section
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 15 }}
-            transition={{ delay: 0.5 }}
+            // initial={{ opacity: 0, y: 15 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // exit={{ opacity: 0, y: 15 }}
+            // transition={{ delay: 0.5 }}
             className="container"
           >
             <PackagesSection
@@ -101,10 +101,10 @@ export default function CommonSections({
       {packages != 0 ? (
         <>
           <section
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 15 }}
-            transition={{ delay: 0.5 }}
+            // initial={{ opacity: 0, y: 15 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // exit={{ opacity: 0, y: 15 }}
+            // transition={{ delay: 0.5 }}
             className="container"
           >
             <PackagesSection
@@ -124,10 +124,10 @@ export default function CommonSections({
 
       {places != 0 ? (
         <section
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 15 }}
-          transition={{ delay: 0.5 }}
+          // initial={{ opacity: 0, y: 15 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // exit={{ opacity: 0, y: 15 }}
+          // transition={{ delay: 0.5 }}
           className="container"
         >
           <PlacesSection places={places} language={language} />
@@ -135,10 +135,10 @@ export default function CommonSections({
       ) : null}
 
       <section
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 15 }}
-        transition={{ delay: 0.5 }}
+        // initial={{ opacity: 0, y: 15 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // exit={{ opacity: 0, y: 15 }}
+        // transition={{ delay: 0.5 }}
         className="container"
       >
         <BlogSection language={language} />

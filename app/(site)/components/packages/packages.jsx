@@ -140,13 +140,13 @@ export default function PackagesSection({ heading, packages, language }) {
                     </span>
                   ))}
               </div>
-              <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mb-2" />
+              <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mb-2" />
 
               <div className="px-2 flex flex-wrap gap-1 mb-2">
                 {tourPackage.placeTypes &&
                   tourPackage.placeTypes.map((item, index) => (
                     <span
-                      className="bg-neutral-50 dark:bg-neutral-900 bg-opacity-50 dark:bg-opacity-50 px-2 py-[2px] rounded-2xl shadow-sm"
+                      className="border-2 border-neutral-900 dark:border-neutral-100 px-2  rounded-2xl shadow-sm"
                       key={index}
                     >
                       <h6 className="text-xs">
