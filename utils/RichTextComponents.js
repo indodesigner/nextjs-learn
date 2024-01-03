@@ -7,8 +7,8 @@ export const RichTextComponents = {
     image: ({ value }) => (
       <Image
         src={urlFor(value).url()}
-        alt="blog post image"
-        className="relative"
+        alt="image"
+        className="relative w-full my-3"
         width={800}
         height={300}
       />

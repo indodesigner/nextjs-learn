@@ -13,6 +13,7 @@ const TourPackage = async ({ params }) => {
   const slug = params.package;
   const tourPackage = await getPackage({ slug });
   const slides = tourPackage.packageImages;
+  const slicedSlides = slides.slice(1);
 
   const packages = await getPackages(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
   const indianPacks = packages.filter((pack) => {
@@ -44,7 +45,7 @@ const TourPackage = async ({ params }) => {
     <div className="container mt-0 md:mt-24 pb-8">
       <PackageContent
         country={countryName}
-        slides={slides}
+        slides={slicedSlides}
         tourPackage={tourPackage}
         indianPackDetails={indianPackDetails}
         japanesePackDetails={japanesePackDetails}
