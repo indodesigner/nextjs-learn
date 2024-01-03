@@ -31,3 +31,5 @@ const PlaceType = async ({ params }) => {
 };
 
 export default PlaceType;
+
+export const revalidate = 10;

@@ -78,3 +78,5 @@ const Blog = async ({ params }) => {
 };
 
 export default Blog;
+
+export const revalidate = 10;

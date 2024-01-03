@@ -57,3 +57,5 @@ const TourPackage = async ({ params }) => {
 };
 
 export default TourPackage;
+
+export const revalidate = 10;
