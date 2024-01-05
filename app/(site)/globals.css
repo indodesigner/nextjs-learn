@@ -128,3 +128,22 @@ body::before {
     transform: scale(1.02) translateY(5px); /* Adjust the scale and translateY values as needed */
   }
 }
+
+.scroll-watcher {
+  height: 4px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #ef4444;
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to {
+    scale: 1 1;
+  }
+}

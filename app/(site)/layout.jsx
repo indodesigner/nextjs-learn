@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${display.variable} ${primary.variable}`}>
       {/* main layout page */}
       <body className="bg-neutral-50 dark:bg-neutral-900 min-h-screen bg-images">
+        <div className="scroll-watcher"></div>
         <Providers>
           <CountryProvider>
             <LanguageProvider>
