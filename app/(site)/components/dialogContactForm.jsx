@@ -49,14 +49,14 @@ const DialogContactForm = ({
             </AlertDialogCancel>
           </AlertDialogHeader>
 
-          <AlertDialogDescription className="flex justify-center mt-2">
-            <ContactForm
-              indianPackDetails={indianPackDetails}
-              japanesePackDetails={japanesePackDetails}
-              currentPack={tourPackage}
-              language={language}
-            />
-          </AlertDialogDescription>
+          {/* <AlertDialogDescription className="flex justify-center mt-2"> */}
+          <ContactForm
+            indianPackDetails={indianPackDetails}
+            japanesePackDetails={japanesePackDetails}
+            currentPack={tourPackage}
+            language={language}
+          />
+          {/* </AlertDialogDescription> */}
           <AlertDialogFooter>
             {/* <AlertDialogAction>Continue</AlertDialogAction> */}
           </AlertDialogFooter>

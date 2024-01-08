@@ -328,7 +328,7 @@ export default function ContactForm({
           ) : null}
 
           {currentPack != null ? (
-            <div className="bg-neutral-50 dark:bg-neutral-900 p-2 rounded-xl flex flex-col gap-2">
+            <div className="bg-neutral-100 dark:bg-neutral-900 p-2 rounded-xl flex flex-col gap-2">
               {/* <Tabs defaultValue={currentPack.country[0].toLowerCase()}>
             <TabsList>
               <TabsTrigger value="india" disabled>
@@ -353,14 +353,16 @@ export default function ContactForm({
             </SelectContent>
           </Select> */}
               <div>
-                <h6>Selected Package Details</h6>
-                <h5 className="text-neutral-950 dark:text-neutral-50 text-sm sm:text-lg font-medium">
+                <h6 className="text-sm text-neutral-500 ps-2 mb-2">
+                  Selected Package Details
+                </h6>
+                <h5 className="text-neutral-950 dark:text-neutral-50 text-sm sm:text-lg font-medium ps-2">
                   {language === "english"
                     ? currentPack.packageName
                     : currentPack.packageNamejp || currentPack.packageName}
                 </h5>
               </div>
-              <div className="flex flex-row gap-2 sm:gap-0 justify-between px-2 bg-neutral-50 dark:bg-neutral-800 bg-opacity-30 dark:bg-opacity-50 rounded-lg">
+              <div className="flex flex-row gap-2 sm:gap-0 justify-between px-3 py-1 bg-neutral-200 dark:bg-neutral-800 bg-opacity-30 dark:bg-opacity-50 rounded-lg">
                 {currentPack.duration != null ? (
                   <div className="flex flex-row place-items-center">
                     <LuCalendarClock className="text-md" />
@@ -375,7 +377,7 @@ export default function ContactForm({
                 ) : null}
 
                 {currentPack.rate && (
-                  <div className=" border-r border-neutral-300 dark:border-neutral-600 border-opacity-50 dark:border-opacity-70"></div>
+                  <div className="border-r border-neutral-300 dark:border-neutral-600 border-opacity-50 dark:border-opacity-70"></div>
                 )}
 
                 {currentPack.rate != null ? (

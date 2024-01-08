@@ -13,6 +13,12 @@ import CommonCarousel from "@/components/commonCarousel";
 import DialogContactForm from "@/components/dialogContactForm";
 import { useLanguage } from "/contexts/languageContext";
 import BackButton from "@/components/backButton";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const packageContent = ({
   tourPackage,
@@ -214,76 +220,111 @@ const packageContent = ({
           </div>
         </div>
       </div> */}
-
-      <div className="mb-8 px-3 sm:px-0">
+      <div className="mb-8 bg-neutral-100 bg-opacity-30 dark:bg-neutral-700 dark:bg-opacity-30 rounded-xl px-2 sm:px-4 pb-4 pt-1">
         <PortableText
           value={
             language === "english"
-              ? tourPackage.content
-              : tourPackage.contentjp || tourPackage.content
+              ? tourPackage.summary
+              : tourPackage.summaryjp || tourPackage.summary
           }
           components={RichTextComponents}
         />
       </div>
+      {/* <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" /> */}
+      <section className="px-2 sm:px-4">
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Detailed Schedule</AccordionTrigger>
+            <AccordionContent>
+              <div className="mb-8">
+                <PortableText
+                  value={
+                    language === "english"
+                      ? tourPackage.content
+                      : tourPackage.contentjp || tourPackage.content
+                  }
+                  components={RichTextComponents}
+                />
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Inclusions</AccordionTrigger>
+            <AccordionContent>
+              <div className="mb-8">
+                <PortableText
+                  value={
+                    language === "english"
+                      ? tourPackage.inclusions
+                      : tourPackage.inclusionsjp || tourPackage.inclusions
+                  }
+                  components={RichTextComponents}
+                />
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </section>
+      {/* <hr className="border-neutral-300 dark:border-neutral-800 mt-16 mb-4" /> */}
 
-      <hr className="border-neutral-300 dark:border-neutral-800 mt-16 mb-4" />
-
-      <h4 className="text-lg sm:text-xl font-bold mb-4">
-        Featured Destinations
-      </h4>
-      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2">
-        {tourPackage.place &&
-          tourPackage.place.map((place) => (
-            <Link
-              key={place._id}
-              href={`/places/${place.slug}`}
-              className="group card card-hover p-2"
-            >
-              <div className="relative">
-                <div class="absolute inset-0 bg-gradient-to-tr from-neutral-900 opacity-70 hover:opacity-10 k to-transparent rounded-md z-9 transition"></div>
-                {place.placeImages ? (
-                  <Image
-                    src={urlFor(place.placeImages).url()}
-                    width={800}
-                    height={500}
-                    alt={place.alt}
-                    className="object-cover h-36 md:h-36 rounded-md"
-                  ></Image>
-                ) : (
-                  // else part for no place image
-                  <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
-                    <div>
-                      <LuImageOff className="w-16 h-36 md:h-36 text-neutral-300 dark:text-neutral-500" />
+      <section className="px-2 sm:px-4">
+        <h4 className="text-lg sm:text-xl font-bold mt-8 mb-4">
+          Featured Destinations
+        </h4>
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2">
+          {tourPackage.place &&
+            tourPackage.place.map((place) => (
+              <Link
+                key={place._id}
+                href={`/places/${place.slug}`}
+                className="group card card-hover p-2 mb-3"
+              >
+                <div className="relative">
+                  <div class="absolute inset-0 bg-gradient-to-tr from-neutral-900 opacity-70 hover:opacity-10 k to-transparent rounded-md z-9 transition"></div>
+                  {place.placeImages ? (
+                    <Image
+                      src={urlFor(place.placeImages).url()}
+                      width={800}
+                      height={500}
+                      alt={place.alt}
+                      className="object-cover h-36 md:h-36 rounded-md"
+                    ></Image>
+                  ) : (
+                    // else part for no place image
+                    <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
+                      <div>
+                        <LuImageOff className="w-16 h-36 md:h-36 text-neutral-300 dark:text-neutral-500" />
+                      </div>
                     </div>
+                  )}
+                  <div className="absolute bottom-1 left-1 group-hover:bg-neutral-800 group-hover:backdrop-blur-md group-hover:bg-opacity-50 rounded-md">
+                    <h5 className=" text-neutral-100 dark:text-white  px-2 text-sm sm:text-lg font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+                      {language === "english"
+                        ? place.placeName
+                        : place.placeNamejp || place.placeName}
+                    </h5>
                   </div>
-                )}
-                <div className="absolute bottom-1 left-1 group-hover:bg-neutral-800 group-hover:backdrop-blur-md group-hover:bg-opacity-50 rounded-md">
-                  <h5 className=" text-neutral-100 dark:text-white  px-2 text-sm sm:text-lg font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
-                    {language === "english"
-                      ? place.placeName
-                      : place.placeNamejp || place.placeName}
-                  </h5>
                 </div>
-              </div>
-              <div className="px-2 flex flex-wrap gap-1 mb-2 mt-4">
-                {place.placeTypes &&
-                  place.placeTypes.map((item, index) => (
-                    <span
-                      className="bg-neutral-900 dark:bg-neutral-300 px-3 py-1 rounded-2xl"
-                      key={index}
-                    >
-                      <h6 className="text-xs font-bold text-white dark:text-neutral-800">
-                        {language === "english"
-                          ? item.placeTypeName.toUpperCase()
-                          : item.placeTypeNamejp ||
-                            item.placeTypeName.toUpperCase()}
-                      </h6>
-                    </span>
-                  ))}
-              </div>
-            </Link>
-          ))}
-      </div>
+                <div className="px-2 flex flex-wrap gap-1 mb-2 mt-4">
+                  {place.placeTypes &&
+                    place.placeTypes.map((item, index) => (
+                      <span
+                        className="bg-neutral-900 dark:bg-neutral-300 px-3 py-1 rounded-2xl"
+                        key={index}
+                      >
+                        <h6 className="text-xs font-bold text-white dark:text-neutral-800">
+                          {language === "english"
+                            ? item.placeTypeName.toUpperCase()
+                            : item.placeTypeNamejp ||
+                              item.placeTypeName.toUpperCase()}
+                        </h6>
+                      </span>
+                    ))}
+                </div>
+              </Link>
+            ))}
+        </div>
+      </section>
     </>
   );
 };

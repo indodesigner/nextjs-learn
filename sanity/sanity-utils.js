@@ -188,8 +188,12 @@ export async function getPackage({ slug }) {
         },
         "country":country[]->name,
         "countryjp":country[]->namejp,
+        summary,
+        summaryjp,
         content,
         contentjp,
+        inclusions,
+        inclusionsjp
       }`
   );
 }

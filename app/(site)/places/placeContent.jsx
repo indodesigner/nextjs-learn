@@ -42,7 +42,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
         </div>
       )}
 
-      <div className="bg-neutral-100 dark:bg-neutral-800 rounded-md my-3 p-2">
+      <div className="bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 shadow-lg rounded-2xl my-3 p-2">
         {/* <div className="px-2 flex flex-wrap gap-2">
           {place.placeTypes &&
             place.placeTypes.map((item, index) => (
