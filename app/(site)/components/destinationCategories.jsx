@@ -5,7 +5,7 @@ const DestinationCategories = ({ placeTypes, language }) => {
   return (
     <div className="bg-red-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 shadow-lg backdrop-blur-lg dark:backdrop-blur-lg rounded-xl">
       <h4 className="text-neutral-800 dark:text-neutral-50 text-xl sm:text-2xl font-bold py-4 text-center">
-        Destination Categories
+        {language === "english" ? "Destination Categories" : "目的地のカテゴリ"}
       </h4>
       <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2 p-4 place-items-center">
         {placeTypes &&

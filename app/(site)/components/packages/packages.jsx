@@ -26,7 +26,7 @@ export default function PackagesSection({ heading, packages, language }) {
               href={`/countries/${country}`}
               className="group text-sm font-medium flex items-center link-hover py-1 px-2"
             >
-              View all
+              {language === "english" ? "View all" : "すべて見る"}
               <LuChevronRight className="group-hover:text-red-300 transition" />
             </Link>
           ) : (
@@ -34,7 +34,7 @@ export default function PackagesSection({ heading, packages, language }) {
               href="/packages"
               className="group text-sm font-medium flex items-center link-hover py-1 px-2"
             >
-              View all
+              {language === "english" ? "View all" : "すべて見る"}
               <LuChevronRight className="group-hover:text-red-300 transition" />
             </Link>
           )

@@ -46,7 +46,9 @@ export const RichTextComponents = {
     ),
     h3: ({ children }) => <h3 className="text-xl mt-4 mb-1">{children}</h3>,
     h4: ({ children }) => (
-      <h4 className="text-lg mt-4 mb-1 text-red-500">{children}</h4>
+      <h4 className="text-lg mt-4 mb-1 text-red-500 dark:text-neutral-50">
+        {children}
+      </h4>
     ),
     h5: ({ children }) => (
       <h5 className="text-base font-bold mt-4 mb-1">{children}</h5>

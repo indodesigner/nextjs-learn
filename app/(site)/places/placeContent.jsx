@@ -29,7 +29,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
             {language === "english" ? place.country : place.countryjp}
           </Link>
         </div>
-        <BackButton />
+        <BackButton language={language} />
       </div>
 
       {slides && slides.length > 0 ? (

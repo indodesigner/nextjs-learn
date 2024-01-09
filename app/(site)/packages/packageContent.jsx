@@ -68,7 +68,7 @@ const packageContent = ({
               : tourPackage.countryjp}
           </Link>
         </div>
-        <BackButton />
+        <BackButton language={language} />
       </div>
 
       <CommonCarousel slides={slides} />
@@ -118,7 +118,7 @@ const packageContent = ({
 
           {tourPackage.rate != null ? (
             <h6 className="text-sm sm:text-md flex flex-col sm:flex-row items-center gap-0 sm:gap-2 ">
-              Starting from
+              {language === "english" ? "Starting from" : "から始まる"}
               <strong className="text-lg sm:text-lg">
                 ₹{tourPackage.rate}
               </strong>
@@ -129,7 +129,9 @@ const packageContent = ({
         <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
 
         <div className="flex items-center px-1">
-          <h4 className="text-xs">DESTINATIONS</h4>
+          <h4 className="text-xs">
+            {language === "english" ? "DESTINATIONS" : "目的地"}
+          </h4>
           <h6 className="text-sm">
             <BsChevronRight className="pb-[2px]" />
           </h6>
@@ -156,7 +158,9 @@ const packageContent = ({
         <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
 
         <div className="flex items-center px-1">
-          <h4 className="text-xs ">ATTRACTIONS</h4>
+          <h4 className="text-xs ">
+            {language === "english" ? "ATTRACTIONS" : "魅力"}
+          </h4>
           <h6 className="text-sm">
             <BsChevronRight className="pb-[2px]" />
           </h6>
@@ -234,7 +238,11 @@ const packageContent = ({
       <section className="px-2 sm:px-4">
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger>Detailed Schedule</AccordionTrigger>
+            <AccordionTrigger>
+              {language === "english"
+                ? "Detailed Schedule"
+                : "詳細スケジュール"}
+            </AccordionTrigger>
             <AccordionContent>
               <div className="mb-8">
                 <PortableText
@@ -249,7 +257,9 @@ const packageContent = ({
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>Inclusions</AccordionTrigger>
+            <AccordionTrigger>
+              {language === "english" ? "Inclusions" : "内包物"}
+            </AccordionTrigger>
             <AccordionContent>
               <div className="mb-8">
                 <PortableText
@@ -269,7 +279,7 @@ const packageContent = ({
 
       <section className="px-2 sm:px-4">
         <h4 className="text-lg sm:text-xl font-bold mt-8 mb-4">
-          Featured Destinations
+          {language === "english" ? "Featured Destinations" : "注目の目的地"}
         </h4>
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2">
           {tourPackage.place &&

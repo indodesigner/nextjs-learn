@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 // import Image from "next/image";
 // import Logo from "../public/images/logo.png";
@@ -7,29 +8,35 @@ import {
   FaSquareFacebook,
   FaXTwitter,
 } from "react-icons/fa6";
+import { useLanguage } from "/contexts/languageContext";
 
 export default function Footer() {
+  const { language } = useLanguage();
+
+  const links = [
+    { href: "/india", name: "India", namejp: "インド" },
+    { href: "/japan", name: "Japan", namejp: "日本" },
+    { href: "/packages", name: "Packages", namejp: "パッケージ" },
+    { href: "/places", name: "Destinations", namejp: "目的地" },
+    { href: "/blogs", name: "Blogs", namejp: "ブログ" },
+    { href: "/about", name: "About", namejp: "について" },
+    { href: "/contact", name: "Contact", namejp: "接触" },
+  ];
   return (
     <div className="flex items-center justify-between py-3 sm:py-4 px-4 md:px-16 bg-neutral-100 dark:bg-neutral-900 backdrop-filter backdrop-blur-xl bg-opacity-30 dark:bg-opacity-30 border-t-[1px] border-neutral-700 dark:border-neutral-500 border-opacity-10 dark:border-opacity-10 min-w-full scroll-auto">
-      <h6 className="text-[10px] sm:text-xs">Copyright © 2023 Niko Travels</h6>
+      <h6 className="text-[10px] sm:text-xs">Copyright © 2024 Niko Travels</h6>
       <div className="hidden sm:block">
         <ul className="flex flex-row gap-3">
-          <li>
-            <Link
-              href="/blogs"
-              className="text-xs md:text-sm font-medium link-hover"
-            >
-              Blogs
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/about"
-              className="text-xs md:text-sm font-medium link-hover"
-            >
-              About
-            </Link>
-          </li>
+          {links.map((link, index) => (
+            <li key={index}>
+              <Link
+                href={`${link.href}`}
+                className="text-xs md:text-sm link-hover"
+              >
+                {language === "english" ? link.name : link.namejp}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
 

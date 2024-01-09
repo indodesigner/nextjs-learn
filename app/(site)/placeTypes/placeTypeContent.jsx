@@ -28,7 +28,7 @@ const PlaceTypeContent = ({ placeType, slides, relatedPacks }) => {
             : placeType.placeTypeNamejp}
         </h6> */}
         </div>
-        <BackButton />
+        <BackButton language={language} />
       </div>
 
       {slides && slides.length > 0 ? (

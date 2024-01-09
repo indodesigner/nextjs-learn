@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { BsChevronLeft } from "react-icons/bs";
 
-const BackButton = () => {
+const BackButton = ({ language }) => {
   const router = useRouter();
 
   const goBack = () => {
@@ -15,7 +15,7 @@ const BackButton = () => {
       onClick={goBack}
     >
       <BsChevronLeft className="pt-0 sm:pt-[2px]" />
-      Back
+      {language === "english" ? "Back" : "戻る"}
     </button>
   );
 };

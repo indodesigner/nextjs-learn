@@ -24,7 +24,7 @@ const DialogContactForm = ({
     <div>
       <AlertDialog>
         <AlertDialogTrigger className="font-medium text-white bg-neutral-950 dark:text-neutral-900 dark:bg-neutral-100 hover:bg-neutral-700 hover:dark:bg-neutral-300 p-2 px-4 ms-4 rounded-lg transition">
-          Book now
+          {language === "english" ? "Book now" : "今予約する"}
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader className="flex flex-row justify-between items-center">

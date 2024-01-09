@@ -20,18 +20,30 @@ const GetInTouchSection = ({ indianPackDetails, japanesePackDetails }) => {
 
   return (
     <div className="bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 shadow-lg p-6 rounded-2xl">
-      <h3 className="font-bold text-2xl mb-2">Get in Touch</h3>
+      <h3 className="font-bold text-2xl mb-2">
+        {language === "english" ? "Get in Touch" : "連絡する"}
+      </h3>
       <div>
-        <p className="mb-3">
-          Ready to embark on a personalized journey with Niko Travels? Contact
-          us today to start planning your dream vacation, whether it's a
-          leisurely escape to Kerala or a business and leisure combination in
-          Japan.
-        </p>
+        {language === "english" ? (
+          <p className="mb-3">
+            Ready to embark on a personalized journey with Niko Travels? Contact
+            us today to start planning your dream vacation, whether it's a
+            leisurely escape to Kerala or a business and leisure combination in
+            Japan.
+          </p>
+        ) : (
+          <p className="mb-3">
+            Niko Travels
+            でパーソナライズされた旅に乗り出す準備はできていますか?接触
+            今日から夢の休暇の計画を始めましょう。
+            ケーララ州へのゆっくりとした休暇、またはビジネスとレジャーの組み合わせ
+            日本。
+          </p>
+        )}
 
         <AlertDialog>
           <AlertDialogTrigger className="font-medium text-white bg-neutral-950 dark:text-neutral-900 dark:bg-neutral-100 hover:bg-neutral-700 hover:dark:bg-neutral-300 p-2 px-4 rounded-lg transition">
-            Book now
+            {language === "english" ? "Book now" : "今予約する"}
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader className="flex flex-row justify-between items-center">
