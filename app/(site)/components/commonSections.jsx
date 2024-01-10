@@ -16,7 +16,7 @@ export default function CommonSections({
   places,
 }) {
   const { language } = useLanguage();
-  const headings = ["Trending", "Popular", "Business", "All"];
+  const headings = ["India", "Japan", "Business", "All"];
   const headingsJp = ["インド", "日本", "仕事", "全て"];
 
   return (

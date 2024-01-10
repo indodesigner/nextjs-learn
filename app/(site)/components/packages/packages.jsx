@@ -7,6 +7,7 @@ import { LuImageOff, LuChevronRight, LuCalendarClock } from "react-icons/lu";
 // import { PortableText } from "@portabletext/react";
 // import { RichTextComponents } from "/utils/RichTextComponents";
 // import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function PackagesSection({ heading, packages, language }) {
   const showViewAllLink = packages.length > 3;
@@ -17,9 +18,17 @@ export default function PackagesSection({ heading, packages, language }) {
   return (
     <div>
       <div className="flex justify-between mb-4">
-        <h4 className="text-xl sm:text-2xl font-bold">
-          {heading} {language === "english" ? "Packages" : "パッケージ"}
-        </h4>
+        <div className="flex flex-row items-center gap-2">
+          <h4 className="text-xl sm:text-2xl font-bold">
+            {language === "english" ? "Explore" : "探検する"} {heading}
+          </h4>
+          <div>
+            <Badge>
+              <span className="gradient-text">Trending</span>
+            </Badge>
+          </div>
+        </div>
+
         {showViewAllLink ? (
           heading == "India" || heading == "Japan" ? (
             <Link
@@ -146,7 +155,7 @@ export default function PackagesSection({ heading, packages, language }) {
                 {tourPackage.placeTypes &&
                   tourPackage.placeTypes.map((item, index) => (
                     <span
-                      className="border-2 border-neutral-900 dark:border-neutral-100 px-2  rounded-2xl shadow-sm"
+                      className="border border-neutral-400 dark:border-neutral-500 px-2 rounded-2xl"
                       key={index}
                     >
                       <h6 className="text-xs">

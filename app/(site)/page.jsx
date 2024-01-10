@@ -24,10 +24,18 @@ export default async function HomePage() {
   // });
 
   const indianPackages = packages.filter((pack) => {
-    return pack.country && pack.country.includes("India");
+    return (
+      pack.country &&
+      pack.country.includes("India") &&
+      pack.packageFilter.includes("Trending")
+    );
   });
   const japanesePackages = packages.filter((pack) => {
-    return pack.country && pack.country.includes("Japan");
+    return (
+      pack.country &&
+      pack.country.includes("Japan") &&
+      pack.packageFilter.includes("Trending")
+    );
   });
 
   const businessPackages = packages.filter((pack) => {
