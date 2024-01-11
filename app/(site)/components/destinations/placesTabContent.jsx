@@ -7,13 +7,13 @@ import { LuImageOff } from "react-icons/lu";
 
 export default async function PlacesTabContent({ places, language }) {
   return (
-    <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2">
+    <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-3">
       {places &&
         places.map((place) => (
           <Link
             key={place._id}
             href={`/places/${place.slug}`}
-            className="group card card-hover p-2"
+            className="group card card-hover p-2 mb-2"
           >
             <div className="relative">
               <div class="absolute inset-0 bg-gradient-to-tr from-neutral-900 opacity-70 hover:opacity-10 k to-transparent rounded-md z-9 transition"></div>
@@ -33,8 +33,8 @@ export default async function PlacesTabContent({ places, language }) {
                   </div>
                 </div>
               )}
-              <div className="absolute bottom-1 left-1 group-hover:bg-neutral-800 group-hover:backdrop-blur-md group-hover:bg-opacity-50 rounded-md">
-                <h5 className=" text-neutral-100 dark:text-white  px-2 text-sm sm:text-lg font-bold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+              <div className="absolute bottom-0 left-0 group-hover:bg-neutral-800 group-hover:backdrop-blur-md group-hover:bg-opacity-40 rounded-md w-full h-full flex justify-center items-center">
+                <h5 className="text-neutral-100 dark:text-white  px-2 text-md sm:text-lg font-bold mt-1 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                   {language === "english"
                     ? place.placeName
                     : place.placeNamejp || place.placeName}
@@ -45,10 +45,10 @@ export default async function PlacesTabContent({ places, language }) {
               {place.placeTypes &&
                 place.placeTypes.map((item, index) => (
                   <span
-                    className="bg-neutral-900 dark:bg-neutral-300 px-3 py-1 rounded-2xl"
+                    className="bg-neutral-900 dark:bg-neutral-300 px-3 py-0.5 rounded-2xl"
                     key={index}
                   >
-                    <h6 className="text-xs font-bold text-white dark:text-neutral-800">
+                    <h6 className="text-xs text-white dark:text-neutral-800">
                       {language === "english"
                         ? item.placeTypeName.toUpperCase()
                         : item.placeTypeNamejp ||

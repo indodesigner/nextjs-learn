@@ -35,7 +35,7 @@ export async function getBlog({ slug }) {
 
 export async function getSlides() {
   return client.fetch(
-    groq`*[_type == "slide"] | order(releaseDate asc){
+    groq`*[_type == "slide"] | order(_createdAt asc){
         _id,
         title,
         titlejp,
@@ -49,7 +49,7 @@ export async function getSlides() {
 
 export async function getSlidesIndia() {
   return client.fetch(
-    groq`*[_type == "slideIndia"] | order(releaseDate asc){
+    groq`*[_type == "slideIndia"] | order(_createdAt desc){
         _id,
         title,
         titlejp,
@@ -63,7 +63,7 @@ export async function getSlidesIndia() {
 
 export async function getSlidesJapan() {
   return client.fetch(
-    groq`*[_type == "slideJapan"] | order(releaseDate asc){
+    groq`*[_type == "slideJapan"] | order(_createdAt desc){
         _id,
         title,
         titlejp,
@@ -77,7 +77,7 @@ export async function getSlidesJapan() {
 
 export async function getPlaces() {
   return client.fetch(
-    groq`*[_type == "place"] | order(createdAt desc){
+    groq`*[_type == "place"] | order(_createdAt desc){
         _id,
         placeName,
         placeNamejp,
@@ -124,7 +124,7 @@ export async function getPlace({ slug }) {
 
 export async function getPackages() {
   return client.fetch(
-    groq`*[_type == "tourPackage"] | order(createdAt desc){
+    groq`*[_type == "tourPackage"] | order(_createdAt desc){
         _id,
         packageName,
         packageNamejp,
@@ -208,7 +208,7 @@ export async function getPackage({ slug }) {
 
 export async function getPlaceTypes() {
   return client.fetch(
-    groq`*[_type == "placeType"] | order(createdAt desc){
+    groq`*[_type == "placeType"] | order(_createdAt desc){
         _id,
         placeTypeName,
         placeTypeNamejp,

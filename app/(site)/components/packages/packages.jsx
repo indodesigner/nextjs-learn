@@ -22,11 +22,15 @@ export default function PackagesSection({ heading, packages, language }) {
           <h4 className="text-xl sm:text-2xl font-bold">
             {language === "english" ? "Explore" : "探検する"} {heading}
           </h4>
-          <div>
-            <Badge>
-              <span className="gradient-text">Trending</span>
-            </Badge>
-          </div>
+          {heading === "All" ? (
+            ""
+          ) : (
+            <div>
+              <Badge>
+                <span className="gradient-text">Trending</span>
+              </Badge>
+            </div>
+          )}
         </div>
 
         {showViewAllLink ? (

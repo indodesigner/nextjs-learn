@@ -45,13 +45,13 @@ export default async function PackagesTabContent({
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-2">
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-3">
             {packages &&
               packages.map((tourPackage) => (
                 <Link
                   key={tourPackage._id}
                   href={`/packages/${tourPackage.slug}`}
-                  className="group card card-hover p-2"
+                  className="group card card-hover p-2 mb-2"
                 >
                   {tourPackage.packageImages ? (
                     <Image
