@@ -54,7 +54,7 @@ export default function PlacesSection({ places, language }) {
                   </div>
                 )}
                 <div className="absolute bottom-0 left-0 group-hover:bg-neutral-800 group-hover:backdrop-blur-md group-hover:bg-opacity-40 rounded-md w-full h-full flex justify-center items-center">
-                  <h5 className="text-neutral-100 dark:text-white  px-2 text-md sm:text-lg font-bold mt-1 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+                  <h5 className="text-center text-neutral-100 dark:text-white  px-2 text-md sm:text-lg font-bold mt-1 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
                     {language === "english"
                       ? place.placeName
                       : place.placeNamejp || place.placeName}
