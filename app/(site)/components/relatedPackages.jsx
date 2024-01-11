@@ -83,7 +83,7 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                       className="bg-black dark:bg-neutral-300 px-3 py-[2px] rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs text-white dark:text-neutral-900">
+                      <h6 className="text-xs text-white dark:text-neutral-900 line-clamp-1">
                         {language === "english"
                           ? item.placeName.toUpperCase()
                           : item.placeNamejp || item.placeName.toUpperCase()}

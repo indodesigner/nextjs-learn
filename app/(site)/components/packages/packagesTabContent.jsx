@@ -136,7 +136,7 @@ export default async function PackagesTabContent({
                           className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl"
                           key={index}
                         >
-                          <h6 className="text-xs text-white dark:text-neutral-900">
+                          <h6 className="text-xs text-white dark:text-neutral-900 line-clamp-1">
                             {language === "english"
                               ? item.placeName.toUpperCase()
                               : item.placeNamejp ||
