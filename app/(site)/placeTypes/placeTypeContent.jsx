@@ -7,9 +7,15 @@ import { BsImageAlt, BsChevronRight } from "react-icons/bs";
 import CommonCarousel from "@/components/commonCarousel";
 import { useLanguage } from "/contexts/languageContext";
 import RelatedPackages from "@/components/relatedPackages";
+import RelatedPlaces from "@/components/relatedPlaces";
 import BackButton from "@/components/backButton";
 
-const PlaceTypeContent = ({ placeType, slides, relatedPacks }) => {
+const PlaceTypeContent = ({
+  placeType,
+  slides,
+  relatedPacks,
+  relatedPlaces,
+}) => {
   const { language } = useLanguage();
 
   return (
@@ -40,7 +46,7 @@ const PlaceTypeContent = ({ placeType, slides, relatedPacks }) => {
           </div>
         </div>
       )}
-      <h3 className="px-3 sm:px-0 text-2xl md:text-3xl font-bold my-2">
+      <h3 className="px-3 sm:px-0 text-2xl md:text-3xl font-bold my-2 mt-4">
         {language === "english"
           ? placeType.placeTypeName
           : placeType.placeTypeNamejp || placeType.placeTypeName}
@@ -76,7 +82,19 @@ const PlaceTypeContent = ({ placeType, slides, relatedPacks }) => {
           components={RichTextComponents}
         />
       </div>
-      <hr className="border-neutral-300 dark:border-neutral-800 mt-16" />
+      <hr className="border-neutral-300 dark:border-neutral-800 mt-8" />
+      {relatedPlaces != 0 ? (
+        <RelatedPlaces
+          relatedPlaces={relatedPlaces}
+          heading={placeType.placeTypeName}
+          headingjp={placeType.placeTypeNamejp}
+          language={language}
+        />
+      ) : (
+        <h5 className="mt-2">Packages Coming soon...</h5>
+      )}
+
+      <hr className="border-neutral-300 dark:border-neutral-800 mt-8" />
       {relatedPacks != 0 ? (
         <RelatedPackages
           relatedPacks={relatedPacks}

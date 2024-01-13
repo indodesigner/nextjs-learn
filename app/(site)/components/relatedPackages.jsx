@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-// import { getPackages } from "/sanity/sanity-utils";
 import urlFor from "/utils/urlFor";
 import { LuImageOff, LuCalendarClock } from "react-icons/lu";
 import GetCountry from "@/components/getCountry";
