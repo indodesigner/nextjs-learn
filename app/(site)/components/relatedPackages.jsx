@@ -17,13 +17,13 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
           {language == "english" ? "Tour Packages" : "旅行 パッケージ"}
         </span>
       </h4>
-      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {relatedPacks &&
           relatedPacks.map((tourPackage) => (
             <Link
               key={tourPackage._id}
               href={`/packages/${tourPackage.slug}`}
-              className="group card card-hover p-2"
+              className="group card card-hover p-2 mb-2"
             >
               {tourPackage.packageImages ? (
                 <Image
@@ -83,7 +83,7 @@ const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
                       className="bg-black dark:bg-neutral-300 px-3 py-[2px] rounded-2xl"
                       key={index}
                     >
-                      <h6 className="text-xs text-white dark:text-neutral-900 line-clamp-1">
+                      <h6 className="text-xs text-white dark:text-neutral-900 line-clamp-1 sm:max-w-[150px]">
                         {language === "english"
                           ? item.placeName.toUpperCase()
                           : item.placeNamejp || item.placeName.toUpperCase()}

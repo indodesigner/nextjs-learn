@@ -42,7 +42,7 @@ const TourPackage = async ({ params }) => {
   // const duration = dateDiff / (1000 * 60 * 60 * 24);
 
   return (
-    <div className="container mt-0 md:mt-24 pb-8">
+    <div className="container mt-0 lg:mt-24 pb-8">
       <PackageContent
         country={countryName}
         slides={slicedSlides}

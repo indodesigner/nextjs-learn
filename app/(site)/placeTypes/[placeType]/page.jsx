@@ -19,7 +19,7 @@ const PlaceType = async ({ params }) => {
   const slides = placeType && placeType.placeTypeImages;
 
   return (
-    <div className="container mt-0 md:mt-24">
+    <div className="container mt-0 lg:mt-24">
       <PlaceTypeContent
         placeType={placeType}
         slides={slides}

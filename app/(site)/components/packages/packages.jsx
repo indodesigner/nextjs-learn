@@ -142,7 +142,7 @@ export default function PackagesSection({ heading, packages, language }) {
                 {tourPackage.place &&
                   tourPackage.place.map((item, index) => (
                     <span
-                      className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl"
+                      className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl sm:max-w-[180px]"
                       key={index}
                     >
                       <h6 className="text-xs text-white dark:text-neutral-900 line-clamp-1">

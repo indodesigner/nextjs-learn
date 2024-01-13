@@ -22,7 +22,7 @@ const Place = async ({ params }) => {
       : "";
 
   return (
-    <div className="container mt-0 md:mt-24">
+    <div className="container mt-0 lg:mt-24">
       <PlaceContent
         place={place}
         slides={slides}

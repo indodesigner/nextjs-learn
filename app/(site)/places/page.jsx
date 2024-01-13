@@ -16,7 +16,7 @@ export default async function Places() {
 
   return (
     <>
-      <div className="container mt-0 md:mt-24">
+      <div className="container mt-0 lg:mt-24">
         <PlacesTabs
           indianPlaces={indianPlaces}
           japanesePlaces={japanesePlaces}

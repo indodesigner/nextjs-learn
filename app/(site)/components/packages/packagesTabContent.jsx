@@ -45,7 +45,7 @@ export default async function PackagesTabContent({
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-2">
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {packages &&
               packages.map((tourPackage) => (
                 <Link
@@ -133,7 +133,7 @@ export default async function PackagesTabContent({
                     {tourPackage.place &&
                       tourPackage.place.map((item, index) => (
                         <span
-                          className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl"
+                          className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl sm:max-w-[170px]"
                           key={index}
                         >
                           <h6 className="text-xs text-white dark:text-neutral-900 line-clamp-1">
