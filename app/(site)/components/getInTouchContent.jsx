@@ -68,14 +68,14 @@ const GetInTouchSection = ({ indianPackDetails, japanesePackDetails }) => {
               </AlertDialogCancel>
             </AlertDialogHeader>
 
-            <AlertDialogDescription className="flex justify-center mt-2">
-              <ContactForm
-                indianPackDetails={indianPackDetails}
-                japanesePackDetails={japanesePackDetails}
-                language={language}
-                currentPack={null}
-              />
-            </AlertDialogDescription>
+            {/* <AlertDialogDescription className="flex justify-center mt-2"> */}
+            <ContactForm
+              indianPackDetails={indianPackDetails}
+              japanesePackDetails={japanesePackDetails}
+              language={language}
+              currentPack={null}
+            />
+            {/* </AlertDialogDescription> */}
             <AlertDialogFooter>
               {/* <AlertDialogAction>Continue</AlertDialogAction> */}
             </AlertDialogFooter>

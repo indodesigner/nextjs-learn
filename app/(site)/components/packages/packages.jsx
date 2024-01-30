@@ -13,7 +13,7 @@ export default function PackagesSection({ heading, packages, language }) {
   const showViewAllLink = packages.length > 3;
   const packagesToDisplay = packages.slice(0, 3); // Get the first 4 packages
   const countries = packages[0] && packages[0].country;
-  const country = countries && countries.map((item) => item.toLowerCase());
+  // const country = countries && countries.map((item) => item.toLowerCase());
 
   return (
     <div>

@@ -38,9 +38,7 @@ export default function RootLayout({ children }) {
           <CountryProvider>
             <LanguageProvider>
               <Navbar />
-              <main className="min-h-[84vh] sm:min-h-[80vh] md:min-h-[78vh]">
-                {children}
-              </main>
+              <main className="min-h-[100svh]">{children}</main>
               <ScrollToTopButton />
               <Footer />
             </LanguageProvider>

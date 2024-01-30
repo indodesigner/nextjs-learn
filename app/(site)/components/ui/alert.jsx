@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority";
 import { cn } from "lib/utils";
 
 const alertVariants = cva(
-  "relative w-full rounded-lg border border-neutral-200 dark:border-neutral-700 p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-2 [&>svg]:text-foreground",
+  "relative w-full rounded-lg border border-neutral-200 dark:border-neutral-700 p-2 flex gap-1",
   {
     variants: {
       variant: {
@@ -32,7 +32,7 @@ Alert.displayName = "Alert";
 const AlertTitle = React.forwardRef(({ className, ...props }, ref) => (
   <h5
     ref={ref}
-    className={cn("mb-1 font-medium leading-none tracking-tight", className)}
+    className={cn("font-medium leading-none tracking-tight", className)}
     {...props}
   />
 ));

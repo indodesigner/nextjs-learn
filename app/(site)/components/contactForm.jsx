@@ -266,9 +266,7 @@ export default function ContactForm({
           {errors.name ? (
             <Alert className="py-1 text-red-500 dark:text-red-400">
               <FaCircleExclamation />
-              <AlertTitle className="text-xs font-normal pt-[3px]">
-                {errors.name}
-              </AlertTitle>
+              <AlertTitle className="text-xs">{errors.name}</AlertTitle>
             </Alert>
           ) : null}
 
@@ -304,9 +302,7 @@ export default function ContactForm({
           {errors.phone ? (
             <Alert className="py-1 text-red-500 dark:text-red-400">
               <FaCircleExclamation />
-              <AlertTitle className="text-xs font-normal pt-[3px]">
-                {errors.phone}
-              </AlertTitle>
+              <AlertTitle className="text-xs">{errors.phone}</AlertTitle>
             </Alert>
           ) : null}
 
@@ -321,9 +317,7 @@ export default function ContactForm({
           {errors.email ? (
             <Alert className="py-1 text-red-500 dark:text-red-400">
               <FaCircleExclamation />
-              <AlertTitle className="text-xs font-normal pt-[3px]">
-                {errors.email}
-              </AlertTitle>
+              <AlertTitle className="text-xs">{errors.email}</AlertTitle>
             </Alert>
           ) : null}
 
@@ -474,9 +468,7 @@ export default function ContactForm({
           {errors.date ? (
             <Alert className="py-1 text-red-500 dark:text-red-400">
               <FaCircleExclamation />
-              <AlertTitle className="text-xs font-normal pt-[3px]">
-                {errors.date}
-              </AlertTitle>
+              <AlertTitle className="text-xs">{errors.date}</AlertTitle>
             </Alert>
           ) : null}
           <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mb-2" />
@@ -528,15 +520,13 @@ export default function ContactForm({
           {errors.noOfAdults ? (
             <Alert className="py-1 text-red-500 dark:text-red-400">
               <FaCircleExclamation />
-              <AlertTitle className="text-xs font-normal pt-[3px]">
-                {errors.noOfAdults}
-              </AlertTitle>
+              <AlertTitle className="text-xs">{errors.noOfAdults}</AlertTitle>
             </Alert>
           ) : null}
           {/* {errors.noOfChildren ? (
             <Alert className="py-1 text-red-500 dark:text-red-400">
               <FaCircleExclamation />
-              <AlertTitle className="text-xs font-normal pt-[3px]">
+              <AlertTitle className="text-xs">
                 {errors.noOfChildren}
               </AlertTitle>
             </Alert>
