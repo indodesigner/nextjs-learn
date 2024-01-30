@@ -214,6 +214,7 @@ export async function getPlaceTypes() {
         placeTypeNamejp,
         "slug": slug.current,
         "placeTypeIcon": placeTypeIcon.asset->url,
+        "iconAlt": placeTypeIcon.alt,
         placeTypeImages[0]{asset->{url}},
         "alt": coalesce(placeTypeImages[0].alt, "Image of the destination Type"),
         content,

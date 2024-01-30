@@ -4,19 +4,9 @@ import urlFor from "/utils/urlFor";
 import { LuImageOff } from "react-icons/lu";
 import GetCountry from "@/components/getCountry";
 
-const RelatedPlaces = ({ relatedPlaces, heading, headingjp, language }) => {
+const RelatedPlaces = ({ relatedPlaces, language }) => {
   return (
     <>
-      <h4 className="text-lg sm:text-xl font-bold my-4 text-red-500">
-        {/* <span className="text-neutral-900 dark:text-neutral-50 me-2 font-light">
-          {language == "english" ? "Suggested" : "パッケージ"}
-        </span> */}
-        {/* {language == "english" ? heading : headingjp} */}
-        Curated
-        <span className="text-neutral-900 dark:text-neutral-50 ms-2 font-light">
-          {language == "english" ? "Destinations" : "目的地"}
-        </span>
-      </h4>
       <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2">
         {relatedPlaces &&
           relatedPlaces.map((place) => (
@@ -33,13 +23,13 @@ const RelatedPlaces = ({ relatedPlaces, heading, headingjp, language }) => {
                     width={800}
                     height={500}
                     alt={place.alt}
-                    className="object-cover h-36 md:h-36 rounded-md"
+                    className="object-cover aspect-video rounded-md"
                   ></Image>
                 ) : (
                   // else part for no place image
                   <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
                     <div>
-                      <LuImageOff className="w-16 h-36 md:h-36 text-neutral-300 dark:text-neutral-500" />
+                      <LuImageOff className="w-16 aspect-video text-neutral-300 dark:text-neutral-500" />
                     </div>
                   </div>
                 )}

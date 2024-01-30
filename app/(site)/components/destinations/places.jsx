@@ -43,13 +43,13 @@ export default function PlacesSection({ places, language }) {
                     width={800}
                     height={500}
                     alt={place.alt}
-                    className="object-cover h-36 md:h-36 rounded-md"
+                    className="object-cover aspect-video rounded-md"
                   ></Image>
                 ) : (
                   // else part for no place image
                   <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
                     <div>
-                      <LuImageOff className="w-16 h-36 md:h-36 text-neutral-300 dark:text-neutral-500" />
+                      <LuImageOff className="w-16 aspect-video text-neutral-300 dark:text-neutral-500" />
                     </div>
                   </div>
                 )}

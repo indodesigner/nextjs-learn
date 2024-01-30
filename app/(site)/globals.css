@@ -5,7 +5,7 @@
 /*-- tailwindcss custom styles -- START -------------------------------------------*/
 @layer components {
   .container {
-    @apply max-w-5xl p-4 mb-8;
+    @apply max-w-5xl p-4 mb-4;
   }
 
   .text-primary-color {

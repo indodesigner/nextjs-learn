@@ -34,24 +34,24 @@ export default function PackagesSection({ heading, packages, language }) {
         </div>
 
         {showViewAllLink ? (
-          heading == "India" || heading == "Japan" ? (
-            <Link
-              href={`/countries/${country}`}
-              className="group text-sm font-medium flex items-center link-hover py-1 px-2"
-            >
-              {language === "english" ? "View all" : "すべて見る"}
-              <LuChevronRight className="group-hover:text-red-300 transition" />
-            </Link>
-          ) : (
-            <Link
-              href="/packages"
-              className="group text-sm font-medium flex items-center link-hover py-1 px-2"
-            >
-              {language === "english" ? "View all" : "すべて見る"}
-              <LuChevronRight className="group-hover:text-red-300 transition" />
-            </Link>
-          )
-        ) : null}
+          // heading == "India" || heading == "Japan" ? (
+          //   <Link
+          //     href={`/${country}`}
+          //     className="group text-sm font-medium flex items-center link-hover py-1 px-2"
+          //   >
+          //     {language === "english" ? "View all" : "すべて見る"}
+          //     <LuChevronRight className="group-hover:text-red-300 transition" />
+          //   </Link>
+          // ) : (
+          <Link
+            href="/packages"
+            className="group text-sm font-medium flex items-center link-hover py-1 px-2"
+          >
+            {language === "english" ? "View all" : "すべて見る"}
+            <LuChevronRight className="group-hover:text-red-300 transition" />
+          </Link>
+        ) : // )
+        null}
       </div>
 
       <div className="grid grid-cols-1  xs:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -68,13 +68,13 @@ export default function PackagesSection({ heading, packages, language }) {
                   width={800}
                   height={500}
                   alt={tourPackage.alt}
-                  className="object-cover h-40 lg:h-36 rounded-md"
+                  className="object-cover aspect-video rounded-md"
                 ></Image>
               ) : (
                 // else part for no blog image
                 <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">
                   <div>
-                    <LuImageOff className="w-16 h-40 lg:h-32 text-neutral-300 dark:text-neutral-500" />
+                    <LuImageOff className="w-16 aspect-video text-neutral-300 dark:text-neutral-500" />
                   </div>
                 </div>
               )}

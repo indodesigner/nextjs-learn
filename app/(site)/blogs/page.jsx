@@ -4,6 +4,11 @@ import { LuFrown } from "react-icons/lu";
 import GetCountry from "@/components/getCountry";
 import BlogContent from "./blogsList";
 
+export const metadata = {
+  title: "Niko Travels",
+  description: "Explore with Niko Travels - Blogs",
+};
+
 const TIMEOUT_DURATION = 5000;
 export default async function Blogs() {
   const timeoutPromise = new Promise((_, reject) => {

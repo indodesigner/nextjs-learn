@@ -9,6 +9,11 @@ import SlidesSection from "@/components/slidesSection";
 import CommonSections from "@/components/commonSections";
 import AboutIndia from "./aboutIndia";
 
+export const metadata = {
+  title: "Niko Travels",
+  description: "Explore with Niko Travels - India",
+};
+
 export default async function ExploreIndia() {
   const slidesIndia = await getSlidesIndia();
   const packs = await getPackages();

@@ -3,6 +3,11 @@ import { getPackages } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
 import GetInTouch from "@/components/getInTouch";
 
+export const metadata = {
+  title: "Niko Travels",
+  description: "Explore with Niko Travels - Packages",
+};
+
 export default async function Packages() {
   const packages = await getPackages(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
 

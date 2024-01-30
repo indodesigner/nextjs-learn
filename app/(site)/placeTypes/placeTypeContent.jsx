@@ -83,6 +83,12 @@ const PlaceTypeContent = ({
         />
       </div>
       <hr className="border-neutral-300 dark:border-neutral-800 mt-8" />
+      <h4 className="text-lg sm:text-xl font-bold my-4 text-red-500">
+        Curated
+        <span className="text-neutral-900 dark:text-neutral-50 ms-2 font-light">
+          {language == "english" ? "Destinations" : "目的地"}
+        </span>
+      </h4>
       {relatedPlaces != 0 ? (
         <RelatedPlaces
           relatedPlaces={relatedPlaces}

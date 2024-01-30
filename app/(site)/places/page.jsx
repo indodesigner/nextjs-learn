@@ -3,6 +3,11 @@ import { getPlaces, getPlaceTypes } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
 import GetInTouch from "@/components/getInTouch";
 
+export const metadata = {
+  title: "Niko Travels",
+  description: "Explore with Niko Travels - Destinations",
+};
+
 export default async function Places() {
   const places = await getPlaces(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
   const placeTypes = await getPlaceTypes();
