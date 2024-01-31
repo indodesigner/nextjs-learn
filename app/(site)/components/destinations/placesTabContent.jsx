@@ -16,7 +16,7 @@ export default async function PlacesTabContent({ places, language }) {
             className="group card card-hover p-2 mb-2"
           >
             <div className="relative">
-              <div class="absolute inset-0 bg-gradient-to-tr from-neutral-900 opacity-70 hover:opacity-10 k to-transparent rounded-md z-9 transition"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-neutral-900 opacity-70 hover:opacity-10 k to-transparent rounded-md z-9 transition"></div>
               {place.placeImages ? (
                 <Image
                   src={urlFor(place.placeImages).url()}

@@ -1,4 +1,5 @@
-import { DM_Sans, Geologica, Roboto } from "next/font/google";
+import { DM_Sans, Roboto } from "next/font/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Providers from "@/components/providers";
@@ -31,7 +32,10 @@ export default function RootLayout({ children }) {
   return (
     // passing font variables to global.css can be accessed there and used
     <html lang="en" className={`${display.variable} ${primary.variable}`}>
-      {/* main layout page */}
+      {/* google analytics tags....................... */}
+      <GoogleAnalytics gaId="G-0SH9RRRGYN" />
+      <GoogleTagManager gtmId="GTM-53GRCD5N" />
+      {/* main layout page............................ */}
       <body className="bg-neutral-50 dark:bg-neutral-900 min-h-screen bg-images">
         <div className="scroll-watcher"></div>
         <Providers>
