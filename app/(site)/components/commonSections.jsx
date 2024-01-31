@@ -1,5 +1,4 @@
 "use client";
-import { Suspense } from "react";
 import BlogSection from "@/components/blogs";
 import PlacesSection from "@/components/destinations/places";
 import PackagesSection from "@/components/packages/packages";
@@ -32,13 +31,11 @@ export default function CommonSections({
             className="container"
             id="packages"
           >
-            <Suspense fallback={<p>Loading content...</p>}>
-              <PackagesSection
-                packages={firstSectionPackages}
-                heading={language === "english" ? headings[0] : headingsJp[0]}
-                language={language}
-              />
-            </Suspense>
+            <PackagesSection
+              packages={firstSectionPackages}
+              heading={language === "english" ? headings[0] : headingsJp[0]}
+              language={language}
+            />
           </section>
           {/* <hr className="container border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-50 mt-8" /> */}
         </>

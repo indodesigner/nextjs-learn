@@ -16,7 +16,7 @@ const AboutPage = () => {
         the tranquility of Kerala's landscapes or the vibrant cultural tapestry
         of Japan.
       </p>
-      <div className="gradient-bg p-6  my-8 text-white rounded-2xl">
+      <div className="gradient-bg-light p-6 my-8 rounded-2xl">
         <h3 className="font-bold text-2xl mb-2">What Sets Us Apart</h3>
         <h5 className="font-semibold text-lg">
           Kerala, India: A Tapestry of Experiences
@@ -57,7 +57,7 @@ const AboutPage = () => {
           contributing to their preservation for future generations.
         </li>
       </ul>
-      <div className="container">
+      <div className="mt-8">
         <GetInTouch />
       </div>
     </div>

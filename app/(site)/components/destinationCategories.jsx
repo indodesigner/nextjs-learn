@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const DestinationCategories = ({ placeTypes, language }) => {
   return (
-    <div className="bg-red-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 shadow-lg backdrop-blur-lg dark:backdrop-blur-lg rounded-xl">
+    <div className="gradient-bg-light shadow-lg rounded-xl">
       <h4 className="text-neutral-800 dark:text-neutral-50 text-xl sm:text-2xl font-bold pt-4 text-center">
         {language === "english" ? "Destination Categories" : "目的地のカテゴリ"}
       </h4>

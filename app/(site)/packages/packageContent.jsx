@@ -74,7 +74,7 @@ const packageContent = ({
 
       <CommonCarousel slides={slides} />
 
-      <div className="bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 shadow-lg rounded-2xl my-3 p-2">
+      <div className="bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20 shadow-lg rounded-2xl my-3 p-2">
         <div className="grid grid-cols-4 md:grid-cols-4 mb-2 px-1">
           <div className="col-span-2 md:col-span-3">
             <h3 className="text-lg sm:text-2xl md:text-3xl font-semibold mb-2">
@@ -225,7 +225,7 @@ const packageContent = ({
           </div>
         </div>
       </div> */}
-      <div className="mb-8 bg-neutral-100 bg-opacity-30 dark:bg-neutral-700 dark:bg-opacity-30 rounded-xl px-2 sm:px-4 pb-4 pt-1">
+      <div className="gradient-bg-light mb-8 rounded-xl px-2 sm:px-4 pb-4 pt-1">
         <PortableText
           value={
             language === "english"
@@ -259,7 +259,7 @@ const packageContent = ({
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              {language === "english" ? "Inclusions" : "内包物"}
+              {language === "english" ? "Tour Perks" : "ツアー特典"}
             </AccordionTrigger>
             <AccordionContent>
               <div className="mb-8">

@@ -30,6 +30,10 @@
   .gradient-bg {
     @apply bg-gradient-to-r from-indigo-400 to-red-400;
   }
+
+  .gradient-bg-light {
+    @apply bg-gradient-to-br from-red-300/25 to-indigo-300/25 backdrop-blur-xl dark:bg-gradient-to-br dark:from-neutral-800/25 dark:to-neutral-700/25 dark:backdrop-blur-xl dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20;
+  }
   .btn-primary {
     @apply bg-primary-color px-4 py-1 rounded-2xl hover:bg-primary-color-hover transition duration-200 focus:outline-none focus:ring-2 focus:bg-purple-400 focus:ring-opacity-75;
   }

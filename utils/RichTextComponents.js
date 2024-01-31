@@ -67,8 +67,8 @@ export const RichTextComponents = {
   },
   list: {
     // Ex. 1: customizing common list types
-    bullet: ({ children }) => <ul className="mt-xl">{children}</ul>,
-    number: ({ children }) => <ol className="mt-lg">{children}</ol>,
+    bullet: ({ children }) => <ul className="mt-xl ps-4">{children}</ul>,
+    number: ({ children }) => <ol className="mt-lg ps-4">{children}</ol>,
 
     // Ex. 2: rendering custom lists
     checkmarks: ({ children }) => (

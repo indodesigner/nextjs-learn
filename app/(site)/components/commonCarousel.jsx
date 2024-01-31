@@ -31,10 +31,11 @@ const CommonCarousel = ({ slides }) => {
           <SwiperSlide key={slide._id} className="dark:bg-neutral-900">
             <Image
               src={slide.asset.url}
-              width={3000}
-              height={3000}
+              width={2000}
+              height={2000}
               className="min-w-screen max-h-[40vh] md:max-h-[60vh] object-cover rounded-md"
               alt={slide.alt}
+              priority
             ></Image>
           </SwiperSlide>
         ))}
