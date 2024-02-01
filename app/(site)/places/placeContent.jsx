@@ -42,7 +42,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
         </div>
       )}
 
-      <div className="bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 shadow-lg rounded-2xl my-3 p-2">
+      <div className="bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20 shadow-lg rounded-2xl my-3 p-2">
         {/* <div className="px-2 flex flex-wrap gap-2">
           {place.placeTypes &&
             place.placeTypes.map((item, index) => (
@@ -60,12 +60,14 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
             ))}
         </div> */}
 
-        <h3 className="text-2xl md:text-3xl font-bold mb-2">
+        <h3 className="text-2xl md:text-3xl font-bold mb-2 px-2">
           {language === "english"
             ? place.placeName
             : place.placeNamejp || place.placeName}
         </h3>
-        <div className="flex items-center px-1">
+        <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
+
+        <div className="flex items-center px-2 pt-2">
           <h4 className="text-xs ">ATTRACTIONS</h4>
           <h6 className="text-sm">
             <BsChevronRight className="pb-[2px]" />
@@ -76,7 +78,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
                 <Link
                   href={`/placeTypes/${item.slug}`}
                   key={index}
-                  className="group border-2 border-red-500 dark:border-red-500 hover:bg-red-100 dark:hover:bg-neutral-700 px-3 rounded-3xl transition"
+                  className="group border-2 border-red-500 dark:border-neutral-200 hover:bg-red-100 dark:hover:bg-neutral-700 px-3 rounded-3xl transition"
                 >
                   <h6
                     className="text-xs font-medium text-red-500 dark:text-white ps-2"

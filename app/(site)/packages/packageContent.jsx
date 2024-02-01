@@ -129,7 +129,7 @@ const packageContent = ({
 
         <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
 
-        <div className="flex items-center px-1">
+        <div className="flex items-center px-1 py-1">
           <h4 className="text-xs">
             {language === "english" ? "DESTINATIONS" : "目的地"}
           </h4>
@@ -158,7 +158,7 @@ const packageContent = ({
         </div>
         <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
 
-        <div className="flex items-center px-1">
+        <div className="flex items-center px-1 pt-1">
           <h4 className="text-xs ">
             {language === "english" ? "ATTRACTIONS" : "魅力"}
           </h4>

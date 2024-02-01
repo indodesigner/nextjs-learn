@@ -11,7 +11,7 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
 
   return (
     <>
-      <div className="container mt-0 sm:mt-8 lg:mt-28">
+      <div className="container mt-0 sm:mt-8 lg:mt-16">
         <h2 className="text-3xl font-extrabold my-4">
           {language === "english" ? "Contact us" : "お問い合わせ"}
         </h2>
@@ -25,7 +25,7 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
                 alt="Contact us illustration"
                 className="w-auto h-auto"
               ></Image>
-              <div className="bg-white dark:bg-neutral-800 px-2 py-1 rounded-lg shadow-lg absolute top-0 right-0 xs:right-[50px] sm:right-[100px] md:right-0 lg:right-[50px]">
+              <div className="bg-neutral-100 dark:bg-neutral-800 bg-opacity-80 dark:bg-opacity-80 dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20 px-2 py-1 rounded-lg shadow-lg absolute top-0 right-0 xs:right-[50px] sm:right-[100px] md:right-0 lg:right-[50px]">
                 <a
                   href="tel:+914842867618"
                   className="flex items-center text-xl font-semibold gap-1 mb-1 p-1 px-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-md"
@@ -56,7 +56,7 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
           </div>
 
           <div className="w-full sm:w-[380px]">
-            <div className=" bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl">
+            <div className=" bg-neutral-50 dark:bg-neutral-900 bg-opacity-80 dark:bg-opacity-80 dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20 p-4 rounded-xl shadow-xl">
               <p className="text-sm font-normal mb-2 text-center">
                 Send your details we will get back to you within 24 Hrs
               </p>

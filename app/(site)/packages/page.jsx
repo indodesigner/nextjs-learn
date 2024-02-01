@@ -63,7 +63,7 @@ export default async function Packages() {
 
   return (
     <>
-      <div className="container mt-0 lg:mt-24">
+      <div className="container mt-0 lg:mt-16">
         <PackagesTabs
           indianPacks={indianPacks}
           japanesePacks={japanesePacks}

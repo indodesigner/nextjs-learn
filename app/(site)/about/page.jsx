@@ -7,7 +7,7 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <div className="container mt-0 sm:mt-8 lg:mt-28">
+    <div className="container mt-0 sm:mt-8 lg:mt-16">
       <h2 className="text-3xl font-extrabold my-4">About us</h2>
       <p>
         Discover the world with Niko Travels, where we craft extraordinary

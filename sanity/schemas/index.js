@@ -8,6 +8,7 @@ import packageFilter from "./packageFilter";
 import category from "./category";
 import tourPackage from "./tourPackage";
 import placeType from "./placeType";
+import advertisement from "./advertisement";
 
 export const schemaTypes = [
   blog,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   slide,
   slideJapan,
   slideIndia,
+  advertisement,
 ];

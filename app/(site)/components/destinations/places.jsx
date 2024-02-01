@@ -5,24 +5,32 @@ import urlFor from "/utils/urlFor";
 import { LuImageOff, LuChevronRight } from "react-icons/lu";
 // import { PortableText } from "@portabletext/react";
 // import { RichTextComponents } from "/utils/RichTextComponents";
+import useMediaQuery from "/hooks/useMediaQuery";
 
 export default function PlacesSection({ places, language }) {
   const showViewAllLink = places.length > 3;
-  const placesToDisplay = places.slice(0, 3); // Get the first 4 packages
+  const isSmallScreen = useMediaQuery("(max-width: 1024px)");
+  const placesToDisplay = isSmallScreen
+    ? places.slice(0, 4)
+    : places.slice(0, 3); // Get the first 3/4 places
 
   return (
     <div>
-      <div className="flex justify-between mb-4">
+      <div className="flex justify-between mb-4 px-1">
         <h4 className="text-xl sm:text-2xl font-bold">
           {language === "english" ? "Destinations" : "目的地"}
         </h4>
         {showViewAllLink && (
+          // <Link
+          //   href="/places"
+          //   className="group text-sm font-medium flex items-center link-hover py-1 px-2"
+          // >
           <Link
             href="/places"
-            className="group text-sm font-medium flex items-center link-hover py-1 px-2"
+            className="button-primary group text-xs font-medium"
           >
             {language === "english" ? "View all" : "すべて見る"}
-            <LuChevronRight className="group-hover:text-red-300 transition" />
+            {/* <LuChevronRight className="group-hover:text-red-300 transition" /> */}
           </Link>
         )}
       </div>

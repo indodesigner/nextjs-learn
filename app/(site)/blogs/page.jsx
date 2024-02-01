@@ -24,7 +24,7 @@ export default async function Blogs() {
     return (
       <>
         {blogs != 0 ? (
-          <div className="container mt-0 md:mt-24">
+          <div className="container mt-0 md:mt-16">
             <BlogContent blogs={blogs} />
             <GetCountry country={null} />
           </div>

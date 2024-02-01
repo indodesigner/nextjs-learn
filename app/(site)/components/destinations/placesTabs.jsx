@@ -20,7 +20,7 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces, placeTypes }) => {
   const { language } = useLanguage();
 
   return (
-    <div className="sm:mt-8">
+    <>
       <h2 className="text-3xl font-extrabold my-4">
         {language === "english" ? "Destinations" : "目的地"}
       </h2>
@@ -112,7 +112,7 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces, placeTypes }) => {
       <section>
         <DestinationCategories placeTypes={placeTypes} language={language} />
       </section>
-    </div>
+    </>
   );
 };
 

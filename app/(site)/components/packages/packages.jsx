@@ -7,17 +7,22 @@ import { LuImageOff, LuChevronRight, LuCalendarClock } from "react-icons/lu";
 // import { PortableText } from "@portabletext/react";
 // import { RichTextComponents } from "/utils/RichTextComponents";
 // import { Button } from "@/components/ui/button";
+import useMediaQuery from "/hooks/useMediaQuery";
 import { Badge } from "@/components/ui/badge";
 
 export default function PackagesSection({ heading, packages, language }) {
   const showViewAllLink = packages.length > 3;
-  const packagesToDisplay = packages.slice(0, 3); // Get the first 4 packages
-  const countries = packages[0] && packages[0].country;
+
+  const isSmallScreen = useMediaQuery("(max-width: 1024px)");
+  const packagesToDisplay = isSmallScreen
+    ? packages.slice(0, 4)
+    : packages.slice(0, 3); // Get the first 3/4 packages
+  // const countries = packages[0] && packages[0].country;
   // const country = countries && countries.map((item) => item.toLowerCase());
 
   return (
     <div>
-      <div className="flex justify-between mb-4">
+      <div className="flex justify-between mb-4 px-1">
         <div className="flex flex-row items-center gap-2">
           <h4 className="text-xl sm:text-2xl font-bold">
             {language === "english" ? "Explore" : "探検する"} {heading}
@@ -34,6 +39,7 @@ export default function PackagesSection({ heading, packages, language }) {
         </div>
 
         {showViewAllLink ? (
+          // .....................disabled......................................................................
           // heading == "India" || heading == "Japan" ? (
           //   <Link
           //     href={`/${country}`}
@@ -43,18 +49,24 @@ export default function PackagesSection({ heading, packages, language }) {
           //     <LuChevronRight className="group-hover:text-red-300 transition" />
           //   </Link>
           // ) : (
+          // ...........................................................................................
+
+          // <Link
+          //   href="/packages"
+          //   className="group text-sm font-medium flex items-center link-hover py-1 px-2"
+          // >
           <Link
             href="/packages"
-            className="group text-sm font-medium flex items-center link-hover py-1 px-2"
+            className="button-primary group text-xs font-medium"
           >
             {language === "english" ? "View all" : "すべて見る"}
-            <LuChevronRight className="group-hover:text-red-300 transition" />
+            {/* <LuChevronRight className="group-hover:text-red-300 transition" /> */}
           </Link>
         ) : // )
         null}
       </div>
 
-      <div className="grid grid-cols-1  xs:grid-cols-2 lg:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2">
         {packagesToDisplay &&
           packagesToDisplay.map((tourPackage) => (
             <Link

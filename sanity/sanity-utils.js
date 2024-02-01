@@ -242,3 +242,24 @@ export async function getPlaceType({ slug }) {
       }`
   );
 }
+
+export async function getAds() {
+  return client.fetch(
+    groq`*[_type == "advertisement"] | order(_createdAt desc){
+        _id,
+        adName,
+        adNamejp,
+        "slug": slug.current,
+        adImages[] {
+          asset->{
+            url
+          },
+          alt,
+          caption
+        },
+        href,
+        content,
+        contentjp,
+      }`
+  );
+}

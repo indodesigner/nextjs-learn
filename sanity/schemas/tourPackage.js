@@ -99,6 +99,8 @@ export default {
     {
       title: "Package Images",
       name: "packageImages",
+      description:
+        "Upload images with 16:9 aspect ratio (eg. 1280 x 720 pixels)",
       type: "array",
       of: [
         {

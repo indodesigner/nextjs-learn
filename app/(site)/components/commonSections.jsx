@@ -6,6 +6,7 @@ import DestinationCategories from "@/components/destinationCategories";
 // import { motion } from "framer-motion";
 import { useLanguage } from "/contexts/languageContext";
 import GetInTouch from "@/components/getInTouch";
+import Advertisement from "@/components/advertisement";
 
 export default function CommonSections({
   placeTypes,
@@ -117,9 +118,14 @@ export default function CommonSections({
         </>
       ) : null}
 
-      <section className="container">
-        <GetInTouch />
-        {/* <hr className="container border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-50 mt-8" /> */}
+      <section
+        // initial={{ opacity: 0, y: 15 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // exit={{ opacity: 0, y: 15 }}
+        // transition={{ delay: 0.5 }}
+        className="container"
+      >
+        <Advertisement language={language} />
       </section>
 
       {places != 0 ? (
@@ -133,6 +139,11 @@ export default function CommonSections({
           <PlacesSection places={places} language={language} />
         </section>
       ) : null}
+
+      <section className="container">
+        <GetInTouch />
+        {/* <hr className="container border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-50 mt-8" /> */}
+      </section>
 
       <section
         // initial={{ opacity: 0, y: 15 }}

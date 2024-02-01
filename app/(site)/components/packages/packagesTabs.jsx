@@ -17,7 +17,7 @@ const PackagesTabs = ({
   const { language } = useLanguage();
 
   return (
-    <div className="sm:mt-8">
+    <>
       <h2 className="text-3xl font-extrabold my-4">
         {language === "english" ? "Packages" : "パッケージ"}
       </h2>
@@ -102,7 +102,7 @@ const PackagesTabs = ({
           )}
         </TabsContent>
       </Tabs>
-    </div>
+    </>
   );
 };
 
