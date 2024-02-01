@@ -17,7 +17,7 @@ export const sendEmail = async (response) => {
   const href = "https://www.nikotravels.com/packages/"; //change this to domain after hosting <<<<<<<important>
 
   const msg = {
-    to: "webdesigner@indocosmo.com",
+    to: ["webdesigner@indocosmo.com", "sales@niko-inn.com"],
     from: "webdesigner@indocosmo.com",
     subject: `New Enquiry from ${name}`,
     text: `

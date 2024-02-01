@@ -37,7 +37,7 @@ const Advertisement = async ({ language }) => {
                         value={
                           language === "english"
                             ? ad.content
-                            : ad.contentjp || place.content
+                            : ad.contentjp || ad.content
                         }
                         components={RichTextComponents}
                       />

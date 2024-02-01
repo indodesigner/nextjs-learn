@@ -23,7 +23,7 @@ export default function Footer() {
     { href: "/contact", name: "Contact", namejp: "接触" },
   ];
   return (
-    <div className="flex items-center justify-between py-3 sm:py-4 px-4 md:px-16 bg-neutral-100 dark:bg-neutral-900 backdrop-filter backdrop-blur-xl bg-opacity-30 dark:bg-opacity-30 border-t-[1px] border-neutral-700 dark:border-neutral-500 border-opacity-10 dark:border-opacity-10 min-w-full scroll-auto">
+    <div className="flex items-center justify-between py-3 sm:py-4 px-4 md:px-16 bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 border-t-[1px] border-neutral-300 dark:border-neutral-400 border-opacity-20 dark:border-opacity-20 backdrop-blur-lg min-w-full scroll-auto">
       <h6 className="text-[10px] sm:text-xs">Copyright © 2024 Niko Travels</h6>
       <div className="hidden sm:block">
         <ul className="flex flex-row gap-3">

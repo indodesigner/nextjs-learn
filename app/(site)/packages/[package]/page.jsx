@@ -8,6 +8,7 @@ import { getPackage, getPackages } from "/sanity/sanity-utils";
 // import PackageCarousel from "@/components/packageCarousel";
 import GetCountry from "@/components/getCountry";
 import PackageContent from "../packageContent";
+import Advertisement from "@/components/advertisement";
 
 const TourPackage = async ({ params }) => {
   const slug = params.package;
@@ -42,18 +43,26 @@ const TourPackage = async ({ params }) => {
   // const duration = dateDiff / (1000 * 60 * 60 * 24);
 
   return (
-    <div className="container mt-0 lg:mt-24 pb-8">
-      <PackageContent
-        country={countryName}
-        slides={slicedSlides}
-        tourPackage={tourPackage}
-        indianPackDetails={indianPackDetails}
-        japanesePackDetails={japanesePackDetails}
-        currentPack={tourPackage}
-      />
+    <>
+      <div className="container mt-0 lg:mt-24 lg:pb-8">
+        <PackageContent
+          country={countryName}
+          slides={slicedSlides}
+          tourPackage={tourPackage}
+          indianPackDetails={indianPackDetails}
+          japanesePackDetails={japanesePackDetails}
+          currentPack={tourPackage}
+        />
+        <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mt-2" />
 
-      <GetCountry country={countryName} />
-    </div>
+        <GetCountry country={countryName} />
+      </div>
+      <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mt-2" />
+
+      <div className="container">
+        <Advertisement />
+      </div>
+    </>
   );
 };
 

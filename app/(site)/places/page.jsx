@@ -2,6 +2,7 @@ import PlacesTabs from "@/components/destinations/placesTabs";
 import { getPlaces, getPlaceTypes } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
 import GetInTouch from "@/components/getInTouch";
+import Advertisement from "@/components/advertisement";
 
 export const metadata = {
   title: "Niko Travels",
@@ -30,6 +31,10 @@ export default async function Places() {
       </div>
       <div className="container">
         <GetInTouch />
+      </div>
+      <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mt-2" />
+      <div className="container">
+        <Advertisement />
       </div>
       <GetCountry country={null} />
     </>

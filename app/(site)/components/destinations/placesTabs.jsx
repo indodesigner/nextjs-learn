@@ -74,7 +74,7 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces, placeTypes }) => {
                   </h1>
                 )}
               </CardContent>
-              <CardFooter></CardFooter>
+              {/* <CardFooter></CardFooter> */}
             </Card>
           </TabsContent>
           <TabsContent value="japan">
@@ -99,7 +99,7 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces, placeTypes }) => {
                     language={language}
                   />
                 </CardContent>
-                <CardFooter></CardFooter>
+                {/* <CardFooter></CardFooter> */}
               </Card>
             ) : (
               <div className="text-center">

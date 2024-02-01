@@ -199,7 +199,7 @@ export default async function PackagesTabContent({
               ))}
           </div>
         </CardContent>
-        <CardFooter></CardFooter>
+        {/* <CardFooter></CardFooter> */}
       </Card>
     </>
   );
