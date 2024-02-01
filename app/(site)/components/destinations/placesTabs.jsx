@@ -10,7 +10,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -99,7 +98,6 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces, placeTypes }) => {
                     language={language}
                   />
                 </CardContent>
-                {/* <CardFooter></CardFooter> */}
               </Card>
             ) : (
               <div className="text-center">
