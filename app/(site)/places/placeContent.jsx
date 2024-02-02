@@ -63,10 +63,7 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
                   key={item._id}
                   className="group border-2 border-red-500 dark:border-neutral-200 hover:bg-red-100 dark:hover:bg-neutral-700 px-3 rounded-3xl transition"
                 >
-                  <h6
-                    className="text-xs font-medium text-red-500 dark:text-white ps-2"
-                    key={index}
-                  >
+                  <h6 className="text-xs font-medium text-red-500 dark:text-white ps-2">
                     {language === "english"
                       ? item.placeTypeName.toUpperCase()
                       : item.placeTypeNamejp ||
