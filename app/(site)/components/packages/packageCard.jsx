@@ -66,10 +66,10 @@ export default function PackageCard({ packages, language }) {
 
             <div className="px-2 flex flex-wrap gap-1 mb-2">
               {tourPackage.place &&
-                tourPackage.place.map((item, index) => (
+                tourPackage.place.map((item) => (
                   <span
                     className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl sm:max-w-[180px]"
-                    key={index}
+                    key={item._id}
                   >
                     <h6 className="text-xs text-white dark:text-neutral-900 line-clamp-1">
                       {language === "english"
@@ -83,10 +83,10 @@ export default function PackageCard({ packages, language }) {
 
             <div className="px-2 flex flex-wrap gap-1 mb-2">
               {tourPackage.placeTypes &&
-                tourPackage.placeTypes.map((item, index) => (
+                tourPackage.placeTypes.map((item) => (
                   <span
-                    className="border-2 border-neutral-700 dark:border-neutral-400 px-2 rounded-2xl"
-                    key={index}
+                    className="border border-neutral-400 dark:border-neutral-400 px-2 rounded-2xl"
+                    key={item._id}
                   >
                     <h6 className="text-xs">
                       {language === "english"

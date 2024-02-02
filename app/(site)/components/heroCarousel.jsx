@@ -26,7 +26,7 @@ const HeroCarousel = ({ slides }) => {
   ];
 
   return (
-    <div>
+    <section className="p-4 md:px-8 md:py-4 lg:py-[86px] lg:px-16">
       <Swiper
         autoplay={{
           delay: 4000,
@@ -65,9 +65,9 @@ const HeroCarousel = ({ slides }) => {
                   <span>
                     <div className="grid grid-cols-2 gap-3">
                       {path == "/"
-                        ? links.map((link, index) => (
+                        ? links.map((link) => (
                             <Link
-                              key={index}
+                              key={link.href}
                               href={`/${link.href}`}
                               className="flex flex-col items-center py-2 px-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
                             >
@@ -113,7 +113,7 @@ const HeroCarousel = ({ slides }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 };
 

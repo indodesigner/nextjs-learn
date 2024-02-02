@@ -25,7 +25,7 @@ const Advertisement = async ({ language }) => {
                   <div className="md:hidden md:group-hover:flex group-hover:flex-col md:text-center justify-center items-center md:px-8 transition duration-300 md:text-white">
                     <div className="flex justify-between items-center">
                       <h1 className="font-bold text-lg sm:text-3xl">
-                        {ad.adName}
+                        {language === "english" ? ad.adName : ad.adNamejp}
                       </h1>
                       <span className="md:hidden block bg-neutral-300 dark:bg-neutral-700 opacity-50 backdrop-blur-xl px-3 rounded-sm text-xs font-semibold">
                         Ad

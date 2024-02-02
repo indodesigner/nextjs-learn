@@ -27,18 +27,19 @@ const CommonCarousel = ({ slides }) => {
         className="mySwiper"
         navigation={true}
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide._id} className="dark:bg-neutral-900">
-            <Image
-              src={slide.asset.url}
-              width={2000}
-              height={2000}
-              className="min-w-screen max-h-[40vh] md:max-h-[60vh] object-cover rounded-md"
-              alt={slide.alt}
-              priority
-            ></Image>
-          </SwiperSlide>
-        ))}
+        {slides &&
+          slides.map((slide) => (
+            <SwiperSlide key={slide._id} className="dark:bg-neutral-900">
+              <Image
+                src={slide.asset.url}
+                width={2000}
+                height={2000}
+                className="min-w-screen max-h-[40vh] md:max-h-[60vh] object-cover rounded-md"
+                alt={slide.alt}
+                priority
+              ></Image>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   );

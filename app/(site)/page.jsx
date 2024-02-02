@@ -4,7 +4,7 @@ import {
   getPlaces,
   getPlaceTypes,
 } from "/sanity/sanity-utils";
-import SlidesSection from "@/components/slidesSection";
+import HeroCarousel from "@/components/heroCarousel";
 import CommonSections from "@/components/commonSections";
 import GetCountry from "@/components/getCountry";
 
@@ -25,7 +25,7 @@ export default async function HomePage() {
 
   return (
     <div>
-      <SlidesSection slides={slides} />
+      <HeroCarousel slides={slides} />
       <CommonSections
         placeTypes={placeTypes}
         packages={packages}

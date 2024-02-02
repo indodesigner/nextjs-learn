@@ -85,6 +85,7 @@ export async function getPlaces() {
         placeImages[0]{asset->{url}},
         "alt": coalesce(placeImages[0].alt, "Image of the destination"),
         "placeTypes":placeType[]->{
+          "_id": _id,
           "placeTypeName":placeTypeName,
           "placeTypeNamejp":placeTypeNamejp
         },
@@ -110,6 +111,7 @@ export async function getPlace({ slug }) {
           caption
         },
         "placeTypes":placeType[]->{
+          "_id": _id,
           "placeTypeName":placeTypeName,
           "placeTypeNamejp":placeTypeNamejp,
           "slug": slug.current
@@ -136,10 +138,12 @@ export async function getPackages() {
         duration,
         rate,
         "place": place[]->{
+          "_id": _id,
           "placeName": placeName,
           "placeNamejp": placeNamejp
         },
         "placeTypes":placeType[]->{
+          "_id": _id,
           "placeTypeName":placeTypeName,
           "placeTypeNamejp":placeTypeNamejp
         },
@@ -167,12 +171,14 @@ export async function getPackage({ slug }) {
         duration,
         rate,
         "place": place[]->{
+          "_id": _id,
           "placeName": placeName,
           "placeNamejp": placeNamejp,
           placeImages[0]{asset->{url}},
           "alt": coalesce(placeImages[0].alt, "Image of the destination"),
           "slug": slug.current,
           "placeTypes":placeType[]->{
+            "_id": _id,
             "placeTypeName":placeTypeName,
             "placeTypeNamejp":placeTypeNamejp
           }

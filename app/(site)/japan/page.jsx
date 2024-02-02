@@ -5,7 +5,7 @@ import {
   getPlaceTypes,
 } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
-import SlidesSection from "@/components/slidesSection";
+import HeroCarousel from "@/components/heroCarousel";
 import CommonSections from "@/components/commonSections";
 import AboutJapan from "./aboutJapan";
 
@@ -34,7 +34,7 @@ export default async function ExploreJapan() {
 
   return (
     <div>
-      <SlidesSection slides={slidesJapan} />
+      <HeroCarousel slides={slidesJapan} />
       <AboutJapan />
       <CommonSections
         placeTypes={placeTypes}

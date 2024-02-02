@@ -21,8 +21,8 @@ const packageContent = ({
   tourPackage,
   slides,
   country,
-  indianPackDetails,
-  japanesePackDetails,
+  // indianPackDetails,
+  // japanesePackDetails,
 }) => {
   const { language } = useLanguage();
 
@@ -87,8 +87,8 @@ const packageContent = ({
             } col-span-2 md:col-span-1 place-self-end self-center z-10`}
           >
             <DialogContactForm
-              indianPackDetails={indianPackDetails}
-              japanesePackDetails={japanesePackDetails}
+              // indianPackDetails={indianPackDetails}
+              // japanesePackDetails={japanesePackDetails}
               tourPackage={tourPackage}
               language={language}
             />
@@ -130,21 +130,15 @@ const packageContent = ({
           </h6>
           <div className="p-2 flex flex-wrap gap-2 divide-x divide-neutral-200 dark:divide-neutral-600">
             {tourPackage.place &&
-              tourPackage.place.map((item, index) => (
-                // <Link
-                //   href={`/places/${item.slug}`}
-                //   key={index}
-                //   className="group border-2 border-neutral-800 dark:border-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
-                // >
+              tourPackage.place.map((item) => (
                 <h6
                   className="text-xs font-medium text-red-500 dark:text-white ps-2"
-                  key={index}
+                  key={item._id}
                 >
                   {language === "english"
                     ? item.placeName.toUpperCase()
                     : item.placeNamejp || item.placeName.toUpperCase()}
                 </h6>
-                // </Link>
               ))}
           </div>
         </div>
@@ -159,10 +153,10 @@ const packageContent = ({
           </h6>
           <div className="p-2 flex flex-wrap gap-2 divide-x divide-neutral-200 dark:divide-neutral-600">
             {tourPackage.placeTypes &&
-              tourPackage.placeTypes.map((item, index) => (
+              tourPackage.placeTypes.map((item) => (
                 <h6
                   className="text-xs font-medium text-red-500 dark:text-white ps-2"
-                  key={index}
+                  key={item._id}
                 >
                   {language === "english"
                     ? item.placeTypeName.toUpperCase()

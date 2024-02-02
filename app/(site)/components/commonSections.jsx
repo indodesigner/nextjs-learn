@@ -25,7 +25,7 @@ export default function CommonSections({
 
   return (
     <div>
-      {firstSectionPackages != null ? (
+      {firstSectionPackages?.length > 0 ? (
         <>
           <section className="container" id="packages">
             <PackagesSection
@@ -43,7 +43,7 @@ export default function CommonSections({
         </>
       ) : null}
 
-      {secondSectionPackages != null ? (
+      {secondSectionPackages?.length > 0 ? (
         <>
           <section className="container">
             <PackagesSection

@@ -57,10 +57,10 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
           </h6>
           <div className="p-2 flex flex-wrap gap-2">
             {place.placeTypes &&
-              place.placeTypes.map((item, index) => (
+              place.placeTypes.map((item) => (
                 <Link
                   href={`/placeTypes/${item.slug}`}
-                  key={index}
+                  key={item._id}
                   className="group border-2 border-red-500 dark:border-neutral-200 hover:bg-red-100 dark:hover:bg-neutral-700 px-3 rounded-3xl transition"
                 >
                   <h6

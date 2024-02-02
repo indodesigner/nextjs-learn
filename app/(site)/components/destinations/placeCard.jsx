@@ -40,10 +40,10 @@ export default function PlaceCard({ places, language }) {
             </div>
             <div className="px-2 flex flex-wrap gap-1 mb-2 mt-4">
               {place.placeTypes &&
-                place.placeTypes.map((item, index) => (
+                place.placeTypes.map((item) => (
                   <span
                     className="bg-neutral-900 dark:bg-neutral-300 px-3 py-0.5 rounded-2xl"
-                    key={index}
+                    key={item._id}
                   >
                     <h6 className="text-xs text-white dark:text-neutral-800">
                       {language === "english"
