@@ -43,23 +43,6 @@ const PlaceContent = ({ place, slides, country, relatedPacks }) => {
       )}
 
       <div className="bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20 shadow-lg rounded-2xl my-3 p-2">
-        {/* <div className="px-2 flex flex-wrap gap-2">
-          {place.placeTypes &&
-            place.placeTypes.map((item, index) => (
-              <Link
-                href={`/placeTypes/${item.slug}`}
-                key={index}
-                className="group border-2 border-red-500 dark:border-neutral-200 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
-              >
-                <h6 className="text-xs font-medium dark:text-white">
-                  {language === "english"
-                    ? item.placeTypeName.toUpperCase()
-                    : item.placeTypeNamejp || item.placeTypeName.toUpperCase()}
-                </h6>
-              </Link>
-            ))}
-        </div> */}
-
         <h3 className="text-2xl md:text-3xl font-bold mb-2 px-2">
           {language === "english"
             ? place.placeName

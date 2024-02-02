@@ -131,10 +131,8 @@ export async function getPackages() {
         "slug": slug.current,
         packageImages[0]{asset->{url}},
         "alt": coalesce(packageImages[0].alt, "Image of the tour package"),
-        "category": category[]->name,
-        "packageFilter": packageFilter[]->name,
-        departureDate,
-        returnDate,
+        isBusiness,
+        isTrending,
         duration,
         rate,
         "place": place[]->{
@@ -166,8 +164,6 @@ export async function getPackage({ slug }) {
           alt,
           caption
         },
-        departureDate,
-        returnDate,
         duration,
         rate,
         "place": place[]->{
@@ -197,14 +193,6 @@ export async function getPackage({ slug }) {
       }`
   );
 }
-
-// export async function getFilters() {
-//   return client.fetch(
-//     groq`*[_type == "packageFilter"]{
-//       name
-//       }`
-//   );
-// }
 
 export async function getPlaceTypes() {
   return client.fetch(

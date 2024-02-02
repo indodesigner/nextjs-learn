@@ -4,8 +4,6 @@ import slideJapan from "./slideJapan";
 import slideIndia from "./slideIndia";
 import place from "./place";
 import country from "./country";
-import packageFilter from "./packageFilter";
-import category from "./category";
 import tourPackage from "./tourPackage";
 import placeType from "./placeType";
 import advertisement from "./advertisement";
@@ -16,8 +14,6 @@ export const schemaTypes = [
   place,
   placeType,
   country,
-  category,
-  packageFilter,
   slide,
   slideJapan,
   slideIndia,

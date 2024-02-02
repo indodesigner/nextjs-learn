@@ -73,7 +73,6 @@ const PlacesTabs = ({ indianPlaces, japanesePlaces, placeTypes }) => {
                   </h1>
                 )}
               </CardContent>
-              {/* <CardFooter></CardFooter> */}
             </Card>
           </TabsContent>
           <TabsContent value="japan">

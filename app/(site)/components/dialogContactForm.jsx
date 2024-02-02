@@ -4,10 +4,8 @@ import { BsXLg } from "react-icons/bs";
 
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
@@ -49,17 +47,13 @@ const DialogContactForm = ({
             </AlertDialogCancel>
           </AlertDialogHeader>
 
-          {/* <AlertDialogDescription className="flex justify-center mt-2"> */}
           <ContactForm
             indianPackDetails={indianPackDetails}
             japanesePackDetails={japanesePackDetails}
             currentPack={tourPackage}
             language={language}
           />
-          {/* </AlertDialogDescription> */}
-          <AlertDialogFooter>
-            {/* <AlertDialogAction>Continue</AlertDialogAction> */}
-          </AlertDialogFooter>
+          <AlertDialogFooter></AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
     </div>

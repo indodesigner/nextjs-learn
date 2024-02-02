@@ -80,8 +80,6 @@ export default function ContactForm({
         dateInputRef.current.focus();
       } else if (errors.noOfAdults) {
         paxAdultInputRef.current.focus();
-        // } else if (errors.noOfChildren) {
-        //   paxChildrenInputRef.current.focus();
       }
 
       return;
@@ -244,8 +242,6 @@ export default function ContactForm({
     }
   }, [sentStatus]);
 
-  // const currentPath = usePathname();
-  // const isPackagesPage = currentPath.includes("packages");
   const [date, setDate] = useState();
 
   return (
@@ -323,29 +319,6 @@ export default function ContactForm({
 
           {currentPack != null ? (
             <div className="bg-neutral-100 dark:bg-neutral-900 p-2 rounded-xl flex flex-col gap-2">
-              {/* <Tabs defaultValue={currentPack.country[0].toLowerCase()}>
-            <TabsList>
-              <TabsTrigger value="india" disabled>
-                {language === "english"
-                  ? "India Packages"
-                  : "インドのパッケージ"}
-              </TabsTrigger>
-              <TabsTrigger value="japan" disabled>
-                {language === "english" ? "Japan Packages" : "日本パッケージ"}
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
-
-          <Select>
-            <SelectTrigger disabled>
-              <SelectValue placeholder={currentPack.packageName} />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value={currentPack.packageName}>
-                {currentPack.packageName}
-              </SelectItem>
-            </SelectContent>
-          </Select> */}
               <div>
                 <h6 className="text-sm text-neutral-500 ps-2 mb-2">
                   Selected Package Details
@@ -523,14 +496,6 @@ export default function ContactForm({
               <AlertTitle className="text-xs">{errors.noOfAdults}</AlertTitle>
             </Alert>
           ) : null}
-          {/* {errors.noOfChildren ? (
-            <Alert className="py-1 text-red-500 dark:text-red-400">
-              <FaCircleExclamation />
-              <AlertTitle className="text-xs">
-                {errors.noOfChildren}
-              </AlertTitle>
-            </Alert>
-          ) : null} */}
 
           <Textarea
             value={values.message}
@@ -542,12 +507,6 @@ export default function ContactForm({
             }
             ref={messageInputRef}
           />
-          {/* {errors.message ? (
-        <Alert className="py-1 text-red-500 dark:text-red-400">
-          <FaCircleExclamation />
-          <AlertTitle className="text-sm">{errors.message}</AlertTitle>
-        </Alert>
-      ) : null} */}
         </div>
       </ScrollArea>
       <Button type="submit" disabled={loading}>

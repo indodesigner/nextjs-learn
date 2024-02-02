@@ -20,32 +20,13 @@ export default async function ExploreIndia() {
   const places = await getPlaces();
   const placeTypes = await getPlaceTypes();
 
-  // find duration from dep date and ret date...dep and ret dates not used for now....
-  // const packagesWithDuration = packs.map((pack) => {
-  //   const retdate = new Date(pack.returnDate);
-  //   const depDate = new Date(pack.departureDate);
-  //   const dateDiff = retdate - depDate;
-  //   const duration = dateDiff / (1000 * 60 * 60 * 24);
-  //   return { ...pack, duration };
-  // });
   const allPackages = packs.filter(
     (pack) => pack.country && pack.country.includes("India")
   );
 
-  const trendingPackages = allPackages.filter(
-    (pack) => pack.packageFilter && pack.packageFilter.includes("Trending")
-  );
+  const trendingPackages = allPackages.filter((pack) => pack.isTrending);
 
-  const popularPackages = allPackages.filter(
-    (pack) => pack.packageFilter && pack.packageFilter.includes("Popular")
-  );
-
-  const businessPackages = allPackages.filter(
-    (pack) => pack.category && pack.category.includes("Business")
-  );
-
-  // const headings = ["Trending", "Popular", "Business", "All"];
-  // const headingsJp = ["インド", "日本", "仕事", "全て"];
+  const businessPackages = allPackages.filter((pack) => pack.isBusiness);
 
   const placesIndian = places.filter(
     (pack) => pack.country && pack.country.includes("India")
@@ -59,7 +40,7 @@ export default async function ExploreIndia() {
         placeTypes={placeTypes}
         packages={allPackages}
         firstSectionPackages={trendingPackages}
-        secondSectionPackages={popularPackages}
+        secondSectionPackages={null}
         businessPackages={businessPackages}
         places={placesIndian}
       />

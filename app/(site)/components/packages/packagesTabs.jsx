@@ -12,8 +12,8 @@ const PackagesTabs = ({
   japanesePacks,
   trendingIndia,
   trendingJapan,
-  popularIndia,
-  popularJapan,
+  businessIndia,
+  businessJapan,
   placeTypes,
 }) => {
   const { language } = useLanguage();
@@ -56,10 +56,10 @@ const PackagesTabs = ({
                 country={"india"}
               />
             ) : null}
-            {popularIndia != 0 ? (
+            {businessIndia != 0 ? (
               <PackagesTabContent
-                packages={popularIndia}
-                heading={language === "english" ? "Popular" : "人気のある"}
+                packages={businessIndia}
+                heading={language === "english" ? "Business" : "仕事"}
                 language={language}
                 country={"india"}
               />
@@ -82,10 +82,10 @@ const PackagesTabs = ({
                 country={"japan"}
               />
             ) : null}
-            {popularJapan != 0 ? (
+            {businessJapan != 0 ? (
               <PackagesTabContent
-                packages={popularJapan}
-                heading={language === "english" ? "Popular" : "人気のある"}
+                packages={businessJapan}
+                heading={language === "english" ? "Business" : "仕事"}
                 language={language}
                 country={"japan"}
               />

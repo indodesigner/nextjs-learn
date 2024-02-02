@@ -1,11 +1,4 @@
-// import { RichTextComponents } from "/utils/RichTextComponents";
-// import Link from "next/link";
-// import { format } from "date-fns";
-// import { parseISO } from "date-fns";
 import { getPackage, getPackages } from "/sanity/sanity-utils";
-// import { PortableText } from "@portabletext/react";
-// import urlFor from "/utils/urlFor";
-// import PackageCarousel from "@/components/packageCarousel";
 import GetCountry from "@/components/getCountry";
 import PackageContent from "../packageContent";
 import Advertisement from "@/components/advertisement";
@@ -36,11 +29,6 @@ const TourPackage = async ({ params }) => {
     Array.isArray(tourPackage.country) && tourPackage.country.length > 0
       ? tourPackage.country[0].toLowerCase()
       : "";
-
-  // const retdate = new Date(tourPackage.returnDate);
-  // const depDate = new Date(tourPackage.departureDate);
-  // const dateDiff = retdate - depDate;
-  // const duration = dateDiff / (1000 * 60 * 60 * 24);
 
   return (
     <>

@@ -2,11 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { RichTextComponents } from "/utils/RichTextComponents";
 import Link from "next/link";
-// import Image from "next/image";
-// import { format } from "date-fns";
-// import { parseISO } from "date-fns";
 import { PortableText } from "@portabletext/react";
-// import urlFor from "/utils/urlFor";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import { LuCalendarClock } from "react-icons/lu";
 import CommonCarousel from "@/components/commonCarousel";
@@ -113,10 +109,6 @@ const packageContent = ({
             </div>
           ) : null}
 
-          {/* {tourPackage.rate && (
-            <div className="hidden sm:block border-r border-neutral-300 dark:border-neutral-600"></div>
-          )} */}
-
           {tourPackage.rate != null ? (
             <h6 className="text-sm sm:text-md flex flex-col sm:flex-row items-center gap-0 sm:gap-2 ">
               {language === "english" ? "Starting from" : "から始まる"}
@@ -168,11 +160,6 @@ const packageContent = ({
           <div className="p-2 flex flex-wrap gap-2 divide-x divide-neutral-200 dark:divide-neutral-600">
             {tourPackage.placeTypes &&
               tourPackage.placeTypes.map((item, index) => (
-                // <Link
-                //   href={`/placeTypes/${item.slug}`}
-                //   key={index}
-                //   className="group border-2 border-red-500 dark:border-red-500 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
-                // >
                 <h6
                   className="text-xs font-medium text-red-500 dark:text-white ps-2"
                   key={index}
@@ -187,44 +174,6 @@ const packageContent = ({
         </div>
       </div>
 
-      {/* <div className="my-5 px-4 py-5 bg-white dark:bg-neutral-900 shadow-lg shadow-neutral-200 dark:shadow-neutral-900 rounded-md">
-        <div className="flex flex-row justify-between">
-          {duration == 0 ? (
-            <h6>Duration depends on your schedule</h6>
-          ) : (
-            <h4 className="font-bold text-lg mb-4">{duration} Days</h4>
-          )}
-
-          {tourPackage.rate ? (
-            <h4 className="font-bold text-lg mb-4">₹{tourPackage.rate}</h4>
-          ) : (
-            <h6>Package rate depends on the schedule</h6>
-          )}
-        </div>
-
-        <div className="flex flex-col sm:flex-row sm:gap-8 gap-2">
-          <div className="flex flex-row place-items-center">
-            <h5 className="min-w-[80px] sm:min-w-fit font-light">Departure</h5>
-            <span className="bg-neutral-100 dark:bg-neutral-800 px-2 py-1 ms-2 rounded-lg font-medium">
-              {tourPackage.departureDate ? (
-                format(parseISO(tourPackage.departureDate), "dd MMMM yyyy")
-              ) : (
-                <h6>You Pick</h6>
-              )}
-            </span>
-          </div>
-          <div className="flex flex-row place-items-center">
-            <h5 className="min-w-[80px] sm:min-w-fit font-light">Return</h5>
-            <span className="bg-neutral-100 dark:bg-neutral-800 px-2 py-1 ms-2 rounded-lg font-medium">
-              {tourPackage.returnDate ? (
-                format(parseISO(tourPackage.returnDate), "dd MMMM yyyy")
-              ) : (
-                <h6>You Pick</h6>
-              )}
-            </span>
-          </div>
-        </div>
-      </div> */}
       <div className="gradient-bg-light mb-8 rounded-xl px-2 sm:px-4 pb-4 pt-1">
         <PortableText
           value={
@@ -235,7 +184,6 @@ const packageContent = ({
           components={RichTextComponents}
         />
       </div>
-      {/* <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" /> */}
       <section className="px-2 sm:px-4">
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
@@ -276,7 +224,6 @@ const packageContent = ({
           </AccordionItem>
         </Accordion>
       </section>
-      {/* <hr className="border-neutral-300 dark:border-neutral-800 mt-16 mb-4" /> */}
 
       <section className="px-2 sm:px-4">
         <h4 className="text-lg sm:text-xl font-bold mt-8 mb-4">

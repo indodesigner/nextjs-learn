@@ -16,17 +16,45 @@ export default function CommonSections({
   places,
 }) {
   const { language } = useLanguage();
-  const headings = ["India", "Japan", "Business", "All"];
-  const headingsJp = ["インド", "日本", "仕事", "全て"];
+  const headings = [
+    { id: "in", title: "India", titlejp: "インド" },
+    { id: "jp", title: "Japan", titlejp: "日本" },
+    { id: "bp", title: "Business Packages", titlejp: "仕事 パッケージ" },
+    { id: "ap", title: "All Packages", titlejp: "全て パッケージ" },
+  ];
 
   return (
     <div>
-      {firstSectionPackages != 0 ? (
+      {firstSectionPackages != null ? (
         <>
           <section className="container" id="packages">
             <PackagesSection
               packages={firstSectionPackages}
-              heading={language === "english" ? headings[0] : headingsJp[0]}
+              heading={{
+                id: headings[0].id,
+                title:
+                  language === "english"
+                    ? headings[0].title
+                    : headings[0].titlejp,
+              }}
+              language={language}
+            />
+          </section>
+        </>
+      ) : null}
+
+      {secondSectionPackages != null ? (
+        <>
+          <section className="container">
+            <PackagesSection
+              packages={secondSectionPackages}
+              heading={{
+                id: headings[1].id,
+                title:
+                  language === "english"
+                    ? headings[1].title
+                    : headings[1].titlejp,
+              }}
               language={language}
             />
           </section>
@@ -44,24 +72,18 @@ export default function CommonSections({
         </>
       ) : null}
 
-      {secondSectionPackages != 0 ? (
-        <>
-          <section className="container">
-            <PackagesSection
-              packages={secondSectionPackages}
-              heading={language === "english" ? headings[1] : headingsJp[1]}
-              language={language}
-            />
-          </section>
-        </>
-      ) : null}
-
       {businessPackages != 0 ? (
         <>
           <section className="container">
             <PackagesSection
               packages={businessPackages}
-              heading={language === "english" ? headings[2] : headingsJp[2]}
+              heading={{
+                id: headings[2].id,
+                title:
+                  language === "english"
+                    ? headings[2].title
+                    : headings[2].titlejp,
+              }}
               language={language}
             />
           </section>
@@ -73,7 +95,13 @@ export default function CommonSections({
           <section className="container">
             <PackagesSection
               packages={packages}
-              heading={language === "english" ? headings[3] : headingsJp[3]}
+              heading={{
+                id: headings[3].id,
+                title:
+                  language === "english"
+                    ? headings[3].title
+                    : headings[3].titlejp,
+              }}
               language={language}
             />
           </section>

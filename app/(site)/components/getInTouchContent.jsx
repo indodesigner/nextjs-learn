@@ -19,7 +19,6 @@ const GetInTouchSection = ({ indianPackDetails, japanesePackDetails }) => {
   const { language } = useLanguage();
 
   return (
-    // <div className="bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 shadow-lg p-6 rounded-2xl">
     <div className="gradient-bg-light shadow-lg p-6 rounded-2xl">
       <h3 className="font-bold text-2xl mb-2">
         {language === "english" ? "Get in Touch" : "連絡する"}
@@ -69,17 +68,13 @@ const GetInTouchSection = ({ indianPackDetails, japanesePackDetails }) => {
               </AlertDialogCancel>
             </AlertDialogHeader>
 
-            {/* <AlertDialogDescription className="flex justify-center mt-2"> */}
             <ContactForm
               indianPackDetails={indianPackDetails}
               japanesePackDetails={japanesePackDetails}
               language={language}
               currentPack={null}
             />
-            {/* </AlertDialogDescription> */}
-            <AlertDialogFooter>
-              {/* <AlertDialogAction>Continue</AlertDialogAction> */}
-            </AlertDialogFooter>
+            <AlertDialogFooter></AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
       </div>

@@ -25,14 +25,6 @@ const PlaceTypeContent = ({
           <Link href="/places" className="gradient-text">
             {language === "english" ? "Destinations types" : "目的地"}
           </Link>
-          {/* <h6 className="text-sm">
-          <BsChevronRight className="pt-[2px]" />
-        </h6> */}
-          {/* <h6 className="text-neutral-500 dark:text-neutral-400">
-          {language === "english"
-            ? placeType.placeTypeName
-            : placeType.placeTypeNamejp}
-        </h6> */}
         </div>
         <BackButton language={language} />
       </div>
@@ -51,26 +43,6 @@ const PlaceTypeContent = ({
           ? placeType.placeTypeName
           : placeType.placeTypeNamejp || placeType.placeTypeName}
       </h3>
-
-      {/* <div className="bg-neutral-100 dark:bg-neutral-800 rounded-md my-3 p-2">
-        <div className="px-2 flex flex-wrap gap-2">
-          {place.placeTypes &&
-            place.placeTypes.map((item, index) => (
-              <Link
-                // href={`/placetype/${item.slug}`} // need to add [page] for this
-                href={"/"}
-                key={index}
-                className="group border-2 border-red-500 dark:border-neutral-200 hover:bg-red-100 dark:hover:bg-neutral-700 p-1 px-5 rounded-3xl transition"
-              >
-                <h6 className="text-xs font-medium dark:text-white">
-                  {language === "english"
-                    ? item.placeTypeName.toUpperCase()
-                    : item.placeTypeNamejp || item.placeTypeName.toUpperCase()}
-                </h6>
-              </Link>
-            ))}
-        </div>
-      </div> */}
 
       <div className="mb-4 px-3 sm:px-0 mt-2">
         <PortableText

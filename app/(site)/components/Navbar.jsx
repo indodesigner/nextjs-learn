@@ -11,17 +11,6 @@ import { useCountry } from "/contexts/countryContext";
 import { useLanguage } from "/contexts/languageContext";
 import SwitchLanguage from "@/components/switchLanguage";
 
-// import {
-//   NavigationMenu,
-//   NavigationMenuContent,
-//   NavigationMenuIndicator,
-//   NavigationMenuItem,
-//   NavigationMenuLink,
-//   NavigationMenuList,
-//   NavigationMenuTrigger,
-//   NavigationMenuViewport,
-// } from "@/components/ui/navigation-menu";
-
 const Navbar = () => {
   const path = usePathname();
   const { country } = useCountry();
@@ -38,8 +27,6 @@ const Navbar = () => {
     { href: "/about", name: "About", namejp: "について" },
     { href: "/contact", name: "Contact", namejp: "接触" },
   ];
-
-  // const contactLinks = links.slice(-2);
 
   const closeNavbar = () => {
     setToggle(false);
@@ -141,35 +128,6 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-            {/* <li>
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>
-                      {language === "english" ? "Contact" : "接触"}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent className="flex flex-col bg-white p-4 px-8 gap-4">
-                      {contactLinks &&
-                        contactLinks.map((link, index) => (
-                          <NavigationMenuLink key={index}>
-                            <Link
-                              href={link.href}
-                              className={`${
-                                path === link.href ||
-                                country === link.name.toLowerCase()
-                                  ? "font-bold py-[2px] px-4 border-[1px] bg-white dark:bg-neutral-900 dark:bg-opacity-70 border-neutral-200 dark:border-neutral-700 rounded-2xl"
-                                  : "font-medium"
-                              }  link-hover "`}
-                            >
-                              {language === "english" ? link.name : link.namejp}
-                            </Link>
-                          </NavigationMenuLink>
-                        ))}
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-            </li> */}
             <li>
               <div className="px-2">
                 <SwitchLanguage />
@@ -265,13 +223,6 @@ const Navbar = () => {
                         <ThemeChanger />
                       </div>
                     </motion.li>
-
-                    {/* <motion.li
-                      className="nav-item dark:text-white text-2xl sm:text-3xl mt-8 ps-2"
-                      variants={navItem}
-                    >
-                      <ThemeChanger />
-                    </motion.li> */}
                   </motion.ul>
                 </div>
               </motion.div>

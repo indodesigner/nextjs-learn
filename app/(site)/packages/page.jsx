@@ -13,27 +13,15 @@ export default async function Packages() {
   const packages = await getPackages(); //fetch places from sanity query can be fount in (sanity/sanity-utils.js)
   const placeTypes = await getPlaceTypes();
 
-  // find duration from dep date and ret date.......
-  // const packagesWithDuration = packages.map((pack) => {
-  //   const retdate = new Date(pack.returnDate);
-  //   const depDate = new Date(pack.departureDate);
-  //   const dateDiff = retdate - depDate;
-  //   const duration = dateDiff / (1000 * 60 * 60 * 24);
-  //   return { ...pack, duration };
-  // });
-  // const indianPacks = packagesWithDuration.filter((pack) => {
-  //   return pack.country && pack.country.includes("India");
-  // });
-  // const japanesePacks = packagesWithDuration.filter((pack) => {
-  //   return pack.country && pack.country.includes("Japan");
-  // });
+  const indianPacks = packages.filter((pack) => {
+    return pack.country && pack.country.includes("India");
+  });
+  const japanesePacks = packages.filter((pack) => {
+    return pack.country && pack.country.includes("Japan");
+  });
 
-  // const trendingIndia = indianPacks.filter((pack) => {
-  //   return pack.packageFilter && pack.packageFilter.includes("Trending");
-  // });
-  // const trendingJapan = japanesePacks.filter((pack) => {
-  //   return pack.packageFilter && pack.packageFilter.includes("Trending");
-  // });
+  const trendingIndia = indianPacks.filter((pack) => pack.isTrending);
+  const trendingJapan = japanesePacks.filter((pack) => pack.isTrending);
 
   // const popularIndia = indianPacks.filter((pack) => {
   //   return pack.packageFilter && pack.packageFilter.includes("Popular");
@@ -42,26 +30,8 @@ export default async function Packages() {
   //   return pack.packageFilter && pack.packageFilter.includes("Popular");
   // });
 
-  const indianPacks = packages.filter((pack) => {
-    return pack.country && pack.country.includes("India");
-  });
-  const japanesePacks = packages.filter((pack) => {
-    return pack.country && pack.country.includes("Japan");
-  });
-
-  const trendingIndia = indianPacks.filter((pack) => {
-    return pack.packageFilter && pack.packageFilter.includes("Trending");
-  });
-  const trendingJapan = japanesePacks.filter((pack) => {
-    return pack.packageFilter && pack.packageFilter.includes("Trending");
-  });
-
-  const popularIndia = indianPacks.filter((pack) => {
-    return pack.packageFilter && pack.packageFilter.includes("Popular");
-  });
-  const popularJapan = japanesePacks.filter((pack) => {
-    return pack.packageFilter && pack.packageFilter.includes("Popular");
-  });
+  const businessIndia = indianPacks.filter((pack) => pack.isBusiness);
+  const businessJapan = japanesePacks.filter((pack) => pack.isBusiness);
 
   return (
     <>
@@ -71,8 +41,10 @@ export default async function Packages() {
           japanesePacks={japanesePacks}
           trendingIndia={trendingIndia}
           trendingJapan={trendingJapan}
-          popularIndia={popularIndia}
-          popularJapan={popularJapan}
+          // popularIndia={popularIndia}
+          // popularJapan={popularJapan}
+          businessIndia={businessIndia}
+          businessJapan={businessJapan}
           placeTypes={placeTypes}
         />
       </div>

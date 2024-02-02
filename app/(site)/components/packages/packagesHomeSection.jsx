@@ -4,29 +4,36 @@ import { Badge } from "@/components/ui/badge";
 import PackageCard from "@/components/packages/packageCard";
 
 export default function PackagesSection({ heading, packages, language }) {
-  const showViewAllLink = packages.length > 3;
+  const showViewAllLink = packages && packages.length > 3;
+
+  const { id, title } = heading;
 
   const isSmallScreen = useMediaQuery("(max-width: 1024px)");
   const packagesToDisplay = isSmallScreen
-    ? packages.slice(0, 4)
-    : packages.slice(0, 3); // Get the first 3/4 packages
+    ? packages && packages.slice(0, 4)
+    : packages && packages.slice(0, 3); // Get the first 3/4 packages
 
   return (
     <div>
       <div className="flex justify-between mb-4 px-1">
         <div className="flex flex-row items-center gap-2">
           <h4 className="text-xl sm:text-2xl font-bold">
-            {language === "english" ? "Explore" : "探検する"} {heading}
+            {id === "in" || id === "jp"
+              ? language === "english"
+                ? "Explore"
+                : "探検する"
+              : null}{" "}
+            {title}
           </h4>
-          {heading === "All" ? (
-            ""
-          ) : (
+          {id === "in" || id === "jp" ? (
             <div>
               <Badge>
-                <span className="gradient-text">Trending</span>
+                <span className="gradient-text">
+                  {language === "english" ? "Trending" : "トレンド"}
+                </span>
               </Badge>
             </div>
-          )}
+          ) : null}
         </div>
 
         {showViewAllLink ? (
@@ -36,8 +43,7 @@ export default function PackagesSection({ heading, packages, language }) {
           >
             {language === "english" ? "View all" : "すべて見る"}
           </Link>
-        ) : // )
-        null}
+        ) : null}
       </div>
 
       <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -46,3 +52,5 @@ export default function PackagesSection({ heading, packages, language }) {
     </div>
   );
 }
+
+export const revalidate = 10;
