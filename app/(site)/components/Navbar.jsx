@@ -197,7 +197,7 @@ const Navbar = () => {
                   </div>
 
                   <motion.ul
-                    className="ps-8"
+                    className="px-8"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
@@ -213,7 +213,7 @@ const Navbar = () => {
                         }}
                       >
                         <motion.li
-                          className="nav-item dark:text-white text-lg sm:text-xl font-semibold mb-4 ps-2"
+                          className="nav-item dark:text-white text-xl sm:text-2xl font-semibold border-b border-neutral-300 dark:border-neutral-900 mb-4 pb-4"
                           variants={navItem}
                         >
                           <h6 className="link-hover">
