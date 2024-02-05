@@ -12,14 +12,14 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
   return (
     <>
       <div className="container mt-0 sm:mt-8 lg:mt-16">
-        <h2 className="text-3xl font-extrabold my-4">
+        <h2 className="text-3xl font-extrabold">
           {language === "english" ? "Contact us" : "お問い合わせ"}
         </h2>
+        <p className="text-sm font-normal mb-4">
+          Send your details we will get back to you within 24 Hrs
+        </p>
         <div className="grid grid-cols-1 gap-2 mb-4 sm:mb-8">
           <div className=" bg-neutral-50 dark:bg-neutral-900 bg-opacity-80 dark:bg-opacity-80 dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20 p-4 rounded-xl shadow-xl">
-            <p className="text-sm font-normal mb-2 text-center">
-              Send your details we will get back to you within 24 Hrs
-            </p>
             <ContactForm
               indianPackDetails={indianPackDetails}
               japanesePackDetails={japanesePackDetails}

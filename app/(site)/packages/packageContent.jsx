@@ -119,15 +119,18 @@ const packageContent = ({
           ) : null}
         </div>
 
-        <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
+        <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
 
-        <div className="flex items-center px-1 py-1">
-          <h4 className="text-xs">
-            {language === "english" ? "DESTINATIONS" : "目的地"}
-          </h4>
-          <h6 className="text-sm">
-            <BsChevronRight className="pb-[2px]" />
-          </h6>
+        <div className=" px-1 py-1 pt-2">
+          <div className="flex items-center mb-1">
+            <h4 className="text-xs">
+              {language === "english" ? "DESTINATIONS" : "目的地"}
+            </h4>
+            <h6 className="text-sm">
+              <BsChevronRight className="pb-[2px]" />
+            </h6>
+          </div>
+          {/* 
           <div className="p-2 flex flex-wrap gap-2 divide-x divide-neutral-200 dark:divide-neutral-600">
             {tourPackage.place &&
               tourPackage.place.map((item) => (
@@ -140,18 +143,35 @@ const packageContent = ({
                     : item.placeNamejp || item.placeName.toUpperCase()}
                 </h6>
               ))}
+          </div> */}
+          <div className="flex flex-wrap gap-1 mb-1">
+            {tourPackage.place &&
+              tourPackage.place.map((item) => (
+                <span
+                  className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl sm:max-w-[180px]"
+                  key={item._id}
+                >
+                  <h6 className="text-xs text-white dark:text-neutral-900 line-clamp-1">
+                    {language === "english"
+                      ? item.placeName.toUpperCase()
+                      : item.placeNamejp || item.placeName.toUpperCase()}
+                  </h6>
+                </span>
+              ))}
           </div>
         </div>
         <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
 
-        <div className="flex items-center px-1 pt-1">
-          <h4 className="text-xs ">
-            {language === "english" ? "ATTRACTIONS" : "魅力"}
-          </h4>
-          <h6 className="text-sm">
-            <BsChevronRight className="pb-[2px]" />
-          </h6>
-          <div className="p-2 flex flex-wrap gap-2 divide-x divide-neutral-200 dark:divide-neutral-600">
+        <div className="px-1 pt-2">
+          <div className="flex items-center mb-1">
+            <h4 className="text-xs">
+              {language === "english" ? "ATTRACTIONS" : "魅力"}
+            </h4>
+            <h6 className="text-sm">
+              <BsChevronRight className="pb-[2px]" />
+            </h6>
+          </div>
+          {/* <div className="p-2 flex flex-wrap gap-2 divide-x divide-neutral-200 dark:divide-neutral-600">
             {tourPackage.placeTypes &&
               tourPackage.placeTypes.map((item) => (
                 <h6
@@ -162,7 +182,22 @@ const packageContent = ({
                     ? item.placeTypeName.toUpperCase()
                     : item.placeTypeNamejp || item.placeTypeName.toUpperCase()}
                 </h6>
-                // </Link>
+              ))}
+          </div> */}
+          <div className="flex flex-wrap gap-1 mb-2">
+            {tourPackage.placeTypes &&
+              tourPackage.placeTypes.map((item) => (
+                <span
+                  className="border border-neutral-400 dark:border-neutral-400 px-2 rounded-2xl"
+                  key={item._id}
+                >
+                  <h6 className="text-xs">
+                    {language === "english"
+                      ? item.placeTypeName.toUpperCase()
+                      : item.placeTypeNamejp ||
+                        item.placeTypeName.toUpperCase()}
+                  </h6>
+                </span>
               ))}
           </div>
         </div>

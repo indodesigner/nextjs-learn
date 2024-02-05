@@ -26,7 +26,7 @@ const HeroCarousel = ({ slides }) => {
   ];
 
   return (
-    <section className="p-4 md:px-8 md:py-4 lg:py-[86px] lg:px-16">
+    <section className="p-4 md:px-8 md:py-4 lg:pt-[86px] lg:mb-8 lg:px-16">
       <Swiper
         autoplay={{
           delay: 4000,
@@ -35,9 +35,9 @@ const HeroCarousel = ({ slides }) => {
         effect={"fade"}
         slidesPerView={1}
         spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         modules={[Pagination, Navigation, Autoplay, EffectFade]}
         className="mySwiper rounded-xl md:rounded-3xl"
         // navigation={true}
@@ -50,7 +50,7 @@ const HeroCarousel = ({ slides }) => {
                 width={3000}
                 height={3000}
                 alt={slide.alt}
-                className="min-w-screen max-h-[70vh] md:max-h-screen object-cover rounded-xl md:rounded-3xl"
+                className="aspect-video object-cover rounded-xl md:rounded-3xl"
               ></Image>
               <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">
                 <span className="flex flex-col items-center">
