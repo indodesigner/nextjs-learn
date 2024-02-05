@@ -24,8 +24,10 @@ const primary = Roboto({
 });
 
 export const metadata = {
-  title: "Niko Travels",
-  description: "Explore with Niko Travels",
+  title:
+    "Travel and Tour Packages | Affordable Packages for Vaccations | Niko Travels - Kochi",
+  description:
+    "Explore the world with Niko! Discover curated travel packages, unbeatable deals, and unforgettable experiences. Plan your dream vacaation and let us turn your travel aspirations into reality. Book now for a journey filled with adventure, luxury, and unparalleled service!",
 };
 
 export default function RootLayout({ children }) {

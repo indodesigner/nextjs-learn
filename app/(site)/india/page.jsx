@@ -10,8 +10,10 @@ import CommonSections from "@/components/commonSections";
 import AboutIndia from "./aboutIndia";
 
 export const metadata = {
-  title: "Niko Travels",
-  description: "Explore with Niko Travels - India",
+  title:
+    "Explore India's Wonders: Unbeatable Tour Packages & Cultural Journeys | Niko Travels",
+  description:
+    "Discover the magic of India with our curated tour packages. Immerse yourself in cultural splendors, historical marvels, and breathtaking landscapes. Book now for exclusive deals and expert-guided adventures. Your unforgettable journey through India begins here with Niko Travels",
 };
 
 export default async function ExploreIndia() {

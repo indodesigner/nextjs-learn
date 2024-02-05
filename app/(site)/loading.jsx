@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 // import Logo from "/public/images/logo.png";
 // import Image from "next/image";
 
-const loading = () => {
+const Loading = () => {
   return (
     <div className="flex flex-col justify-center items-center rounded-lg py-2 px-4 pt-24 md:pt-56 gap-5">
       {/* <Image src={Logo} width={80} height={48} alt="logo image"></Image> */}
@@ -38,4 +38,4 @@ const loading = () => {
   );
 };
 
-export default loading;
+export default Loading;

@@ -10,8 +10,10 @@ import CommonSections from "@/components/commonSections";
 import AboutJapan from "./aboutJapan";
 
 export const metadata = {
-  title: "Niko Travels",
-  description: "Explore with Niko Travels - Japan",
+  title:
+    "Discover Japan's Charm with Niko Travels : Unforgettable Tour Packages & Cultural Escapades",
+  description:
+    "Embark on a journey through Japan's wonders with Niko Travels in Kochi. Explore ancient traditions, modern marvels, and scenic landscapes with our expertly crafted tour packages. Book now for exclusive deals and immerse yourself in the beauty of Japan. Your adventure awaits with Niko Travels.",
 };
 
 export default async function ExploreJapan() {

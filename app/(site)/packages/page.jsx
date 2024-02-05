@@ -5,8 +5,10 @@ import GetInTouch from "@/components/getInTouch";
 import Advertisement from "@/components/advertisement";
 
 export const metadata = {
-  title: "Niko Travels",
-  description: "Explore with Niko Travels - Packages",
+  title:
+    "Uncover Asian Marvels: Best Tour Packages to Japan and India | Explore with Niko Travels",
+  description:
+    "Experience the allure of Japan and the richness of India with our curated tour packages. Discover cultural treasures, historical landmarks, and scenic wonders. Book now for exclusive deals and personalized adventures. Elevate your travel experience with the best from Japan to India, brought to you by Niko Travels.",
 };
 
 export default async function Packages() {

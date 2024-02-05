@@ -5,8 +5,10 @@ import GetInTouch from "@/components/getInTouch";
 import Advertisement from "@/components/advertisement";
 
 export const metadata = {
-  title: "Niko Travels",
-  description: "Explore with Niko Travels - Destinations",
+  title:
+    "Explore the Best of Japan and India: Top Places to Visit & Exclusive Tour Packages",
+  description:
+    "Discover the allure of Japan and the beauty of India with our comprehensive guide to the best places to visit. From iconic landmarks to hidden gems, plan your journey with insights and book exclusive tour packages for an unforgettable adventure. Immerse yourself in culture, history, and scenic landscapes with Niko Travels",
 };
 
 export default async function Places() {
