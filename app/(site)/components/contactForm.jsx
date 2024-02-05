@@ -27,8 +27,8 @@ import {
 } from "@/components/ui/popover";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { ScrollArea } from "@/components/ui/scroll-area";
-// import { usePathname } from "next/navigation";
+// import { ScrollArea } from "@/components/ui/scroll-area";
+import { usePathname } from "next/navigation";
 
 export default function ContactForm({
   indianPackDetails,
@@ -244,12 +244,13 @@ export default function ContactForm({
 
   const [date, setDate] = useState();
 
+  const path = usePathname();
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      {/* <ScrollArea className=" h-[70vh] sm:h-full rounded-md border border-neutral-200 dark:border-neutral-700"> */}
       <div
         className={
-          currentPack === null
+          path === "/contact"
             ? ``
             : `h-[70vh] sm:h-full overflow-y-scroll sm:overflow-hidden`
         }
@@ -527,7 +528,8 @@ export default function ContactForm({
           </div>
         </div>
       </div>
-      {/* </ScrollArea> */}
+      <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
+
       <div className="flex justify-center align-middle">
         <Button type="submit" disabled={loading}>
           {!loading ? (

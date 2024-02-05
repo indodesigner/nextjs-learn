@@ -3,11 +3,8 @@ import Link from "next/link";
 // import Image from "next/image";
 // import Logo from "../public/images/logo.png";
 // import logoDark from "../public/images/logo.png";
-import {
-  FaSquareInstagram,
-  FaSquareFacebook,
-  FaXTwitter,
-} from "react-icons/fa6";
+import SocialLinks from "@/components/socialLinks";
+
 import { useLanguage } from "/contexts/languageContext";
 
 export default function Footer() {
@@ -39,29 +36,7 @@ export default function Footer() {
           ))}
         </ul>
       </div>
-
-      <div>
-        <ul className="flex flex-row gap-5">
-          {/* <li className="hover:scale-90 transition">
-            <Link href="/about" className="text-medium md:text-2xl">
-              <FaSquareInstagram />
-            </Link>
-          </li> */}
-          <li className="hover:scale-90 transition">
-            <Link
-              href="https://www.facebook.com/nikotravelskochi/"
-              className="text-medium md:text-2xl"
-            >
-              <FaSquareFacebook />
-            </Link>
-          </li>
-          {/* <li className="hover:scale-90 transition">
-            <Link href="/about" className="text-medium md:text-2xl">
-              <FaXTwitter />
-            </Link>
-          </li> */}
-        </ul>
-      </div>
+      <SocialLinks />
     </div>
   );
 }

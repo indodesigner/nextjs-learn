@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import ContactForm from "@/components/contactForm";
 import { FaPhone, FaWhatsapp, FaLocationDot } from "react-icons/fa6";
-import Illustration from "/public/images/contact-illustration.svg";
+// import Illustration from "/public/images/contact-illustration.svg";
 import { useLanguage } from "/contexts/languageContext";
 
 const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
@@ -15,7 +15,7 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
         <h2 className="text-3xl font-extrabold my-4">
           {language === "english" ? "Contact us" : "お問い合わせ"}
         </h2>
-        <div className="grid grid-cols-1 gap-2 mb-4">
+        <div className="grid grid-cols-1 gap-2 mb-4 sm:mb-8">
           <div className=" bg-neutral-50 dark:bg-neutral-900 bg-opacity-80 dark:bg-opacity-80 dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20 p-4 rounded-xl shadow-xl">
             <p className="text-sm font-normal mb-2 text-center">
               Send your details we will get back to you within 24 Hrs

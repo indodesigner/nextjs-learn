@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { useCountry } from "/contexts/countryContext";
 import { useLanguage } from "/contexts/languageContext";
 import SwitchLanguage from "@/components/switchLanguage";
+import SocialLinks from "@/components/socialLinks";
 
 const Navbar = () => {
   const path = usePathname();
@@ -153,15 +154,22 @@ const Navbar = () => {
             >
               <Image src={Logo} width={32} height={32} alt="logo image"></Image>
             </Link>
-            <button
-              className="text-3xl"
-              onClick={() => {
-                setToggle(!isToggled);
-                disableScroll();
-              }}
-            >
-              <LuMenu />
-            </button>
+            <div className="flex align-middle divide-x divide-neutral-400 dark:divide-neutral-500 divide-opacity-30 dark:divide-opacity-30">
+              <SwitchLanguage />
+              <div className="ps-3 pe-1">
+                <ThemeChanger />
+              </div>
+
+              <button
+                className="text-3xl ps-3"
+                onClick={() => {
+                  setToggle(!isToggled);
+                  disableScroll();
+                }}
+              >
+                <LuMenu />
+              </button>
+            </div>
           </div>
           <AnimatePresence>
             {isToggled && (
@@ -214,7 +222,7 @@ const Navbar = () => {
                         </motion.li>
                       </Link>
                     ))}
-                    <motion.li
+                    {/* <motion.li
                       className="ps-2 flex flex-row gap-4 divide-x-2 divide-neutral-300 dark:divide-neutral-600 items-center nav-item dark:text-white text-lg sm:text-xl mt-8"
                       variants={navItem}
                     >
@@ -222,6 +230,12 @@ const Navbar = () => {
                       <div className="ps-3">
                         <ThemeChanger />
                       </div>
+                    </motion.li> */}
+                    <motion.li
+                      className="ps-2 flex flex-row gap-4 divide-x-2 divide-neutral-300 dark:divide-neutral-600 items-center nav-item dark:text-white text-lg sm:text-xl mt-8"
+                      variants={navItem}
+                    >
+                      <SocialLinks />
                     </motion.li>
                   </motion.ul>
                 </div>
