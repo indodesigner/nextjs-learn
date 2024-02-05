@@ -186,7 +186,7 @@ const Navbar = () => {
                     closeNavbar();
                   }}
                 ></div>
-                <div className="absolute w-[60vw] sm:w-[40vw] h-[100vh] top-0 right-0 bg-white dark:bg-neutral-950 bg-opacity-100">
+                <div className="absolute w-[60vw] sm:w-[40vw] h-[100vh] top-0 right-0 bg-white dark:bg-neutral-900 bg-opacity-100">
                   <div className="px-4 py-4 flex justify-end">
                     <button
                       className="text-3xl dark:text-white"
@@ -213,7 +213,7 @@ const Navbar = () => {
                         }}
                       >
                         <motion.li
-                          className="nav-item dark:text-white text-xl sm:text-2xl font-semibold border-b border-neutral-300 dark:border-neutral-900 mb-4 pb-4"
+                          className="nav-item dark:text-white text-xl sm:text-2xl font-semibold border-b border-neutral-200 dark:border-neutral-800 mb-4 pb-4"
                           variants={navItem}
                         >
                           <h6 className="link-hover">
