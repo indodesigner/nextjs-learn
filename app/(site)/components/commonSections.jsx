@@ -1,5 +1,5 @@
 "use client";
-import BlogSection from "@/components/blogs";
+import BlogSection from "@/components/blogsHomeSection";
 import PlacesSection from "@/components/destinations/placesHomeSection";
 import PackagesSection from "@/components/packages/packagesHomeSection";
 import DestinationCategories from "@/components/destinationCategories";

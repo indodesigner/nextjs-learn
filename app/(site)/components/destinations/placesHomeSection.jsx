@@ -10,7 +10,7 @@ export default function PlacesSection({ places, language }) {
     : places.slice(0, 3); // Get the first 3/4 places
 
   return (
-    <div>
+    <>
       <div className="flex justify-between mb-4 px-1">
         <h4 className="text-xl sm:text-2xl font-bold">
           {language === "english" ? "Destinations" : "目的地"}
@@ -28,6 +28,6 @@ export default function PlacesSection({ places, language }) {
       <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2">
         <PlaceCard places={placesToDisplay} language={language} />
       </div>
-    </div>
+    </>
   );
 }

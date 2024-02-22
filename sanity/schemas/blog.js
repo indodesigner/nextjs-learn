@@ -24,7 +24,7 @@ export default {
       },
     },
     {
-      title: "Release date",
+      title: "Publish date",
       name: "releaseDate",
       type: "datetime",
       options: {

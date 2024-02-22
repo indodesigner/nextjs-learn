@@ -23,7 +23,7 @@ const PlaceTypeContent = ({
       <div className="flex justify-between mb-4">
         <div className="flex items-center">
           <Link href="/places" className="gradient-text">
-            {language === "english" ? "Destinations types" : "目的地"}
+            {language === "english" ? "Destinations Categories" : "目的地"}
           </Link>
         </div>
         <BackButton language={language} />

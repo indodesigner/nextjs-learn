@@ -43,8 +43,10 @@ export default async function Blogs() {
         <span className="flex justify-center text-3xl">
           <LuFrown />
         </span>
-        <h1 className="text-lg font-bold">Error fetching blogs</h1>
-        <h5 className="text-sm">Please try again later</h5>
+        <h1 className="text-lg font-bold">Error fetching data</h1>
+        <h5 className="text-sm">
+          Please try refreshing the page or try again later
+        </h5>
         <Link href={"/"} className="text-sm link-hover underline">
           Go back
         </Link>

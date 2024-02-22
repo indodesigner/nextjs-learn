@@ -32,10 +32,14 @@ export default async function PackagesTabContent({
           <CardDescription>
             {country === "india"
               ? language === "english"
-                ? "Explore Kerala's Finest Tour Packages Listed Below"
+                ? `Explore Kerala's finest ${
+                    heading === "All" ? "Tour" : heading
+                  } Packages listed below`
                 : "以下のケーララ州の最高のツアーパッケージを探索してください"
               : language === "english"
-              ? "Explore Japan's Finest Tour Packages Listed Below"
+              ? `Explore Japan's Finest ${
+                  heading === "All" ? "Tour" : heading
+                } Packages Listed Below`
               : "以下の日本最高のツアーパッケージを探索してください"}
           </CardDescription>
         </CardHeader>
