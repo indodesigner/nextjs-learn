@@ -12,7 +12,6 @@ export async function getBlogs() {
         "postImage": postImage.asset->url,
         "alt": postImage.alt,
         content,
-        href,
       }`
   );
 }
@@ -28,7 +27,6 @@ export async function getBlog({ slug }) {
           "postImage": postImage.asset->url,
           "alt": postImage.alt,
           content,
-          href,
         }`
   );
 }

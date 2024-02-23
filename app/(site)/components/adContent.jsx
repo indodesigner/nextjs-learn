@@ -23,7 +23,7 @@ const AdContent = ({ ads }) => {
                 <span className="hidden md:block bg-neutral-800 text-white opacity-50 backdrop-blur-xl md:absolute md:top-3 md:right-3 px-3 py-1 rounded-md text-xs font-semibold">
                   Ad
                 </span>
-                <div className="px-2 group md:absolute md:inset-0 md:bg-transparent md:hover:bg-black/50 rounded-md z-9 transition duration-300 flex justify-center items-center mb-4 md:mb-0">
+                <div className="px-2 group md:absolute md:inset-0 md:bg-transparent md:hover:bg-black/50 rounded-2xl z-9 transition duration-300 flex justify-center items-center mb-4 md:mb-0">
                   <div className="md:hidden md:group-hover:flex group-hover:flex-col md:text-center justify-center items-center md:px-8 transition duration-300 md:text-white">
                     <div className="flex justify-between items-center">
                       <h1 className="font-bold text-lg sm:text-3xl">
@@ -53,7 +53,7 @@ const AdContent = ({ ads }) => {
                     width={1920}
                     height={720}
                     alt={ad.adImages[0].alt}
-                    className="object-cover rounded-md"
+                    className="object-cover rounded-lg"
                   ></Image>
                 ) : (
                   <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">

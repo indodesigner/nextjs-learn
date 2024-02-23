@@ -37,7 +37,7 @@ const BlogContent = ({ blog, placeName }) => {
         <BackButton language={language} />
       </div>
 
-      <h2 className="text-md sm:text-lg md:text-2xl font-bold mb-2">
+      <h2 className="text-md sm:text-lg md:text-3xl font-bold mb-2">
         {blog.title}
       </h2>
 
@@ -46,14 +46,15 @@ const BlogContent = ({ blog, placeName }) => {
           src={urlFor(blog.postImage).url()}
           width={1080}
           height={480}
-          className="mb-4 h-[400px] object-cover rounded-md"
+          className="mb-4 aspect-video sm:h-[400px] object-cover rounded-md"
           alt={blog.alt}
         ></Image>
-      ) : (
-        <div className="flex justify-center my-8">
-          <BsImageAlt className="w-16 h-16 text-white" />
-        </div>
-      )}
+      ) : // (
+      //   <div className="flex justify-center my-8">
+      //     <BsImageAlt className="w-16 h-16 text-white" />
+      //   </div>
+      // )
+      null}
 
       <article className="mb-4 px-3 sm:px-0">
         <PortableText value={blog.content} components={RichTextComponents} />

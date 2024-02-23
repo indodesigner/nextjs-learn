@@ -5,13 +5,20 @@ import urlFor from "/utils/urlFor";
 export const RichTextComponents = {
   types: {
     image: ({ value }) => (
-      <Image
-        src={urlFor(value).url()}
-        alt="image"
-        className="relative w-full my-3"
-        width={800}
-        height={300}
-      />
+      <>
+        <Image
+          src={urlFor(value).url()}
+          alt={value.alt}
+          className={`relative w-full  ${value.caption ? "mt-3" : "my-3"}`}
+          width={800}
+          height={300}
+        />
+        {value.caption && (
+          <p className="mb-4 p-1 text-xs opacity-70 bg-neutral-200 bg-opacity-50 dark:bg-neutral-700 dark:bg-opacity-50">
+            {value.caption}
+          </p>
+        )}
+      </>
     ),
     callToAction: ({ value, isInline }) =>
       isInline ? (

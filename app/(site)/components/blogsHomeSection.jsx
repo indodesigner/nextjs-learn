@@ -44,7 +44,7 @@ export default async function BlogSection({ language }) {
                     width={800}
                     height={500}
                     alt={blog.alt}
-                    className="object-cover h-32 rounded-md"
+                    className="object-cover aspect-video rounded-md"
                   ></Image>
                 ) : (
                   // else part for no blog image
@@ -66,7 +66,7 @@ export default async function BlogSection({ language }) {
                     ))}
                 </div>
 
-                <h6 className="px-2 text-sm sm:text-md font-bold mb-1 line-clamp-3 group-hover:gradient-text">
+                <h6 className="px-2 text-sm sm:text-md font-bold my-2 line-clamp-3 group-hover:gradient-text">
                   {blog.title}
                 </h6>
 

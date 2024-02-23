@@ -69,12 +69,49 @@ export default {
       name: "content",
       title: "Content",
       type: "array",
-      of: [{ type: "block" }, { type: "image" }],
-    },
-    {
-      name: "href",
-      type: "url",
-      title: "Link",
+      of: [
+        {
+          type: "block",
+          marks: {
+            annotations: [
+              {
+                name: "link",
+                type: "object",
+                title: "External link",
+                fields: [
+                  {
+                    name: "href",
+                    type: "url",
+                    title: "URL",
+                  },
+                  {
+                    title: "Open in new tab",
+                    name: "blank",
+                    description:
+                      "Turn this on if the link needs to be opened in a new tab",
+                    type: "boolean",
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              title: "Alt",
+              type: "string",
+            },
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        },
+      ],
     },
   ],
 };
