@@ -29,6 +29,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 // import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePathname } from "next/navigation";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm({
   indianPackDetails,
@@ -48,6 +49,12 @@ export default function ContactForm({
     message: "",
   });
 
+  const [token, setToken] = useState("");
+
+  const handleChangeRecaptcha = (token) => {
+    setToken(token);
+  };
+
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [sentStatus, setSentStatus] = useState(false);
@@ -62,6 +69,11 @@ export default function ContactForm({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!token) {
+      console.error("ReCaptcha token not available.");
+      return;
+    }
 
     const errors = validate(values);
 
@@ -529,6 +541,10 @@ export default function ContactForm({
         </div>
       </div>
       <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
+      <ReCAPTCHA
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+        onChange={handleChangeRecaptcha}
+      />
 
       <div className="flex justify-center align-middle">
         <Button type="submit" disabled={loading}>
