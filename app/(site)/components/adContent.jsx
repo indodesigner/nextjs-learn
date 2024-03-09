@@ -13,13 +13,8 @@ const AdContent = ({ ads }) => {
       {ads &&
         ads.map((ad) => (
           <>
-            <Link
-              href={ad.href}
-              target="_blank"
-              title={ad.href}
-              className="md:relative "
-            >
-              <div className="bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20 shadow-lg rounded-2xl my-3 p-2">
+            <Link href={ad.href} target="_blank" title={ad.href}>
+              <div className="relative bg-neutral-100 dark:bg-neutral-700 bg-opacity-30 dark:bg-opacity-30 dark:border-[1px] dark:border-neutral-400 dark:border-opacity-20 shadow-lg rounded-2xl my-3 p-2">
                 <span className="hidden md:block bg-neutral-800 text-white opacity-50 backdrop-blur-xl md:absolute md:top-3 md:right-3 px-3 py-1 rounded-md text-xs font-semibold">
                   Ad
                 </span>
