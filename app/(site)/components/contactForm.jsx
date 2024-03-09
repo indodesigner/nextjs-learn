@@ -215,6 +215,7 @@ export default function ContactForm({
       ...prevValues,
       date: selectedDate ? format(selectedDate, "yyyy-MM-dd") : null,
     }));
+    dateInputRef.current.click();
   };
 
   const handleSliderChange = (value, sliderName) => {
