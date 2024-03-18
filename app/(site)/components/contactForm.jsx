@@ -29,6 +29,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 // import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePathname } from "next/navigation";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm({
   indianPackDetails,
@@ -60,8 +61,26 @@ export default function ContactForm({
   const paxAdultInputRef = useRef(null);
   const paxChildrenInputRef = useRef(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e, captchaToken) => {
     e.preventDefault();
+
+    try {
+      const captchaResponse = await fetch(
+        `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+        {
+          method: "POST",
+        }
+      );
+      const captchaResult = await captchaResponse.json();
+      if (!captchaResult.success) {
+        // Handle captcha verification failure
+        console.error("Captcha verification failed");
+        return;
+      }
+    } catch (error) {
+      console.error("Error verifying captcha:", error);
+      return;
+    }
 
     const errors = validate(values);
 
@@ -530,7 +549,10 @@ export default function ContactForm({
         </div>
       </div>
       <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
-
+      <ReCAPTCHA
+        sitekey={`${process.env.GOOGLE_RECAPTCHA_SITE_KEY}`}
+        onChange={(token) => handleCaptcha(token)}
+      />
       <div className="flex justify-center align-middle">
         <Button type="submit" disabled={loading}>
           {!loading ? (
