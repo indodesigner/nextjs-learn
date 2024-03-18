@@ -34,6 +34,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 export default function ContactForm({
   indianPackDetails,
   japanesePackDetails,
+  gCaptchaSiteKey,
+  gCaptchaSecretKey,
   language,
   currentPack,
 }) {
@@ -53,6 +55,8 @@ export default function ContactForm({
   const [loading, setLoading] = useState(false);
   const [sentStatus, setSentStatus] = useState(false);
 
+  // const [expired, setExpired] = useState(false);
+
   const nameInputRef = useRef(null);
   const phoneInputRef = useRef(null);
   const emailInputRef = useRef(null);
@@ -64,14 +68,21 @@ export default function ContactForm({
   const handleSubmit = async (e, captchaToken) => {
     e.preventDefault();
 
+    console.log(captchaToken, "token");
+
+    // console.log("onChange prop - Captcha value:", value);
+    // this.setState({ value });
+    // if (value === null) setState({ expired: "true" });
     try {
       const captchaResponse = await fetch(
-        `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.GOOGLE_RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+        `https://www.google.com/recaptcha/api/siteverify?secret=${gCaptchaSecretKey}&response=${captchaToken}`,
         {
           method: "POST",
         }
       );
       const captchaResult = await captchaResponse.json();
+
+      console.log(captchaResult, "abc");
       if (!captchaResult.success) {
         // Handle captcha verification failure
         console.error("Captcha verification failed");
@@ -550,8 +561,8 @@ export default function ContactForm({
       </div>
       <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
       <ReCAPTCHA
-        sitekey={`${process.env.GOOGLE_RECAPTCHA_SITE_KEY}`}
-        onChange={(token) => handleCaptcha(token)}
+        sitekey={gCaptchaSiteKey}
+        onChange={(token) => handleSubmit(token)}
       />
       <div className="flex justify-center align-middle">
         <Button type="submit" disabled={loading}>

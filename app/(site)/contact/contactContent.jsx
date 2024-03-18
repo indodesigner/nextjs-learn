@@ -6,7 +6,12 @@ import { FaPhone, FaWhatsapp, FaLocationDot } from "react-icons/fa6";
 // import Illustration from "/public/images/contact-illustration.svg";
 import { useLanguage } from "/contexts/languageContext";
 
-const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
+const ContactContent = ({
+  indianPackDetails,
+  japanesePackDetails,
+  gCaptchaSiteKey,
+  gCaptchaSecretKey,
+}) => {
   const { language } = useLanguage();
 
   return (
@@ -23,6 +28,8 @@ const ContactContent = ({ indianPackDetails, japanesePackDetails }) => {
             <ContactForm
               indianPackDetails={indianPackDetails}
               japanesePackDetails={japanesePackDetails}
+              gCaptchaSecretKey={gCaptchaSecretKey}
+              gCaptchaSiteKey={gCaptchaSiteKey}
               language={language}
               currentPack={null}
             />
