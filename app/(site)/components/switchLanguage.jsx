@@ -19,6 +19,7 @@ const SwitchLanguage = () => {
               width={48}
               height={48}
               className="w-6 h-auto object-cover"
+              alt="Japanese flag icon"
             />
             <h6>JP</h6>
           </>
@@ -29,6 +30,7 @@ const SwitchLanguage = () => {
               width={48}
               height={48}
               className="w-6 h-auto object-cover"
+              alt="USA flag icon"
             />
             <h6>EN</h6>
           </>

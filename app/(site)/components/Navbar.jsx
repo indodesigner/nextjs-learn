@@ -103,7 +103,13 @@ const Navbar = () => {
             href="/"
             className="font-medium flex items-center gap-1 link-hover shadow-md rounded-3xl"
           >
-            <Image src={Logo} width={56} height={56} alt="logo image"></Image>
+            <Image
+              src={Logo}
+              width={56}
+              height={56}
+              alt="logo image"
+              priority
+            ></Image>
           </Link>
 
           <ul className="ps-[7px] py-2 flex flex-row items-center bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 rounded-3xl shadow-lg">
@@ -152,7 +158,13 @@ const Navbar = () => {
               href="/"
               className="font-medium flex items-center gap-1 link-hover"
             >
-              <Image src={Logo} width={32} height={32} alt="logo image"></Image>
+              <Image
+                src={Logo}
+                width={32}
+                height={32}
+                alt="logo image"
+                priority
+              ></Image>
             </Link>
             <div className="flex align-middle divide-x divide-neutral-400 dark:divide-neutral-500 divide-opacity-30 dark:divide-opacity-30">
               <SwitchLanguage />

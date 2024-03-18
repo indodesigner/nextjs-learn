@@ -10,7 +10,6 @@ const ContactContent = ({
   indianPackDetails,
   japanesePackDetails,
   gCaptchaSiteKey,
-  gCaptchaSecretKey,
 }) => {
   const { language } = useLanguage();
 
@@ -28,7 +27,6 @@ const ContactContent = ({
             <ContactForm
               indianPackDetails={indianPackDetails}
               japanesePackDetails={japanesePackDetails}
-              gCaptchaSecretKey={gCaptchaSecretKey}
               gCaptchaSiteKey={gCaptchaSiteKey}
               language={language}
               currentPack={null}

@@ -29,13 +29,12 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 // import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePathname } from "next/navigation";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm({
   indianPackDetails,
   japanesePackDetails,
   gCaptchaSiteKey,
-  gCaptchaSecretKey,
   language,
   currentPack,
 }) {
@@ -67,31 +66,6 @@ export default function ContactForm({
 
   const handleSubmit = async (e, captchaToken) => {
     e.preventDefault();
-
-    console.log(captchaToken, "token");
-
-    // console.log("onChange prop - Captcha value:", value);
-    // this.setState({ value });
-    // if (value === null) setState({ expired: "true" });
-    try {
-      const captchaResponse = await fetch(
-        `https://www.google.com/recaptcha/api/siteverify?secret=${gCaptchaSecretKey}&response=${captchaToken}`,
-        {
-          method: "POST",
-        }
-      );
-      const captchaResult = await captchaResponse.json();
-
-      console.log(captchaResult, "abc");
-      if (!captchaResult.success) {
-        // Handle captcha verification failure
-        console.error("Captcha verification failed");
-        return;
-      }
-    } catch (error) {
-      console.error("Error verifying captcha:", error);
-      return;
-    }
 
     const errors = validate(values);
 
@@ -560,10 +534,7 @@ export default function ContactForm({
         </div>
       </div>
       <hr className=" border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70" />
-      <ReCAPTCHA
-        sitekey={gCaptchaSiteKey}
-        onChange={(token) => handleSubmit(token)}
-      />
+      {/* <ReCAPTCHA sitekey={gCaptchaSiteKey} onChange={handleCaptchaChange} /> */}
       <div className="flex justify-center align-middle">
         <Button type="submit" disabled={loading}>
           {!loading ? (

@@ -28,7 +28,7 @@ const ContactPage = async () => {
   }));
 
   const gCaptchaSiteKey = process.env.GOOGLE_RECAPTCHA_SITE_KEY;
-  const gCaptchaSecretKey = process.env.GOOGLE_RECAPTCHA_SECRET_KEY;
+  // const gCaptchaSecretKey = process.env.GOOGLE_RECAPTCHA_SECRET_KEY;
 
   return (
     <>
@@ -36,7 +36,6 @@ const ContactPage = async () => {
         indianPackDetails={indianPackDetails}
         japanesePackDetails={japanesePackDetails}
         gCaptchaSiteKey={gCaptchaSiteKey}
-        gCaptchaSecretKey={gCaptchaSecretKey}
       />
       <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mt-2" />
 
