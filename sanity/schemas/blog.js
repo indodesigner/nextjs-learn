@@ -17,10 +17,11 @@ export default {
         maxLength: 15, // will be ignored if slugify is set
         slugify: (input) =>
           input
+            .slice(0, 15)
             .toLowerCase()
             .replace(/\s+/g, "-")
             .replace(/\./g, "")
-            .slice(0, 15),
+            .replace(/:/g, "-"),
       },
     },
     {

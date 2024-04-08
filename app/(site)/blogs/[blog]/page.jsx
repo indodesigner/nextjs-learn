@@ -6,7 +6,7 @@ const Blog = async ({ params }) => {
   const blog = await getBlog({ slug });
 
   const placeName =
-    Array.isArray(blog.place) && blog.place.length > 0
+    Array.isArray(blog.place && blog.place) && blog.place.length > 0
       ? blog.place.map((item) => item.toLowerCase())
       : "";
   return (
