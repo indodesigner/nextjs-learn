@@ -465,7 +465,7 @@ export default function ContactForm({
                     mode="single"
                     selected={date}
                     onSelect={handleDateSelect}
-                    initialFocus
+                    // initialFocus //commented due to there was issue on firefox when setting this initialFocus property
                   />
                 </PopoverContent>
               </Popover>
