@@ -60,8 +60,8 @@ const HeroCarousel = ({ slides }) => {
               />
               <motion.div
                 initial="hidden"
-                animate="show"
-                viewport={{ once: true }}
+                whileInView="show"
+                // viewport={{ once: true }}
                 variants={{
                   hidden: {},
                   show: {
