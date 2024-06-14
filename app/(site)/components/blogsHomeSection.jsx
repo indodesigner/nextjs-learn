@@ -31,7 +31,7 @@ export default async function BlogSection({ language }) {
 
       <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2">
         {blogs &&
-          blogs.slice(0, 5).map((blog, index) => (
+          blogs.slice(0, 3).map((blog, index) => (
             <div key={index} className="grid grid-cols-1">
               <Link
                 id={blog._id}

@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { useLanguage } from "/contexts/languageContext";
 import IndiaFlagIcon from "/public/images/india-flag-icon.svg";
 import JapanFlagIcon from "/public/images/japan-flag-icon.svg";
+import { motion } from "framer-motion";
 
 // Import Swiper styles
 import "swiper/css";
@@ -24,6 +25,11 @@ const HeroCarousel = ({ slides }) => {
     { href: "india", name: "India", namejp: "インド", icon: "IndiaFlagIcon" },
     { href: "japan", name: "Japan", namejp: "日本", icon: "JapanFlagIcon" },
   ];
+
+  const FADE_UP_ANIMATION_VARIANTS = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { type: "spring" } },
+  };
 
   return (
     <section className="p-4 md:px-8 md:py-4 lg:pt-[86px] lg:mb-8 lg:px-16">
@@ -51,18 +57,37 @@ const HeroCarousel = ({ slides }) => {
                 height={3000}
                 alt={slide.alt}
                 className="aspect-video object-cover rounded-xl md:rounded-3xl"
-              ></Image>
-              <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">
+              />
+              <motion.div
+                initial="hidden"
+                animate="show"
+                viewport={{ once: true }}
+                variants={{
+                  hidden: {},
+                  show: {
+                    transition: {
+                      staggerChildren: 0.15,
+                    },
+                  },
+                }}
+                className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300"
+              >
                 <span className="flex flex-col items-center">
-                  <h1 className="text-2xl sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-3 mb-2">
+                  <motion.h1
+                    className="text-2xl sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-3 mb-2"
+                    variants={FADE_UP_ANIMATION_VARIANTS}
+                  >
                     {language === "english" ? slide.title : slide.titlejp}
-                  </h1>
+                  </motion.h1>
 
-                  <p className="mb-4 text-xs sm:text-sm md:text-md lg:text-lg font-light w-[100%] sm:max-w-[80%] md:max-w-[60%] md:block hidden">
+                  <motion.p
+                    className="mb-4 text-xs sm:text-sm md:text-md lg:text-lg font-light w-[100%] sm:max-w-[80%] md:max-w-[60%] md:block hidden"
+                    variants={FADE_UP_ANIMATION_VARIANTS}
+                  >
                     {language === "english" ? slide.caption : slide.captionjp}
-                  </p>
+                  </motion.p>
 
-                  <span>
+                  <motion.span variants={FADE_UP_ANIMATION_VARIANTS}>
                     <div className="grid grid-cols-2 gap-3">
                       {path == "/"
                         ? links.map((link) => (
@@ -78,7 +103,7 @@ const HeroCarousel = ({ slides }) => {
                                   height={48}
                                   className="w-8 sm:w-12 md:w-16 h-auto"
                                   alt="Indian flag button icon"
-                                ></Image>
+                                />
                               ) : (
                                 <Image
                                   src={JapanFlagIcon}
@@ -86,7 +111,7 @@ const HeroCarousel = ({ slides }) => {
                                   height={48}
                                   className="w-8 sm:w-12 md:w-16 h-auto"
                                   alt="Japanese flag button icon"
-                                ></Image>
+                                />
                               )}
                               <h5 className="text-sm font-light sm:text-xl">
                                 {language === "english"
@@ -97,7 +122,7 @@ const HeroCarousel = ({ slides }) => {
                           ))
                         : null}
                     </div>
-                  </span>
+                  </motion.span>
 
                   <a href="#packages" className="lg:block hidden">
                     <Player
@@ -108,7 +133,7 @@ const HeroCarousel = ({ slides }) => {
                     ></Player>
                   </a>
                 </span>
-              </div>
+              </motion.div>
             </div>
           </SwiperSlide>
         ))}
