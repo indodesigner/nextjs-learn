@@ -66,9 +66,9 @@ export default async function BlogSection({ language }) {
                     ))}
                 </div>
 
-                <h6 className="px-2 text-sm sm:text-md font-bold my-2 line-clamp-3 group-hover:gradient-text">
+                <h5 className="px-2 text-sm sm:text-md font-bold my-2 line-clamp-3 group-hover:gradient-text">
                   {blog.title}
-                </h6>
+                </h5>
 
                 {/* rich text component with line clamped to 2 lines */}
                 {/* <div className="px-2 text-xs line-clamp-2">
@@ -77,9 +77,9 @@ export default async function BlogSection({ language }) {
                       components={RichTextComponents}
                     />
                   </div> */}
-                <h6 className="px-2 mb-2 text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
+                <span className="px-2 mb-2 text-[10px] font-bold flex gap-1 mt-2 text-neutral-600 dark:text-neutral-300 group-hover:text-black dark:group-hover:text-white transition">
                   {calculateDateTime(blog.releaseDate)}
-                </h6>
+                </span>
               </Link>
             </div>
           ))}

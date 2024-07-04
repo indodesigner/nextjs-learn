@@ -88,18 +88,22 @@ const HeroCarousel = ({ slides }) => {
                                   alt="Japanese flag button icon"
                                 />
                               )}
-                              <h5 className="text-sm font-light sm:text-xl">
+                              <span className="text-sm font-light sm:text-xl">
                                 {language === "english"
                                   ? link.name
                                   : link.namejp}
-                              </h5>
+                              </span>
                             </Link>
                           ))
                         : null}
                     </div>
                   </span>
 
-                  <a href="#packages" className="lg:block hidden">
+                  <a
+                    href="#packages"
+                    className="lg:block hidden"
+                    aria-label="go to packages section"
+                  >
                     <Player
                       autoplay
                       loop
