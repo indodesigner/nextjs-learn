@@ -31,23 +31,23 @@ export default function PackageCard({ packages, language }) {
               </div>
             )}
 
-            <h5 className="px-2 text-base sm:text-md md:text-lg font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
+            <h3 className="px-2 text-base sm:text-md md:text-lg font-semibold mt-2 mb-1 line-clamp-3 group-hover:gradient-text transition duration-200">
               {(language === "english"
                 ? tourPackage.packageName
                 : tourPackage.packageNamejp) || tourPackage.packageName}
-            </h5>
+            </h3>
 
             <div className="flex flex-row gap-2 sm:gap-0 justify-between px-2 py-1 mb-3 bg-neutral-200 dark:bg-neutral-800 bg-opacity-30 dark:bg-opacity-50 rounded-lg">
               {tourPackage.duration != null ? (
                 <div className="flex flex-row place-items-center">
                   <LuCalendarClock className="text-md sm:text-lg" />
 
-                  <h6 className="text-base sm:text-md ps-2">
+                  <span className="text-base sm:text-md ps-2">
                     <strong>{tourPackage.duration.days}</strong>{" "}
                     {language === "english" ? "Days & " : "日々 & "}
                     <strong>{tourPackage.duration.nights}</strong>{" "}
                     {language === "english" ? "Nights" : "夜"}
-                  </h6>
+                  </span>
                 </div>
               ) : null}
 
@@ -56,12 +56,12 @@ export default function PackageCard({ packages, language }) {
               )}
 
               {tourPackage.rate != null ? (
-                <h6 className="text-xs flex flex-col items-center">
+                <h4 className="text-xs flex flex-col items-center">
                   Starting from
                   <strong className="text-lg sm:text-lg">
                     ₹{tourPackage.rate}
                   </strong>
-                </h6>
+                </h4>
               ) : null}
             </div>
 
@@ -72,11 +72,11 @@ export default function PackageCard({ packages, language }) {
                     className="bg-neutral-900 dark:bg-neutral-300 px-2 py-[2px] rounded-2xl sm:max-w-[180px]"
                     key={item._id}
                   >
-                    <h6 className="text-xs text-white dark:text-neutral-900 line-clamp-1">
+                    <div className="text-xs text-white dark:text-neutral-900 line-clamp-1">
                       {language === "english"
                         ? item.placeName.toUpperCase()
                         : item.placeNamejp || item.placeName.toUpperCase()}
-                    </h6>
+                    </div>
                   </span>
                 ))}
             </div>
@@ -89,12 +89,12 @@ export default function PackageCard({ packages, language }) {
                     className="border border-neutral-400 dark:border-neutral-400 px-2 rounded-2xl"
                     key={item._id}
                   >
-                    <h6 className="text-xs">
+                    <div className="text-xs">
                       {language === "english"
                         ? item.placeTypeName.toUpperCase()
                         : item.placeTypeNamejp ||
                           item.placeTypeName.toUpperCase()}
-                    </h6>
+                    </div>
                   </span>
                 ))}
             </div>

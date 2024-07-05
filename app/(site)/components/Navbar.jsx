@@ -178,6 +178,7 @@ const Navbar = () => {
                   setToggle(!isToggled);
                   disableScroll();
                 }}
+                aria-label="Open navigation menu"
               >
                 <LuMenu />
               </button>
@@ -203,6 +204,7 @@ const Navbar = () => {
                     <button
                       className="text-3xl dark:text-white"
                       onClick={() => closeNavbar()}
+                      aria-label="Close navigation menu"
                     >
                       <LuX />
                     </button>

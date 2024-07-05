@@ -4,9 +4,9 @@ import Link from "next/link";
 const DestinationCategories = ({ placeTypes, language }) => {
   return (
     <div className="gradient-bg-light shadow-lg rounded-xl">
-      <h4 className="text-neutral-800 dark:text-neutral-50 text-xl sm:text-2xl font-bold pt-4 text-center">
+      <h3 className="text-neutral-800 dark:text-neutral-50 text-xl sm:text-2xl font-bold pt-4 text-center">
         {language === "english" ? "Destination Categories" : "目的地のカテゴリ"}
-      </h4>
+      </h3>
       <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2 p-4 place-items-center">
         {placeTypes &&
           placeTypes.map((item) => (
@@ -25,11 +25,11 @@ const DestinationCategories = ({ placeTypes, language }) => {
                 ></Image>
               ) : null}
 
-              <h5 className="text-white font-bold">
+              <h4 className="text-white font-bold">
                 {language === "english"
                   ? item.placeTypeName
                   : item.placeTypeNamejp || item.placeTypeName}
-              </h5>
+              </h4>
             </Link>
           ))}
       </div>

@@ -12,9 +12,9 @@ export default function PlacesSection({ places, language }) {
   return (
     <>
       <div className="flex justify-between mb-4 px-1">
-        <h4 className="text-xl sm:text-2xl font-bold">
+        <h3 className="text-xl sm:text-2xl font-bold">
           {language === "english" ? "Destinations" : "目的地"}
-        </h4>
+        </h3>
         {showViewAllLink && (
           <Link
             href="/places"
