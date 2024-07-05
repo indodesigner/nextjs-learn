@@ -12,7 +12,11 @@ const SocialLinks = () => {
       <div>
         <ul className="flex flex-row gap-5">
           <li className="hover:scale-90 transition">
-            <Link href="/about" className="text-medium md:text-2xl">
+            <Link
+              href="https://www.instagram.com/nikotravelskochi/"
+              className="text-medium md:text-2xl"
+              aria-label="Link to Nikotravel's Instagram page"
+            >
               <FaSquareInstagram />
             </Link>
           </li>
@@ -20,15 +24,16 @@ const SocialLinks = () => {
             <Link
               href="https://www.facebook.com/nikotravelskochi/"
               className="text-medium md:text-2xl"
+              aria-label="Link to Nikotravel's Facebook page"
             >
               <FaSquareFacebook />
             </Link>
           </li>
-          <li className="hover:scale-90 transition">
+          {/* <li className="hover:scale-90 transition">
             <Link href="/about" className="text-medium md:text-2xl">
               <FaXTwitter />
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

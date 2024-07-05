@@ -17,14 +17,14 @@ export default function PackagesSection({ heading, packages, language }) {
     <div>
       <div className="flex justify-between mb-4 px-1">
         <div className="flex flex-row items-center gap-2">
-          <h4 className="text-xl sm:text-2xl font-bold">
+          <h2 className="text-xl sm:text-2xl font-bold">
             {id === "in" || id === "jp"
               ? language === "english"
                 ? "Explore"
                 : "探検する"
               : null}{" "}
             {title}
-          </h4>
+          </h2>
           {id === "in" || id === "jp" ? (
             <div>
               <Badge>

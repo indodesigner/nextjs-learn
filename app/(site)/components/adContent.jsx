@@ -48,7 +48,7 @@ const AdContent = ({ ads }) => {
                   height={720}
                   alt={ad.adImages[0].alt}
                   className="object-cover rounded-lg"
-                  priority
+                  loading="lazy"
                 ></Image>
               ) : (
                 <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">

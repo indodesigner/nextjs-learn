@@ -47,8 +47,8 @@ const HeroCarousel = ({ slides }) => {
             <div className="relative bg-neutral-900">
               <Image
                 src={slide.slideImage}
-                width={3000}
-                height={3000}
+                width={2000}
+                height={1000}
                 alt={slide.alt}
                 className="aspect-video object-cover rounded-xl md:rounded-3xl"
                 loading="lazy"
