@@ -23,7 +23,7 @@ const AdContent = ({ ads }) => {
                     <h1 className="font-bold text-lg sm:text-3xl">
                       {language === "english" ? ad.adName : ad.adNamejp}
                     </h1>
-                    <span className="md:hidden block bg-neutral-300 dark:bg-neutral-700 opacity-50 backdrop-blur-xl px-3 rounded-sm text-xs font-semibold">
+                    <span className="md:hidden block text-neutral-600 dark:text-neutral-200 bg-neutral-200 dark:bg-neutral-700 backdrop-blur-xl px-3 rounded-md text-xs font-semibold">
                       Ad
                     </span>
                   </div>
