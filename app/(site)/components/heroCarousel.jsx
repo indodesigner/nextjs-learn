@@ -51,6 +51,7 @@ const HeroCarousel = ({ slides }) => {
                 height={3000}
                 alt={slide.alt}
                 className="aspect-video object-cover rounded-xl md:rounded-3xl"
+                loading="lazy"
               />
               <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">
                 <span className="flex flex-col items-center">

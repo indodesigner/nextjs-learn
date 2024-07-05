@@ -22,6 +22,7 @@ export default function PlaceCard({ places, language }) {
                   height={500}
                   alt={place.alt}
                   className="object-cover aspect-video rounded-md"
+                  loading="lazy"
                 ></Image>
               ) : (
                 <div className="grid place-items-center border border-neutral-300 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded-md">

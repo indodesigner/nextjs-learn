@@ -20,6 +20,7 @@ export default function PackageCard({ packages, language }) {
                 height={500}
                 alt={tourPackage.alt}
                 className="object-cover aspect-video rounded-md"
+                loading="lazy"
               ></Image>
             ) : (
               // else part for no blog image
