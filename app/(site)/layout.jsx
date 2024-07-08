@@ -32,12 +32,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    // passing font variables to global.css can be accessed there and used
     <html lang="en" className={`${display.variable} ${primary.variable}`}>
-      {/* google analytics tags....................... */}
-      <GoogleAnalytics gaId="G-0SH9RRRGYN" />
-      <GoogleTagManager gtmId="GTM-53GRCD5N" />
-      {/* main layout page............................ */}
       <body className="bg-neutral-50 dark:bg-neutral-900 min-h-screen bg-images">
         <div className="scroll-watcher"></div>
         <Providers>
@@ -50,6 +45,10 @@ export default function RootLayout({ children }) {
             </LanguageProvider>
           </CountryProvider>
         </Providers>
+
+        {/* google analytics tags....................... */}
+        <GoogleAnalytics gaId="G-0SH9RRRGYN" />
+        <GoogleTagManager gtmId="GTM-53GRCD5N" />
       </body>
     </html>
   );
