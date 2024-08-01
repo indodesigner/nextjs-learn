@@ -41,8 +41,8 @@ export default async function BlogSection({ language }) {
                 {blog.postImage ? (
                   <Image
                     src={urlFor(blog.postImage).url()}
-                    width={800}
-                    height={500}
+                    width={600}
+                    height={300}
                     alt={blog.alt}
                     className="object-cover aspect-video rounded-md"
                   ></Image>

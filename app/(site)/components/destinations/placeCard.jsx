@@ -18,8 +18,8 @@ export default function PlaceCard({ places, language }) {
               {place.placeImages ? (
                 <Image
                   src={urlFor(place.placeImages).url()}
-                  width={800}
-                  height={500}
+                  width={600}
+                  height={300}
                   alt={place.alt}
                   className="object-cover aspect-video rounded-md"
                   loading="lazy"
@@ -32,11 +32,11 @@ export default function PlaceCard({ places, language }) {
                 </div>
               )}
               <div className="absolute bottom-0 left-0 group-hover:bg-neutral-800 group-hover:backdrop-blur-md group-hover:bg-opacity-40 rounded-md w-full h-full flex justify-center items-center">
-                <h4 className="text-center text-neutral-100 dark:text-white  px-2 text-lg md:text-xl font-extrabold mt-1 mb-1 line-clamp-2 group-hover:gradient-text transition duration-200">
+                <h3 className="text-center text-neutral-100 dark:text-white  px-2 text-lg md:text-xl font-extrabold mt-1 mb-1 line-clamp-2 group-hover:gradient-text transition duration-200">
                   {language === "english"
                     ? place.placeName
                     : place.placeNamejp || place.placeName}
-                </h4>
+                </h3>
               </div>
             </div>
             <div className="px-2 flex flex-wrap gap-1 mb-2 mt-4">
