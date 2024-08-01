@@ -18,8 +18,8 @@ export default function PlaceCard({ places, language }) {
               {place.placeImages ? (
                 <Image
                   src={urlFor(place.placeImages).url()}
-                  width={600}
-                  height={300}
+                  width={500}
+                  height={250}
                   alt={place.alt}
                   className="object-cover aspect-video rounded-md"
                   loading="lazy"

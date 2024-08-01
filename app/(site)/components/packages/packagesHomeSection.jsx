@@ -46,7 +46,7 @@ export default function PackagesSection({ heading, packages, language }) {
         ) : null}
       </div>
 
-      <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
         <PackageCard packages={packagesToDisplay} language={language} />
       </div>
     </div>

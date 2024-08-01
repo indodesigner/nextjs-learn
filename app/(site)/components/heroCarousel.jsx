@@ -47,10 +47,10 @@ const HeroCarousel = ({ slides }) => {
             <div className="relative bg-neutral-900">
               <Image
                 src={slide.slideImage}
-                width={2000}
-                height={1000}
+                width={1000}
+                height={500}
                 alt={slide.alt}
-                className="aspect-video object-cover rounded-xl md:rounded-3xl"
+                className="w-full lg:h-[80svh] object-cover rounded-xl md:rounded-3xl"
                 loading="lazy"
               />
               <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">

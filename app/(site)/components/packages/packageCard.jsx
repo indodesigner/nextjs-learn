@@ -16,8 +16,8 @@ export default function PackageCard({ packages, language }) {
             {tourPackage.packageImages ? (
               <Image
                 src={urlFor(tourPackage.packageImages).url()}
-                width={800}
-                height={500}
+                width={500}
+                height={250}
                 alt={tourPackage.alt}
                 className="object-cover aspect-video rounded-md"
                 loading="lazy"

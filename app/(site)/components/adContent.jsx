@@ -44,10 +44,10 @@ const AdContent = ({ ads }) => {
               {ad.adImages ? (
                 <Image
                   src={ad.adImages[0].asset.url}
-                  width={1920}
-                  height={720}
+                  width={800}
+                  height={400}
                   alt={ad.adImages[0].alt}
-                  className="object-cover rounded-lg"
+                  className="object-cover rounded-lg w-full"
                   loading="lazy"
                 ></Image>
               ) : (
