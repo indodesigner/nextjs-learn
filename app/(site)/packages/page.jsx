@@ -1,4 +1,4 @@
-import PackagesTabs from "@/components/packages/packagesTabs";
+import PackagesTabs from "@/_sections/packages/packagesTabs";
 import { getPackages, getPlaceTypes } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
 import GetInTouch from "@/components/getInTouch";

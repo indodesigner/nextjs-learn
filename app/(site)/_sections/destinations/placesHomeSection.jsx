@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PlaceCard from "@/components/destinations/placeCard";
+import PlaceCard from "@/_sections/destinations/placeCard";
 import useMediaQuery from "/hooks/useMediaQuery";
 
 export default function PlacesSection({ places, language }) {

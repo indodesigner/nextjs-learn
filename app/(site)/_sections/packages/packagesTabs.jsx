@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import PackagesTabContent from "@/components/packages/packagesTabContent";
+import PackagesTabContent from "@/_sections/packages/packagesTabContent";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from "/contexts/languageContext";
 import IndiaFlagIcon from "/public/images/india-flag-icon.svg";

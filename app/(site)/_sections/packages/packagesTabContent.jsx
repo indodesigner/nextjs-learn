@@ -1,4 +1,4 @@
-import PackageCard from "@/components/packages/packageCard";
+import PackageCard from "@/_sections/packages/packageCard";
 
 import {
   Card,
@@ -25,8 +25,8 @@ export default async function PackagesTabContent({
                 ? "Kerala Packages"
                 : "ケーララ州のバケーションパッケージ"
               : language === "english"
-              ? "Japan Packages"
-              : "日本パッケージ"}
+                ? "Japan Packages"
+                : "日本パッケージ"}
           </CardTitle>
 
           <CardDescription>
@@ -37,10 +37,10 @@ export default async function PackagesTabContent({
                   } Packages listed below`
                 : "以下のケーララ州の最高のツアーパッケージを探索してください"
               : language === "english"
-              ? `Explore Japan's Finest ${
-                  heading === "All" ? "Tour" : heading
-                } Packages Listed Below`
-              : "以下の日本最高のツアーパッケージを探索してください"}
+                ? `Explore Japan's Finest ${
+                    heading === "All" ? "Tour" : heading
+                  } Packages Listed Below`
+                : "以下の日本最高のツアーパッケージを探索してください"}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-2">

@@ -1,7 +1,7 @@
 "use client";
 import BlogSection from "@/components/blogsHomeSection";
-import PlacesSection from "@/components/destinations/placesHomeSection";
-import PackagesSection from "@/components/packages/packagesHomeSection";
+import PlacesSection from "@/_sections/destinations/placesHomeSection";
+import PackagesSection from "@/_sections/packages/packagesHomeSection";
 import DestinationCategories from "@/components/destinationCategories";
 import { useLanguage } from "/contexts/languageContext";
 import GetInTouch from "@/components/getInTouch";

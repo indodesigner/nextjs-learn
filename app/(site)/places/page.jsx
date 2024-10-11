@@ -1,4 +1,4 @@
-import PlacesTabs from "@/components/destinations/placesTabs";
+import PlacesTabs from "@/_sections/destinations/placesTabs";
 import { getPlaces, getPlaceTypes } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
 import GetInTouch from "@/components/getInTouch";

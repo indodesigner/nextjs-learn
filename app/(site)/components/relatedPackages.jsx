@@ -1,5 +1,5 @@
 import GetCountry from "@/components/getCountry";
-import PackageCard from "@/components/packages/packageCard";
+import PackageCard from "@/_sections/packages/packageCard";
 
 const RelatedPackages = ({ relatedPacks, heading, headingjp, language }) => {
   return (

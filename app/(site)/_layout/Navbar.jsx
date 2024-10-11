@@ -20,13 +20,13 @@ const Navbar = () => {
   const [isToggled, setToggle] = useState(false);
 
   const links = [
-    { href: "/india", name: "India", namejp: "インド" },
-    { href: "/japan", name: "Japan", namejp: "日本" },
-    { href: "/packages", name: "Packages", namejp: "パッケージ" },
-    { href: "/places", name: "Destinations", namejp: "目的地" },
-    { href: "/blogs", name: "Blogs", namejp: "ブログ" },
-    { href: "/about", name: "About", namejp: "について" },
-    { href: "/contact", name: "Contact", namejp: "接触" },
+    { id: "1", href: "/india", name: "India", namejp: "インド" },
+    { id: "2", href: "/japan", name: "Japan", namejp: "日本" },
+    { id: "3", href: "/packages", name: "Packages", namejp: "パッケージ" },
+    { id: "4", href: "/places", name: "Destinations", namejp: "目的地" },
+    { id: "5", href: "/blogs", name: "Blogs", namejp: "ブログ" },
+    { id: "6", href: "/about", name: "About", namejp: "について" },
+    { id: "7", href: "/contact", name: "Contact", namejp: "接触" },
   ];
 
   const closeNavbar = () => {
@@ -114,7 +114,7 @@ const Navbar = () => {
 
           <ul className="ps-[7px] py-2 flex flex-row items-center bg-white dark:bg-neutral-600 backdrop-filter backdrop-blur-xl bg-opacity-100 dark:bg-opacity-30 border-[1px] border-neutral-700 dark:border-white border-opacity-10 dark:border-opacity-10 rounded-3xl shadow-lg">
             {links.map((link) => (
-              <li key={link.name}>
+              <li key={link.id}>
                 <Link
                   href={link.href}
                   className={`${
@@ -219,7 +219,7 @@ const Navbar = () => {
                   >
                     {links.map((link) => (
                       <Link
-                        key={link.name}
+                        key={link.id}
                         href={link.href}
                         className="group"
                         onClick={() => {

@@ -1,5 +1,5 @@
 import GetCountry from "@/components/getCountry";
-import PlaceCard from "@/components/destinations/placeCard";
+import PlaceCard from "@/_sections/destinations/placeCard";
 
 const RelatedPlaces = ({ relatedPlaces, language }) => {
   return (

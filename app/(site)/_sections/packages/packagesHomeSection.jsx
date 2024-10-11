@@ -1,7 +1,7 @@
 import Link from "next/link";
 import useMediaQuery from "/hooks/useMediaQuery";
 import { Badge } from "@/components/ui/badge";
-import PackageCard from "@/components/packages/packageCard";
+import PackageCard from "@/_sections/packages/packageCard";
 
 export default function PackagesSection({ heading, packages, language }) {
   const showViewAllLink = packages && packages.length > 3;

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useLanguage } from "/contexts/languageContext";
-import PlacesTabContent from "@/components/destinations/placesTabContent";
+import PlacesTabContent from "@/_sections/destinations/placesTabContent";
 import IndiaFlagIcon from "/public/images/india-flag-icon.svg";
 import JapanFlagIcon from "/public/images/japan-flag-icon.svg";
 import DestinationCategories from "@/components/destinationCategories";

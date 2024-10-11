@@ -1,4 +1,4 @@
-import PlaceCard from "@/components/destinations/placeCard";
+import PlaceCard from "@/_sections/destinations/placeCard";
 
 export default async function PlacesTabContent({ places, language }) {
   return (

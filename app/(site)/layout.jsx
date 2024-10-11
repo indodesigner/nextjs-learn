@@ -1,11 +1,11 @@
 import { DM_Sans, Roboto } from "next/font/google";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
-import Footer from "@/components/footer";
 import Providers from "@/components/providers";
 import { CountryProvider } from "/contexts/countryContext";
 import { LanguageProvider } from "/contexts/languageContext";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/_layout/Navbar";
+import Footer from "@/_layout/footer";
 import ScrollToTopButton from "@/components/scrollToTopButton";
 
 const display = DM_Sans({
