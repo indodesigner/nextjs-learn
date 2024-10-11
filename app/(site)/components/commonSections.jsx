@@ -106,7 +106,7 @@ export default function CommonSections({
       ) : null}
 
       <section className="container">
-        <GetInTouch />
+        <GetInTouch language={language} />
       </section>
 
       <section className="container">
