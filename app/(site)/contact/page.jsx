@@ -2,6 +2,7 @@ import GetCountry from "@/components/getCountry";
 import { getPackages } from "/sanity/sanity-utils";
 import ContactContent from "./contactContent";
 import Advertisement from "@/components/advertisement";
+import FadeUp from "@/components/animations/fadeUp";
 
 export const metadata = {
   title:
@@ -40,7 +41,9 @@ const ContactPage = async () => {
       <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mt-2" />
 
       <div className="container">
-        <Advertisement />
+        <FadeUp delay="0.3">
+          <Advertisement />
+        </FadeUp>
       </div>
 
       <GetCountry country={null} />

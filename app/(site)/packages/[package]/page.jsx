@@ -2,6 +2,7 @@ import { getPackage, getPackages } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
 import PackageContent from "../packageContent";
 import Advertisement from "@/components/advertisement";
+import FadeUp from "@/components/animations/fadeUp";
 
 const TourPackage = async ({ params }) => {
   const slug = params.package;
@@ -47,9 +48,11 @@ const TourPackage = async ({ params }) => {
       </div>
       <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mt-2" />
 
-      <div className="container">
-        <Advertisement />
-      </div>
+      <FadeUp delay="0.3">
+        <div className="container">
+          <Advertisement />
+        </div>
+      </FadeUp>
     </>
   );
 };

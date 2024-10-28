@@ -1,4 +1,5 @@
 import PackageCard from "@/_sections/packages/packageCard";
+import FadeUp from "@/components/animations/fadeUp";
 
 import {
   Card,
@@ -44,9 +45,11 @@ export default async function PackagesTabContent({
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-2">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <PackageCard packages={packages} language={language} />
-          </div>
+          <FadeUp delay="0.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <PackageCard packages={packages} language={language} />
+            </div>
+          </FadeUp>
         </CardContent>
       </Card>
     </>

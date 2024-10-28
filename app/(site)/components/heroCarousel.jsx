@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { useLanguage } from "/contexts/languageContext";
 import IndiaFlagIcon from "/public/images/india-flag-icon.svg";
 import JapanFlagIcon from "/public/images/japan-flag-icon.svg";
+import FadeUp from "@/components/animations/fadeUp";
 
 // Import Swiper styles
 import "swiper/css";
@@ -39,7 +40,7 @@ const HeroCarousel = ({ slides }) => {
         //   clickable: true,
         // }}
         modules={[Pagination, Navigation, Autoplay, EffectFade]}
-        className="mySwiper rounded-xl md:rounded-3xl"
+        className="mySwiper rounded-xl md:rounded-3xl shadow-xl"
         // navigation={true}
       >
         {slides.map((slide) => (
@@ -53,53 +54,56 @@ const HeroCarousel = ({ slides }) => {
                 className="w-full lg:h-[80svh] object-cover rounded-xl md:rounded-3xl"
                 loading="lazy"
               />
-              <div className="absolute group flex justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">
-                <span className="flex flex-col items-center">
+              <div className="absolute group flex flex-col justify-center items-center bottom-0 py-10 min-w-[100%] min-h-[100%] bg-neutral-900 bg-opacity-60 hover:bg-opacity-70 text-white px-3 transition duration-300">
+                <FadeUp delay="0.3">
                   <h1 className="text-2xl sm:text-5xl lg:text-7xl font-extrabold drop-shadow-md gradient-text py-3 mb-2">
                     {language === "english" ? slide.title : slide.titlejp}
                   </h1>
-
+                </FadeUp>
+                <FadeUp delay="0.4" className="flex justify-center">
                   <p className="mb-4 text-xs sm:text-sm md:text-md lg:text-lg font-light w-[100%] sm:max-w-[80%] md:max-w-[60%] md:block hidden">
                     {language === "english" ? slide.caption : slide.captionjp}
                   </p>
+                </FadeUp>
 
-                  <span>
-                    <div className="grid grid-cols-2 gap-3">
-                      {path == "/"
-                        ? links.map((link) => (
-                            <Link
-                              key={link.href}
-                              href={`/${link.href}`}
-                              className="flex flex-col items-center py-2 px-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
-                            >
-                              {link.icon === "IndiaFlagIcon" ? (
-                                <Image
-                                  src={IndiaFlagIcon}
-                                  width={48}
-                                  height={48}
-                                  className="w-8 sm:w-12 md:w-16 h-auto"
-                                  alt="Indian flag button icon"
-                                />
-                              ) : (
-                                <Image
-                                  src={JapanFlagIcon}
-                                  width={48}
-                                  height={48}
-                                  className="w-8 sm:w-12 md:w-16 h-auto"
-                                  alt="Japanese flag button icon"
-                                />
-                              )}
-                              <span className="text-sm font-light sm:text-xl">
-                                {language === "english"
-                                  ? link.name
-                                  : link.namejp}
-                              </span>
-                            </Link>
-                          ))
-                        : null}
-                    </div>
-                  </span>
+                <FadeUp delay="0.5">
+                  {/* <div> */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {path == "/"
+                      ? links.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={`/${link.href}`}
+                            className="flex flex-col items-center py-2 px-4 sm:px-8 bg-neutral-300 border-2 border-neutral-100 border-opacity-10 bg-opacity-20 backdrop-blur-xl rounded-xl shadow-md hover:shadow-neutral-900 hover:-translate-y-1 transition"
+                          >
+                            {link.icon === "IndiaFlagIcon" ? (
+                              <Image
+                                src={IndiaFlagIcon}
+                                width={48}
+                                height={48}
+                                className="w-8 sm:w-12 md:w-16 h-auto"
+                                alt="Indian flag button icon"
+                              />
+                            ) : (
+                              <Image
+                                src={JapanFlagIcon}
+                                width={48}
+                                height={48}
+                                className="w-8 sm:w-12 md:w-16 h-auto"
+                                alt="Japanese flag button icon"
+                              />
+                            )}
+                            <span className="text-sm font-light sm:text-xl">
+                              {language === "english" ? link.name : link.namejp}
+                            </span>
+                          </Link>
+                        ))
+                      : null}
+                  </div>
+                  {/* </div> */}
+                </FadeUp>
 
+                <FadeUp delay="0.6">
                   <a
                     href="#packages"
                     className="lg:block hidden"
@@ -112,7 +116,7 @@ const HeroCarousel = ({ slides }) => {
                       style={{ height: "64px", width: "64px" }}
                     ></Player>
                   </a>
-                </span>
+                </FadeUp>
               </div>
             </div>
           </SwiperSlide>

@@ -6,6 +6,7 @@ import DestinationCategories from "@/components/destinationCategories";
 import { useLanguage } from "/contexts/languageContext";
 import GetInTouch from "@/components/getInTouch";
 import Advertisement from "@/components/advertisement";
+import FadeUp from "@/components/animations/fadeUp";
 
 export default function CommonSections({
   placeTypes,
@@ -27,90 +28,111 @@ export default function CommonSections({
     <div>
       {firstSectionPackages?.length > 0 ? (
         <section className="container" id="packages">
-          <PackagesSection
-            packages={firstSectionPackages}
-            heading={{
-              id: headings[0].id,
-              title:
-                language === "english"
-                  ? headings[0].title
-                  : headings[0].titlejp,
-            }}
-            language={language}
-          />
+          <FadeUp delay="0.3">
+            <PackagesSection
+              packages={firstSectionPackages}
+              heading={{
+                id: headings[0].id,
+                title:
+                  language === "english"
+                    ? headings[0].title
+                    : headings[0].titlejp,
+              }}
+              language={language}
+            />
+          </FadeUp>
         </section>
       ) : null}
 
       {secondSectionPackages?.length > 0 ? (
         <section className="container">
-          <PackagesSection
-            packages={secondSectionPackages}
-            heading={{
-              id: headings[1].id,
-              title:
-                language === "english"
-                  ? headings[1].title
-                  : headings[1].titlejp,
-            }}
-            language={language}
-          />
+          <FadeUp delay="0.3">
+            <PackagesSection
+              packages={secondSectionPackages}
+              heading={{
+                id: headings[1].id,
+                title:
+                  language === "english"
+                    ? headings[1].title
+                    : headings[1].titlejp,
+              }}
+              language={language}
+            />
+          </FadeUp>
         </section>
       ) : null}
 
       {placeTypes != 0 ? (
         <section className="container" id="categories">
-          <DestinationCategories placeTypes={placeTypes} language={language} />
+          <FadeUp delay="0.3">
+            <DestinationCategories
+              placeTypes={placeTypes}
+              language={language}
+            />
+          </FadeUp>
         </section>
       ) : null}
 
       {businessPackages != 0 ? (
         <section className="container">
-          <PackagesSection
-            packages={businessPackages}
-            heading={{
-              id: headings[2].id,
-              title:
-                language === "english"
-                  ? headings[2].title
-                  : headings[2].titlejp,
-            }}
-            language={language}
-          />
+          <FadeUp delay="0.3">
+            <PackagesSection
+              packages={businessPackages}
+              heading={{
+                id: headings[2].id,
+                title:
+                  language === "english"
+                    ? headings[2].title
+                    : headings[2].titlejp,
+              }}
+              language={language}
+            />
+          </FadeUp>
         </section>
       ) : null}
 
       {packages != 0 ? (
         <section className="container">
-          <PackagesSection
-            packages={packages}
-            heading={{
-              id: headings[3].id,
-              title:
-                language === "english"
-                  ? headings[3].title
-                  : headings[3].titlejp,
-            }}
-            language={language}
-          />
+          <FadeUp delay="0.3">
+            <PackagesSection
+              packages={packages}
+              heading={{
+                id: headings[3].id,
+                title:
+                  language === "english"
+                    ? headings[3].title
+                    : headings[3].titlejp,
+              }}
+              language={language}
+            />
+          </FadeUp>
         </section>
       ) : null}
 
       <section className="container">
-        <Advertisement language={language} />
+        <FadeUp delay="0.3">
+          <Advertisement language={language} />
+        </FadeUp>
       </section>
 
       {places != 0 ? (
         <section className="container">
-          <PlacesSection places={places} language={language} />
+          <FadeUp delay="0.3">
+            <PlacesSection places={places} language={language} />
+          </FadeUp>
         </section>
       ) : null}
 
       <section className="container">
-        <GetInTouch language={language} />
+        <FadeUp delay="0.3">
+          <GetInTouch language={language} />
+        </FadeUp>
       </section>
 
       <section className="container">
-        <BlogSection language={language} />
+        <FadeUp delay="0.3">
+          <BlogSection language={language} />
+        </FadeUp>
       </section>
     </div>
   );

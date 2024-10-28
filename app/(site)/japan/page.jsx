@@ -8,6 +8,7 @@ import GetCountry from "@/components/getCountry";
 import HeroCarousel from "@/components/heroCarousel";
 import CommonSections from "@/components/commonSections";
 import AboutJapan from "./aboutJapan";
+import FadeUp from "@/components/animations/fadeUp";
 
 export const metadata = {
   title:
@@ -37,7 +38,9 @@ export default async function ExploreJapan() {
   return (
     <div>
       <HeroCarousel slides={slidesJapan} />
-      <AboutJapan />
+      <FadeUp delay="0.3">
+        <AboutJapan />
+      </FadeUp>
       <CommonSections
         placeTypes={placeTypes}
         packages={allPackages}

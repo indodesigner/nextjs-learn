@@ -14,7 +14,7 @@ export default function PlaceCard({ places, language }) {
             className="group card card-hover p-2 mb-2"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-neutral-900 opacity-70 hover:opacity-10 k to-transparent rounded-md z-9 transition"></div>
+              <div className="absolute w-full h-[100.1%] inset-0 bg-gradient-to-tr from-neutral-900 opacity-70 hover:opacity-10 to-transparent rounded-md z-9 transition"></div>
               {place.placeImages ? (
                 <Image
                   src={urlFor(place.placeImages).url()}
@@ -31,7 +31,7 @@ export default function PlaceCard({ places, language }) {
                   </div>
                 </div>
               )}
-              <div className="absolute bottom-0 left-0 group-hover:bg-neutral-800 group-hover:backdrop-blur-md group-hover:bg-opacity-40 rounded-md w-full h-full flex justify-center items-center">
+              <div className="absolute top-0 left-0 group-hover:bg-neutral-800 group-hover:backdrop-blur-md group-hover:bg-opacity-40 rounded-md w-full h-full flex justify-center items-center">
                 <h3 className="text-center text-neutral-100 dark:text-white  px-2 text-lg md:text-xl font-extrabold mt-1 mb-1 line-clamp-2 group-hover:gradient-text transition duration-200">
                   {language === "english"
                     ? place.placeName
