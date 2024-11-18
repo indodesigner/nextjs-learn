@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "@/components/providers";
 import { CountryProvider } from "/contexts/countryContext";
 import { LanguageProvider } from "/contexts/languageContext";
+import SmoothScrolling from "@/components/animations/lenisScroll";
 import Navbar from "@/_layout/Navbar";
 import Footer from "@/_layout/footer";
 import ScrollToTopButton from "@/components/scrollToTopButton";
@@ -38,10 +39,12 @@ export default function RootLayout({ children }) {
         <Providers>
           <CountryProvider>
             <LanguageProvider>
-              <Navbar />
-              <main className="min-h-[100svh]">{children}</main>
-              <ScrollToTopButton />
-              <Footer />
+              <SmoothScrolling>
+                <Navbar />
+                <main className="min-h-[100svh]">{children}</main>
+                <ScrollToTopButton />
+                <Footer />
+              </SmoothScrolling>
             </LanguageProvider>
           </CountryProvider>
         </Providers>
