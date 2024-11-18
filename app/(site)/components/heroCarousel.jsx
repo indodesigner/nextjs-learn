@@ -10,6 +10,7 @@ import { useLanguage } from "/contexts/languageContext";
 import IndiaFlagIcon from "/public/images/india-flag-icon.svg";
 import JapanFlagIcon from "/public/images/japan-flag-icon.svg";
 import FadeUp from "@/components/animations/fadeUp";
+import { useLenis } from "lenis/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -21,10 +22,19 @@ const HeroCarousel = ({ slides }) => {
   const path = usePathname();
   const { language } = useLanguage();
 
+  const lenis = useLenis(); // Access Lenis instance for smooth scrolling
+
   const links = [
     { href: "india", name: "India", namejp: "インド", icon: "IndiaFlagIcon" },
     { href: "japan", name: "Japan", namejp: "日本", icon: "JapanFlagIcon" },
   ];
+
+  const scrollToSection = (selector) => {
+    const element = document.querySelector(selector);
+    if (element && lenis) {
+      lenis.scrollTo(element, { duration: 1.5 }); // Smooth scroll to the target element
+    }
+  };
 
   return (
     <section className="p-4 md:px-8 md:py-4 lg:pt-[86px] lg:mb-8 lg:px-16">
@@ -104,9 +114,9 @@ const HeroCarousel = ({ slides }) => {
                 </FadeUp>
 
                 <FadeUp delay="0.6">
-                  <a
-                    href="#packages"
+                  <button
                     className="lg:block hidden"
+                    onClick={() => scrollToSection("#packages")}
                     aria-label="go to packages section"
                   >
                     <Player
@@ -115,7 +125,7 @@ const HeroCarousel = ({ slides }) => {
                       src={LottieArrow}
                       style={{ height: "64px", width: "64px" }}
                     ></Player>
-                  </a>
+                  </button>
                 </FadeUp>
               </div>
             </div>
