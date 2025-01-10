@@ -1,7 +1,6 @@
 import PlacesTabs from "@/_sections/destinations/placesTabs";
 import { getPlaces, getPlaceTypes } from "/sanity/sanity-utils";
 import GetCountry from "@/components/getCountry";
-import GetInTouch from "@/components/getInTouch";
 import Advertisement from "@/components/advertisement";
 import FadeUp from "@/components/animations/fadeUp";
 
@@ -31,11 +30,6 @@ export default async function Places() {
           japanesePlaces={japanesePlaces}
           placeTypes={placeTypes}
         />
-      </div>
-      <div className="container">
-        <FadeUp delay="0.3">
-          <GetInTouch />
-        </FadeUp>
       </div>
       <hr className="border-neutral-300 dark:border-neutral-700 border-opacity-50 dark:border-opacity-70 mt-2" />
       <div className="container">

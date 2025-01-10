@@ -1,7 +1,10 @@
+"use client";
 import GetInTouch from "@/components/getInTouch";
 import FadeUp from "@/components/animations/fadeUp";
+import { useLanguage } from "/contexts/languageContext";
 
 const AboutPage = () => {
+  const { language } = useLanguage();
   return (
     <div className="container mt-0 sm:mt-8 lg:mt-16">
       <FadeUp delay="0.3">
@@ -64,7 +67,7 @@ const AboutPage = () => {
 
       <div className="mt-8">
         <FadeUp delay="0.3">
-          <GetInTouch />
+          <GetInTouch language={language} />
         </FadeUp>
       </div>
     </div>

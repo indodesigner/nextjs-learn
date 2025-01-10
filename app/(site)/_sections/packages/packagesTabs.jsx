@@ -7,6 +7,7 @@ import IndiaFlagIcon from "/public/images/india-flag-icon.svg";
 import JapanFlagIcon from "/public/images/japan-flag-icon.svg";
 import DestinationCategories from "@/components/destinationCategories";
 import FadeUp from "@/components/animations/fadeUp";
+import GetInTouch from "@/components/getInTouch";
 
 const PackagesTabs = ({
   indianPacks,
@@ -113,6 +114,11 @@ const PackagesTabs = ({
       <section>
         <FadeUp delay="0.3">
           <DestinationCategories placeTypes={placeTypes} language={language} />
+        </FadeUp>
+      </section>
+      <section className="mt-8">
+        <FadeUp delay="0.3">
+          <GetInTouch language={language} />
         </FadeUp>
       </section>
     </>
